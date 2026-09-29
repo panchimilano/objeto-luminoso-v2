@@ -102,7 +102,7 @@ textarea:focus{outline:2px solid #d9d3c4}
 .plate.dim .sel{opacity:1}
 .plate .zring:hover,.plate .parc:hover{filter:brightness(.92)}
 .plate .blk:hover{filter:brightness(.85)}
-.plate .flabel{font-size:9px;pointer-events:all;cursor:pointer}
+.plate .flabel{font-size:14px;pointer-events:all;cursor:pointer}
 .plate .flabel.lo{fill:var(--muted)}
 .plate .flabel.top{font-size:11px;font-weight:600}
 .plate .zlabel{font-size:11px;pointer-events:none}
@@ -139,13 +139,13 @@ textarea:focus{outline:2px solid #d9d3c4}
 .plate .blk:focus-visible{stroke:var(--ink);stroke-width:1.5}
 .plate .iband{fill:none;stroke:var(--line);stroke-opacity:.6;cursor:pointer;transition:stroke-opacity .18s,opacity .18s}
 .plate .iband:hover{stroke-opacity:.9}
-.plate .iband.on{stroke:var(--ink);stroke-opacity:.72}
+.plate .iband.on{stroke:var(--ink);stroke-opacity:.7}
 .plate .iband:focus-visible{stroke-opacity:1}
-.plate .ibl{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;fill:var(--ink);pointer-events:none}
+.plate .ibl{font-family:var(--f-ui);font-size:18px;font-weight:600;letter-spacing:.02em;fill:var(--ink);pointer-events:none}
 .plate .ibl.on{fill:var(--paper)}
 .plate .iconn{stroke:var(--ink);stroke-opacity:.72;fill:none}
 .plate .xlinks,.plate .iconns,.plate .xlinks path,.plate .iconns path{pointer-events:none!important}
-.plate.dim .iband{opacity:.25}.plate.dim .iband.sel{opacity:1}.plate.dim .ibl{opacity:.3}.plate.dim .ibl.sel{opacity:1}
+.plate.dim .iband{opacity:.65}.plate.dim .iband.sel{opacity:1}.plate.dim .ibl{opacity:.85}.plate.dim .ibl.sel{opacity:1}
 .det{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
 .det .t{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .det .m{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:3px;line-height:1.7}
@@ -182,7 +182,7 @@ details.trace summary::before{content:'+ '}details.trace[open] summary::before{c
 </style>
 </head>
 <body>
-<div class="stage"><svg class="plate" id="plate" viewBox="-55 -55 1110 1110"></svg></div>
+<div class="stage"><svg class="plate" id="plate" viewBox="-320 -320 1640 1640"></svg></div>
 <div class="hdr"><h1 id="title">—</h1><div class="sub" id="sub"></div><div class="meta" id="meta"></div></div>
 <div class="sel" id="sel"><button id="baseBtn">Database</button></div>
 <div class="base" id="base"><button class="close" onclick="closeBase()">×</button>
@@ -199,13 +199,13 @@ details.trace summary::before{content:'+ '}details.trace[open] summary::before{c
 <script>
 const $=(s,r=document)=>r.querySelector(s);
 const NS='http://www.w3.org/2000/svg';
-const G={cx:500,cy:500,RPH:121,RP0:125,RP1:148,RZ0:153,RZ1:213,RF0:219,LEN:{4:96,3:54,2:27,1:11,0:7},HOUT:17,HK:1.6,HADD:54,GAPP:.07,GAPZ:.009,RB0:322,BW:16,BG:5,RLBL:388}; // V2: RB0 radio interior de la primera banda de Identidad · BW espesor de banda · BG separación · RLBL rótulos de campo (antes 340); viewBox ampliado a 1110
+const G={cx:500,cy:500,RPH:121,RP0:125,RP1:148,RZ0:153,RZ1:213,RF0:219,LEN:{4:96,3:54,2:27,1:11,0:7},HOUT:17,HK:1.6,HADD:54,GAPP:.07,GAPZ:.009,RB0:470,BW:14,BG:12,RLBL:562}; // V2: anillos fuera del halo, con aire entre bandas. RF0 y LEN mantienen las longitudes originales de los atributos.
 const HUE={make:212,use:73,say:341,'SINTAXIS':212,'PRAGMÁTICA':73,'SEMÁNTICA':341}; // un color por plano, mismos tres tonos que V1
 const ALPHA={documentado:1,observado:.8,inferido:.55,interpretado:.45,otro:.5,desconocido:0,conflicto:.9};
 const JWORD={4:'clave',3:'determinante',2:'relevante',1:'contextual'}; // V2 §8: identidad ≠ importancia
 const PSEC={P1:'Propósito',P2:'Principios rectores',P3:'Condiciones no negociables'};
 let IMODE=null,ISEL=null,PER=0; // modo activo de Identidad (objeto | familia | marca) · ítem que afina las conexiones · ángulo por campo
-const MODES=[['objeto','OBJETO'],['familia','FAMILIA'],['marca','MARCA / COLECCIÓN']];
+const MODES=[['objeto','Objeto'],['familia','Familia'],['marca','Marca']];
 const MODENAME={objeto:'Identidad del objeto',familia:'Identidad de familia',marca:'Identidad de marca / colección'};
 const KEY=(e,fn)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}};
 const CHORDS={S:[['O3-3','O7-4'],['O3-4','O6-4'],['O8-5','C4-3'],['O6-3','C5-2'],['U3-6','C4-2'],['O5-4','U4-2'],['O3-2','C1-3'],['O7-1','U4-4']],
@@ -282,7 +282,7 @@ function render(){
         if(st==='conflicto'){const [x,y]=pol(G.RF0+L+4,f.am);el('circle',{cx:x,cy:y,r:2,fill:TH().conf},gB)}
         const deg=f.am*180/Math.PI,left=Math.cos(f.am)<0;const [x,y]=pol(G.RLBL,f.am);
         const t=el('text',{class:'flabel'+(j>=3?'':' lo'),x,y,transform:`rotate(${left?deg+180:deg} ${x} ${y})`,'text-anchor':left?'end':'start','dominant-baseline':'central',id:'fl-'+f.id},gL);
-        const lbl=f.name;t.textContent=lbl.length>30?lbl.slice(0,29)+'…':lbl;t.addEventListener('click',()=>openField(f)); // categoría del instrumento, común a cualquier lámpara; lo específico de Hope va en la tarjeta
+        const words=f.name.split(' '),lines=[];let line='';words.forEach(w=>{if(line&&(line+' '+w).length>22){lines.push(line);line=w}else line=line?line+' '+w:w});if(line)lines.push(line);lines.forEach((ln,k)=>{const span=el('tspan',{x,dy:k===0?-(lines.length-1)*8:16},t);span.textContent=ln});t.addEventListener('click',()=>openField(f)); // categoría del instrumento, común a cualquier lámpara; lo específico de Hope va en la tarjeta
       });
     });
     // nombre del plano sobre el arco
@@ -306,7 +306,7 @@ function render(){
   const stg=svg.parentElement;if(!stg.dataset.bound){stg.dataset.bound='1';stg.addEventListener('click',e=>{if(e.target===stg)closeCard()})} // el fondo fuera del svg también cierra (la rueda ya no llena toda la stage)
 }
 
-/* ---------- V2 · Identidad: tres anillos concéntricos (bandas) Objeto → Familia → Marca, siempre visibles; al elegir uno, conexiones rectas del mismo espesor hasta las categorías que construyen esa identidad ---------- */
+/* ---------- V2 · Identidad: tres anillos concéntricos (bandas) Objeto → Familia → Marca, siempre visibles; al elegir uno, dos contornos finos que prolongan los bordes de las categorías hasta el anillo elegido ---------- */
 function fieldById(id){for(const p of DATA[V].planes)for(const z of p.zones)for(const f of z.fields)if(f.id===id)return f;return null}
 function idItems(mode){const I=DATA[V].identidad||{};return mode==='objeto'?(I.objeto||[]):mode==='familia'?[...((I.familia||{}).invariantes||[]),...((I.familia||{}).variables||[])]:((I.marca_coleccion||{}).items||[])}
 function bandR(i){return G.RB0+G.BW/2+i*(G.BW+G.BG)}
@@ -321,8 +321,12 @@ function drawIdentity(){
   if(!IMODE)return;
   const i=MODES.findIndex(x=>x[0]===IMODE),rMid=bandR(i);const items=ISEL?idItems(IMODE).filter(it=>it.id===ISEL):idItems(IMODE);
   const links=new Set();items.forEach(it=>(it.links||[]).forEach(l=>links.add(l)));
-  links.forEach(l=>{const f=fieldById(l);if(!f)return;const L=G.LEN[f.j]??G.LEN[1];const [x0,y0]=pol(G.RF0+L+1,f.am),[x1,y1]=pol(rMid,f.am);
-    el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iconn','stroke-width':G.BW,'data-f':l,'data-m':IMODE},gC)});
+  links.forEach(l=>{const f=fieldById(l);if(!f)return;const L=G.LEN[f.j]??G.LEN[1];
+    // Dirección de Fran: el color termina; sus dos bordes continúan sin relleno hasta contactar el anillo.
+    [f.a0+G.GAPZ/3,f.a1-G.GAPZ/3].forEach((angle,edge)=>{
+      const [x0,y0]=pol(G.RF0+L,angle),[x1,y1]=pol(rMid-G.BW/2,angle);
+      el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iconn','stroke-width':1.5,'data-f':l,'data-m':IMODE,'data-edge':edge},gC)
+    })});
 }
 function clearX(){const g=$('#plate .xlinks');if(g)g.innerHTML=''}
 function lineCenterTo(f,g){const [u,v]=pol(G.RF0-1,f.am);const c=el('g',{class:'chord sel','data-f':f.id},g);el('path',{d:`M${G.cx} ${G.cy}L${u} ${v}`,class:'curve'},c)}
