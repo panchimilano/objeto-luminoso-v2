@@ -132,39 +132,57 @@ textarea:focus{outline:2px solid #d9d3c4}
 .rel a{display:block;cursor:pointer;color:inherit}.rel a:hover{text-decoration:underline}
 .rel a small{font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-right:6px}
 .plate .knot{fill:var(--ink)}
-/* V2 · centro (Programa proyectual), anillo exterior (Identidad) y líneas de relación por selección */
-.plate .clabel{font-family:var(--f-mono);font-size:8.5px;letter-spacing:.14em;fill:var(--muted);pointer-events:none}
-.plate.dim .clabel.sel{fill:var(--ink)}
-.plate .iring{fill:none;stroke:var(--line);stroke-width:.8}
-.plate .isel{font-family:var(--f-mono);font-size:9px;letter-spacing:.1em;fill:var(--muted)}
-.plate .isel tspan[data-m]{cursor:pointer}.plate .isel tspan[data-m]:hover,.plate .isel tspan.on{fill:var(--ink)}
-.plate .inode{fill:var(--ink)}
-.plate .iline{stroke:var(--ink);stroke-width:.6;fill:none}
-.plate .ilabel{font-family:var(--f-mono);font-size:8px;letter-spacing:.05em;fill:var(--ink);cursor:pointer;text-transform:uppercase}
-.plate.dim .inode,.plate.dim .iline,.plate.dim .ilabel,.plate.dim .iring{opacity:.22}
-.plate.dim .inode.sel,.plate.dim .iline.sel,.plate.dim .ilabel.sel{opacity:1}
+/* V2 · centro (Programa proyectual), tres anillos de Identidad (bandas Objeto · Familia · Marca) y conexiones por selección */
+.plate .clabel{font-family:var(--f-mono);font-size:9px;letter-spacing:.14em;fill:var(--ink);fill-opacity:.75;pointer-events:none}
+.plate.dim .clabel.sel{fill-opacity:1}
+.plate [tabindex]:focus{outline:none}.plate #center:focus-visible{stroke:var(--ink);stroke-width:1.5}
+.plate .blk:focus-visible{stroke:var(--ink);stroke-width:1.5}
+.plate .iband{fill:none;stroke:var(--line);stroke-opacity:.6;cursor:pointer;transition:stroke-opacity .18s,opacity .18s}
+.plate .iband:hover{stroke-opacity:.9}
+.plate .iband.on{stroke:var(--ink);stroke-opacity:.72}
+.plate .iband:focus-visible{stroke-opacity:1}
+.plate .ibl{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;fill:var(--ink);pointer-events:none}
+.plate .ibl.on{fill:var(--paper)}
+.plate .iconn{stroke:var(--ink);stroke-opacity:.72;fill:none}
+.plate .xlinks,.plate .iconns,.plate .xlinks path,.plate .iconns path{pointer-events:none!important}
+.plate.dim .iband{opacity:.25}.plate.dim .iband.sel{opacity:1}.plate.dim .ibl{opacity:.3}.plate.dim .ibl.sel{opacity:1}
 .det{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
 .det .t{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .det .m{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:3px;line-height:1.7}
 .det .m a{cursor:pointer;color:inherit}.det .m a:hover{text-decoration:underline}
 .det.hl{background:rgba(0,0,0,.05);border-radius:6px;padding:8px 6px}
-.pitem{padding:8px 0;border-bottom:1px dashed var(--line);cursor:pointer;font-size:13.5px;line-height:1.5}
+.pitem{padding:9px 0;border-bottom:1px dashed var(--line);cursor:pointer;font-size:13.5px;line-height:1.5}
 .pitem:hover{background:rgba(0,0,0,.03)}
-.pitem small{display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:2px}
-.pitem .w{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.pitem small{display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:3px}
+.pitem .e{display:block;font-size:14.5px;line-height:1.45}
+.pitem .w{display:block;color:var(--muted);font-size:13px;margin-top:3px;line-height:1.5}
 .pill.lg{cursor:pointer}.pill.lg:hover{background:var(--ink);color:var(--paper)}
 .pill.unk{background:none;border:1px solid var(--ink)}
 .guide ul{margin:4px 0 8px;padding-left:18px;font-size:13px;line-height:1.5}
 .rel .why{display:block;color:var(--muted);font-size:12px}
+details.trace{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+details.trace summary{cursor:pointer;font-family:var(--f-mono);font-size:10.5px;letter-spacing:var(--ls-kicker);text-transform:uppercase;color:var(--muted);list-style:none}
+details.trace summary::-webkit-details-marker{display:none}
+details.trace summary::before{content:'+ '}details.trace[open] summary::before{content:'− '}
+.card [tabindex="0"]:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
+.hdr{max-width:calc(100vw - 260px)}body.hascard .hdr{max-width:calc(100vw - 540px)}
+.hdr .meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stage{top:60px}svg.plate{width:min(calc(100vh - 60px),100%);height:auto}
 @media (max-width:1100px){.card{width:min(440px,92vw);right:4vw}}
-/* móvil: la tarjeta baja como panel inferior y la rueda no se desplaza (V1 no lo contemplaba) */
-@media (max-width:700px){.hdr{top:14px;left:16px}.hdr h1{font-size:30px}.sel{top:16px;right:16px}.legend{display:none}.stage{top:130px}
-  .stage svg.plate{width:min(100%,calc(100vh - 130px));height:auto}body.hascard .stage{right:0;bottom:52vh}body.hascard .stage svg.plate{width:min(100%,calc(48vh - 130px))}.card{top:auto;bottom:0;left:0;right:0;width:100%;max-height:52vh;transform:none;border-radius:var(--radius) var(--radius) 0 0;padding:20px 18px}.base{right:4vw;width:92vw}}
-#oolCreate,#oolMsg,#oolJobs,#base .bgrp:last-of-type{display:none!important}
+/* ≤900 px (tablet y móvil): la página fluye en columna — cabecera, rueda a todo el ancho, leyenda y tarjeta debajo; el zoom nativo del navegador queda disponible (viewport sin user-scalable=no) */
+@media (max-width:900px){html,body{height:auto;overflow:auto}body{display:flex;flex-direction:column}
+  .hdr{order:0;position:static;padding:18px 16px 0;max-width:calc(100% - 130px);pointer-events:auto}.hdr h1{font-size:34px}.hdr .meta{white-space:normal}body.hascard .hdr{max-width:calc(100% - 130px)}
+  .sel{position:absolute;top:16px;right:16px}.stage{order:1}.legend{order:2}.card{order:3}.base{position:fixed}
+  .stage{position:static;display:block;padding:6px 2px 0;transition:none}body.hascard .stage{right:auto}
+  svg.plate{width:100%;height:auto;max-width:none}
+  .legend{position:static;display:flex;justify-content:center;flex-wrap:wrap;gap:14px;padding:6px 16px 4px}
+  .card{position:static;transform:none;width:auto;max-height:none;margin:8px 12px 28px;padding:22px 18px}
+  .base{right:4vw;width:92vw;max-height:80vh}.baserow{flex-wrap:wrap}.baserow input{min-width:160px}}
+#oolCreate,#oolMsg,#oolJobs,#oolJobsHead{display:none!important}
 </style>
 </head>
 <body>
-<div class="stage"><svg class="plate" id="plate" viewBox="0 0 1000 1000"></svg></div>
+<div class="stage"><svg class="plate" id="plate" viewBox="-55 -55 1110 1110"></svg></div>
 <div class="hdr"><h1 id="title">—</h1><div class="sub" id="sub"></div><div class="meta" id="meta"></div></div>
 <div class="sel" id="sel"><button id="baseBtn">Database</button></div>
 <div class="base" id="base"><button class="close" onclick="closeBase()">×</button>
@@ -173,7 +191,7 @@ textarea:focus{outline:2px solid #d9d3c4}
   <div id="baseList"></div>
   <div id="oolCreate"></div>
   <div class="ool-msg" id="oolMsg"></div>
-  <div class="bgrp">Trabajos del experto</div>
+  <div class="bgrp" id="oolJobsHead">Trabajos del experto</div>
   <div id="oolJobs"><div class="ool-empty">cargando…</div></div>
 </div>
 <div class="legend"><span><i style="height:14px"></i>J4</span><span><i style="height:9px"></i>J3</span><span><i style="height:5px"></i>J2</span><span><i style="height:3px"></i>J1</span><span style="margin-left:8px"><span class="st"><i></i></span><span class="st"><i style="opacity:.8"></i></span><span class="st"><i style="opacity:.55"></i></span><span class="st"><i style="opacity:.42"></i></span><span class="st"><i style="background:none;border:1px solid var(--ink)"></i></span> documentado → desconocido</span></div>
@@ -181,12 +199,15 @@ textarea:focus{outline:2px solid #d9d3c4}
 <script>
 const $=(s,r=document)=>r.querySelector(s);
 const NS='http://www.w3.org/2000/svg';
-const G={cx:500,cy:500,RPH:121,RP0:125,RP1:148,RZ0:153,RZ1:213,RF0:219,LEN:{4:96,3:54,2:27,1:11,0:7},HOUT:17,HK:1.6,HADD:54,GAPP:.07,GAPZ:.009,RI:327,RIL:334,RLBL:350}; // V2: RI anillo de Identidad · RIL rótulos del anillo · RLBL rótulos de campo (antes 340)
+const G={cx:500,cy:500,RPH:121,RP0:125,RP1:148,RZ0:153,RZ1:213,RF0:219,LEN:{4:96,3:54,2:27,1:11,0:7},HOUT:17,HK:1.6,HADD:54,GAPP:.07,GAPZ:.009,RB0:322,BW:16,BG:5,RLBL:388}; // V2: RB0 radio interior de la primera banda de Identidad · BW espesor de banda · BG separación · RLBL rótulos de campo (antes 340); viewBox ampliado a 1110
 const HUE={make:212,use:73,say:341,'SINTAXIS':212,'PRAGMÁTICA':73,'SEMÁNTICA':341}; // un color por plano, mismos tres tonos que V1
 const ALPHA={documentado:1,observado:.8,inferido:.55,interpretado:.45,otro:.5,desconocido:0,conflicto:.9};
 const JWORD={4:'clave',3:'determinante',2:'relevante',1:'contextual'}; // V2 §8: identidad ≠ importancia
 const PSEC={P1:'Propósito',P2:'Principios rectores',P3:'Condiciones no negociables'};
-let IMODE=null,PER=0; // modo activo del anillo de Identidad (objeto | familia | marca) · ángulo por campo
+let IMODE=null,ISEL=null,PER=0; // modo activo de Identidad (objeto | familia | marca) · ítem que afina las conexiones · ángulo por campo
+const MODES=[['objeto','OBJETO'],['familia','FAMILIA'],['marca','MARCA / COLECCIÓN']];
+const MODENAME={objeto:'Identidad del objeto',familia:'Identidad de familia',marca:'Identidad de marca / colección'};
+const KEY=(e,fn)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}};
 const CHORDS={S:[['O3-3','O7-4'],['O3-4','O6-4'],['O8-5','C4-3'],['O6-3','C5-2'],['U3-6','C4-2'],['O5-4','U4-2'],['O3-2','C1-3'],['O7-1','U4-4']],
               W:[['O3-3','O7-5'],['O3-4','C2-1'],['O5-3','O6-2'],['O8-5','C4-2'],['U3-1','C4-4'],['O6-3','C5-2'],['O3-2','C1-3'],['O5-7','U4-2']]};
 function metaOf(v){const m=(DATA[v]&&DATA[v].meta)||{};return {title:m.nombre||m.objeto||v,sub:[m.empresa,(m.disenadores||[]).join(' + '),m.anio].filter(Boolean).join(' · '),img:'img/'+(m.foto||m.dibujo||''),isPhoto:!!m.foto,objeto:m.objeto||v,estado:m.estado_ficha||''}}
@@ -220,13 +241,13 @@ function render(){
   const d=DATA[V],svg=$('#plate');svg.innerHTML='';svg.classList.remove('dim');
   const per=layout(d);PER=per;
   const MV=metaOf(V);$('#title').textContent=MV.title;$('#sub').textContent=MV.sub+(MV.estado&&MV.estado!=='definitiva'?' · '+MV.estado:'');
-  $('#meta').textContent=`Ficha del objeto luminoso · V2 · programa · ${d.planes.length} planos · ${d.stats.zones} zonas · ${d.stats.fields} campos · identidad`;
+  $('#meta').textContent=`Genoma V2 · ${d.planes.length} planos · ${d.stats.zones} zonas · ${d.stats.fields} campos`;
   const defs=el('defs',{},svg);
   const fl=el('filter',{id:'blur',x:'-20%',y:'-20%',width:'140%',height:'140%'},defs);el('feGaussianBlur',{stdDeviation:4},fl);
   const clip=el('clipPath',{id:'ph'},defs);el('circle',{cx:G.cx,cy:G.cy,r:G.RPH},clip);
   el('image',{href:MV.img,x:G.cx-G.RPH,y:G.cy-G.RPH,width:2*G.RPH,height:2*G.RPH,preserveAspectRatio:'xMidYMid meet','clip-path':'url(#ph)',transform:'translate('+G.cx+' '+G.cy+') scale(.8) translate('+(-G.cx)+' '+(-G.cy)+')',style:MV.isPhoto?'':'filter:grayscale(1) contrast(1.08);mix-blend-mode:multiply'},svg);  // la lámpara ocupa el vacío central, por debajo de las cuerdas
   // V2 · centro clickeable = Programa proyectual (misma tarjeta lateral); leyenda discreta en el vacío entre la foto (r≈97) y el arco de planos, sin tapar la lámpara ni sumar color
-  el('circle',{cx:G.cx,cy:G.cy,r:G.RPH,fill:'transparent',class:'hit',id:'center'},svg).addEventListener('click',()=>openProgram());
+  {const c=el('circle',{cx:G.cx,cy:G.cy,r:G.RPH,fill:'transparent',class:'hit',id:'center',tabindex:0,role:'button','aria-label':'Programa proyectual'},svg);c.addEventListener('click',()=>openProgram());c.addEventListener('keydown',e=>KEY(e,openProgram));el('title',{},c).textContent='Programa proyectual'}
   el('path',{id:'pp-center',d:arcPath(G.RPH-10,Math.PI/2-.95,Math.PI/2+.95),fill:'none'},defs);
   {const t=el('text',{class:'clabel','dominant-baseline':'central',id:'center-lbl'},svg);const tp=el('textPath',{href:'#pp-center',startOffset:'50%','text-anchor':'middle'},t);tp.textContent='PROGRAMA PROYECTUAL'}
   // halo: proyección de la importancia, por zona con su tono, desenfocada
@@ -257,11 +278,11 @@ function render(){
       z.fields.forEach(f=>{const j=jn(f.importancia),st=state(f.estado),L=G.LEN[j]??G.LEN[1];f.j=j;f.st=st;
         const at={d:sectorPath(G.RF0,G.RF0+L,f.a0+G.GAPZ/3,f.a1-G.GAPZ/3),class:'blk hit',id:'blk-'+f.id};
         if(st==='desconocido'){at.fill=getComputedStyle(document.body).getPropertyValue('--paper').trim()||'#f1eee7';at.stroke=z.col;at['stroke-width']=.8}else{at.fill=z.col;at['fill-opacity']=ALPHA[st]*.92}
-        el('path',at,gB).addEventListener('click',()=>openField(f));
+        {at.tabindex=0;at.role='button';at['aria-label']=f.name;const b=el('path',at,gB);b.addEventListener('click',()=>openField(f));b.addEventListener('keydown',e=>KEY(e,()=>openField(f)))}
         if(st==='conflicto'){const [x,y]=pol(G.RF0+L+4,f.am);el('circle',{cx:x,cy:y,r:2,fill:TH().conf},gB)}
         const deg=f.am*180/Math.PI,left=Math.cos(f.am)<0;const [x,y]=pol(G.RLBL,f.am);
         const t=el('text',{class:'flabel'+(j>=3?'':' lo'),x,y,transform:`rotate(${left?deg+180:deg} ${x} ${y})`,'text-anchor':left?'end':'start','dominant-baseline':'central',id:'fl-'+f.id},gL);
-        const lbl=f.titular||f.name;t.textContent=lbl.length>30?lbl.slice(0,29)+'…':lbl;if(f.titular)t.classList.add('top');t.addEventListener('click',()=>openField(f));
+        const lbl=f.name;t.textContent=lbl.length>30?lbl.slice(0,29)+'…':lbl;t.addEventListener('click',()=>openField(f)); // categoría del instrumento, común a cualquier lámpara; lo específico de Hope va en la tarjeta
       });
     });
     // nombre del plano sobre el arco
@@ -282,41 +303,38 @@ function render(){
   drawIdentity();
   // centro: la pieza
   svg.addEventListener('click',e=>{if(e.target===svg)closeCard()});
+  const stg=svg.parentElement;if(!stg.dataset.bound){stg.dataset.bound='1';stg.addEventListener('click',e=>{if(e.target===stg)closeCard()})} // el fondo fuera del svg también cierra (la rueda ya no llena toda la stage)
 }
 
-/* ---------- V2 · anillo exterior de Identidad: en reposo sólo los tres modos; con un modo activo, sus ítems en el ángulo de su campo ancla ---------- */
+/* ---------- V2 · Identidad: tres anillos concéntricos (bandas) Objeto → Familia → Marca, siempre visibles; al elegir uno, conexiones rectas del mismo espesor hasta las categorías que construyen esa identidad ---------- */
 function fieldById(id){for(const p of DATA[V].planes)for(const z of p.zones)for(const f of z.fields)if(f.id===id)return f;return null}
-function idItems(mode){const I=DATA[V].identidad||{};return mode==='objeto'?(I.objeto||[]):mode==='familia'?((I.familia||{}).invariantes||[]):[]}
+function idItems(mode){const I=DATA[V].identidad||{};return mode==='objeto'?(I.objeto||[]):mode==='familia'?[...((I.familia||{}).invariantes||[]),...((I.familia||{}).variables||[])]:((I.marca_coleccion||{}).items||[])}
+function bandR(i){return G.RB0+G.BW/2+i*(G.BW+G.BG)}
 function drawIdentity(){
   const svg=$('#plate'),gI=svg.querySelector('.ident'),defs=svg.querySelector('defs');if(!gI)return;gI.innerHTML='';defs.querySelectorAll('[id^="iarc-"]').forEach(e=>e.remove());
-  el('circle',{cx:G.cx,cy:G.cy,r:G.RI,class:'iring'},gI);
-  el('path',{id:'iarc-sel',d:arcPath(G.RI,Math.PI/2-.62,Math.PI/2+.62),fill:'none'},defs);
-  const t=el('text',{class:'isel','dominant-baseline':'central'},gI);const tp=el('textPath',{href:'#iarc-sel',startOffset:'50%','text-anchor':'middle'},t);
-  [['objeto','OBJETO'],['familia','FAMILIA'],['marca','MARCA/COLECCIÓN']].forEach(([m,lbl],i)=>{if(i){const s=el('tspan',{},tp);s.textContent='   ·   '}const s=el('tspan',{class:IMODE===m?'on':'','data-m':m,id:'isel-'+m},tp);s.textContent=lbl;s.addEventListener('click',e=>{e.stopPropagation();openIdentityMode(m)})});
+  const gB=el('g',{class:'ibands'},gI),gC=el('g',{class:'iconns'},gI),gT=el('g',{class:'ibls'},gI);
+  MODES.forEach(([m,lbl],i)=>{const r=bandR(i);
+    const c=el('circle',{cx:G.cx,cy:G.cy,r,class:'iband'+(IMODE===m?' on':''),'stroke-width':G.BW,id:'iband-'+m,tabindex:0,role:'button','aria-label':MODENAME[m],'data-m':m},gB);
+    c.addEventListener('click',()=>openIdentityMode(m));c.addEventListener('keydown',e=>KEY(e,()=>openIdentityMode(m)));el('title',{},c).textContent=MODENAME[m];
+    el('path',{id:'iarc-'+m,d:arcPath(r,Math.PI/2-.9,Math.PI/2+.9),fill:'none'},defs);
+    const t=el('text',{class:'ibl'+(IMODE===m?' on':''),'dominant-baseline':'central',id:'ibl-'+m},gT);const tp=el('textPath',{href:'#iarc-'+m,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lbl});
   if(!IMODE)return;
-  const items=idItems(IMODE),angs=items.map(it=>(fieldById(it.anchor)||{}).am).filter(a=>a!==undefined);
-  items.forEach(it=>{const f=fieldById(it.anchor);if(!f)return;const L=G.LEN[f.j]??G.LEN[1];
-    // línea radial fina desde la punta de la barra del campo ancla hasta el nodo del anillo; el dato no se mueve, se proyecta
-    const [x0,y0]=pol(G.RF0+L+3,f.am),[x1,y1]=pol(G.RI-3,f.am);el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iline',id:'il-'+it.id},gI);
-    const [cx,cy]=pol(G.RI,f.am);el('circle',{cx,cy,r:2.6,class:'inode hit',id:'in-'+it.id},gI).addEventListener('click',()=>openIdentityItem(it.id));
-    // rótulo corto sobre el arco exterior, limitado al arco libre hasta el ítem vecino más cercano
-    let half=PER*1.5;angs.forEach(a=>{if(a!==f.am){let d=Math.abs(a-f.am);d=Math.min(d,2*Math.PI-d);half=Math.min(half,d/2-.01)}});half=Math.max(half,PER/2-.004);
-    el('path',{id:'iarc-'+it.id,d:arcPath(G.RIL,f.am-half,f.am+half),fill:'none'},defs);
-    const tx=el('text',{class:'ilabel','dominant-baseline':'central',id:'ilb-'+it.id},gI);const tpp=el('textPath',{href:'#iarc-'+it.id,startOffset:'50%','text-anchor':'middle'},tx);
-    let lbl=it.rotulo||it.label;tpp.textContent=lbl;const avail=G.RIL*2*half-6;while(tx.getComputedTextLength()>avail&&lbl.length>3){lbl=lbl.slice(0,-2)+'…';tpp.textContent=lbl}
-    el('title',{},tx).textContent=it.label+' · '+(it.why||'');tx.addEventListener('click',()=>openIdentityItem(it.id));
-  });
+  const i=MODES.findIndex(x=>x[0]===IMODE),rMid=bandR(i);const items=ISEL?idItems(IMODE).filter(it=>it.id===ISEL):idItems(IMODE);
+  const links=new Set();items.forEach(it=>(it.links||[]).forEach(l=>links.add(l)));
+  links.forEach(l=>{const f=fieldById(l);if(!f)return;const L=G.LEN[f.j]??G.LEN[1];const [x0,y0]=pol(G.RF0+L+1,f.am),[x1,y1]=pol(rMid,f.am);
+    el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iconn','stroke-width':G.BW,'data-f':l,'data-m':IMODE},gC)});
 }
 function clearX(){const g=$('#plate .xlinks');if(g)g.innerHTML=''}
 function lineCenterTo(f,g){const [u,v]=pol(G.RF0-1,f.am);const c=el('g',{class:'chord sel','data-f':f.id},g);el('path',{d:`M${G.cx} ${G.cy}L${u} ${v}`,class:'curve'},c)}
-function chordBetween(a,b,g){const [x0,y0]=pol(G.RP0-3,a.am),[x1,y1]=pol(G.RP0-3,b.am),[u0,v0]=pol(G.RF0-1,a.am),[u1,v1]=pol(G.RF0-1,b.am);const c=el('g',{class:'chord sel','data-f':a.id+' '+b.id},g);el('path',{d:`M${u0} ${v0}L${x0} ${y0}Q${G.cx} ${G.cy} ${x1} ${y1}L${u1} ${v1}`,class:'curve'},c)}
 
 /* ---------- la tarjeta ---------- */
 const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const paras=s=>(s||'').split(/\n{2,}/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/_(.+?)_/g,'<i>$1</i>')}</p>`).join('');
 function showCard(html,selector){HELP=null;clearX();const c=$('#card');$('#cardBody').innerHTML=html;c.classList.add('on');document.body.classList.add('hascard');c.scrollTop=0;
+  c.querySelectorAll('a[onclick],.pitem,.pill.lg,.zlist .z,.flist .f').forEach(e=>{if(!e.hasAttribute('tabindex'))e.setAttribute('tabindex','0');if(!e.getAttribute('role'))e.setAttribute('role','button')}); // teclado: Enter/Espacio en los enlaces internos (ver keydown delegado)
+  if(innerWidth<=900)setTimeout(()=>c.scrollIntoView({behavior:'smooth',block:'start'}),60);
   const svg=$('#plate');svg.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'));if(selector){svg.classList.add('dim');svg.querySelectorAll(selector).forEach(e=>e.classList.add('sel'))}else svg.classList.remove('dim')}
-function closeCard(){$('#card').classList.remove('on');document.body.classList.remove('hascard');const svg=$('#plate');svg.classList.remove('dim');svg.querySelectorAll('.sel,.rel').forEach(e=>e.classList.remove('sel','rel'));clearX();if(IMODE){IMODE=null;drawIdentity()}}
+function closeCard(){$('#card').classList.remove('on');document.body.classList.remove('hascard');const svg=$('#plate');svg.classList.remove('dim');svg.querySelectorAll('.sel,.rel').forEach(e=>e.classList.remove('sel','rel'));clearX();ISEL=null;if(IMODE){IMODE=null;drawIdentity()}}
 function introRest(p){const lines=(p.intro||'').split('\n').map(l=>l.trim()).filter(Boolean);return lines.filter(l=>!l.startsWith('#')).slice(1).join('\n\n')}
 const cap=s=>(s||'').charAt(0)+(s||'').slice(1).toLowerCase();
 const V2=()=>DEFS.v2||{};
@@ -343,7 +361,7 @@ function openZone(z){
 }
 function srcHtml(codes){const S=(DEFS.sources||{});return (codes||'').split(/[,;\s]+/).filter(Boolean).map(c=>{const s=S[c];if(!s)return`<span class="pill">${esc(c)}</span>`;return s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(c)} · ${esc(s.name)}</a>`:`${esc(c)} · ${esc(s.name)}`}).join('<br>')}
 /* ---------- V2 · detalle atómico, relaciones tipadas, legacy ---------- */
-function goRef(r){if(/^P[123]-/.test(r))return openPItem(r);if(/^PA-/.test(r))return openProgram(r);if(/^I[OFV]\d/.test(r))return openIdentityItem(r);if(/^DOC-/.test(r))return openDocs(r);if(/^LEGACY-/.test(r))return openLegacyPlane(r.slice(7));if(/^familia\./.test(r))return showIdentityMode('familia');
+function goRef(r){if(/^P[123]-/.test(r))return openPItem(r);if(/^PA-/.test(r))return openProgram(r);if(/^I[OFVM]\d/.test(r))return openIdentityItem(r);if(/^DOC-/.test(r))return openDocs(r);if(/^LEGACY-/.test(r))return openLegacyPlane(r.slice(7));if(/^familia\./.test(r))return showIdentityMode('familia');
   const m=r.match(/^([A-Z]{2}\d-\d)(?:\.(.+))?$/);if(m)return m[2]?openDetail(m[1],r):openFieldId(m[1]);if(/^[OUC]\d-\d$/.test(r))return openLegacy(r)}
 function entName(e){return ((DATA[V].entidades||{})[e]||{nombre:e}).nombre}
 function detHtml(d){
@@ -355,7 +373,7 @@ function detHtml(d){
   const refs=(d.ref||[]).map(r=>`<a onclick="goRef('${r}')">→ ${esc(r)}</a>`).join(' ');
   return `<div class="det" id="det-${esc(d.id)}"><span class="t">${esc(d.tipo||'')}</span>${esc(d.texto)}${d.nota?` <i>${esc(d.nota)}</i>`:''}<div class="m">${ent}${ext}${mag}${meta}${(d.legacy_ids||[]).length?' · '+lpills(d.legacy_ids):''}${refs?' · '+refs:''}</div></div>`}
 function pitemById(id){const P=DATA[V].programa||{};for(const s of ['proposito','principios','condiciones','antecedentes'])for(const it of (P[s]||[]))if(it.id===id)return it;return null}
-function iitemById(id){const I=DATA[V].identidad||{};for(const it of (I.objeto||[]))if(it.id===id)return it;for(const it of ((I.familia||{}).invariantes||[]))if(it.id===id)return it;for(const it of ((I.familia||{}).variables||[]))if(it.id===id)return it;return null}
+function iitemById(id){const I=DATA[V].identidad||{};for(const it of (I.objeto||[]))if(it.id===id)return it;for(const it of ((I.familia||{}).invariantes||[]))if(it.id===id)return it;for(const it of ((I.familia||{}).variables||[]))if(it.id===id)return it;for(const it of ((I.marca_coleccion||{}).items||[]))if(it.id===id)return it;return null}
 function nameOf(id){if(/^P/.test(id)){const it=pitemById(id);return it?it.texto:id}if(/^I/.test(id)){const it=iitemById(id);return it?it.label:id}const f=fieldById(id);return f?f.name:id}
 function fnOf(id){return /^P/.test(id)?`openPItem('${id}')`:/^I/.test(id)?`openIdentityItem('${id}')`:`openFieldId('${id}')`}
 function relLine(r,me){const other=r.from===me?r.to:r.from,dir=r.from===me;const t=r.type.replace('_',' ');const f=fieldById(other);
@@ -378,55 +396,61 @@ function openField(f,hl){
   if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}
 }
 function openDetail(fid,did){const f=fieldById(fid);if(f)openField(f,did)}
-/* ---------- V2 · Programa proyectual (centro) ---------- */
+/* ---------- V2 · Programa proyectual (centro): enunciados de proyecto en prosa operativa; origen, fuentes e historia en trazabilidad desplegable ---------- */
+function imgNote(){const I=(DATA[V].meta||{}).imagen||{};return I.archivo?`<div class="sec"><div class="kicker">Imagen central</div><div class="human"><p>${esc(I.procedencia||'')} ${esc(I.nota||'')}${I.variante_confirmada===false?' Variante no confirmada.':''}</p></div></div>`:''}
+function traceP(P){return `<details class="trace"><summary>Trazabilidad · origen, fuentes e historia del proceso</summary>
+      <div class="sec"><div class="kicker">Cómo se reconstruyó</div><div class="human"><p>${esc(P.nota_reconstruccion||'')}</p>${paras(P.lectura)}</div></div>
+      <div class="sec"><div class="kicker">Historia del proceso · fuera del programa</div>${(P.antecedentes||[]).map(a=>`<div class="det" id="det-${a.id}"><span class="t">${a.id}</span>${esc(a.texto)}<div class="m">${esc(a.estado)} · ${esc(a.fuente)}${(a.legacy_ids||[]).length?' · '+lpills(a.legacy_ids):''}${(a.ref||[]).map(r=>` · <a onclick="goRef('${r}')">→ ${r}</a>`).join('')}</div></div>`).join('')}</div>
+      ${imgNote()}<div class="rel"><a onclick="openDocs()">Documentación de producto · ${(DATA[V].documentacion||[]).length} →</a></div></details>`}
 function openProgram(hl){const P=DATA[V].programa||{},MV=metaOf(V);const n=new Set(REL().filter(r=>r.type==='responde_a').map(r=>r.from)).size;
-  const sec=(key,code)=>`<div class="sec"><div class="kicker">${esc(PSEC[code])}</div>${(P[key]||[]).map(it=>`<div class="pitem" onclick="openPItem('${it.id}')">${esc(it.texto)}<small>${it.id} · ${esc(it.estado)} · ${(it.links||[]).length} campos responden</small></div>`).join('')}</div>`;
-  showCard(`<div class="kicker">Programa proyectual</div><div class="hrow"><h2>${esc(MV.title)}</h2>${helpBtn('program','programa')}</div><div class="q">${esc((V2().programa||{}).pregunta||'')}</div>
-    <div class="sec"><div class="kicker">Procedencia</div><div class="human">${paras(P.lectura)}</div></div>${sec('proposito','P1')}${sec('principios','P2')}${sec('condiciones','P3')}
-    <div class="sec"><div class="kicker">Relaciones</div><div class="human"><p>${n} campos responden actualmente al programa. Elegí un ítem para ver cuáles y con qué tipo de relación; las líneas se dibujan sólo por selección.</p></div></div>
-    <div class="sec"><div class="kicker">Antecedentes · fuera del anillo principal</div>${(P.antecedentes||[]).map(a=>`<div class="det" id="det-${a.id}"><span class="t">${a.id}</span>${esc(a.texto)}<div class="m">${esc(a.estado)} · ${esc(a.fuente)}${(a.legacy_ids||[]).length?' · '+lpills(a.legacy_ids):''}${(a.ref||[]).map(r=>` · <a onclick="goRef('${r}')">→ ${r}</a>`).join('')}</div></div>`).join('')}<div class="rel"><a onclick="openDocs()">Documentación de producto · ${(DATA[V].documentacion||[]).length} →</a></div></div>`,'#center-lbl');
-  if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}}
+  const sec=(key,code)=>`<div class="sec"><div class="kicker">${esc(PSEC[code])}</div>${(P[key]||[]).map(it=>`<div class="pitem" onclick="openPItem('${it.id}')"><span class="e">${esc(it.enunciado||it.texto)}</span><span class="w">${esc(it.desarrollo||'')}</span><small>${it.id} · ${(it.links||[]).length} categorías responden</small></div>`).join('')}</div>`;
+  showCard(`<div class="kicker">Programa proyectual · <b>reconstrucción para proyectar</b></div><div class="hrow"><h2>${esc(MV.title)}</h2>${helpBtn('program','programa')}</div><div class="q">${esc((V2().programa||{}).pregunta||'')}</div>
+    ${sec('proposito','P1')}${sec('principios','P2')}${sec('condiciones','P3')}
+    <div class="sec"><div class="kicker">Relaciones</div><div class="human"><p>${n} categorías responden al programa. Elegí un enunciado para ver cuáles y con qué tipo de relación; las líneas se dibujan sólo por selección.</p></div></div>
+    ${traceP(P)}`,'#center-lbl');
+  if(hl){const d=$('#cardBody details');if(d)d.open=true;const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}}
 function openPItem(id){const it=pitemById(id);if(!it||!it.seccion)return openProgram(id);const code=it.seccion,pd=((V2().programa||{}).partes||{})[code]||{};const rels=REL().filter(r=>r.type==='responde_a'&&r.to===id);
   showCard(`<div class="kicker">Programa · <b>${esc(PSEC[code])}</b> · ${id}</div><div class="hrow"><h2>${esc(PSEC[code])}</h2>${helpBtn('pitem',code)}</div><div class="q">${esc(pd.pregunta||'')}</div>
-    <div class="sec"><div class="kicker">Ítem</div><div class="val">${esc(it.texto)}</div><div class="kv"><b>Procedencia</b><span>${esc(it.procedencia||'—')}</span><b>Estado</b><span>${esc(it.estado||'')}</span><b>Confianza</b><span>${esc(it.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(it.fuente)||'—'}</span><b>Proyecto</b><span>${esc(it.estado_proyecto||'— (ficha de objeto existente)')}</span><b>Legacy</b><span>${lpills(it.legacy_ids)||'—'}</span></div>${it.nota?`<div class="human" style="margin-top:8px"><p><i>${esc(it.nota)}</i></p></div>`:''}</div>
-    <div class="sec"><div class="kicker">Responden a este ítem · ${rels.length} campos</div>${rels.map(r=>relLine(r,id)).join('')||'<div class="human"><p>—</p></div>'}</div>
+    <div class="sec"><div class="kicker">Enunciado</div><div class="val">${esc(it.enunciado||it.texto)}</div><div class="human">${paras(it.desarrollo||'')}</div></div>
+    <div class="sec"><div class="kicker">Responden a este enunciado · ${rels.length} categorías</div>${rels.map(r=>relLine(r,id)).join('')||'<div class="human"><p>—</p></div>'}</div>
+    <details class="trace"><summary>Trazabilidad · origen y evidencia</summary><div class="sec"><div class="kv"><b>Testimonio</b><span>${esc(it.testimonio||'—')}</span><b>Origen</b><span>${esc(it.procedencia||'—')}</span><b>Estado</b><span>${esc(it.estado||'')}</span><b>Confianza</b><span>${esc(it.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(it.fuente)||'—'}</span><b>Proyecto</b><span>${esc(it.estado_proyecto||'— (ficha de objeto existente)')}</span><b>Legacy</b><span>${lpills(it.legacy_ids)||'—'}</span></div>${it.nota?`<div class="human" style="margin-top:8px"><p><i>${esc(it.nota)}</i></p></div>`:''}</div></details>
     <div class="rel"><a onclick="openProgram()">← Programa proyectual</a></div>`,'#center-lbl,'+(it.links||[]).map(l=>`#blk-${l},#fl-${l}`).join(','));
   const g=$('#plate .xlinks');(it.links||[]).forEach(l=>{const f=fieldById(l);if(f)lineCenterTo(f,g)})}
 function openDocs(hl){const D=DATA[V].documentacion||[];
   showCard(`<div class="kicker">Documentación de producto</div><div class="hrow"><h2>Fuera del núcleo radial</h2></div><div class="q">Identificación, fechas, estado comercial, reconocimientos, embalaje, documentación técnica, patente, repuestos y ciclo de vida. Contexto documental: no describe prestaciones ni identidad.</div>
-    <div class="sec">${D.map(d=>`<div class="det" id="det-${d.id}"><span class="t">${d.id}</span><b>${esc(d.titulo)}</b> — ${esc(d.texto)}<div class="m">${esc(d.estado)} · ${esc(d.confianza)} · ${esc(d.fuente)}${(d.legacy_ids||[]).length?' · '+lpills(d.legacy_ids):''}${(d.ref||[]).map(r=>` · <a onclick="goRef('${r}')">→ ${r}</a>`).join('')}</div></div>`).join('')}</div>
+    ${imgNote()}<div class="sec">${D.map(d=>`<div class="det" id="det-${d.id}"><span class="t">${d.id}</span><b>${esc(d.titulo)}</b> — ${esc(d.texto)}<div class="m">${esc(d.estado)} · ${esc(d.confianza)} · ${esc(d.fuente)}${(d.legacy_ids||[]).length?' · '+lpills(d.legacy_ids):''}${(d.ref||[]).map(r=>` · <a onclick="goRef('${r}')">→ ${r}</a>`).join('')}</div></div>`).join('')}</div>
     <div class="rel"><a onclick="openProgram()">← Programa proyectual</a></div>`,null);
   if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}}
-/* ---------- V2 · Identidad: modos y elementos ---------- */
-function openIdentityMode(m){if(IMODE===m){IMODE=null;closeCard();return}showIdentityMode(m)}
-function iitemRow(it){return `<div class="pitem" onclick="openIdentityItem('${it.id}')">● ${esc(it.label)}<span class="w">${esc(it.why||it.texto||'')}</span><small>${(it.links||[]).length} campos vinculados${it.anchor?' · ancla '+esc(it.anchor):''} · ${esc(it.estado||'')}</small></div>`}
-function showIdentityMode(m){IMODE=m;drawIdentity();const I=DATA[V].identidad||{},D2=V2().identidad||{},AL=((DATA[V].meta||{}).alcance)||{};let html='';
-  if(m==='objeto'){const d=D2.objeto||{};html=`<div class="kicker">Identidad · <b>Objeto</b></div><div class="hrow"><h2>${esc(d.nombre||'Identidad del objeto')}</h2>${helpBtn('identity','objeto')}</div><div class="q">${esc(d.pregunta||'')}</div>
+/* ---------- V2 · Identidad: al elegir una banda, el panel muestra a la vez su lectura y todos sus elementos; elegir un elemento afina las conexiones ---------- */
+function openIdentityMode(m){if(IMODE===m&&!ISEL){IMODE=null;ISEL=null;drawIdentity();closeCard();return}showIdentityMode(m)}
+function iitemRow(it){return `<div class="pitem" onclick="openIdentityItem('${it.id}')"><span class="e">● ${esc(it.label)}</span><span class="w">${esc(it.why||it.texto||'')}</span><small>${(it.links||[]).map(l=>{const f=fieldById(l);return f?f.name:l}).join(' · ')} · ${esc(it.estado||'')}</small></div>`}
+function modeSelector(m,items){const links=new Set();items.forEach(it=>(it.links||[]).forEach(l=>links.add(l)));return `#iband-${m},#ibl-${m}`+[...links].map(l=>`,#blk-${l},#fl-${l}`).join('')}
+function showIdentityMode(m){IMODE=m;ISEL=null;drawIdentity();const I=DATA[V].identidad||{},D2=V2().identidad||{},AL=((DATA[V].meta||{}).alcance)||{},LEC=(I.lecturas||{})[m]||'';let html='';
+  const lect=`<div class="sec"><div class="kicker">Lectura · Hope</div><div class="human">${paras(LEC)}</div></div>`;
+  if(m==='objeto'){const d=D2.objeto||{};html=`<div class="kicker">Identidad · <b>Objeto</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.objeto)}</h2>${helpBtn('identity','objeto')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
     <div class="sec"><div class="kicker">Elementos definitorios · ${(I.objeto||[]).length}</div>${(I.objeto||[]).map(iitemRow).join('')}</div>
-    <div class="sec"><div class="kicker">Alcance</div><div class="human"><p>${esc(AL.objeto||'')}</p><p><small>La selección identitaria es un juicio editorial sobre hechos documentados: cada elemento declara su estado y se sustenta en campos existentes. Un campo J4 no es identitario por su altura.</small></p></div></div>`}
+    <div class="sec"><div class="kicker">Alcance</div><div class="human"><p>${esc(AL.objeto||'')}</p></div></div>`}
   else if(m==='familia'){const d=D2.familia||{},F=I.familia||{};const blk=(k,tit)=>F[k]?`<div class="sec"><div class="kicker">${tit}</div><div class="human"><p>${esc(F[k].texto)}</p></div><div class="det"><div class="m">${esc(F[k].estado||'')}${F[k].confianza?' · confianza '+esc(F[k].confianza):''}${F[k].fuente?' · '+esc(F[k].fuente):''}${(F[k].legacy_ids||[]).length?' · '+lpills(F[k].legacy_ids):''}</div></div></div>`:'';
-    html=`<div class="kicker">Identidad · <b>Familia</b></div><div class="hrow"><h2>${esc(d.nombre||'Identidad de familia')}</h2>${helpBtn('identity','familia')}</div><div class="q">${esc(d.pregunta||'')}</div>
-    <div class="sec"><div class="kicker">Comparación disponible</div><div class="human"><p>${esc(F.nota||'')}</p><p>${esc(AL.familia||'')}</p></div></div>${blk('miembros','Miembros')}
-    <div class="sec"><div class="kicker">Invariantes · ${(F.invariantes||[]).length} <small>(en el anillo)</small></div>${(F.invariantes||[]).map(iitemRow).join('')}</div>
+    html=`<div class="kicker">Identidad · <b>Familia</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.familia)}</h2>${helpBtn('identity','familia')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
+    <div class="sec"><div class="kicker">Invariantes · ${(F.invariantes||[]).length}</div>${(F.invariantes||[]).map(iitemRow).join('')}</div>
     <div class="sec"><div class="kicker">Variables admitidas · ${(F.variables||[]).length}</div>${(F.variables||[]).map(iitemRow).join('')}</div>
-    ${blk('regla_pertenencia','Regla / límite de pertenencia')}${blk('limites','Límites documentales y comerciales')}${blk('no_realizadas','Variaciones no realizadas')}${blk('descartado','Descartado como invariante')}`}
-  else{const d=D2.marca_coleccion||{},M=I.marca_coleccion||{};html=`<div class="kicker">Afinidad · <b>Marca / Colección</b></div><div class="hrow"><h2>${esc(d.nombre||'Afinidad de marca / colección')}</h2>${helpBtn('identity','marca')}</div><div class="q">${esc(d.pregunta||'')}</div>
-    <div class="sec"><div class="kicker">Referencias</div><div class="human"><p>${(M.referencias||[]).length?esc(M.referencias.join(' · ')):`<span class="pill unk">${esc(M.estado||'pendiente de análisis de colección')}</span>`}</p></div></div>
-    <div class="sec"><div class="kicker">Tipo de relación</div><div class="human"><p>${esc(M.tipo_relacion||'—')}</p></div></div>
-    <div class="sec"><div class="kicker">Elementos de afinidad</div><div class="human"><p>${(M.elementos||[]).length?esc(M.elementos.join(' · ')):'—'}</p></div></div>
-    <div class="sec"><div class="kicker">Por qué queda pendiente</div><div class="human"><p>${esc(M.nota||'')}</p><p>${esc(AL.coleccion||'')}</p></div></div>`}
-  showCard(html,null)}
-function openIdentityItem(id){const it=iitemById(id);if(!it)return;const modo=it.modo||'objeto';if(IMODE!==modo){IMODE=modo;drawIdentity()}const D2=V2().identidad||{};const kind=it.variable?'variable admitida':(modo==='objeto'?'elemento definitorio':'invariante');
+    ${blk('regla_pertenencia','Regla / límite de pertenencia')}<div class="sec"><div class="kicker">Comparación disponible</div><div class="human"><p>${esc(F.nota||'')}</p><p>${esc(AL.familia||'')}</p></div></div>${blk('miembros','Miembros')}${blk('limites','Límites documentales y comerciales')}${blk('no_realizadas','Variaciones no realizadas')}${blk('descartado','Descartado como invariante')}`}
+  else{const d=D2.marca_coleccion||{},M=I.marca_coleccion||{};html=`<div class="kicker">Identidad · <b>Marca / Colección</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.marca)}</h2>${helpBtn('identity','marca')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
+    <div class="sec"><div class="kicker">Rasgos de identidad de marca · ${(M.items||[]).length}</div>${(M.items||[]).length?(M.items||[]).map(iitemRow).join(''):`<div class="human"><p><span class="pill unk">${esc(M.estado||'pendiente de análisis de colección')}</span></p></div>`}</div>
+    <div class="sec"><div class="kicker">Referencias</div><div class="human"><p>${(M.referencias||[]).length?esc(M.referencias.join(' · ')):'—'}</p></div></div>
+    <div class="sec"><div class="kicker">Tipo de relación</div><div class="human"><p>${esc(M.tipo_relacion||'—')}${(M.elementos||[]).length?' · por '+esc(M.elementos.join(', ')):''}</p></div></div>
+    <div class="sec"><div class="kicker">Estado y fuente de la lectura</div><div class="kv"><b>Estado</b><span>${esc(M.estado||'')}</span><b>Fuente</b><span>${srcHtml(M.fuente)||'—'}</span></div><div class="human" style="margin-top:8px"><p><small>${esc(M.nota||'')}</small></p><p><small>${esc(AL.coleccion||'')}</small></p></div></div>`}
+  showCard(html,modeSelector(m,idItems(m)))}
+function openIdentityItem(id){const it=iitemById(id);if(!it)return;const modo=it.modo||'objeto';IMODE=modo;ISEL=id;drawIdentity();const D2=V2().identidad||{};const kind=it.variable?'variable admitida':(modo==='objeto'?'elemento definitorio':modo==='familia'?'invariante':'elemento de afinidad');
   const links=(it.links||[]).map(l=>{const f=fieldById(l),via=(it.via||{})[l];return `<div class="rel"><a onclick="openFieldId('${l}')"><small>${l}</small>${esc(f?f.name:l)} <small>· ${esc(f?f.zone.name:'')}${it.anchor===l?' · ancla':''}</small></a>${via?`<small><a onclick="goRef('${via}')" style="display:inline">→ ${esc(via)}</a></small>`:''}</div>`}).join('');
-  const roles=(it.roles||[modo]).map(r=>({objeto:'Identidad del objeto',familia:'Identidad de familia'})[r]||r).join(' · ');
-  const prog=(it.programa||[]).map(p=>{const pi=pitemById(p);return `<div class="rel"><span class="tag">${esc(id)} responde a ${esc(p)} <small>(vía sus campos)</small></span><a onclick="openPItem('${p}')"><small>${p}</small>${esc(pi?pi.texto:p)}</a></div>`}).join('');
-  showCard(`<div class="kicker">Identidad · <b>${modo==='objeto'?'Objeto':'Familia'}</b> · ${kind} · ${id}</div><div class="hrow"><h2>${esc(it.label)}</h2>${helpBtn('iitem',id)}</div><div class="q">${esc((D2[modo]||{}).pregunta||'')}</div>
+  const roles=(it.roles||[modo]).map(r=>MODENAME[r]||r).join(' · ');
+  const prog=(it.programa||[]).map(p=>{const pi=pitemById(p);return `<div class="rel"><span class="tag">${esc(id)} responde a ${esc(p)} <small>(vía sus categorías)</small></span><a onclick="openPItem('${p}')"><small>${p}</small>${esc(pi?pi.texto:p)}</a></div>`}).join('');
+  showCard(`<div class="kicker">Identidad · <b>${esc(MODES.find(x=>x[0]===modo)[1])}</b> · ${kind} · ${id}</div><div class="hrow"><h2>${esc(it.label)}</h2>${helpBtn('iitem',id)}</div><div class="q">${esc((D2[modo==='marca'?'marca_coleccion':modo]||{}).pregunta||'')}</div>
     <div class="sec"><div class="kicker">Por qué define este nivel de identidad</div><div class="human"><p>${esc(it.why||it.texto||'')}</p></div></div>
-    <div class="sec"><div class="kicker">Se sustenta en · ${(it.links||[]).length}</div>${links}</div>
+    <div class="sec"><div class="kicker">Se sustenta en · ${(it.links||[]).length} categorías</div>${links}</div>
     <div class="sec"><div class="kicker">Estado y fuente</div><div class="kv"><b>Estado</b><span>${esc(it.estado||'')}</span><b>Confianza</b><span>${esc(it.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(it.fuente)||'—'}</span>${it.alcance?`<b>Alcance</b><span>${esc(it.alcance)}</span>`:''}<b>Legacy</b><span>${lpills(it.legacy_ids)||'—'}</span></div></div>
-    <div class="sec"><div class="kicker">Relaciones</div><div class="human"><p>${esc(roles)}${it.variable?' · variable admitida (no se dibuja en el anillo)':''}</p></div>${prog}<div class="rel"><a onclick="showIdentityMode('${modo}')">← ${modo==='objeto'?'Identidad del objeto':'Identidad de familia'}</a></div></div>`,
-    (it.links||[]).map(l=>`#blk-${l},#fl-${l}`).join(',')+`,#in-${id},#il-${id},#ilb-${id}`);
-  const g=$('#plate .xlinks'),a=fieldById(it.anchor);if(a)(it.links||[]).filter(l=>l!==it.anchor).forEach(l=>{const f=fieldById(l);if(f)chordBetween(a,f,g)})}
+    <div class="sec"><div class="kicker">Relaciones</div><div class="human"><p>${esc(roles)}${it.variable?' · variable admitida':''}</p></div>${prog}<div class="rel"><a onclick="showIdentityMode('${modo}')">← ${esc(MODENAME[modo])} · todos los elementos</a></div></div>`,
+    modeSelector(modo,[it]))}
 /* ---------- V2 · legacy V1 (sólo lectura, para auditoría) ---------- */
 function legacyField(id){const L=(DATA[V].legacy||{}).ficha;if(!L)return null;for(const p of L.planes)for(const z of p.zones)for(const f of z.fields)if(f.id===id)return {f,z,p};return null}
 function openLegacy(id){const r=legacyField(id);if(!r)return;const {f,z,p}=r;const df=(DEFS.fields||{})[id]||{};const def=df.definicion||((f.body||'').match(/^_(.+?)_/m)||[])[1]||'';const cov=((DATA[V].legacy||{}).cobertura||{})[id]||[];
@@ -478,6 +502,7 @@ async function saveComment(ta){const key=ta.dataset.key,label=ta.dataset.label,t
   const s=$('#saved');if(!r.ok){s.textContent='no se pudo guardar';return}
   if(text.trim())COMMENTS[key]={text,label,ts:new Date().toISOString()};else delete COMMENTS[key];s.textContent=text.trim()?'guardado':'borrado'}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCard();closeBase()}});
+$('#card').addEventListener('keydown',e=>{const t=e.target;if((e.key==='Enter'||e.key===' ')&&t.matches&&t.matches('[role=button],a[onclick]')&&t.tagName!=='BUTTON'){e.preventDefault();t.click()}});
 function openBase(){$('#base').classList.add('on');renderBase();loadOolJobs();$('#baseQ').focus()}
 function closeBase(){$('#base').classList.remove('on')}
 function renderBase(){const q=($('#baseQ').value||'').toLowerCase();$('#baseN').textContent=LAMPS.length;

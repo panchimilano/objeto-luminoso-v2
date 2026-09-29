@@ -66,12 +66,15 @@
    "variantes": "Sin etiqueta = D66/42 EU. Otras: D66/42 US · D66/42 (ensayo 2011) · familia Hope."
   },
   "programa": {
-   "titulo": "Hope · programa reconstruido a partir de testimonios autorales",
-   "lectura": "No se dispone del brief original de 2007–2009: lo que sigue son intenciones y condiciones relatadas por los autores años después (entrevistas F9/F10/F11, press kit F8, respuestas de Fran de 2026 F19) y una síntesis del revisor marcada como tal. Un testimonio documenta un requisito; no demuestra que se haya verificado su cumplimiento.",
+   "titulo": "Programa proyectual · reconstrucción para proyectar",
+   "nota_reconstruccion": "Reconstruido a partir de los testimonios de los autores (F8–F11, F19) para poder proyectar con él. El origen de cada enunciado, su estado de evidencia y la historia del proceso quedan en la trazabilidad.",
+   "lectura": "No se dispone del brief original de 2007–2009: los enunciados son intenciones y condiciones relatadas por los autores años después (entrevistas F9/F10/F11, press kit F8, respuestas de Fran de 2026 F19) y una síntesis del revisor marcada como tal. Un testimonio documenta un requisito; no demuestra que se haya verificado su cumplimiento.",
    "proposito": [
     {
      "id": "P1-1",
-     "texto": "Luceplan pidió «un candelabro moderno», algo que hacía veinte años quería hacer, para una empresa que no hace decoración.",
+     "enunciado": "Crear un candelabro contemporáneo para Luceplan: una lámpara de gran presencia que celebre la luz sin ser un objeto decorativo.",
+     "desarrollo": "Es el encargo que origina el proyecto y la vara con la que se juzga cada decisión. La pieza debe reconocerse dentro del linaje del candelabro y, a la vez, reinterpretarlo con la lógica técnica de una empresa que no hace decoración: de ahí que Qué reconozco y Relación con el arquetipo respondan directamente a este propósito.",
+     "testimonio": "Luceplan pidió «un candelabro moderno», algo que hacía veinte años quería hacer, para una empresa que no hace decoración.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado (discurso)",
      "confianza": "alta",
@@ -93,6 +96,7 @@
       }
      ],
      "seccion": "P1",
+     "texto": "Crear un candelabro contemporáneo para Luceplan: una lámpara de gran presencia que celebre la luz sin ser un objeto decorativo.",
      "links": [
       "CO1-2",
       "CO1-3"
@@ -100,7 +104,9 @@
     },
     {
      "id": "P1-2",
-     "texto": "Recuperar la maravilla del candelabro —«muy brillante, imposible no verla»— con un objeto liviano y moderno.",
+     "enunciado": "Devolver a un ambiente la maravilla del candelabro —una luz brillante, multiplicada, imposible de ignorar— con un objeto liviano y actual.",
+     "desarrollo": "Fija el resultado de uso que se persigue: espectáculo luminoso y presencia escultórica antes que luz de tarea (Aporte al uso), y los valores de celebración y maravilla que la pieza debe evocar (Asociaciones y valores).",
+     "testimonio": "Recuperar la maravilla del candelabro —«muy brillante, imposible no verla»— con un objeto liviano y moderno.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado (autores)",
      "confianza": "alta",
@@ -122,6 +128,7 @@
       }
      ],
      "seccion": "P1",
+     "texto": "Devolver a un ambiente la maravilla del candelabro —una luz brillante, multiplicada, imposible de ignorar— con un objeto liviano y actual.",
      "links": [
       "US3-1",
       "CO3-1"
@@ -131,7 +138,9 @@
    "principios": [
     {
      "id": "P2-1",
-     "texto": "Tomar la esencia del candelabro —una fuente multiplicada en cientos de reflejos, luz festiva— y no su forma.",
+     "enunciado": "Tomar la esencia del candelabro y no su forma: multiplicar una fuente en cientos de reflejos y producir luz de fiesta con medios nuevos.",
+     "desarrollo": "Orienta toda la óptica. Cada componente debe refractar y multiplicar la fuente en lugar de difundirla (Recorrido y transformación); la relación con el arquetipo se define por esa continuidad de efecto y no por brazos, colgantes ni cristal (Relación con el arquetipo); el brillo percibido al encender es la lectura que se busca (Cualidades que transmite).",
+     "testimonio": "Tomar la esencia del candelabro —una fuente multiplicada en cientos de reflejos, luz festiva— y no su forma.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado (autores)",
      "confianza": "alta",
@@ -159,6 +168,7 @@
       }
      ],
      "seccion": "P2",
+     "texto": "Tomar la esencia del candelabro y no su forma: multiplicar una fuente en cientos de reflejos y producir luz de fiesta con medios nuevos.",
      "links": [
       "HA4-2",
       "CO1-3",
@@ -167,7 +177,9 @@
     },
     {
      "id": "P2-2",
-     "texto": "Liberar esa luz multiplicada del peso, el costo, la fragilidad y el montaje del cristal: liviandad y economía como lógica de toda solución.",
+     "enunciado": "Liberar esa luz multiplicada del peso, el costo, la fragilidad y el montaje del cristal: usar la liviandad y la economía como lógica de toda solución.",
+     "desarrollo": "Gobierna materiales, procesos y montaje. Pide hojas de lámina finísima que pesan gramos (Forma de cada pieza), un proceso de prensado de lámina óptica en lugar de un molde por lente (Material, acabado y fabricación), un conjunto de más de un metro que pesa pocos kilos (Forma y dimensiones) y un montaje que el cliente hace sin herramientas (Acciones posibles).",
+     "testimonio": "Síntesis del revisor a partir de O3-2 y del relato F9/F10: liviandad y economía como lógica de toda solución.",
      "procedencia": "reconstrucción del revisor (síntesis de O3-2 y del relato F9/F10)",
      "estado": "interpretado (síntesis)",
      "confianza": "alta",
@@ -199,6 +211,7 @@
       }
      ],
      "seccion": "P2",
+     "texto": "Liberar esa luz multiplicada del peso, el costo, la fragilidad y el montaje del cristal: usar la liviandad y la economía como lógica de toda solución.",
      "links": [
       "HA1-1",
       "HA2-2",
@@ -208,7 +221,9 @@
     },
     {
      "id": "P2-3",
-     "texto": "Un solo módulo repetido, con elementos fijos (hoja en dos tamaños, brazo, lámpara comercial) y una estructura variable, para generar una familia.",
+     "enunciado": "Construir la lámpara con un solo módulo repetido —elementos fijos y una estructura variable— para que el mismo sistema genere una familia.",
+     "desarrollo": "Define la organización del objeto y de la familia. Una unidad repetida sobre coronas (Organización y reglas), un módulo de tres piezas como unidad de proyecto (Piezas y función) y uniones reversibles que permiten agregar, quitar y reemplazar (Qué se une y cómo). Lo que es fijo —hoja en dos tamaños, brazo, lámpara comercial— y lo que es variable —estructura, cantidad, montaje— sale de este principio.",
+     "testimonio": "Un solo módulo repetido, con elementos fijos (hoja en dos tamaños, brazo, lámpara comercial) y una estructura variable, para generar una familia.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado",
      "confianza": "alta",
@@ -235,6 +250,7 @@
       }
      ],
      "seccion": "P2",
+     "texto": "Construir la lámpara con un solo módulo repetido —elementos fijos y una estructura variable— para que el mismo sistema genere una familia.",
      "links": [
       "HA1-2",
       "HA2-1",
@@ -245,7 +261,9 @@
    "condiciones": [
     {
      "id": "P3-1",
-     "texto": "Que la fuente no se vea desde ningún punto, aunque el volumen sea abierto.",
+     "enunciado": "Mantener la fuente fuera de la línea de visión desde cualquier punto, aunque el volumen sea abierto.",
+     "desarrollo": "Es la condición que ordena la geometría: coronas desfasadas con la hoja grande afuera (Organización y reglas), doble hoja por módulo y solape entre módulos y coronas (Recorrido y transformación) y vacíos calculados para que las hojas no se crucen (Forma y dimensiones). Se proyecta como requisito; el estado físico de su cumplimiento se registra aparte, en los datos.",
+     "testimonio": "Que la fuente no se vea desde ningún punto, aunque el volumen sea abierto.",
      "procedencia": "testimonio autoral posterior (Rizzatto F9; Fran F19: «parte fundamental del proyecto»)",
      "estado": "documentado (Fran, Rizzatto)",
      "confianza": "alta",
@@ -273,6 +291,7 @@
       }
      ],
      "seccion": "P3",
+     "texto": "Mantener la fuente fuera de la línea de visión desde cualquier punto, aunque el volumen sea abierto.",
      "links": [
       "HA1-1",
       "HA1-2",
@@ -281,7 +300,9 @@
     },
     {
      "id": "P3-2",
-     "texto": "Fuente luminosa comercial y reemplazable, sin electrónica propia en la luminaria.",
+     "enunciado": "Usar una fuente luminosa comercial y reemplazable, sin electrónica propia en la luminaria.",
+     "desarrollo": "Condiciona el sistema eléctrico: portalámparas de rosca alimentados directamente de la red, sin driver (Fuente y alimentación). Mantiene la lámpara independiente de la tecnología de fuente y hace que el reemplazo sea una acción del usuario, no una reparación.",
+     "testimonio": "Fuente luminosa comercial y reemplazable, sin electrónica propia en la luminaria (elemento «fijo» del sistema).",
      "procedencia": "testimonio autoral posterior (elemento «fijo» del sistema)",
      "estado": "documentado",
      "confianza": "alta",
@@ -304,13 +325,16 @@
       }
      ],
      "seccion": "P3",
+     "texto": "Usar una fuente luminosa comercial y reemplazable, sin electrónica propia en la luminaria.",
      "links": [
       "HA4-1"
      ]
     },
     {
      "id": "P3-3",
-     "texto": "Para que el efecto ocurra, la lámpara debe ser puntual o de filamento visible: con LED opal se pierde el destello.",
+     "enunciado": "Elegir una lámpara puntual o de filamento visible: con una fuente opal se pierde el destello que da sentido al objeto.",
+     "desarrollo": "Define la fuente recomendada (Fuente y alimentación) y las condiciones para que el efecto ocurra (Condiciones y límites relevantes). La elección de la fuente debe preservar el destello: su tamaño y su distribución luminosa forman parte del proyecto óptico.",
+     "testimonio": "Para que el efecto ocurra, la lámpara debe ser puntual o de filamento visible: con LED opal se pierde el destello.",
      "procedencia": "testimonio autoral 2026 (posterior al desarrollo; condición de uso, no requisito original de 2009)",
      "estado": "documentado (Fran)",
      "confianza": "alta",
@@ -333,6 +357,7 @@
       }
      ],
      "seccion": "P3",
+     "texto": "Elegir una lámpara puntual o de filamento visible: con una fuente opal se pierde el destello que da sentido al objeto.",
      "links": [
       "HA4-1",
       "US3-2"
@@ -565,6 +590,26 @@
           ]
          },
          {
+          "id": "HA1-1.d9",
+          "tipo": "variante",
+          "sujeto": "familia",
+          "texto": "Escala en la familia: diámetro entre 48 y 200 cm y peso entre 1,5 y 16,1 kg según el miembro; la altura acompaña. Inventario documental, no rango generativo libre.",
+          "estado": "documentado",
+          "confianza": "alta",
+          "fuente": "F1,F5",
+          "legacy_ids": [
+           "C5-3",
+           "O4-3"
+          ],
+          "estado_proyecto": null,
+          "conflicto": false,
+          "desconocido": false,
+          "clave": "Ø / peso",
+          "valor": "48–200 / 1,5–16,1",
+          "unidad": "cm / kg",
+          "variante": "familia Hope"
+         },
+         {
           "id": "HA1-1.d8",
           "tipo": "medida",
           "sujeto": "conjunto D66/42",
@@ -773,7 +818,7 @@
           "id": "HA1-2.d9",
           "tipo": "afirmacion",
           "sujeto": "conjunto D66/42",
-          "texto": "Parámetros que V1 listaba juntos (O6-5): N = 42 · coronas = 3 · módulos por corona = 14 (inferido) · tamaños de hoja = 2 · fuentes = 3 · conificación ≈ 1 cm · espesor 0,8 mm · Ø 110 · h 66. Cada número vive en su campo dueño; aquí sólo se enlazan.",
+          "texto": "Parámetros que V1 listaba juntos (O6-5): cantidad de módulos, coronas, módulos por corona (inferido), tamaños de hoja, fuentes, conificación, espesor, diámetro y altura. Cada valor vive en su registro dueño; aquí sólo se enlazan.",
           "estado": "documentado / inferido",
           "confianza": "alta",
           "fuente": "F1,F3,F19",
@@ -791,6 +836,46 @@
            "HA2-2.d5",
            "HA4-1.d1"
           ]
+         },
+         {
+          "id": "HA1-2.d11",
+          "tipo": "variante",
+          "sujeto": "familia",
+          "texto": "Cantidad de módulos en la familia: de 3 a 105 según el miembro (el código dice cuántos); el número de coronas varía con la cantidad. El intervalo no autoriza cualquier entero intermedio ni cualquier geometría.",
+          "estado": "documentado",
+          "confianza": "alta",
+          "fuente": "F1,F3,F5",
+          "legacy_ids": [
+           "C5-3",
+           "C5-1"
+          ],
+          "estado_proyecto": null,
+          "conflicto": false,
+          "desconocido": false,
+          "clave": "módulos",
+          "valor": "3–105",
+          "unidad": "unidades",
+          "variante": "familia Hope"
+         },
+         {
+          "id": "HA1-2.d12",
+          "tipo": "variante",
+          "sujeto": "familia",
+          "texto": "Composición y apilado: 17 kits documentados de dos o tres suspensiones apiladas, hasta 32 kg y 4 m de altura total.",
+          "estado": "documentado",
+          "confianza": "alta",
+          "fuente": "F1,F5",
+          "legacy_ids": [
+           "C5-5",
+           "C5-3"
+          ],
+          "estado_proyecto": null,
+          "conflicto": false,
+          "desconocido": false,
+          "clave": "kits",
+          "valor": "17",
+          "unidad": "kits",
+          "variante": "familia Hope"
          },
          {
           "id": "HA1-2.d10",
@@ -2275,6 +2360,42 @@
           ]
          },
          {
+          "id": "HA4-1.d10",
+          "tipo": "variante",
+          "sujeto": "familia",
+          "texto": "Número de fuentes en la familia: de 1 a 5 según el miembro; la referencia D66/42 tiene tres.",
+          "estado": "documentado",
+          "confianza": "alta",
+          "fuente": "F1,F3,F5",
+          "legacy_ids": [
+           "C5-3"
+          ],
+          "estado_proyecto": null,
+          "conflicto": false,
+          "desconocido": false,
+          "clave": "fuentes",
+          "valor": "1–5",
+          "unidad": "unidades",
+          "variante": "familia Hope"
+         },
+         {
+          "id": "HA4-1.d11",
+          "tipo": "variante",
+          "sujeto": "familia",
+          "texto": "En todos los miembros documentados la fuente es una lámpara comercial de rosca, reemplazable; el corpus no registra versión con LED integrado.",
+          "estado": "documentado (nivel agregado)",
+          "confianza": "alta",
+          "fuente": "F1,F5,F9",
+          "legacy_ids": [
+           "C5-2",
+           "C5-5"
+          ],
+          "estado_proyecto": null,
+          "conflicto": false,
+          "desconocido": false,
+          "variante": "familia Hope"
+         },
+         {
           "id": "HA4-1.d9",
           "tipo": "recomendacion",
           "sujeto": "fuente",
@@ -3637,7 +3758,7 @@
     "nombre_teorico": "SEMÁNTICA",
     "question": "¿Qué reconocemos en esta lámpara, cómo se presenta y qué evoca?",
     "intro": "# QUÉ COMUNICA\n\n¿Qué reconocemos en esta lámpara, cómo se presenta y qué evoca?\n\nDescribe cómo el objeto es reconocido e interpretado. Distingue qué tipo de objeto entendemos que es, qué cualidades aparenta poseer y qué imágenes, referencias o valores puede evocar. Toda interpretación debe conservar su evidencia, atribución o grado de certeza.",
-    "descripcion": "Por su manera de existir en el espacio, Hope D66/42 es una suspensión: cuelga del techo a altura regulable y pertenece a un sistema modular con plafones, apliques y lámparas de pie. El modelo del mundo de la iluminación al que remite es la araña o candelabro de cristal: Luceplan la presenta como «interpretación moderna del candelabro clásico» y los autores dicen haber tomado «la esencia, no la forma». Conserva la multiplicación de una fuente en muchos reflejos y la luz de fiesta; transforma la materia —lámina plástica en vez de cristal—, los componentes y la configuración, sin brazos curvos, colgantes ni velas. Que sea «funcionalmente idéntica» es una analogía de los autores, no una equivalencia fotométrica.\n\nSe presenta liviana y desmaterializada pese a sus 110 cm y 7 kg, abierta y permeable —«un elemento que explotó en el espacio», dice Rizzatto—, ordenada por la repetición de una sola pieza y a la vez compleja, técnica y orgánica al mismo tiempo; las hojas parecen cristal tallado. Esas cualidades las sustentan rasgos concretos: la transparencia y el espesor de 0,8 mm de las hojas, los vacíos entre módulos, la repetición, los enganches y el acero que se ven de cerca y desaparecen de lejos, y el cambio entre apagada —escultura transparente que se irisa— y encendida, cuando la luz parece salir de las hojas en cientos de puntos y la lámpara real queda oculta por el solape.\n\nEvoca flor y pétalos (así la llama Luceplan), cristal y joya (el estudio la presentó como «meta-cristal»), racimo, diente de león o nube (lecturas), y las diatomeas de Haeckel son un referente declarado de los autores por su lógica de capas, no una metáfora visual. Sus valores son celebración y maravilla, una «luz festiva» que marca el centro del espacio. La ficha V1 también atribuía «honestidad» a mostrar las lámparas comunes a la vista; esa lectura contradice la intención documentada de ocultar la fuente y se conserva marcada como conflicto, sin resolverla.",
+    "descripcion": "Por su manera de existir en el espacio, Hope D66/42 es una suspensión: cuelga del techo a altura regulable y pertenece a un sistema modular con plafones, apliques y lámparas de pie. El modelo del mundo de la iluminación al que remite es la araña o candelabro de cristal: Luceplan la presenta como «interpretación moderna del candelabro clásico» y los autores dicen haber tomado «la esencia, no la forma». Conserva la multiplicación de una fuente en muchos reflejos y la luz de fiesta; transforma la materia —lámina plástica en vez de cristal—, los componentes y la configuración, sin brazos curvos, colgantes ni velas. Que sea «funcionalmente idéntica» es una analogía de los autores, no una equivalencia fotométrica.\n\nSe presenta liviana y desmaterializada pese a sus 110 cm y 7 kg, abierta y permeable —«un elemento que explotó en el espacio», dice Rizzatto—, ordenada por la repetición de una sola pieza y a la vez compleja, técnica y orgánica al mismo tiempo; las hojas parecen cristal tallado. Esas cualidades las sustentan rasgos concretos: la transparencia y el espesor de 0,8 mm de las hojas, los vacíos entre módulos, la repetición, los enganches y el acero que se ven de cerca y desaparecen de lejos, y el cambio entre apagada —escultura transparente que se irisa— y encendida, cuando la luz parece salir de las hojas en cientos de puntos y el solape está pensado para que la lámpara real no quede a la vista (intención documentada por los autores, no verificada por ángulos).\n\nEvoca flor y pétalos (así la llama Luceplan), cristal y joya (el estudio la presentó como «meta-cristal»), racimo, diente de león o nube (lecturas), y las diatomeas de Haeckel son un referente declarado de los autores por su lógica de capas, no una metáfora visual. Sus valores son celebración y maravilla, una «luz festiva» que marca el centro del espacio. La ficha V1 también atribuía «honestidad» a mostrar las lámparas comunes a la vista; esa lectura contradice la intención documentada de ocultar la fuente y se conserva marcada como conflicto, sin resolverla.",
     "color": "6",
     "zones": [
      {
@@ -3935,7 +4056,7 @@
       "name": "Cómo se presenta",
       "pregunta": "¿Qué cualidades aparenta tener el objeto y qué las produce?",
       "razon": "Describe cualidades percibidas como pertenecientes al objeto, a alguna de sus partes o a su luz. No pregunta a qué recuerda, sino cómo se presenta.",
-      "lectura": "Hope se presenta liviana y desmaterializada pese a medir 110 cm y pesar 7 kg —Luceplan habla de «smaterializzazione e leggerezza»—, abierta y permeable («un elemento que explotó en el espacio», Rizzatto), ordenada por la repetición radial de un módulo y a la vez compleja por sus 84 hojas y reflejos, y tensa entre lo técnico (clips, acero cortado a láser) y lo orgánico (pétalos), entre liviano y grande, entre cristal aparente y lámina plástica. La parte que domina la percepción es la hoja: 84 piezas transparentes rayadas en círculos, cada una con su chispa. Estas cualidades tienen sujeto y condición: la ligereza es del conjunto, la apariencia de cristal es de las hojas, el brillo es de la luz encendida. Las explican rasgos observables: la transparencia y los 0,8 mm de la hoja, los vacíos, la repetición, los enganches y la chapa que se ven de cerca y desaparecen de lejos, la variación con la distancia y la luz del día, y el cambio al encender, cuando la luz parece salir de las hojas y la lámpara real queda oculta por el solape.",
+      "lectura": "Hope se presenta liviana y desmaterializada pese a medir 110 cm y pesar 7 kg —Luceplan habla de «smaterializzazione e leggerezza»—, abierta y permeable («un elemento que explotó en el espacio», Rizzatto), ordenada por la repetición radial de un módulo y a la vez compleja por sus 84 hojas y reflejos, y tensa entre lo técnico (clips, acero cortado a láser) y lo orgánico (pétalos), entre liviano y grande, entre cristal aparente y lámina plástica. La parte que domina la percepción es la hoja: 84 piezas transparentes rayadas en círculos, cada una con su chispa. Estas cualidades tienen sujeto y condición: la ligereza es del conjunto, la apariencia de cristal es de las hojas, el brillo es de la luz encendida. Las explican rasgos observables: la transparencia y los 0,8 mm de la hoja, los vacíos, la repetición, los enganches y la chapa que se ven de cerca y desaparecen de lejos, la variación con la distancia y la luz del día, y el cambio al encender, cuando la luz parece salir de las hojas y el solape busca que la lámpara real no quede a la vista (intención, no resultado medido).",
       "importancia": "",
       "cards": [],
       "fields": [
@@ -4122,7 +4243,7 @@
         "name": "Rasgos que las explican",
         "importancia": "J2",
         "titular": "",
-        "valor": "Transparencia y espesor de 0,8 mm de las hojas; vacíos entre módulos; repetición de una sola pieza; enganches y acero a la vista de cerca que desaparecen de lejos; variación con distancia y luz del día; y el cambio al encender, cuando la luz parece salir de las hojas en cientos de puntos y la lámpara real queda oculta por el solape",
+        "valor": "Transparencia y espesor de 0,8 mm de las hojas; vacíos entre módulos; repetición de una sola pieza; enganches y acero a la vista de cerca que desaparecen de lejos; variación con distancia y luz del día; y el cambio al encender, cuando la luz parece salir de las hojas en cientos de puntos y el solape busca que la lámpara real no quede a la vista",
         "unidad": "—",
         "estado": "observado + documentado",
         "confianza": "alta",
@@ -4252,7 +4373,7 @@
           "id": "CO2-2.d6",
           "tipo": "rasgo",
           "sujeto": "luz encendida",
-          "texto": "Origen aparente de la luz: parece salir de las hojas en cientos de puntos y rayos; la lámpara real queda oculta por el solape. Intención de los autores y observación en fotos; su verificación por ángulos está pendiente.",
+          "texto": "Origen aparente de la luz: parece salir de las hojas en cientos de puntos y rayos; el solape está pensado para que la lámpara real no quede a la vista. Intención de los autores y observación en fotos; su verificación por ángulos está pendiente.",
           "estado": "documentado + observado",
           "confianza": "alta",
           "fuente": "F9,F12,F19",
@@ -4290,7 +4411,7 @@
           "id": "CO2-2.d8",
           "tipo": "rasgo",
           "sujeto": "conjunto",
-          "texto": "Doble lectura: apagada, transparente e incolora, se irisa; encendida, la fuente desaparece y el objeto es la luz. Identidades complementarias.",
+          "texto": "Doble lectura: apagada, transparente e incolora, se irisa; encendida, la fuente tiende a desaparecer de la vista y el objeto es la luz. Identidades complementarias.",
           "estado": "observado + documentado",
           "confianza": "alta",
           "fuente": "F12,F9",
@@ -4318,7 +4439,7 @@
          "pendientes": 0,
          "inferidos": 0
         },
-        "body": "_Vincula la interpretación expresiva con evidencias observables: transparencia, espesor, vacío, repetición, acabado, detalle, continuidad, contraste, encendido/apagado o punto de vista. Fundamenta una lectura sin convertirla en verdad universal._\nValor: Transparencia y espesor de 0,8 mm de las hojas; vacíos entre módulos; repetición de una sola pieza; enganches y acero a la vista de cerca que desaparecen de lejos; variación con distancia y luz del día; y el cambio al encender, cuando la luz parece salir de las hojas en cientos de puntos y la lámpara real queda oculta por el solape · Unidad: — · Importancia: J2\nFuente/estado/confianza: F12,F3,F11,F9,F10,F19 · observado + documentado · alta\nEtiquetas: #transparencia #espesor-08 #hueco #repeticion #union #detalle #distancia #escala #nube #apagada-encendida #fuente-oculta #destello #refraccion #escultura\nLegacy: C2-6 C3-3 C4-2 C4-3 C4-5"
+        "body": "_Vincula la interpretación expresiva con evidencias observables: transparencia, espesor, vacío, repetición, acabado, detalle, continuidad, contraste, encendido/apagado o punto de vista. Fundamenta una lectura sin convertirla en verdad universal._\nValor: Transparencia y espesor de 0,8 mm de las hojas; vacíos entre módulos; repetición de una sola pieza; enganches y acero a la vista de cerca que desaparecen de lejos; variación con distancia y luz del día; y el cambio al encender, cuando la luz parece salir de las hojas en cientos de puntos y el solape busca que la lámpara real no quede a la vista · Unidad: — · Importancia: J2\nFuente/estado/confianza: F12,F3,F11,F9,F10,F19 · observado + documentado · alta\nEtiquetas: #transparencia #espesor-08 #hueco #repeticion #union #detalle #distancia #escala #nube #apagada-encendida #fuente-oculta #destello #refraccion #escultura\nLegacy: C2-6 C3-3 C4-2 C4-3 C4-5"
        }
       ]
      },
@@ -4698,6 +4819,11 @@
    }
   ],
   "identidad": {
+   "lecturas": {
+    "objeto": "Lo que hace que Hope siga siendo Hope es un conjunto corto de decisiones encadenadas: una hoja-lente Fresnel de lámina finísima que se conifica al calzarse y a la vez refracta y multiplica la luz; un módulo de brazo y dos hojas que se cuelga como una percha y se repite sin cambiar; una organización en coronas desfasadas, con la hoja grande afuera y solape calculado, pensada para que un volumen abierto no muestre sus lámparas; y el carácter que resulta: una escultura transparente apagada que, encendida, parece emitir desde cientos de puntos. Cambiar cualquiera de esas decisiones daría otro objeto. Cada elemento se conecta con las decisiones de forma, construcción, uso y comunicación que hacen reconocible al objeto.",
+    "familia": "Hope es una familia porque un mismo módulo —brazo más hoja grande y hoja chica— se agrupa radialmente en coronas alrededor de una o más lámparas comerciales, sobre una estructura de acero plegado. Eso es lo que permanece en suspensiones, plafones, apliques, lámparas de pie y kits apilados. Lo que cambia sin romper la pertenencia es la cantidad de módulos y coronas, la escala, el montaje y el número de fuentes. Tres coronas, 42 módulos y tres E27 son de la referencia D66/42, no de toda la familia; la comparación disponible es documental y agregada, sin matriz completa miembro por miembro.",
+    "marca": "Luceplan expresa una «poética técnica»: inteligencia y detalles técnicos que generan formas nuevas, una belleza que nace de la solución técnica y no de un gesto decorativo. Hope pertenece a esa identidad por la lógica de su lente Fresnel de lámina prensada, por el tipo de iluminación que produce —una fuente multiplicada en cientos de reflejos— y por la forma que resulta de organizar ese módulo. La relación es de continuidad: la pieza dialoga con la marca a través de la óptica, las partes, la organización y la expresión, no por semejanza formal con otras colecciones."
+   },
    "objeto": [
     {
      "id": "IO1",
@@ -4765,7 +4891,7 @@
     },
     {
      "id": "IO3",
-     "label": "Organización que oculta la fuente",
+     "label": "Organización pensada para ocultar la fuente",
      "rotulo": "Fuente oculta",
      "anchor": "HA1-2",
      "links": [
@@ -4778,7 +4904,7 @@
       "HA4-2": "HA4-2.d5",
       "HA1-1": "HA1-1.d7"
      },
-     "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es lo que hace que un volumen abierto no muestre sus lámparas.",
+     "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es la solución con la que un volumen abierto busca no mostrar sus lámparas; su cumplimiento en todos los ángulos no está verificado.",
      "alcance": "objeto (variante D66/42: 42 módulos y tres coronas son de esta referencia)",
      "roles": [
       "objeto"
@@ -4920,7 +5046,7 @@
        "HA4-1"
       ],
       "via": {
-       "HA4-1": "HA4-1.d1"
+       "HA4-1": "HA4-1.d11"
       },
       "why": "Fuente reemplazable de rosca en todos los miembros; sin LED integrado en el corpus documentado.",
       "estado": "documentado (nivel agregado)",
@@ -4942,9 +5068,9 @@
        "HA1-2"
       ],
       "via": {
-       "HA1-2": "HA1-2.d10"
+       "HA1-2": "HA1-2.d11"
       },
-      "texto": "De 3 a 105 módulos según el miembro; número de coronas variable. El intervalo no autoriza cualquier entero intermedio ni cualquier geometría.",
+      "texto": "La cantidad de módulos y de coronas cambia entre miembros sin romper la pertenencia; el valor de cada uno vive en el registro de familia enlazado.",
       "estado": "documentado",
       "fuente": "F1,F3,F5",
       "legacy_ids": [
@@ -4960,9 +5086,9 @@
        "HA1-1"
       ],
       "via": {
-       "HA1-1": "HA1-1.d5"
+       "HA1-1": "HA1-1.d9"
       },
-      "texto": "Diámetro 48–200 cm; peso 1,5–16,1 kg; a más módulos, más achatada.",
+      "texto": "La escala del conjunto varía con la cantidad de módulos; a más módulos, más achatada. Valores en el registro de familia enlazado.",
       "estado": "documentado",
       "fuente": "F1,F5",
       "legacy_ids": [
@@ -5000,9 +5126,9 @@
        "HA4-1"
       ],
       "via": {
-       "HA4-1": "HA4-1.d1"
+       "HA4-1": "HA4-1.d10"
       },
-      "texto": "De 1 a 5 fuentes según el miembro; D66/42 tiene tres.",
+      "texto": "El número de fuentes cambia según el miembro; el registro de familia enlazado da el intervalo documentado.",
       "estado": "documentado",
       "fuente": "F1,F3,F5",
       "legacy_ids": [
@@ -5018,9 +5144,9 @@
        "HA1-2"
       ],
       "via": {
-       "HA1-2": "HA1-2.d10"
+       "HA1-2": "HA1-2.d12"
       },
-      "texto": "17 kits de dos o tres suspensiones apiladas (hasta 32 kg y 4 m).",
+      "texto": "Varias suspensiones pueden apilarse en kits documentados; cantidades y límites en el registro de familia enlazado.",
       "estado": "documentado",
       "fuente": "F1,F5",
       "legacy_ids": [
@@ -5066,11 +5192,106 @@
     }
    },
    "marca_coleccion": {
-    "estado": "pendiente de análisis de colección",
-    "referencias": [],
-    "tipo_relacion": null,
-    "elementos": [],
-    "nota": "Saber que Luceplan produce Hope no prueba afinidad, continuidad ni contraste con otra familia de la marca. No hay corpus comparativo en esta ficha (la otra ficha Luceplan del sitio, Mesh, queda fuera del alcance V2) y la especificación prohíbe inferir identidad de marca a partir de una sola lámpara. No se elige «neutralidad» para expresar falta de datos."
+    "estado": "lectura de autor (interpretada)",
+    "referencias": [
+     "Luceplan · «poética técnica» de la marca según Francisco Gómez Paz (29/09/2026)"
+    ],
+    "tipo_relacion": "continuidad",
+    "elementos": [
+     "óptica",
+     "material y proceso",
+     "organización",
+     "detalle",
+     "expresión"
+    ],
+    "fuente": "F20",
+    "nota": "Lectura formulada por Francisco Gómez Paz en la conversación del 29/09/2026 (F20), registrada como interpretación de autor. No es un análisis del catálogo Luceplan ni afirma hechos históricos sobre otras colecciones; el linaje «inteligente belleza» citado en C1-4 es el único antecedente documental.",
+    "items": [
+     {
+      "id": "IM1",
+      "label": "Belleza nacida de una solución técnica",
+      "anchor": "HA2-2",
+      "links": [
+       "HA2-2",
+       "HA2-3",
+       "CO2-1"
+      ],
+      "via": {
+       "HA2-2": "HA2-2.d6",
+       "HA2-3": "HA2-3.d8",
+       "CO2-1": "CO2-1.d5"
+      },
+      "why": "La forma de la hoja y su apariencia de cristal no son un gesto decorativo: salen de una microgeometría óptica calculada y de un proceso de prensado de lámina. Es el rasgo que Francisco identifica como el núcleo de la poética técnica de Luceplan.",
+      "alcance": "marca (lectura de autor)",
+      "roles": [
+       "marca"
+      ],
+      "estado": "interpretado (lectura de autor)",
+      "confianza": "media-alta",
+      "fuente": "F20,F8,F10",
+      "legacy_ids": [
+       "C1-4"
+      ],
+      "modo": "marca"
+     },
+     {
+      "id": "IM2",
+      "label": "Inteligencia técnica en el detalle",
+      "anchor": "HA3-1",
+      "links": [
+       "HA3-1",
+       "HA2-2",
+       "CO2-2"
+      ],
+      "via": {
+       "HA3-1": "HA3-1.u1",
+       "HA2-2": "HA2-2.d5",
+       "CO2-2": "CO2-2.d4"
+      },
+      "why": "La ranura que calza la hoja, la leve conificación que la vuelve rígida y el brazo que se cuelga como una percha son detalles que resuelven un problema y a la vez definen la expresión de la pieza: «el detalle nace de la solución de un problema».",
+      "alcance": "marca (lectura de autor)",
+      "roles": [
+       "marca"
+      ],
+      "estado": "interpretado (lectura de autor)",
+      "confianza": "media-alta",
+      "fuente": "F20,F11,F19",
+      "legacy_ids": [
+       "C1-4",
+       "C3-3"
+      ],
+      "modo": "marca"
+     },
+     {
+      "id": "IM3",
+      "label": "Una lógica óptica que genera la forma y el tipo de luz",
+      "anchor": "HA4-2",
+      "links": [
+       "HA4-2",
+       "HA1-2",
+       "US3-1",
+       "CO1-3"
+      ],
+      "via": {
+       "HA4-2": "HA4-2.d1",
+       "HA1-2": "HA1-2.d1",
+       "US3-1": "US3-1.d3",
+       "CO1-3": "CO1-3.d1"
+      },
+      "why": "La lente Fresnel no es un accesorio: su lógica decide cómo se multiplica la luz, cómo se organizan los módulos y qué clase de iluminación se obtiene. Para Francisco, esa cadena —de la solución óptica a la forma y a la luz— es lo que conecta a Hope con la identidad de Luceplan.",
+      "alcance": "marca (lectura de autor)",
+      "roles": [
+       "marca"
+      ],
+      "estado": "interpretado (lectura de autor)",
+      "confianza": "media-alta",
+      "fuente": "F20,F9,F10",
+      "legacy_ids": [
+       "C1-4"
+      ],
+      "modo": "marca"
+     }
+    ]
    }
   },
   "relations": [
@@ -5413,7 +5634,7 @@
     "via": [
      "HA1-2.d5"
     ],
-    "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es lo que hace que un volumen abierto no muestre sus lámparas.",
+    "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es la solución con la que un volumen abierto busca no mostrar sus lámparas; su cumplimiento en todos los ángulos no está verificado.",
     "estado": "interpretado (condición documentada; selección identitaria)",
     "fuente": "F9,F19",
     "origen": "identidad.links",
@@ -5426,7 +5647,7 @@
     "via": [
      "HA4-2.d5"
     ],
-    "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es lo que hace que un volumen abierto no muestre sus lámparas.",
+    "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es la solución con la que un volumen abierto busca no mostrar sus lámparas; su cumplimiento en todos los ángulos no está verificado.",
     "estado": "interpretado (condición documentada; selección identitaria)",
     "fuente": "F9,F19",
     "origen": "identidad.links",
@@ -5439,7 +5660,7 @@
     "via": [
      "HA1-1.d7"
     ],
-    "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es lo que hace que un volumen abierto no muestre sus lámparas.",
+    "why": "Las tres coronas desfasadas, la hoja grande afuera, los vacíos y el solape de D66/42 son la respuesta específica de esta variante a la condición P3-1. Es la solución con la que un volumen abierto busca no mostrar sus lámparas; su cumplimiento en todos los ángulos no está verificado.",
     "estado": "interpretado (condición documentada; selección identitaria)",
     "fuente": "F9,F19",
     "origen": "identidad.links",
@@ -5593,7 +5814,7 @@
     "to": "IF4",
     "type": "define",
     "via": [
-     "HA4-1.d1"
+     "HA4-1.d11"
     ],
     "why": "Fuente reemplazable de rosca en todos los miembros; sin LED integrado en el corpus documentado.",
     "estado": "documentado (nivel agregado)",
@@ -5606,9 +5827,9 @@
     "to": "IV1",
     "type": "define",
     "via": [
-     "HA1-2.d10"
+     "HA1-2.d11"
     ],
-    "why": "De 3 a 105 módulos según el miembro; número de coronas variable. El intervalo no autoriza cualquier entero intermedio ni cualquier geometría.",
+    "why": "La cantidad de módulos y de coronas cambia entre miembros sin romper la pertenencia; el valor de cada uno vive en el registro de familia enlazado.",
     "estado": "documentado",
     "fuente": "F1,F3,F5",
     "origen": "identidad.links",
@@ -5619,9 +5840,9 @@
     "to": "IV2",
     "type": "define",
     "via": [
-     "HA1-1.d5"
+     "HA1-1.d9"
     ],
-    "why": "Diámetro 48–200 cm; peso 1,5–16,1 kg; a más módulos, más achatada.",
+    "why": "La escala del conjunto varía con la cantidad de módulos; a más módulos, más achatada. Valores en el registro de familia enlazado.",
     "estado": "documentado",
     "fuente": "F1,F5",
     "origen": "identidad.links",
@@ -5658,9 +5879,9 @@
     "to": "IV4",
     "type": "define",
     "via": [
-     "HA4-1.d1"
+     "HA4-1.d10"
     ],
-    "why": "De 1 a 5 fuentes según el miembro; D66/42 tiene tres.",
+    "why": "El número de fuentes cambia según el miembro; el registro de familia enlazado da el intervalo documentado.",
     "estado": "documentado",
     "fuente": "F1,F3,F5",
     "origen": "identidad.links",
@@ -5671,11 +5892,141 @@
     "to": "IV5",
     "type": "define",
     "via": [
-     "HA1-2.d10"
+     "HA1-2.d12"
     ],
-    "why": "17 kits de dos o tres suspensiones apiladas (hasta 32 kg y 4 m).",
+    "why": "Varias suspensiones pueden apilarse en kits documentados; cantidades y límites en el registro de familia enlazado.",
     "estado": "documentado",
     "fuente": "F1,F5",
+    "origen": "identidad.links",
+    "anchor": false
+   },
+   {
+    "from": "HA2-2",
+    "to": "IM1",
+    "type": "define",
+    "via": [
+     "HA2-2.d6"
+    ],
+    "why": "La forma de la hoja y su apariencia de cristal no son un gesto decorativo: salen de una microgeometría óptica calculada y de un proceso de prensado de lámina. Es el rasgo que Francisco identifica como el núcleo de la poética técnica de Luceplan.",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F8,F10",
+    "origen": "identidad.links",
+    "anchor": true
+   },
+   {
+    "from": "HA2-3",
+    "to": "IM1",
+    "type": "define",
+    "via": [
+     "HA2-3.d8"
+    ],
+    "why": "La forma de la hoja y su apariencia de cristal no son un gesto decorativo: salen de una microgeometría óptica calculada y de un proceso de prensado de lámina. Es el rasgo que Francisco identifica como el núcleo de la poética técnica de Luceplan.",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F8,F10",
+    "origen": "identidad.links",
+    "anchor": false
+   },
+   {
+    "from": "CO2-1",
+    "to": "IM1",
+    "type": "define",
+    "via": [
+     "CO2-1.d5"
+    ],
+    "why": "La forma de la hoja y su apariencia de cristal no son un gesto decorativo: salen de una microgeometría óptica calculada y de un proceso de prensado de lámina. Es el rasgo que Francisco identifica como el núcleo de la poética técnica de Luceplan.",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F8,F10",
+    "origen": "identidad.links",
+    "anchor": false
+   },
+   {
+    "from": "HA3-1",
+    "to": "IM2",
+    "type": "define",
+    "via": [
+     "HA3-1.u1"
+    ],
+    "why": "La ranura que calza la hoja, la leve conificación que la vuelve rígida y el brazo que se cuelga como una percha son detalles que resuelven un problema y a la vez definen la expresión de la pieza: «el detalle nace de la solución de un problema».",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F11,F19",
+    "origen": "identidad.links",
+    "anchor": true
+   },
+   {
+    "from": "HA2-2",
+    "to": "IM2",
+    "type": "define",
+    "via": [
+     "HA2-2.d5"
+    ],
+    "why": "La ranura que calza la hoja, la leve conificación que la vuelve rígida y el brazo que se cuelga como una percha son detalles que resuelven un problema y a la vez definen la expresión de la pieza: «el detalle nace de la solución de un problema».",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F11,F19",
+    "origen": "identidad.links",
+    "anchor": false
+   },
+   {
+    "from": "CO2-2",
+    "to": "IM2",
+    "type": "define",
+    "via": [
+     "CO2-2.d4"
+    ],
+    "why": "La ranura que calza la hoja, la leve conificación que la vuelve rígida y el brazo que se cuelga como una percha son detalles que resuelven un problema y a la vez definen la expresión de la pieza: «el detalle nace de la solución de un problema».",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F11,F19",
+    "origen": "identidad.links",
+    "anchor": false
+   },
+   {
+    "from": "HA4-2",
+    "to": "IM3",
+    "type": "define",
+    "via": [
+     "HA4-2.d1"
+    ],
+    "why": "La lente Fresnel no es un accesorio: su lógica decide cómo se multiplica la luz, cómo se organizan los módulos y qué clase de iluminación se obtiene. Para Francisco, esa cadena —de la solución óptica a la forma y a la luz— es lo que conecta a Hope con la identidad de Luceplan.",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F9,F10",
+    "origen": "identidad.links",
+    "anchor": true
+   },
+   {
+    "from": "HA1-2",
+    "to": "IM3",
+    "type": "define",
+    "via": [
+     "HA1-2.d1"
+    ],
+    "why": "La lente Fresnel no es un accesorio: su lógica decide cómo se multiplica la luz, cómo se organizan los módulos y qué clase de iluminación se obtiene. Para Francisco, esa cadena —de la solución óptica a la forma y a la luz— es lo que conecta a Hope con la identidad de Luceplan.",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F9,F10",
+    "origen": "identidad.links",
+    "anchor": false
+   },
+   {
+    "from": "US3-1",
+    "to": "IM3",
+    "type": "define",
+    "via": [
+     "US3-1.d3"
+    ],
+    "why": "La lente Fresnel no es un accesorio: su lógica decide cómo se multiplica la luz, cómo se organizan los módulos y qué clase de iluminación se obtiene. Para Francisco, esa cadena —de la solución óptica a la forma y a la luz— es lo que conecta a Hope con la identidad de Luceplan.",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F9,F10",
+    "origen": "identidad.links",
+    "anchor": false
+   },
+   {
+    "from": "CO1-3",
+    "to": "IM3",
+    "type": "define",
+    "via": [
+     "CO1-3.d1"
+    ],
+    "why": "La lente Fresnel no es un accesorio: su lógica decide cómo se multiplica la luz, cómo se organizan los módulos y qué clase de iluminación se obtiene. Para Francisco, esa cadena —de la solución óptica a la forma y a la luz— es lo que conecta a Hope con la identidad de Luceplan.",
+    "estado": "interpretado (lectura de autor)",
+    "fuente": "F20,F9,F10",
     "origen": "identidad.links",
     "anchor": false
    },
@@ -6059,6 +6410,7 @@
     "O4-3": [
      "HA1-1",
      "HA1-1.d5",
+     "HA1-1.d9",
      "IV2"
     ],
     "O4-5": [
@@ -6091,6 +6443,17 @@
      "US1-2.d3",
      "CO1-1",
      "CO1-1.d1"
+    ],
+    "C5-3": [
+     "HA1-1.d9",
+     "HA1-2.d11",
+     "HA1-2.d12",
+     "HA4-1.d10",
+     "IV1",
+     "IV2",
+     "IV3",
+     "IV4",
+     "IV5"
     ],
     "O6-3": [
      "HA1-2",
@@ -6143,6 +6506,19 @@
      "HA4-2.d5",
      "P3-1",
      "IO3"
+    ],
+    "C5-1": [
+     "HA1-2.d11",
+     "IV3",
+     "familia.miembros"
+    ],
+    "C5-5": [
+     "HA1-2.d12",
+     "HA4-1.d11",
+     "IF2",
+     "IF4",
+     "IV5",
+     "familia.limites"
     ],
     "O5-1": [
      "HA2-1",
@@ -6351,6 +6727,14 @@
      "HA4-3",
      "HA4-3.d1"
     ],
+    "C5-2": [
+     "HA4-1.d11",
+     "IF1",
+     "IF2",
+     "IF3",
+     "IF4",
+     "familia.descartado"
+    ],
     "O8-6": [
      "HA4-2",
      "HA4-2.d3",
@@ -6479,7 +6863,10 @@
     ],
     "C1-4": [
      "CO1-2",
-     "CO1-2.d2"
+     "CO1-2.d2",
+     "IM1",
+     "IM2",
+     "IM3"
     ],
     "C1-2": [
      "CO1-2.d3",
@@ -6541,7 +6928,8 @@
     ],
     "C3-3": [
      "CO2-2",
-     "CO2-2.d4"
+     "CO2-2.d4",
+     "IM2"
     ],
     "C4-2": [
      "CO2-2",
@@ -6608,33 +6996,9 @@
      "PA-3",
      "DOC-2"
     ],
-    "C5-2": [
-     "IF1",
-     "IF2",
-     "IF3",
-     "IF4",
-     "familia.descartado"
-    ],
-    "C5-5": [
-     "IF2",
-     "IF4",
-     "IV5",
-     "familia.limites"
-    ],
     "C5-4": [
      "IF3",
      "familia.regla_pertenencia"
-    ],
-    "C5-3": [
-     "IV1",
-     "IV2",
-     "IV3",
-     "IV4",
-     "IV5"
-    ],
-    "C5-1": [
-     "IV3",
-     "familia.miembros"
     ],
     "C5-6": [
      "familia.no_realizadas"
@@ -9237,10 +9601,10 @@
    "desconocidos": 0,
    "conflictos": 2,
    "desconocidos_parciales": 7,
-   "detalle": 166,
+   "detalle": 171,
    "detalle_desconocidos": 8,
    "detalle_conflictos": 2,
-   "relations": 56,
+   "relations": 66,
    "programa_items": 8,
    "identidad_objeto": 4,
    "legacy_fields": 104

@@ -517,12 +517,12 @@
     }
    },
    "marca_coleccion": {
-    "nombre": "Afinidad de marca / colección",
-    "kicker": "AFINIDAD · MARCA / COLECCIÓN",
-    "pregunta": "¿Con qué otras familias o colecciones debe dialogar este proyecto y mediante qué elementos?",
-    "que_es": "Describe la relación buscada o reconocida entre el proyecto y otras colecciones de una marca. La afinidad no significa necesariamente semejanza: puede ser continuidad, complementariedad, contraste deliberado o neutralidad. Cada afinidad debe explicarse mediante elementos concretos de la ficha, no con adjetivos genéricos.",
+    "nombre": "Identidad de marca / colección",
+    "kicker": "IDENTIDAD · MARCA / COLECCIÓN",
+    "pregunta": "¿Qué rasgos de este proyecto expresan la identidad de la marca o de la colección?",
+    "que_es": "Describe la lógica de diseño que conecta este proyecto con una marca o una colección. Se explica mediante decisiones concretas de forma, material, luz, uso, expresión y detalle. La relación puede ser de continuidad, complementariedad o contraste deliberado; cada lectura conecta esos principios con categorías del objeto.",
     "secciones": {
-     "referencias": "Familias, colecciones o productos con los que se establece la relación.",
+     "referencias": "Lecturas de autor, principios declarados, familias, colecciones o productos que fundamentan la relación.",
      "tipo": [
       "continuidad",
       "complementariedad",
@@ -541,7 +541,7 @@
       "detalle"
      ]
     },
-    "regla": "no inferir identidad de marca a partir de una sola lámpara. Si el corpus de la marca es insuficiente, mostrar `pendiente de análisis`."
+    "regla": "Fundamentar la lectura en principios declarados, testimonios de autor o comparación de productos y explicitar su origen en el detalle. Los rasgos de una sola lámpara no prueban por sí solos una regla de todo el catálogo. Si falta sustento, dejar la relación pendiente."
    }
   },
   "importancia": {
@@ -2710,6 +2710,10 @@
   },
   "F19": {
    "name": "Fran · respuestas del 03/09/2026 (chat)",
+   "url": ""
+  },
+  "F20": {
+   "name": "Francisco Gómez Paz · lectura de marca Luceplan («poética técnica»), mensaje en el topic Estudio, 29/09/2026 22:09 UTC (chat)",
    "url": ""
   }
  }
