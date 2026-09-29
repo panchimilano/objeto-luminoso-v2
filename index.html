@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OOL V2 · Ficha del objeto luminoso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Jura:wght@400;500;600&family=Big+Shoulders+Display:wght@700&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f1eee7;--ink:#262a2e;--muted:#787c82;--line:#cdc8be;--card:#fbfaf7;--conf:#c4503c;--radius:12px;--shadow:0 24px 70px rgba(38,41,46,.14);
+  --f-display:Gloock,serif;--f-ui:Jura,system-ui,sans-serif;--f-mono:'Red Hat Mono',monospace;--f-plane:'Big Shoulders Display',sans-serif;--w-display:400;--w-plane:700;--ls-plane:.12em;--ls-kicker:.09em}
+/* Tema Vibia — tipografía (Gordita, servida desde su CDN) y paleta tomadas de vibia.com (04/09/2026) */
+@font-face{font-family:Gordita;font-weight:300;src:url(https://assets.vibiacdn.com/fonts/gorditalight.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Gordita;font-weight:400;src:url(https://assets.vibiacdn.com/fonts/gorditaregular.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Gordita;font-weight:500;src:url(https://assets.vibiacdn.com/fonts/gorditamedium.woff2) format("woff2");font-display:swap}
+body[data-theme=vibia]{--paper:#f6f2f0;--ink:#010101;--muted:#807c7e;--line:#e1dbd3;--card:#fcfbfc;--conf:#e1736d;--radius:4px;--shadow:0 8px 30px rgba(1,1,1,.08);
+  --f-display:Gordita,sans-serif;--f-ui:Gordita,sans-serif;--f-mono:Gordita,sans-serif;--f-plane:Gordita,sans-serif;--w-display:300;--w-plane:500;--ls-plane:.22em;--ls-kicker:.14em}
+body[data-theme=vibia] .hdr h1{font-weight:300;letter-spacing:-.01em}
+body[data-theme=vibia] .card h2{font-weight:300}
+body[data-theme=vibia] .card .kicker,body[data-theme=vibia] .kv b,body[data-theme=vibia] .hint,body[data-theme=vibia] .legend,body[data-theme=vibia] .hdr .meta,body[data-theme=vibia] .flist .id,body[data-theme=vibia] .flist .st,body[data-theme=vibia] .rel .tag,body[data-theme=vibia] .tags span,body[data-theme=vibia] .pill,body[data-theme=vibia] .saved{text-transform:uppercase;letter-spacing:.12em;font-size:9.5px;font-weight:500}
+body[data-theme=vibia] .sel,body[data-theme=vibia] .theme{border-radius:4px}body[data-theme=vibia] .sel button,body[data-theme=vibia] .theme button{border-radius:3px;text-transform:uppercase;letter-spacing:.1em;font-size:10.5px}
+body[data-theme=vibia] .plate .zlabel{font-weight:400}body[data-theme=vibia] .plate .flabel{font-weight:400}
+body[data-theme=vibia] .plate .plabel{fill:var(--card);font-size:18px;letter-spacing:.16em}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-weight:500;overflow:hidden;transition:background .3s}
+.stage{position:fixed;inset:0;display:grid;place-items:center;transition:right .35s ease}
+body.hascard .stage{right:490px}
+svg.plate{width:min(100vh,100%);height:min(100vh,100vw);max-width:100%;display:block;transition:width .35s ease}
+.hdr{position:fixed;top:26px;left:36px;pointer-events:none}
+.hdr h1{font-family:var(--f-display);font-weight:var(--w-display);font-size:54px;line-height:1;margin:0 0 6px}
+.hdr .sub{font-size:14px;color:var(--muted)}
+.hdr .meta{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;color:var(--muted);margin-top:6px}
+.base{position:fixed;top:78px;right:36px;width:400px;max-height:70vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);display:none;z-index:5}
+.base.on{display:block}
+.base .close{position:absolute;top:8px;right:12px;border:0;background:none;font-size:20px;cursor:pointer;color:var(--muted)}
+.base .kicker{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.baserow{display:flex;gap:8px;margin:10px 0 8px;align-items:center}
+.baserow input{flex:1;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font:inherit;font-size:13px;background:#fff}
+.seg2{display:flex;border:1px solid var(--line);border-radius:999px;padding:2px}.seg2 button{border:0;background:none;font:inherit;font-size:11px;padding:4px 9px;border-radius:999px;cursor:pointer;color:var(--muted)}.seg2 button.on{background:var(--ink);color:var(--paper)}
+.bgrp{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:12px 0 4px}
+.bl{display:flex;gap:10px;align-items:center;padding:7px 6px;border-radius:8px;cursor:pointer;font-size:14px}.bl:hover{background:rgba(0,0,0,.04)}.bl.on{background:rgba(0,0,0,.07)}
+.bl img{width:34px;height:34px;border-radius:50%;object-fit:cover;background:#fff;border:1px solid var(--line);flex:none}
+.bl .n{flex:1}.bl .n small{display:block;color:var(--muted);font-size:11.5px}.bl .st{font-family:var(--f-mono);font-size:10px;color:var(--muted)}
+.ool-actions{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.ool-actions button,.ool-send{border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);padding:6px 11px;font:inherit;font-size:11.5px;cursor:pointer}.ool-actions button:first-child,.ool-send{background:var(--ink);color:var(--paper)}
+.ool-brief{display:none;margin:8px 0 12px}.ool-brief.on{display:block}.ool-brief textarea{min-height:76px}.ool-brief .ool-send{margin-top:7px}.ool-msg{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);min-height:15px;margin:6px 0}
+.ool-job{padding:9px 0;border-top:1px dashed var(--line);font-size:12.5px}.ool-job-head{display:flex;gap:8px;align-items:baseline}.ool-job-head b{flex:1}.ool-job .stage-label{font-family:var(--f-mono);font-size:10px;color:var(--muted)}.ool-job .err{color:var(--conf);margin-top:5px}.ool-questions{margin-top:8px}.ool-questions ul{margin:5px 0 8px;padding-left:18px}.ool-questions textarea{min-height:70px}.ool-empty{font-size:12px;color:var(--muted);margin:8px 0}
+.sel.theme{top:78px}
+.sel{position:fixed;top:32px;right:36px;display:flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(255,255,255,.5)}
+.sel button{border:0;background:none;font:inherit;font-size:12.5px;padding:6px 14px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.sel button.on{background:var(--ink);color:var(--paper)}
+.hint{position:fixed;bottom:24px;left:36px;max-width:calc(100% - 640px);line-height:1.5;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;color:var(--muted)}
+.legend{position:fixed;bottom:24px;right:36px;display:flex;gap:22px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;color:var(--muted);align-items:center}
+.legend i{display:inline-block;vertical-align:middle;margin-right:6px;background:var(--ink);width:8px}
+.legend .st{display:inline-flex;gap:3px;align-items:center;margin-right:4px}.legend .st i{width:10px;height:8px}
+/* la tarjeta */
+.card{position:fixed;right:36px;top:50%;transform:translateY(-50%);width:440px;max-height:86vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px 24px;box-shadow:var(--shadow);display:none}
+.card.on{display:block}
+.card .close{position:absolute;top:12px;right:14px;border:0;background:none;font-size:22px;line-height:1;cursor:pointer;color:var(--muted)}
+.card .kicker{font-family:var(--f-mono);font-size:10.5px;letter-spacing:var(--ls-kicker);text-transform:uppercase;color:var(--muted)}
+.card .kicker b{color:var(--ink);font-weight:500}
+.card h2{font-family:var(--f-display);font-weight:var(--w-display);font-size:29px;line-height:1.1;margin:8px 0 4px}
+.card .q{color:var(--muted);font-size:14px}
+.card .hrow{display:flex;align-items:flex-start;gap:10px}.card .hrow h2{flex:1}
+.card .help{flex:none;margin-top:12px;width:26px;height:26px;border-radius:50%;border:1px solid var(--line,#cfc9bf);background:transparent;color:var(--muted);font-family:var(--f-mono);font-size:14px;line-height:24px;text-align:center;cursor:pointer;padding:0}
+.card .help:hover,.card .help.on{background:var(--ink);color:var(--paper,#f1eee7);border-color:var(--ink)}
+.card .guide .kicker{color:var(--ink)}
+.card .guide .def{margin:6px 0 10px;padding-left:10px;border-left:2px solid var(--line,#cfc9bf)}
+.card .guide .def b{display:block;font-weight:500}
+.card .guide .def small{color:var(--muted)}
+.sec{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.sec .kicker{margin-bottom:9px}
+.human{font-size:14.5px;line-height:1.6}
+.human p{margin:0 0 10px}
+.val{font-size:17px;line-height:1.4;margin:2px 0 8px}
+.kv{display:grid;grid-template-columns:104px 1fr;gap:7px 12px;font-size:13.5px;line-height:1.4}
+.kv b{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;padding-top:3px}
+.kv a{color:inherit}
+.flist .f{display:flex;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);cursor:pointer;font-size:13.5px;align-items:center}
+.flist .f:hover{background:rgba(0,0,0,.03)}
+.flist .f .id{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);width:42px;flex:none}
+.flist .f .n{flex:1}
+.flist .f .bar{width:64px;height:5px;border-radius:3px;background:var(--line);overflow:hidden;flex:none}
+.flist .f .bar i{display:block;height:100%}
+.flist .f .st{font-family:var(--f-mono);font-size:10px;color:var(--muted);width:82px;text-align:right;flex:none}
+.zlist .z{padding:7px 0;border-bottom:1px dashed var(--line);cursor:pointer;font-size:14px;display:flex;gap:10px;align-items:center}
+.zlist .z i{width:10px;height:10px;border-radius:2px;flex:none}
+.zlist .z small{color:var(--muted);margin-left:auto;font-family:var(--f-mono);font-size:10.5px}
+.vocab{display:flex;flex-wrap:wrap;gap:6px}
+.vocab span{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px}
+.vocab span.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 10px;font:inherit;font-size:13px;line-height:1.45;min-height:64px;background:#fff;resize:vertical}
+textarea:focus{outline:2px solid #d9d3c4}
+.saved{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin-top:5px;min-height:14px}
+.pill{display:inline-block;border-radius:999px;padding:2px 9px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;background:rgba(0,0,0,.06)}
+.pill.conf{background:var(--conf);color:#fff}
+/* svg */
+.plate text{font-family:var(--f-ui);font-weight:500;fill:var(--ink)}
+.plate .hit{cursor:pointer}
+.plate .blk{transition:opacity .18s}
+.plate.dim .blk,.plate.dim .zring,.plate.dim .parc,.plate.dim .flabel,.plate.dim .zlabel,.plate.dim .plabel{opacity:.22}
+.plate.dim .sel{opacity:1}
+.plate .zring:hover,.plate .parc:hover{filter:brightness(.92)}
+.plate .blk:hover{filter:brightness(.85)}
+.plate .flabel{font-size:9px;pointer-events:all;cursor:pointer}
+.plate .flabel.lo{fill:var(--muted)}
+.plate .flabel.top{font-size:11px;font-weight:600}
+.plate .zlabel{font-size:11px;pointer-events:none}
+.plate .zlabel.rad{font-size:9px;letter-spacing:.01em}
+.plate .plabel{font-family:var(--f-plane);font-weight:var(--w-plane);font-size:23px;letter-spacing:var(--ls-plane);fill:var(--paper);pointer-events:none}
+.plate .scale{fill:none;stroke:var(--line);stroke-width:.8;stroke-dasharray:2.5 5}
+.plate .chord path{fill:none;stroke-linejoin:round;pointer-events:stroke}
+.plate .chord .curve{stroke:#dedad2;stroke-opacity:.7;stroke-width:.4}
+.plate .chord.wide{display:none}
+/* al seleccionar: las cuerdas siguen SIEMPRE por atrás; las elegidas suben a gris medio (nunca negro), el resto casi desaparece */
+.plate.dim .chord{opacity:.08}
+.plate.dim .chord.sel{display:block;opacity:1}
+.plate.dim .chord.sel .curve{stroke:#8e8981;stroke-opacity:.95;stroke-width:.7}
+/* lo seleccionado queda semitransparente para que las cuerdas se vean pasar por debajo */
+/* siempre un poco de transparencia (también en reposo) para que las cuerdas se adivinen por atrás */
+.plate .zring{fill-opacity:.86}
+.plate .parc{fill-opacity:.9}
+.plate.dim .zring.sel{fill-opacity:.78}
+.plate.dim .parc{fill-opacity:.82}
+.plate.dim .blk.sel{fill-opacity:.88}
+.plate.dim .blk.rel{fill-opacity:.8}
+.plate.dim .blk.rel,.plate.dim .flabel.rel{opacity:.7}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.tags span{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.rel{padding:6px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
+.rel .tag{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);display:block;margin-bottom:2px}
+.rel a{display:block;cursor:pointer;color:inherit}.rel a:hover{text-decoration:underline}
+.rel a small{font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-right:6px}
+.plate .knot{fill:var(--ink)}
+/* V2 · centro (Programa proyectual), anillo exterior (Identidad) y líneas de relación por selección */
+.plate .clabel{font-family:var(--f-mono);font-size:8.5px;letter-spacing:.14em;fill:var(--muted);pointer-events:none}
+.plate.dim .clabel.sel{fill:var(--ink)}
+.plate .iring{fill:none;stroke:var(--line);stroke-width:.8}
+.plate .isel{font-family:var(--f-mono);font-size:9px;letter-spacing:.1em;fill:var(--muted)}
+.plate .isel tspan[data-m]{cursor:pointer}.plate .isel tspan[data-m]:hover,.plate .isel tspan.on{fill:var(--ink)}
+.plate .inode{fill:var(--ink)}
+.plate .iline{stroke:var(--ink);stroke-width:.6;fill:none}
+.plate .ilabel{font-family:var(--f-mono);font-size:8px;letter-spacing:.05em;fill:var(--ink);cursor:pointer;text-transform:uppercase}
+.plate.dim .inode,.plate.dim .iline,.plate.dim .ilabel,.plate.dim .iring{opacity:.22}
+.plate.dim .inode.sel,.plate.dim .iline.sel,.plate.dim .ilabel.sel{opacity:1}
+.det{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
+.det .t{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.det .m{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:3px;line-height:1.7}
+.det .m a{cursor:pointer;color:inherit}.det .m a:hover{text-decoration:underline}
+.det.hl{background:rgba(0,0,0,.05);border-radius:6px;padding:8px 6px}
+.pitem{padding:8px 0;border-bottom:1px dashed var(--line);cursor:pointer;font-size:13.5px;line-height:1.5}
+.pitem:hover{background:rgba(0,0,0,.03)}
+.pitem small{display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:2px}
+.pitem .w{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.pill.lg{cursor:pointer}.pill.lg:hover{background:var(--ink);color:var(--paper)}
+.pill.unk{background:none;border:1px solid var(--ink)}
+.guide ul{margin:4px 0 8px;padding-left:18px;font-size:13px;line-height:1.5}
+.rel .why{display:block;color:var(--muted);font-size:12px}
+@media (max-width:1100px){.card{width:min(440px,92vw);right:4vw}}
+/* móvil: la tarjeta baja como panel inferior y la rueda no se desplaza (V1 no lo contemplaba) */
+@media (max-width:700px){.hdr{top:14px;left:16px}.hdr h1{font-size:30px}.sel{top:16px;right:16px}.legend{display:none}.stage{top:130px}
+  .stage svg.plate{width:min(100%,calc(100vh - 130px));height:auto}body.hascard .stage{right:0;bottom:52vh}body.hascard .stage svg.plate{width:min(100%,calc(48vh - 130px))}.card{top:auto;bottom:0;left:0;right:0;width:100%;max-height:52vh;transform:none;border-radius:var(--radius) var(--radius) 0 0;padding:20px 18px}.base{right:4vw;width:92vw}}
+#oolCreate,#oolMsg,#oolJobs,#base .bgrp:last-of-type{display:none!important}
+</style>
+</head>
+<body>
+<div class="stage"><svg class="plate" id="plate" viewBox="0 0 1000 1000"></svg></div>
+<div class="hdr"><h1 id="title">—</h1><div class="sub" id="sub"></div><div class="meta" id="meta"></div></div>
+<div class="sel" id="sel"><button id="baseBtn">Database</button></div>
+<div class="base" id="base"><button class="close" onclick="closeBase()">×</button>
+  <div class="kicker">Database · <span id="baseN">0</span> fichas</div>
+  <div class="baserow"><input id="baseQ" placeholder="buscar lámpara, diseñador, empresa…"><div class="seg2"><button data-g="empresa" class="on">por empresa</button><button data-g="disenador">por diseñador</button></div></div>
+  <div id="baseList"></div>
+  <div id="oolCreate"></div>
+  <div class="ool-msg" id="oolMsg"></div>
+  <div class="bgrp">Trabajos del experto</div>
+  <div id="oolJobs"><div class="ool-empty">cargando…</div></div>
+</div>
+<div class="legend"><span><i style="height:14px"></i>J4</span><span><i style="height:9px"></i>J3</span><span><i style="height:5px"></i>J2</span><span><i style="height:3px"></i>J1</span><span style="margin-left:8px"><span class="st"><i></i></span><span class="st"><i style="opacity:.8"></i></span><span class="st"><i style="opacity:.55"></i></span><span class="st"><i style="opacity:.42"></i></span><span class="st"><i style="background:none;border:1px solid var(--ink)"></i></span> documentado → desconocido</span></div>
+<div class="card" id="card"><button class="close" onclick="closeCard()">×</button><div id="cardBody"></div></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const NS='http://www.w3.org/2000/svg';
+const G={cx:500,cy:500,RPH:121,RP0:125,RP1:148,RZ0:153,RZ1:213,RF0:219,LEN:{4:96,3:54,2:27,1:11,0:7},HOUT:17,HK:1.6,HADD:54,GAPP:.07,GAPZ:.009,RI:327,RIL:334,RLBL:350}; // V2: RI anillo de Identidad · RIL rótulos del anillo · RLBL rótulos de campo (antes 340)
+const HUE={make:212,use:73,say:341,'SINTAXIS':212,'PRAGMÁTICA':73,'SEMÁNTICA':341}; // un color por plano, mismos tres tonos que V1
+const ALPHA={documentado:1,observado:.8,inferido:.55,interpretado:.45,otro:.5,desconocido:0,conflicto:.9};
+const JWORD={4:'clave',3:'determinante',2:'relevante',1:'contextual'}; // V2 §8: identidad ≠ importancia
+const PSEC={P1:'Propósito',P2:'Principios rectores',P3:'Condiciones no negociables'};
+let IMODE=null,PER=0; // modo activo del anillo de Identidad (objeto | familia | marca) · ángulo por campo
+const CHORDS={S:[['O3-3','O7-4'],['O3-4','O6-4'],['O8-5','C4-3'],['O6-3','C5-2'],['U3-6','C4-2'],['O5-4','U4-2'],['O3-2','C1-3'],['O7-1','U4-4']],
+              W:[['O3-3','O7-5'],['O3-4','C2-1'],['O5-3','O6-2'],['O8-5','C4-2'],['U3-1','C4-4'],['O6-3','C5-2'],['O3-2','C1-3'],['O5-7','U4-2']]};
+function metaOf(v){const m=(DATA[v]&&DATA[v].meta)||{};return {title:m.nombre||m.objeto||v,sub:[m.empresa,(m.disenadores||[]).join(' + '),m.anio].filter(Boolean).join(' · '),img:'img/'+(m.foto||m.dibujo||''),isPhoto:!!m.foto,objeto:m.objeto||v,estado:m.estado_ficha||''}}
+let DATA,DEFS,COMMENTS,LAMPS=[],TAGS={},TITLES={zones:{},fields:{}},GRADES={},V=null,SELKEY=null,GROUP='empresa',OOLJOBS=[];
+const THEMES={fgp:{s:.42,v:.57,ds:.5,dv:.5,halo:.3,conf:'#c4503c'},vibia:{s:.26,v:.56,ds:.32,dv:.46,halo:.22,conf:'#e1736d'}};
+let THEME='fgp'; /* Fran (04/09 14:24): se queda con su gráfica; el tema Vibia queda en el código pero sin botón */const TH=()=>THEMES[THEME]||THEMES.fgp;
+function setTheme(t){THEME=THEMES[t]?t:'fgp';localStorage.setItem('ool-theme',THEME);document.body.dataset.theme=THEME;document.querySelectorAll('#theme button').forEach(b=>b.classList.toggle('on',b.dataset.t===THEME));if(DATA){const open=$('#card').classList.contains('on');render();if(open)closeCard()}}
+function applyTitles(d){Object.values(d).forEach(o=>o.planes.forEach(p=>p.zones.forEach(z=>{const pre=(z.fields[0]||{}).id?.split('-')[0];if(!z.name0)z.name0=z.name;if(pre&&TITLES.zones[pre])z.name=TITLES.zones[pre];z.fields.forEach(f=>{if(!f.name0)f.name0=f.name;if(TITLES.fields[f.id])f.name=TITLES.fields[f.id];if(!f.imp0)f.imp0=f.importancia;const g=(GRADES[o.version]||{})[f.id];if(g)f.importancia=g;f.titular=((GRADES.titulares||{})[o.version]||{})[f.id]||''})})))}
+const pol=(r,a)=>[G.cx+r*Math.cos(a),G.cy+r*Math.sin(a)];
+const jn=j=>{const n=parseInt((j||'').replace(/\D/g,''));return isNaN(n)?1:n};
+function state(e){e=(e||'').toLowerCase();if(e.includes('conflicto'))return'conflicto';if(e.includes('desconocido'))return'desconocido';if(e.startsWith('documentado')||e.includes('medici'))return'documentado';if(e.startsWith('observado'))return'observado';if(e.startsWith('inferido'))return'inferido';if(e.startsWith('interpretado')||e.includes('hipótesis'))return'interpretado';return'otro'}
+function hsv(h,s=TH().s,v=TH().v){h=((h%360)+360)%360;const c=v*s,x=c*(1-Math.abs((h/60)%2-1)),m=v-c;let r,g,b;if(h<60)[r,g,b]=[c,x,0];else if(h<120)[r,g,b]=[x,c,0];else if(h<180)[r,g,b]=[0,c,x];else if(h<240)[r,g,b]=[0,x,c];else if(h<300)[r,g,b]=[x,0,c];else[r,g,b]=[c,0,x];return`rgb(${Math.round((r+m)*255)},${Math.round((g+m)*255)},${Math.round((b+m)*255)})`}
+function mix(rgb,t,to=null){if(!to){const m=(getComputedStyle(document.body).getPropertyValue('--paper').trim().match(/[0-9a-f]{2}/gi)||['f1','ee','e7']).map(h=>parseInt(h,16));to=m.length===3?m:[241,238,231]}const m=rgb.match(/\d+/g).map(Number);return`rgb(${m.map((c,i)=>Math.round(c*(1-t)+to[i]*t)).join(',')})`}
+const el=(n,at={},parent)=>{const e=document.createElementNS(NS,n);for(const k in at)e.setAttribute(k,at[k]);if(parent)parent.appendChild(e);return e};
+function sectorPath(r0,r1,a0,a1){const L=(a1-a0)>Math.PI?1:0;const [x0,y0]=pol(r1,a0),[x1,y1]=pol(r1,a1),[x2,y2]=pol(r0,a1),[x3,y3]=pol(r0,a0);return`M${x0} ${y0}A${r1} ${r1} 0 ${L} 1 ${x1} ${y1}L${x2} ${y2}A${r0} ${r0} 0 ${L} 0 ${x3} ${y3}Z`}
+function arcPath(r,a0,a1){const am=(a0+a1)/2,bottom=Math.sin(am)>0;const L=(a1-a0)>Math.PI?1:0;if(!bottom){const [x0,y0]=pol(r,a0),[x1,y1]=pol(r,a1);return`M${x0} ${y0}A${r} ${r} 0 ${L} 1 ${x1} ${y1}`}const [x0,y0]=pol(r,a1),[x1,y1]=pol(r,a0);return`M${x0} ${y0}A${r} ${r} 0 ${L} 0 ${x1} ${y1}`}
+function catmull(pts,samples=10){const out=[],N=pts.length;for(let i=0;i<N-1;i++){const p0=pts[Math.max(i-1,0)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(i+2,N-1)];for(let k=0;k<samples;k++){const t=k/samples;const cr=(v0,v1,v2,v3)=>.5*((2*v1)+(-v0+v2)*t+(2*v0-5*v1+4*v2-v3)*t*t+(-v0+3*v1-3*v2+v3)*t*t*t);out.push([cr(p0[0],p1[0],p2[0],p3[0]),cr(p0[1],p1[1],p2[1],p3[1])])}}out.push(pts[N-1]);return out}
+const twidth=(s,fs)=>s.length*fs*.6;
+
+function layout(d){
+  const total=d.planes.reduce((n,p)=>n+p.zones.reduce((m,z)=>m+z.fields.length,0),0);
+  const per=(2*Math.PI-G.GAPP*3)/total;let a=-Math.PI/2+G.GAPP/2;const PC=[];
+  d.planes.forEach(p=>{p.a0=a;p.zones.forEach(z=>{z.a0=a;z.fields.forEach(f=>{f.a0=a;f.a1=a+per;f.am=a+per/2;a+=per});z.a1=a;z.am=(z.a0+z.a1)/2});p.a1=a;p.am=(p.a0+p.a1)/2;PC.push([p.am,HUE[p.id]??HUE[p.name]??200]);a+=G.GAPP});
+  const hueAt=ang=>{for(let i=0;i<3;i++){let [c0,h0]=PC[i],[c1,h1]=PC[(i+1)%3];if(c1<c0)c1+=2*Math.PI;const aa=ang>=c0?ang:ang+2*Math.PI;if(aa>=c0&&aa<=c1){if(h1>h0)h1-=360;return h0+(h1-h0)*(aa-c0)/(c1-c0)}}return PC[0][1]};
+  // Fran (07/09): un color por plano, bien delimitado; las zonas se distinguen por claridad dentro del mismo color (leve deriva de tono, nunca fuera de la familia)
+  d.planes.forEach(p=>{const H=HUE[p.id]??HUE[p.name]??200,n=p.zones.length;p.zones.forEach((z,i)=>{const t=n>1?i/(n-1):.5;z.hue=H+(t-.5)*10;z.col=hsv(z.hue,TH().s*(0.82+0.36*t),TH().v*(1.14-0.28*t));z.deep=hsv(H,TH().ds,TH().dv);z.plane=p;z.fields.forEach(f=>{f.zone=z;f.plane=p})})});
+  return per;
+}
+
+function render(){
+  const d=DATA[V],svg=$('#plate');svg.innerHTML='';svg.classList.remove('dim');
+  const per=layout(d);PER=per;
+  const MV=metaOf(V);$('#title').textContent=MV.title;$('#sub').textContent=MV.sub+(MV.estado&&MV.estado!=='definitiva'?' · '+MV.estado:'');
+  $('#meta').textContent=`Ficha del objeto luminoso · V2 · programa · ${d.planes.length} planos · ${d.stats.zones} zonas · ${d.stats.fields} campos · identidad`;
+  const defs=el('defs',{},svg);
+  const fl=el('filter',{id:'blur',x:'-20%',y:'-20%',width:'140%',height:'140%'},defs);el('feGaussianBlur',{stdDeviation:4},fl);
+  const clip=el('clipPath',{id:'ph'},defs);el('circle',{cx:G.cx,cy:G.cy,r:G.RPH},clip);
+  el('image',{href:MV.img,x:G.cx-G.RPH,y:G.cy-G.RPH,width:2*G.RPH,height:2*G.RPH,preserveAspectRatio:'xMidYMid meet','clip-path':'url(#ph)',transform:'translate('+G.cx+' '+G.cy+') scale(.8) translate('+(-G.cx)+' '+(-G.cy)+')',style:MV.isPhoto?'':'filter:grayscale(1) contrast(1.08);mix-blend-mode:multiply'},svg);  // la lámpara ocupa el vacío central, por debajo de las cuerdas
+  // V2 · centro clickeable = Programa proyectual (misma tarjeta lateral); leyenda discreta en el vacío entre la foto (r≈97) y el arco de planos, sin tapar la lámpara ni sumar color
+  el('circle',{cx:G.cx,cy:G.cy,r:G.RPH,fill:'transparent',class:'hit',id:'center'},svg).addEventListener('click',()=>openProgram());
+  el('path',{id:'pp-center',d:arcPath(G.RPH-10,Math.PI/2-.95,Math.PI/2+.95),fill:'none'},defs);
+  {const t=el('text',{class:'clabel','dominant-baseline':'central',id:'center-lbl'},svg);const tp=el('textPath',{href:'#pp-center',startOffset:'50%','text-anchor':'middle'},t);tp.textContent='PROGRAMA PROYECTUAL'}
+  // halo: proyección de la importancia, por zona con su tono, desenfocada
+  const halo=el('g',{filter:'url(#blur)',opacity:TH().halo},svg);
+  d.planes.forEach(p=>{
+    const pts=[];p.zones.forEach(z=>z.fields.forEach(f=>pts.push([f.am,G.RF0+G.LEN[jn(f.importancia)]*G.HK+G.HADD])));
+    const rs=pts.map(q=>q[1]);pts.forEach((q,i)=>q[1]=(rs[Math.max(0,i-1)]+2*rs[i]+rs[Math.min(rs.length-1,i+1)])/4);
+    const seq=[[p.a0+.005,G.RF0+G.HADD*.5],...pts,[p.a1-.005,G.RF0+G.HADD*.5]];const sm=catmull(seq);
+    const rAt=ang=>{if(ang<=sm[0][0])return sm[0][1];for(let i=1;i<sm.length;i++)if(sm[i][0]>=ang){const [a0,r0]=sm[i-1],[a1,r1]=sm[i];return r0+(r1-r0)*(ang-a0)/(a1-a0||1)}return sm[sm.length-1][1]};
+    p.zones.forEach(z=>{const n=Math.max(6,Math.round((z.a1-z.a0)/.006));const outer=[],inner=[];for(let i=0;i<=n;i++){const ang=z.a0+(z.a1-z.a0)*i/n;outer.push(pol(Math.max(G.RF0+2,rAt(ang)),ang));inner.push(pol(G.RF0+2,ang))}
+      el('path',{d:'M'+outer.map(q=>q.join(' ')).join('L')+'L'+inner.reverse().map(q=>q.join(' ')).join('L')+'Z',fill:z.col},halo)});
+  });
+  // anillos de escala
+  [1,2,3,4].forEach(j=>el('circle',{cx:G.cx,cy:G.cy,r:G.RF0+G.LEN[j],class:'scale'},svg));
+  const gC=el('g',{class:'chords'},svg),gX=el('g',{class:'chords xlinks'},svg),gZ=el('g',{},svg),gB=el('g',{},svg),gL=el('g',{},svg),gP=el('g',{},svg),gT=el('g',{},svg),gI=el('g',{class:'ident'},svg); // gX: líneas de Programa/Identidad por selección (por atrás, como las cuerdas) · gI: anillo exterior
+  d.planes.forEach(p=>{
+    p.zones.forEach((z,zi)=>{
+      // arco del plano (degradé por zona) + anillo de zona
+      el('path',{d:sectorPath(G.RP0,G.RP1,Math.max(z.a0,p.a0+.004),z.a1-(zi===p.zones.length-1?.004:0)),fill:z.deep,class:'parc hit',id:'parc-'+z.nodeId,'data-plane':p.name},gP).addEventListener('click',()=>openPlane(p));
+      const zr=el('path',{d:sectorPath(G.RZ0,G.RZ1,z.a0+G.GAPZ/2,z.a1-G.GAPZ/2),fill:mix(z.col,.72),stroke:getComputedStyle(document.body).getPropertyValue('--paper').trim()||'#f1eee7','stroke-width':1.2,class:'zring hit',id:'zr-'+z.nodeId},gZ);zr.addEventListener('click',()=>openZone(z));
+      // nombre de zona: siempre en el eje (radial), en 1-2 líneas que entran en el anillo (regla de Fran, 04/09)
+      {const maxc=12,words=z.name.split(' '),lines=[];let cur='';
+        words.forEach(w=>{if(cur&&(cur+' '+w).length>maxc){lines.push(cur);cur=w}else cur=cur?cur+' '+w:w});if(cur)lines.push(cur);
+        const longest=Math.max(...lines.map(l=>l.length)),AV=G.RZ1-G.RZ0-9,fs=Math.min(9,AV/(longest*.58));
+        const deg=z.am*180/Math.PI,left=Math.cos(z.am)<0,rot=left?deg+180:deg;const [x,y]=pol(G.RZ0+5,z.am);const ux=Math.sin(rot*Math.PI/180),uy=-Math.cos(rot*Math.PI/180);
+        lines.forEach((ln,i)=>{const k2=((lines.length-1)/2-i)*(lines.length>2?9:10);const t=el('text',{class:'zlabel rad',x:x+ux*k2,y:y+uy*k2,transform:`rotate(${rot} ${x+ux*k2} ${y+uy*k2})`,'text-anchor':left?'end':'start','dominant-baseline':'central',style:`font-size:${fs}px`},gT);t.textContent=ln;t.dataset.z=z.nodeId;if(t.getComputedTextLength()>AV){t.setAttribute('textLength',AV);t.setAttribute('lengthAdjust','spacingAndGlyphs')}})}
+      // campos: bloques + rótulo radial
+      z.fields.forEach(f=>{const j=jn(f.importancia),st=state(f.estado),L=G.LEN[j]??G.LEN[1];f.j=j;f.st=st;
+        const at={d:sectorPath(G.RF0,G.RF0+L,f.a0+G.GAPZ/3,f.a1-G.GAPZ/3),class:'blk hit',id:'blk-'+f.id};
+        if(st==='desconocido'){at.fill=getComputedStyle(document.body).getPropertyValue('--paper').trim()||'#f1eee7';at.stroke=z.col;at['stroke-width']=.8}else{at.fill=z.col;at['fill-opacity']=ALPHA[st]*.92}
+        el('path',at,gB).addEventListener('click',()=>openField(f));
+        if(st==='conflicto'){const [x,y]=pol(G.RF0+L+4,f.am);el('circle',{cx:x,cy:y,r:2,fill:TH().conf},gB)}
+        const deg=f.am*180/Math.PI,left=Math.cos(f.am)<0;const [x,y]=pol(G.RLBL,f.am);
+        const t=el('text',{class:'flabel'+(j>=3?'':' lo'),x,y,transform:`rotate(${left?deg+180:deg} ${x} ${y})`,'text-anchor':left?'end':'start','dominant-baseline':'central',id:'fl-'+f.id},gL);
+        const lbl=f.titular||f.name;t.textContent=lbl.length>30?lbl.slice(0,29)+'…':lbl;if(f.titular)t.classList.add('top');t.addEventListener('click',()=>openField(f));
+      });
+    });
+    // nombre del plano sobre el arco
+    const id='pp-'+(p.id||p.name);el('path',{id,d:arcPath((G.RP0+G.RP1)/2,p.a0,p.a1),fill:'none'},defs);
+    const t=el('text',{class:'plabel','dominant-baseline':'central'},gT);const tp=el('textPath',{href:'#'+id,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=p.name;
+  });
+  // cuerdas automáticas: dos campos de zonas distintas que comparten una etiqueta.
+  // Etiquetas con 2–6 campos se dibujan siempre (relaciones precisas); las más amplias ("temas") sólo al seleccionar un campo.
+  const idx={},byTag={};
+  d.planes.forEach(p=>p.zones.forEach(z=>z.fields.forEach(f=>{idx[f.id]=f;f.tags=f.tags||[];f.rel=[];f.tags.forEach(t=>(byTag[t]=byTag[t]||[]).push(f))})));
+  let nCh=0;Object.entries(byTag).forEach(([t,fs])=>{for(let i=0;i<fs.length;i++)for(let j=i+1;j<fs.length;j++){const a=fs[i],b=fs[j];if(a.zone===b.zone)continue;a.rel.push({tag:t,f:b});b.rel.push({tag:t,f:a});
+    const [x0,y0]=pol(G.RP0-3,a.am),[x1,y1]=pol(G.RP0-3,b.am),[u0,v0]=pol(G.RF0-1,a.am),[u1,v1]=pol(G.RF0-1,b.am);
+    // de campo a campo: tramo radial fino desde el bloque hasta el borde interno, curva por el centro, y radial hasta el otro bloque
+    const c=el('g',{class:'chord'+(fs.length>4?' wide':''),'data-f':a.id+' '+b.id,'data-tag':t},gC);
+    el('path',{d:`M${u0} ${v0}L${x0} ${y0}Q${G.cx} ${G.cy} ${x1} ${y1}L${u1} ${v1}`,class:'curve'},c);
+    el('title',{},c).textContent='#'+t+' · '+a.name+' ↔ '+b.name;if(fs.length<=4)nCh++}});
+  const _nch=nCh;
+  drawIdentity();
+  // centro: la pieza
+  svg.addEventListener('click',e=>{if(e.target===svg)closeCard()});
+}
+
+/* ---------- V2 · anillo exterior de Identidad: en reposo sólo los tres modos; con un modo activo, sus ítems en el ángulo de su campo ancla ---------- */
+function fieldById(id){for(const p of DATA[V].planes)for(const z of p.zones)for(const f of z.fields)if(f.id===id)return f;return null}
+function idItems(mode){const I=DATA[V].identidad||{};return mode==='objeto'?(I.objeto||[]):mode==='familia'?((I.familia||{}).invariantes||[]):[]}
+function drawIdentity(){
+  const svg=$('#plate'),gI=svg.querySelector('.ident'),defs=svg.querySelector('defs');if(!gI)return;gI.innerHTML='';defs.querySelectorAll('[id^="iarc-"]').forEach(e=>e.remove());
+  el('circle',{cx:G.cx,cy:G.cy,r:G.RI,class:'iring'},gI);
+  el('path',{id:'iarc-sel',d:arcPath(G.RI,Math.PI/2-.62,Math.PI/2+.62),fill:'none'},defs);
+  const t=el('text',{class:'isel','dominant-baseline':'central'},gI);const tp=el('textPath',{href:'#iarc-sel',startOffset:'50%','text-anchor':'middle'},t);
+  [['objeto','OBJETO'],['familia','FAMILIA'],['marca','MARCA/COLECCIÓN']].forEach(([m,lbl],i)=>{if(i){const s=el('tspan',{},tp);s.textContent='   ·   '}const s=el('tspan',{class:IMODE===m?'on':'','data-m':m,id:'isel-'+m},tp);s.textContent=lbl;s.addEventListener('click',e=>{e.stopPropagation();openIdentityMode(m)})});
+  if(!IMODE)return;
+  const items=idItems(IMODE),angs=items.map(it=>(fieldById(it.anchor)||{}).am).filter(a=>a!==undefined);
+  items.forEach(it=>{const f=fieldById(it.anchor);if(!f)return;const L=G.LEN[f.j]??G.LEN[1];
+    // línea radial fina desde la punta de la barra del campo ancla hasta el nodo del anillo; el dato no se mueve, se proyecta
+    const [x0,y0]=pol(G.RF0+L+3,f.am),[x1,y1]=pol(G.RI-3,f.am);el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iline',id:'il-'+it.id},gI);
+    const [cx,cy]=pol(G.RI,f.am);el('circle',{cx,cy,r:2.6,class:'inode hit',id:'in-'+it.id},gI).addEventListener('click',()=>openIdentityItem(it.id));
+    // rótulo corto sobre el arco exterior, limitado al arco libre hasta el ítem vecino más cercano
+    let half=PER*1.5;angs.forEach(a=>{if(a!==f.am){let d=Math.abs(a-f.am);d=Math.min(d,2*Math.PI-d);half=Math.min(half,d/2-.01)}});half=Math.max(half,PER/2-.004);
+    el('path',{id:'iarc-'+it.id,d:arcPath(G.RIL,f.am-half,f.am+half),fill:'none'},defs);
+    const tx=el('text',{class:'ilabel','dominant-baseline':'central',id:'ilb-'+it.id},gI);const tpp=el('textPath',{href:'#iarc-'+it.id,startOffset:'50%','text-anchor':'middle'},tx);
+    let lbl=it.rotulo||it.label;tpp.textContent=lbl;const avail=G.RIL*2*half-6;while(tx.getComputedTextLength()>avail&&lbl.length>3){lbl=lbl.slice(0,-2)+'…';tpp.textContent=lbl}
+    el('title',{},tx).textContent=it.label+' · '+(it.why||'');tx.addEventListener('click',()=>openIdentityItem(it.id));
+  });
+}
+function clearX(){const g=$('#plate .xlinks');if(g)g.innerHTML=''}
+function lineCenterTo(f,g){const [u,v]=pol(G.RF0-1,f.am);const c=el('g',{class:'chord sel','data-f':f.id},g);el('path',{d:`M${G.cx} ${G.cy}L${u} ${v}`,class:'curve'},c)}
+function chordBetween(a,b,g){const [x0,y0]=pol(G.RP0-3,a.am),[x1,y1]=pol(G.RP0-3,b.am),[u0,v0]=pol(G.RF0-1,a.am),[u1,v1]=pol(G.RF0-1,b.am);const c=el('g',{class:'chord sel','data-f':a.id+' '+b.id},g);el('path',{d:`M${u0} ${v0}L${x0} ${y0}Q${G.cx} ${G.cy} ${x1} ${y1}L${u1} ${v1}`,class:'curve'},c)}
+
+/* ---------- la tarjeta ---------- */
+const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const paras=s=>(s||'').split(/\n{2,}/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/_(.+?)_/g,'<i>$1</i>')}</p>`).join('');
+function showCard(html,selector){HELP=null;clearX();const c=$('#card');$('#cardBody').innerHTML=html;c.classList.add('on');document.body.classList.add('hascard');c.scrollTop=0;
+  const svg=$('#plate');svg.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'));if(selector){svg.classList.add('dim');svg.querySelectorAll(selector).forEach(e=>e.classList.add('sel'))}else svg.classList.remove('dim')}
+function closeCard(){$('#card').classList.remove('on');document.body.classList.remove('hascard');const svg=$('#plate');svg.classList.remove('dim');svg.querySelectorAll('.sel,.rel').forEach(e=>e.classList.remove('sel','rel'));clearX();if(IMODE){IMODE=null;drawIdentity()}}
+function introRest(p){const lines=(p.intro||'').split('\n').map(l=>l.trim()).filter(Boolean);return lines.filter(l=>!l.startsWith('#')).slice(1).join('\n\n')}
+const cap=s=>(s||'').charAt(0)+(s||'').slice(1).toLowerCase();
+const V2=()=>DEFS.v2||{};
+const REL=()=>DATA[V].relations||[];
+const lpills=ids=>(ids||[]).map(i=>`<span class="pill lg" onclick="openLegacy('${i}')" title="campo V1 (legacy)">${esc(i)}</span>`).join(' ');
+function legacyPlaneOf(p){const L=(DATA[V].legacy||{}).ficha;if(!L)return null;const i=DATA[V].planes.indexOf(p);return L.planes[i]||null}
+function openPlane(p){
+  const zones=p.zones.map(z=>`<div class="z" onclick="openZoneId('${z.nodeId}')"><i style="background:${z.col}"></i>${esc(z.name)}<small>${esc(z.code||'')} · ${z.fields.length} campos</small></div>`).join('');
+  const LP=legacyPlaneOf(p);
+  showCard(`<div class="kicker">Plano</div><div class="hrow"><h2>${esc(cap(p.name))}</h2>${helpBtn('plane',p.id)}</div><div class="q">${esc(p.question||'')}</div>
+    <div class="sec"><div class="kicker">Lectura humana · Hope</div><div class="human">${paras(p.descripcion)}</div></div>
+    <div class="sec"><div class="kicker">Zonas · ${p.zones.length}</div><div class="zlist">${zones}</div></div>
+    ${LP?`<div class="sec"><div class="kicker">Relato V1 · legacy</div><div class="human"><p><small>El plano ${esc(LP.name)} de la ficha V1 se conserva sin editar para auditoría: contiene el antiguo J4 «identitario», «bombitas a la vista» y «14 por corona» tal como estaban.</small></p></div><div class="rel"><a onclick="openLegacyPlane('${p.id}')">Ver el relato y los campos V1 →</a></div></div>`:''}`,
+    p.zones.map(z=>`#parc-${z.nodeId},#zr-${z.nodeId},[data-z="${z.nodeId}"]`).join(',')+',.plabel');
+}
+function openZoneId(id){for(const p of DATA[V].planes)for(const z of p.zones)if(z.nodeId===id)return openZone(z)}
+function openFieldId(id){const f=fieldById(id);if(f)return openField(f)}
+function openZone(z){
+  const rows=z.fields.map(f=>`<div class="f" onclick="openFieldId('${f.id}')"><span class="id">${esc(f.code||f.id)}</span><span class="n">${esc(f.name)}</span><span class="bar"><i style="width:${[0,12,30,58,100][f.j]||10}%;background:${z.col};opacity:${ALPHA[f.st]||.5}"></i></span><span class="st">${f.st}</span></div>`).join('');
+  showCard(`<div class="kicker">${esc(z.plane.name)} · zona ${esc(z.code||z.num)}</div><div class="hrow"><h2>${esc(z.name)}</h2>${helpBtn('zone',z.nodeId)}</div><div class="q">${esc(z.pregunta||'')}</div>
+    <div class="sec"><div class="kicker">Lectura humana · Hope</div><div class="human">${paras(z.lectura||'')}</div></div>
+    <div class="sec"><div class="kicker">Campos · ${z.fields.length}</div><div class="flist">${rows}</div></div>`,
+    `#zr-${z.nodeId},[data-z="${z.nodeId}"],`+z.fields.map(f=>`#blk-${f.id},#fl-${f.id},.chord[data-f~="${f.id}"]`).join(','));
+}
+function srcHtml(codes){const S=(DEFS.sources||{});return (codes||'').split(/[,;\s]+/).filter(Boolean).map(c=>{const s=S[c];if(!s)return`<span class="pill">${esc(c)}</span>`;return s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(c)} · ${esc(s.name)}</a>`:`${esc(c)} · ${esc(s.name)}`}).join('<br>')}
+/* ---------- V2 · detalle atómico, relaciones tipadas, legacy ---------- */
+function goRef(r){if(/^P[123]-/.test(r))return openPItem(r);if(/^PA-/.test(r))return openProgram(r);if(/^I[OFV]\d/.test(r))return openIdentityItem(r);if(/^DOC-/.test(r))return openDocs(r);if(/^LEGACY-/.test(r))return openLegacyPlane(r.slice(7));if(/^familia\./.test(r))return showIdentityMode('familia');
+  const m=r.match(/^([A-Z]{2}\d-\d)(?:\.(.+))?$/);if(m)return m[2]?openDetail(m[1],r):openFieldId(m[1]);if(/^[OUC]\d-\d$/.test(r))return openLegacy(r)}
+function entName(e){return ((DATA[V].entidades||{})[e]||{nombre:e}).nombre}
+function detHtml(d){
+  const meta=[d.sujeto?`sujeto: ${esc(d.sujeto)}`:'',d.variante?`variante: ${esc(d.variante)}`:'',d.condicion?`condición: ${esc(d.condicion)}`:'',d.epoca?`época: ${esc(d.epoca)}`:'',d.actor?`actor: ${esc(d.actor)}`:'',d.atribucion?`atribución: ${esc(d.atribucion)}`:'',
+    `${d.conflicto?'<span class="pill conf">conflicto</span> ':''}${d.desconocido?'<span class="pill unk">desconocido</span> ':''}${esc(d.estado||'')}`,d.confianza&&d.confianza!=='—'?`confianza ${esc(d.confianza)}`:'',d.estado_proyecto?`proyecto: ${esc(d.estado_proyecto)}`:'',d.fuente?esc(d.fuente):''].filter(Boolean).join(' · ');
+  const ent=d.entidad?`<span class="pill" title="entidad">${esc(entName(d.entidad))}${d.cantidad?' × '+d.cantidad:''}</span> `:'';
+  const ext=(d.extremos||[]).length?`<span class="pill" title="unión">${d.extremos.map(entName).map(esc).join(' ↔ ')}${d.mecanismo?' · '+esc(d.mecanismo):''}${d.separable===false?' · no separable':''}</span> `:'';
+  const mag=d.clave?`<span class="pill" title="magnitud">${esc(d.clave)}: ${esc(String(d.valor??''))}${d.unidad&&d.unidad!=='—'?' '+esc(d.unidad):''}</span> `:'';
+  const refs=(d.ref||[]).map(r=>`<a onclick="goRef('${r}')">→ ${esc(r)}</a>`).join(' ');
+  return `<div class="det" id="det-${esc(d.id)}"><span class="t">${esc(d.tipo||'')}</span>${esc(d.texto)}${d.nota?` <i>${esc(d.nota)}</i>`:''}<div class="m">${ent}${ext}${mag}${meta}${(d.legacy_ids||[]).length?' · '+lpills(d.legacy_ids):''}${refs?' · '+refs:''}</div></div>`}
+function pitemById(id){const P=DATA[V].programa||{};for(const s of ['proposito','principios','condiciones','antecedentes'])for(const it of (P[s]||[]))if(it.id===id)return it;return null}
+function iitemById(id){const I=DATA[V].identidad||{};for(const it of (I.objeto||[]))if(it.id===id)return it;for(const it of ((I.familia||{}).invariantes||[]))if(it.id===id)return it;for(const it of ((I.familia||{}).variables||[]))if(it.id===id)return it;return null}
+function nameOf(id){if(/^P/.test(id)){const it=pitemById(id);return it?it.texto:id}if(/^I/.test(id)){const it=iitemById(id);return it?it.label:id}const f=fieldById(id);return f?f.name:id}
+function fnOf(id){return /^P/.test(id)?`openPItem('${id}')`:/^I/.test(id)?`openIdentityItem('${id}')`:`openFieldId('${id}')`}
+function relLine(r,me){const other=r.from===me?r.to:r.from,dir=r.from===me;const t=r.type.replace('_',' ');const f=fieldById(other);
+  return `<div class="rel"><span class="tag">${dir?`${esc(me)} <b>${t}</b> ${esc(other)}`:`${esc(other)} <b>${t}</b> ${esc(me)}`}${r.anchor?' · ancla':''}</span><a onclick="${fnOf(other)}"><small>${esc(other)}</small>${esc(nameOf(other))}${f?` <small>· ${esc(f.zone.name)}</small>`:''}</a>${r.why?`<span class="why">${esc(r.why)}</span>`:''}${(r.via||[]).length?`<small>${r.via.map(v=>`<a onclick="goRef('${v}')" style="display:inline">→ ${esc(v)}</a>`).join(' ')}</small>`:''}</div>`}
+function openField(f,hl){
+  const dv=(V2().fields||{})[f.id]||{};const rels=REL().filter(r=>r.from===f.id||r.to===f.id),byT={};rels.forEach(r=>(byT[r.type]=byT[r.type]||[]).push(r));const inc=f.incertidumbre||{};
+  showCard(`<div class="kicker">${esc(f.plane.name)} · <b>${esc(f.zone.name)}</b> · ${esc(f.code||'')} · ${f.id}</div><div class="hrow"><h2>${esc(f.titular||f.name)}</h2>${helpBtn('field',f.id)}</div><div class="q">${f.titular?`<b>${esc(f.name)}</b> · `:''}${esc(dv.pregunta||f.def||'')}</div>
+    <div class="sec"><div class="kicker">Dato</div><div class="val">${esc(f.valor||'—')}</div>
+      <div class="kv"><b>Unidad</b><span>${esc(f.unidad||'—')}</span><b>Importancia</b><span>J${f.j} · ${JWORD[f.j]||''}</span><b>Estado</b><span>${f.st==='conflicto'?'<span class="pill conf">conflicto</span> ':''}${f.desconocido_parcial?'<span class="pill unk">desconocido parcial</span> ':''}${esc(f.estado||'')}</span><b>Confianza</b><span>${esc(f.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(f.fuente)||'—'}</span>${f.estado_proyecto?`<b>Proyecto</b><span>${esc(f.estado_proyecto)}</span>`:''}<b>Incertidumbre</b><span>${['desconocidos','conflictos','pendientes','inferidos'].map(k=>inc[k]?`${inc[k]} ${k}`:'').filter(Boolean).join(' · ')||'—'}</span></div></div>
+    <div class="sec"><div class="kicker">Detalle · ${(f.detalle||[]).length} registros</div>${(f.detalle||[]).map(detHtml).join('')}</div>
+    ${byT.responde_a?`<div class="sec"><div class="kicker">Responde al Programa · ${byT.responde_a.length}</div>${byT.responde_a.map(r=>relLine(r,f.id)).join('')}</div>`:''}
+    ${byT.define?`<div class="sec"><div class="kicker">Define Identidad · ${byT.define.length}</div>${byT.define.map(r=>relLine(r,f.id)).join('')}</div>`:''}
+    ${(byT.permite||byT.produce)?`<div class="sec"><div class="kicker">Permite · produce · ${(byT.permite||[]).length+(byT.produce||[]).length}</div>${[...(byT.permite||[]),...(byT.produce||[])].map(r=>relLine(r,f.id)).join('')}</div>`:''}
+    <div class="sec"><div class="kicker">Legacy V1 · ${(f.legacy_ids||[]).length} campos de origen</div><div class="tags">${lpills(f.legacy_ids)||'—'}</div></div>
+    ${f.tags.length?`<div class="sec"><div class="kicker">Etiquetas</div><div class="tags">${f.tags.map(t=>`<span>#${esc(t)}</span>`).join('')}</div></div>`:''}
+    ${f.rel.length?`<div class="sec"><div class="kicker">Se cruza con · ${f.rel.length} <small>(exploratorio, por etiquetas)</small></div>${Object.entries(f.rel.reduce((m,r)=>((m[r.tag]=m[r.tag]||[]).push(r.f),m),{})).map(([t,fs])=>`<div class="rel"><span class="tag">#${esc(t)}</span>${fs.map(o=>`<a onclick="openFieldId('${o.id}')"><small>${o.id}</small>${esc(o.name)} <small>· ${esc(o.zone.name)}</small></a>`).join('')}</div>`).join('')}</div>`:''}
+    `,
+    `#blk-${f.id},#fl-${f.id},#zr-${f.zone.nodeId},[data-z="${f.zone.nodeId}"],.chord[data-f~="${f.id}"]`);
+  const svg=$('#plate');svg.querySelectorAll('.rel').forEach(e=>e.classList.remove('rel'));f.rel.forEach(r=>{['#blk-','#fl-'].forEach(pre=>{const e=svg.querySelector(pre+CSS.escape(r.f.id));if(e)e.classList.add('rel')})});
+  if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}
+}
+function openDetail(fid,did){const f=fieldById(fid);if(f)openField(f,did)}
+/* ---------- V2 · Programa proyectual (centro) ---------- */
+function openProgram(hl){const P=DATA[V].programa||{},MV=metaOf(V);const n=new Set(REL().filter(r=>r.type==='responde_a').map(r=>r.from)).size;
+  const sec=(key,code)=>`<div class="sec"><div class="kicker">${esc(PSEC[code])}</div>${(P[key]||[]).map(it=>`<div class="pitem" onclick="openPItem('${it.id}')">${esc(it.texto)}<small>${it.id} · ${esc(it.estado)} · ${(it.links||[]).length} campos responden</small></div>`).join('')}</div>`;
+  showCard(`<div class="kicker">Programa proyectual</div><div class="hrow"><h2>${esc(MV.title)}</h2>${helpBtn('program','programa')}</div><div class="q">${esc((V2().programa||{}).pregunta||'')}</div>
+    <div class="sec"><div class="kicker">Procedencia</div><div class="human">${paras(P.lectura)}</div></div>${sec('proposito','P1')}${sec('principios','P2')}${sec('condiciones','P3')}
+    <div class="sec"><div class="kicker">Relaciones</div><div class="human"><p>${n} campos responden actualmente al programa. Elegí un ítem para ver cuáles y con qué tipo de relación; las líneas se dibujan sólo por selección.</p></div></div>
+    <div class="sec"><div class="kicker">Antecedentes · fuera del anillo principal</div>${(P.antecedentes||[]).map(a=>`<div class="det" id="det-${a.id}"><span class="t">${a.id}</span>${esc(a.texto)}<div class="m">${esc(a.estado)} · ${esc(a.fuente)}${(a.legacy_ids||[]).length?' · '+lpills(a.legacy_ids):''}${(a.ref||[]).map(r=>` · <a onclick="goRef('${r}')">→ ${r}</a>`).join('')}</div></div>`).join('')}<div class="rel"><a onclick="openDocs()">Documentación de producto · ${(DATA[V].documentacion||[]).length} →</a></div></div>`,'#center-lbl');
+  if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}}
+function openPItem(id){const it=pitemById(id);if(!it||!it.seccion)return openProgram(id);const code=it.seccion,pd=((V2().programa||{}).partes||{})[code]||{};const rels=REL().filter(r=>r.type==='responde_a'&&r.to===id);
+  showCard(`<div class="kicker">Programa · <b>${esc(PSEC[code])}</b> · ${id}</div><div class="hrow"><h2>${esc(PSEC[code])}</h2>${helpBtn('pitem',code)}</div><div class="q">${esc(pd.pregunta||'')}</div>
+    <div class="sec"><div class="kicker">Ítem</div><div class="val">${esc(it.texto)}</div><div class="kv"><b>Procedencia</b><span>${esc(it.procedencia||'—')}</span><b>Estado</b><span>${esc(it.estado||'')}</span><b>Confianza</b><span>${esc(it.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(it.fuente)||'—'}</span><b>Proyecto</b><span>${esc(it.estado_proyecto||'— (ficha de objeto existente)')}</span><b>Legacy</b><span>${lpills(it.legacy_ids)||'—'}</span></div>${it.nota?`<div class="human" style="margin-top:8px"><p><i>${esc(it.nota)}</i></p></div>`:''}</div>
+    <div class="sec"><div class="kicker">Responden a este ítem · ${rels.length} campos</div>${rels.map(r=>relLine(r,id)).join('')||'<div class="human"><p>—</p></div>'}</div>
+    <div class="rel"><a onclick="openProgram()">← Programa proyectual</a></div>`,'#center-lbl,'+(it.links||[]).map(l=>`#blk-${l},#fl-${l}`).join(','));
+  const g=$('#plate .xlinks');(it.links||[]).forEach(l=>{const f=fieldById(l);if(f)lineCenterTo(f,g)})}
+function openDocs(hl){const D=DATA[V].documentacion||[];
+  showCard(`<div class="kicker">Documentación de producto</div><div class="hrow"><h2>Fuera del núcleo radial</h2></div><div class="q">Identificación, fechas, estado comercial, reconocimientos, embalaje, documentación técnica, patente, repuestos y ciclo de vida. Contexto documental: no describe prestaciones ni identidad.</div>
+    <div class="sec">${D.map(d=>`<div class="det" id="det-${d.id}"><span class="t">${d.id}</span><b>${esc(d.titulo)}</b> — ${esc(d.texto)}<div class="m">${esc(d.estado)} · ${esc(d.confianza)} · ${esc(d.fuente)}${(d.legacy_ids||[]).length?' · '+lpills(d.legacy_ids):''}${(d.ref||[]).map(r=>` · <a onclick="goRef('${r}')">→ ${r}</a>`).join('')}</div></div>`).join('')}</div>
+    <div class="rel"><a onclick="openProgram()">← Programa proyectual</a></div>`,null);
+  if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}}
+/* ---------- V2 · Identidad: modos y elementos ---------- */
+function openIdentityMode(m){if(IMODE===m){IMODE=null;closeCard();return}showIdentityMode(m)}
+function iitemRow(it){return `<div class="pitem" onclick="openIdentityItem('${it.id}')">● ${esc(it.label)}<span class="w">${esc(it.why||it.texto||'')}</span><small>${(it.links||[]).length} campos vinculados${it.anchor?' · ancla '+esc(it.anchor):''} · ${esc(it.estado||'')}</small></div>`}
+function showIdentityMode(m){IMODE=m;drawIdentity();const I=DATA[V].identidad||{},D2=V2().identidad||{},AL=((DATA[V].meta||{}).alcance)||{};let html='';
+  if(m==='objeto'){const d=D2.objeto||{};html=`<div class="kicker">Identidad · <b>Objeto</b></div><div class="hrow"><h2>${esc(d.nombre||'Identidad del objeto')}</h2>${helpBtn('identity','objeto')}</div><div class="q">${esc(d.pregunta||'')}</div>
+    <div class="sec"><div class="kicker">Elementos definitorios · ${(I.objeto||[]).length}</div>${(I.objeto||[]).map(iitemRow).join('')}</div>
+    <div class="sec"><div class="kicker">Alcance</div><div class="human"><p>${esc(AL.objeto||'')}</p><p><small>La selección identitaria es un juicio editorial sobre hechos documentados: cada elemento declara su estado y se sustenta en campos existentes. Un campo J4 no es identitario por su altura.</small></p></div></div>`}
+  else if(m==='familia'){const d=D2.familia||{},F=I.familia||{};const blk=(k,tit)=>F[k]?`<div class="sec"><div class="kicker">${tit}</div><div class="human"><p>${esc(F[k].texto)}</p></div><div class="det"><div class="m">${esc(F[k].estado||'')}${F[k].confianza?' · confianza '+esc(F[k].confianza):''}${F[k].fuente?' · '+esc(F[k].fuente):''}${(F[k].legacy_ids||[]).length?' · '+lpills(F[k].legacy_ids):''}</div></div></div>`:'';
+    html=`<div class="kicker">Identidad · <b>Familia</b></div><div class="hrow"><h2>${esc(d.nombre||'Identidad de familia')}</h2>${helpBtn('identity','familia')}</div><div class="q">${esc(d.pregunta||'')}</div>
+    <div class="sec"><div class="kicker">Comparación disponible</div><div class="human"><p>${esc(F.nota||'')}</p><p>${esc(AL.familia||'')}</p></div></div>${blk('miembros','Miembros')}
+    <div class="sec"><div class="kicker">Invariantes · ${(F.invariantes||[]).length} <small>(en el anillo)</small></div>${(F.invariantes||[]).map(iitemRow).join('')}</div>
+    <div class="sec"><div class="kicker">Variables admitidas · ${(F.variables||[]).length}</div>${(F.variables||[]).map(iitemRow).join('')}</div>
+    ${blk('regla_pertenencia','Regla / límite de pertenencia')}${blk('limites','Límites documentales y comerciales')}${blk('no_realizadas','Variaciones no realizadas')}${blk('descartado','Descartado como invariante')}`}
+  else{const d=D2.marca_coleccion||{},M=I.marca_coleccion||{};html=`<div class="kicker">Afinidad · <b>Marca / Colección</b></div><div class="hrow"><h2>${esc(d.nombre||'Afinidad de marca / colección')}</h2>${helpBtn('identity','marca')}</div><div class="q">${esc(d.pregunta||'')}</div>
+    <div class="sec"><div class="kicker">Referencias</div><div class="human"><p>${(M.referencias||[]).length?esc(M.referencias.join(' · ')):`<span class="pill unk">${esc(M.estado||'pendiente de análisis de colección')}</span>`}</p></div></div>
+    <div class="sec"><div class="kicker">Tipo de relación</div><div class="human"><p>${esc(M.tipo_relacion||'—')}</p></div></div>
+    <div class="sec"><div class="kicker">Elementos de afinidad</div><div class="human"><p>${(M.elementos||[]).length?esc(M.elementos.join(' · ')):'—'}</p></div></div>
+    <div class="sec"><div class="kicker">Por qué queda pendiente</div><div class="human"><p>${esc(M.nota||'')}</p><p>${esc(AL.coleccion||'')}</p></div></div>`}
+  showCard(html,null)}
+function openIdentityItem(id){const it=iitemById(id);if(!it)return;const modo=it.modo||'objeto';if(IMODE!==modo){IMODE=modo;drawIdentity()}const D2=V2().identidad||{};const kind=it.variable?'variable admitida':(modo==='objeto'?'elemento definitorio':'invariante');
+  const links=(it.links||[]).map(l=>{const f=fieldById(l),via=(it.via||{})[l];return `<div class="rel"><a onclick="openFieldId('${l}')"><small>${l}</small>${esc(f?f.name:l)} <small>· ${esc(f?f.zone.name:'')}${it.anchor===l?' · ancla':''}</small></a>${via?`<small><a onclick="goRef('${via}')" style="display:inline">→ ${esc(via)}</a></small>`:''}</div>`}).join('');
+  const roles=(it.roles||[modo]).map(r=>({objeto:'Identidad del objeto',familia:'Identidad de familia'})[r]||r).join(' · ');
+  const prog=(it.programa||[]).map(p=>{const pi=pitemById(p);return `<div class="rel"><span class="tag">${esc(id)} responde a ${esc(p)} <small>(vía sus campos)</small></span><a onclick="openPItem('${p}')"><small>${p}</small>${esc(pi?pi.texto:p)}</a></div>`}).join('');
+  showCard(`<div class="kicker">Identidad · <b>${modo==='objeto'?'Objeto':'Familia'}</b> · ${kind} · ${id}</div><div class="hrow"><h2>${esc(it.label)}</h2>${helpBtn('iitem',id)}</div><div class="q">${esc((D2[modo]||{}).pregunta||'')}</div>
+    <div class="sec"><div class="kicker">Por qué define este nivel de identidad</div><div class="human"><p>${esc(it.why||it.texto||'')}</p></div></div>
+    <div class="sec"><div class="kicker">Se sustenta en · ${(it.links||[]).length}</div>${links}</div>
+    <div class="sec"><div class="kicker">Estado y fuente</div><div class="kv"><b>Estado</b><span>${esc(it.estado||'')}</span><b>Confianza</b><span>${esc(it.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(it.fuente)||'—'}</span>${it.alcance?`<b>Alcance</b><span>${esc(it.alcance)}</span>`:''}<b>Legacy</b><span>${lpills(it.legacy_ids)||'—'}</span></div></div>
+    <div class="sec"><div class="kicker">Relaciones</div><div class="human"><p>${esc(roles)}${it.variable?' · variable admitida (no se dibuja en el anillo)':''}</p></div>${prog}<div class="rel"><a onclick="showIdentityMode('${modo}')">← ${modo==='objeto'?'Identidad del objeto':'Identidad de familia'}</a></div></div>`,
+    (it.links||[]).map(l=>`#blk-${l},#fl-${l}`).join(',')+`,#in-${id},#il-${id},#ilb-${id}`);
+  const g=$('#plate .xlinks'),a=fieldById(it.anchor);if(a)(it.links||[]).filter(l=>l!==it.anchor).forEach(l=>{const f=fieldById(l);if(f)chordBetween(a,f,g)})}
+/* ---------- V2 · legacy V1 (sólo lectura, para auditoría) ---------- */
+function legacyField(id){const L=(DATA[V].legacy||{}).ficha;if(!L)return null;for(const p of L.planes)for(const z of p.zones)for(const f of z.fields)if(f.id===id)return {f,z,p};return null}
+function openLegacy(id){const r=legacyField(id);if(!r)return;const {f,z,p}=r;const df=(DEFS.fields||{})[id]||{};const def=df.definicion||((f.body||'').match(/^_(.+?)_/m)||[])[1]||'';const cov=((DATA[V].legacy||{}).cobertura||{})[id]||[];
+  showCard(`<div class="kicker">Legacy V1 · ${esc(p.name)} · <b>${esc(z.name)}</b> · ${id}</div><div class="hrow"><h2>${esc(f.titular||f.name)}</h2></div><div class="q">${f.titular?`<b>${esc(f.name)}</b> · `:''}${esc(def)}</div>
+    <div class="sec"><div class="kicker">Dato histórico · V1 sin editar</div><div class="val">${esc(f.valor||'—')}</div><div class="kv"><b>Unidad</b><span>${esc(f.unidad||'—')}</span><b>Importancia V1</b><span>${esc(f.importancia||'')} <small>(escala V1, donde J4 se llamaba «identitario»)</small></span><b>Estado</b><span>${esc(f.estado||'')}</span><b>Confianza</b><span>${esc(f.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(f.fuente)||'—'}</span></div></div>
+    ${(f.tags||[]).length?`<div class="sec"><div class="kicker">Etiquetas V1</div><div class="tags">${f.tags.map(t=>`<span>#${esc(t)}</span>`).join('')}</div></div>`:''}
+    <div class="sec"><div class="kicker">Destino en V2 · ${cov.length}</div>${cov.length?cov.map(c=>`<div class="rel"><a onclick="goRef('${c}')"><small>${esc(c)}</small>${esc(/^[A-Z]{2}\d-\d/.test(c)?nameOf(c.split('.')[0]):c)}</a></div>`).join(''):'<div class="human"><p>Sólo en legacy.</p></div>'}</div>
+    <div class="rel"><a onclick="openLegacyPlane('${DATA[V].planes[(DATA[V].legacy.ficha.planes.indexOf(p))]?.id||'make'}')">← Relato V1 del plano</a></div>`,null)}
+function openLegacyPlane(pid){const p=DATA[V].planes.find(x=>x.id===pid)||DATA[V].planes[0];const LP=legacyPlaneOf(p);if(!LP)return;
+  showCard(`<div class="kicker">Legacy V1 · plano</div><div class="hrow"><h2>${esc(cap(LP.name))}</h2></div><div class="q">Relato y campos de la ficha V1 (blob 7f9ff24f…), conservados sin editar para auditoría. Hoy este contenido vive en <a onclick="openPlaneId('${p.id}')" style="cursor:pointer;text-decoration:underline">${esc(cap(p.name))}</a>.</div>
+    <div class="sec"><div class="kicker">Relato V1</div><div class="human">${paras(LP.descripcion)}</div></div>
+    ${LP.zones.map(z=>`<div class="sec"><div class="kicker">${esc(z.num)} · ${esc(z.name)} · ${z.fields.length} campos</div><div class="flist">${z.fields.map(f=>`<div class="f" onclick="openLegacy('${f.id}')"><span class="id">${f.id}</span><span class="n">${esc(f.titular||f.name)}</span><span class="st">${esc(f.importancia)} · ${state(f.estado)}</span></div>`).join('')}</div></div>`).join('')}`,null)}
+function openPlaneId(id){const p=DATA[V].planes.find(x=>x.id===id);if(p)openPlane(p)}
+
+/* ---------- guía: el "?" que explica qué es cada parte (como la guía de ayuda de la cámara) ---------- */
+/* Los textos de la guía salen de DEFS.v2 (api/defs.json), copiados literalmente de la especificación V2 (§5, §6, §7, §8, §9, §12). Donde la especificación no explicita una inclusión/exclusión, se dice. */
+let HELP=null; // {kind,id,html}
+function helpBtn(kind,id){return `<button class="help" title="qué es esto" onclick="event.stopPropagation();toggleHelp('${kind}','${String(id).replace(/'/g,"\\'")}')">?</button>`}
+const unbold=s=>(s||'').replace(/\*\*/g,'');
+function guideHtml(kind,obj){const D=V2();const li=a=>(a||[]).length?`<ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p><small>La especificación no lo explicita.</small></p>';
+  const block=d=>`<div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p></div></div><div class="sec guide"><div class="kicker">Qué pregunta responde</div><div class="human"><p>${esc(d.pregunta||'')}</p></div></div><div class="sec guide"><div class="kicker">Qué incluye</div><div class="human">${li(d.incluye)}</div></div><div class="sec guide"><div class="kicker">Qué no incluye</div><div class="human">${li(d.no_incluye)}${d.no_confundir?`<p><small>No confundir con: ${esc(d.no_confundir)}</small></p>`:''}</div></div>`;
+  const leer=`<div class="sec guide"><div class="kicker">Cómo se lee</div><div class="human"><p>Estado del dato (evidencia): ${esc((D.estados||{}).evidencia?.join(' · ')||'')}. Estado de proyecto (eje aparte, sólo si existe): ${esc((D.estados||{}).proyecto?.join(' · ')||'')}. Confianza: cuánto fiarse. Fuentes: de dónde sale. Importancia J4 clave · J3 determinante · J2 relevante · J1 contextual: es la longitud de la barra; la identidad es una relación explícita del anillo exterior, no una altura.</p></div></div>`;
+  if(kind==='plane'){const p=obj,d=(D.planes||{})[p.id]||{};return `<div class="kicker">Qué es este plano${p.nombre_teorico?` · nombre teórico: ${esc(p.nombre_teorico)}`:''}</div><div class="hrow"><h2>${esc(cap(p.name))}</h2>${helpBtn('plane',p.id)}</div><div class="q">${esc(d.pregunta||'')}</div>
+    <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p><p><small>La tarjeta muestra la lectura humana del caso Hope; esta ayuda explica el concepto.</small></p></div></div>
+    <div class="sec guide"><div class="kicker">Sus zonas y qué se carga en cada una</div>${p.zones.map(z=>{const zd=(D.zones||{})[z.id]||{};return `<div class="def"><b><small>${esc(z.code||'')}</small> ${esc(z.name)} <small>· ${z.fields.length} campos</small></b><i>${esc(zd.pregunta||'')}</i><br>${esc(zd.que_es||'')}</div>`}).join('')}</div>${leer}`}
+  if(kind==='zone'){const z=obj,d=(D.zones||{})[z.id]||{};return `<div class="kicker">Qué es esta zona · ${esc(z.plane.name)} · ${esc(z.code||'')}</div><div class="hrow"><h2>${esc(z.name)}</h2>${helpBtn('zone',z.nodeId)}</div><div class="q">${esc(d.pregunta||'')}</div>
+    <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p></div></div>
+    <div class="sec guide"><div class="kicker">Sus campos, uno por uno</div>${z.fields.map(f=>{const fd=(D.fields||{})[f.id]||{};return `<div class="def"><b><small>${esc(f.code||f.id)}</small> ${esc(f.name)} <small>· J${f.j} ${JWORD[f.j]||''}</small></b><i>${esc(fd.pregunta||'')}</i><br>${esc(fd.que_es||'')}${(fd.incluye||[]).length?`<br><small>Incluye: ${esc(fd.incluye.join(' · '))}</small>`:''}${(fd.no_incluye||[]).length?`<br><small>No incluye: ${esc(fd.no_incluye.join(' · '))}</small>`:''}${fd.no_confundir?`<br><small>No confundir con: ${esc(fd.no_confundir)}</small>`:''}</div>`}).join('')}</div>${leer}`}
+  if(kind==='field'){const f=obj,d=(D.fields||{})[f.id]||{};return `<div class="kicker">Qué es este campo · ${esc(f.plane.name)} · ${esc(f.zone.name)}</div><div class="hrow"><h2>${esc(f.name)}</h2>${helpBtn('field',f.id)}</div><div class="q">${esc(f.code||'')} · ${f.id}</div>${block(d)}
+    <div class="sec guide"><div class="kicker">Importancia</div><div class="human"><p><b>J${f.j} · ${JWORD[f.j]||''}</b>. ${esc(unbold((D.importancia||{}).nota||''))} Un campo puede ser J4 y no pertenecer a Identidad; un elemento identitario puede apoyarse en un campo J3 o J2.</p></div></div>${leer}`}
+  if(kind==='program'){const d=D.programa||{};return `<div class="kicker">Qué es el Programa proyectual</div><div class="hrow"><h2>${esc(d.nombre||'')}</h2>${helpBtn('program','programa')}</div><div class="q">${esc(d.pregunta||'')}</div>
+    <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p><p>${esc(unbold(d.principio))}</p></div></div>
+    <div class="sec guide"><div class="kicker">Sus tres partes</div>${['P1','P2','P3'].map(k=>{const p=(d.partes||{})[k]||{};return `<div class="def"><b><small>${k}</small> ${esc(p.nombre||'')}</b><i>${esc(p.pregunta||'')}</i><br>${esc(p.que_es||'')}<br><small>Incluye: ${esc((p.incluye||[]).join(' · '))}</small><br><small>No incluye: ${esc((p.no_incluye||[]).join(' · '))}</small></div>`}).join('')}</div>
+    <div class="sec guide"><div class="kicker">Relaciones</div><div class="human"><p><b>responde_a</b>: ${esc((D.relaciones||{}).responde_a||'')} Dirección: campo o decisión → ítem del Programa. ${esc((D.relaciones||{}).nota||'')} Un requisito documentado no es una solución validada: el estado de proyecto es un eje aparte del estado de evidencia.</p></div></div>`}
+  if(kind==='pitem'){const k=obj,p=((D.programa||{}).partes||{})[k]||{};return `<div class="kicker">Qué es · Programa proyectual · ${k}</div><div class="hrow"><h2>${esc(p.nombre||'')}</h2>${helpBtn('pitem',k)}</div><div class="q">${esc(p.pregunta||'')}</div>${block(p)}`}
+  if(kind==='identity'||kind==='iitem'){const m=obj.m,d=D.identidad||{},md=d[m==='marca'?'marca_coleccion':m]||{};const secs=md.secciones?Object.entries(md.secciones).map(([k,v])=>`<div class="def"><b>${esc(k)}</b>${Array.isArray(v)?esc(v.join(' · ')):esc(v)}</div>`).join(''):'';
+    return `<div class="kicker">Qué es · Identidad</div><div class="hrow"><h2>${esc(md.nombre||'')}</h2>${helpBtn(kind,kind==='iitem'?obj.id:m)}</div><div class="q">${esc(md.pregunta||'')}</div>
+    <div class="sec guide"><div class="kicker">Qué es la Identidad</div><div class="human"><p>${esc(unbold(d.principio))} ${esc(d.que_es||'')} ${esc(d.no_duplica||'')} ${esc(unbold(d.proyeccion))} Es una lectura transversal: selecciona y conecta campos existentes; no es un lugar donde copiar datos.</p></div></div>
+    <div class="sec guide"><div class="kicker">Qué es este nivel</div><div class="human"><p>${esc(md.que_es||'')}</p>${md.debe_responder?`<p><small>Debe responder:</small></p>${li(md.debe_responder)}`:''}${md.regla?`<p><small>Regla: ${esc(md.regla)}</small></p>`:''}</div></div>
+    ${secs?`<div class="sec guide"><div class="kicker">Secciones de la tarjeta</div>${secs}</div>`:''}
+    <div class="sec guide"><div class="kicker">Relaciones</div><div class="human"><p><b>define</b>: ${esc((D.relaciones||{}).define||'')} Dirección: campo → elemento de Identidad; el ancla angular es uno de los campos vinculados. <b>comparte</b>: ${esc((D.relaciones||{}).comparte||'')} <b>contrasta</b>: ${esc((D.relaciones||{}).contrasta||'')} ${esc((D.relaciones||{}).nota||'')}</p></div></div>`}
+  return ''}
+function toggleHelp(kind,id){const body=$('#cardBody');
+  if(HELP&&HELP.kind===kind&&HELP.id===id){body.innerHTML=HELP.html;HELP=null;$('#card').scrollTop=0;return}
+  let obj=null;if(kind==='plane')obj=DATA[V].planes.find(p=>p.id===id||p.name===id);else if(kind==='zone'){for(const p of DATA[V].planes)for(const z of p.zones)if(z.nodeId===id)obj=z}else if(kind==='field')obj=fieldById(id);else if(kind==='program')obj='programa';else if(kind==='pitem')obj=id;else if(kind==='identity')obj={m:id};else if(kind==='iitem'){const it=iitemById(id);obj=it?{m:it.modo||'objeto',id}:null}
+  if(!obj)return;HELP={kind,id,html:body.innerHTML};body.innerHTML=guideHtml(kind,obj);$('#card').scrollTop=0;const b=body.querySelector('.help');if(b)b.classList.add('on')}
+async function saveComment(ta){const key=ta.dataset.key,label=ta.dataset.label,text=ta.value;const prev=COMMENTS[key]?COMMENTS[key].text:'';if(text===prev)return;
+  const r=await fetch('api/comments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,label,text})});
+  const s=$('#saved');if(!r.ok){s.textContent='no se pudo guardar';return}
+  if(text.trim())COMMENTS[key]={text,label,ts:new Date().toISOString()};else delete COMMENTS[key];s.textContent=text.trim()?'guardado':'borrado'}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCard();closeBase()}});
+function openBase(){$('#base').classList.add('on');renderBase();loadOolJobs();$('#baseQ').focus()}
+function closeBase(){$('#base').classList.remove('on')}
+function renderBase(){const q=($('#baseQ').value||'').toLowerCase();$('#baseN').textContent=LAMPS.length;
+  const groups={};LAMPS.forEach(l=>{const hay=(l.objeto+' '+l.nombre+' '+l.empresa+' '+(l.disenadores||[]).join(' ')+' '+l.anio).toLowerCase();if(q&&!hay.includes(q))return;
+    const keys=GROUP==='empresa'?[l.empresa||'—']:(l.disenadores&&l.disenadores.length?l.disenadores:['—']);keys.forEach(k=>(groups[k]=groups[k]||[]).push(l))});
+  const found=Object.keys(groups).length>0;
+  $('#baseList').innerHTML=Object.keys(groups).sort().map(k=>`<div class="bgrp">${esc(k)}</div>`+groups[k].map(l=>`<div class="bl ${l.id===V?'on':''}" onclick="pick('${l.id.replace(/'/g,"\\'")}')"><img src="img/${esc(l.foto||l.dibujo||'')}" alt=""><div class="n">${esc(l.nombre)}${l.codigo?' <small style="display:inline">'+esc(l.codigo)+'</small>':''}<small>${esc(GROUP==='empresa'?(l.disenadores||[]).join(' + '):l.empresa)}${l.anio?' · '+l.anio:''}${l.existe===false||l.estado_ficha==='proyecto'?' · proyecto':''}</small></div><span class="st">${l.campos} c · ${l.desconocidos} ?</span></div>`).join('')).join('')||'<div class="bgrp">sin resultados</div>';
+  $('#oolCreate').innerHTML=!found&&q?`<div class="ool-actions"><button onclick="startOol('existente')">Pedirle la ficha al experto</button><button onclick="showNewOol()">Proyecto nuevo</button></div><div class="ool-brief" id="oolBrief"><textarea id="oolBriefText" placeholder="Contame en pocas líneas qué objeto querés proyectar, cómo se usa y qué debería lograr."></textarea><button class="ool-send" onclick="startOol('nuevo')">Crear proyecto</button></div>`:''}
+function showNewOol(){$('#oolBrief').classList.add('on');$('#oolBriefText').focus()}
+async function apiPost(url,body){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw new Error(d.error||'no se pudo completar');return d}
+async function startOol(modo){const pedido=$('#baseQ').value.trim(),brief=modo==='nuevo'?($('#oolBriefText')?.value||'').trim():'';if(!pedido)return;$('#oolMsg').textContent='iniciando…';try{await apiPost('api/ool/start',{modo,pedido,brief});$('#oolMsg').textContent='pedido iniciado';await loadOolJobs()}catch(e){$('#oolMsg').textContent=e.message}}
+const stageText=s=>({preparando:'preparando',delegado:'en cola',investigando:'investigando',identificacion_pendiente:'esperando respuestas',completando:'completando',dibujando:'dibujando',verificando:'verificando',segunda_pasada_delegada:'respuestas enviadas',terminado:'listo',error:'error'})[s]||s||'—';
+function renderOolJobs(){const root=$('#oolJobs');root.innerHTML=OOLJOBS.length?OOLJOBS.map(j=>{const qs=(j.preguntas_pendientes||[]);return`<div class="ool-job" data-job="${esc(j.id)}"><div class="ool-job-head"><b>${esc(j.pedido)}</b><span class="stage-label">${esc(stageText(j.etapa))}</span></div>${(j.errores||[]).map(e=>`<div class="err">${esc(e)}</div>`).join('')}${qs.length?`<div class="ool-questions"><ul>${qs.map(q=>`<li>${esc(q)}</li>`).join('')}</ul><textarea id="ans-${esc(j.id)}" placeholder="Respondé acá, indicando a qué pregunta corresponde cada respuesta."></textarea><button class="ool-send" onclick="answerOol('${esc(j.id)}')">Enviar respuestas</button></div>`:''}</div>`}).join(''):'<div class="ool-empty">todavía no hay trabajos</div>'}
+async function refreshLamps(){const [d,ls]=await Promise.all([fetch('api/data.json').then(r=>r.json()),fetch('api/lamps.json').then(r=>r.json())]);DATA=d;LAMPS=ls;renderBase()}
+async function loadOolJobs(){try{const before=OOLJOBS.map(j=>j.id+':'+j.etapa).join('|');OOLJOBS=await fetch('api/ool/jobs.json').then(r=>r.json());renderOolJobs();const after=OOLJOBS.map(j=>j.id+':'+j.etapa).join('|');if(before&&before!==after&&OOLJOBS.some(j=>j.etapa==='terminado'))await refreshLamps()}catch(e){$('#oolJobs').innerHTML='<div class="ool-empty">no se pudieron leer los trabajos</div>'}}
+async function answerOol(id){const ta=document.getElementById('ans-'+id),respuestas=(ta?.value||'').trim();if(!respuestas)return;$('#oolMsg').textContent='enviando respuestas…';try{await apiPost('api/ool/respond',{id,respuestas});$('#oolMsg').textContent='respuestas enviadas';await loadOolJobs()}catch(e){$('#oolMsg').textContent=e.message}}
+function pick(id){V=id;closeCard();render();closeBase();history.replaceState(null,'','#'+encodeURIComponent(id))}
+$('#baseBtn').addEventListener('click',()=>$('#base').classList.contains('on')?closeBase():openBase());
+$('#baseQ').addEventListener('input',renderBase);
+document.querySelectorAll('.seg2 button').forEach(b=>b.addEventListener('click',()=>{GROUP=b.dataset.g;document.querySelectorAll('.seg2 button').forEach(x=>x.classList.toggle('on',x===b));renderBase()}));
+setTheme('fgp');
+setInterval(()=>{if($('#base').classList.contains('on'))loadOolJobs()},5000);
+(async()=>{const [d,c,df,ls]=await Promise.all([fetch('api/data.json').then(r=>r.json()),fetch('api/comments.json').then(r=>r.json()),fetch('api/defs.json').then(r=>r.json()),fetch('api/lamps.json').then(r=>r.json())]);DATA=d;COMMENTS=c;DEFS=df;LAMPS=ls;const h=decodeURIComponent(location.hash.slice(1));V=(h&&DATA[h])?h:(LAMPS[0]||{}).id||Object.keys(DATA)[0];render()})();
+</script>
+<!-- OOL · exportación estática 2026-09-07 17:41 · generada por build_static.py -->
+</body>
+</html>

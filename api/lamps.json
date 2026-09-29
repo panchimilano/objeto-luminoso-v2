@@ -1,0 +1,28 @@
+[
+ {
+  "id": "Hope D66-42 — Luceplan",
+  "objeto": "Hope Suspension D66/42",
+  "nombre": "Hope",
+  "codigo": "D66/42",
+  "empresa": "Luceplan",
+  "disenadores": [
+   "Francisco Gómez Paz",
+   "Paolo Rizzatto"
+  ],
+  "anio": 2009,
+  "existe": true,
+  "estado_ficha": "definitiva",
+  "titulares": [
+   "La hoja-lente Fresnel",
+   "Solape para ocultar la fuente",
+   "Un módulo × 42, tres coronas"
+  ],
+  "dibujo": "hope-dibujo.png",
+  "foto": "hope-foto.jpg",
+  "campos": 23,
+  "desconocidos": 8,
+  "mtime": "2026-09-29T00:00",
+  "carpeta": "01 · Fichas",
+  "schema": "ool-v2.0"
+ }
+]

@@ -1,0 +1,2716 @@
+{
+ "v2": {
+  "programa": {
+   "nombre": "Programa proyectual",
+   "pregunta": "¿Qué quiere lograr este proyecto y qué debe preservar mientras se desarrolla?",
+   "que_es": "El Programa Proyectual reúne la intención central del proyecto antes de separarla en forma, construcción, uso o comunicación. Describe el problema u oportunidad que origina la lámpara, los principios que orientan las decisiones y las condiciones que no deben perderse durante el desarrollo. Puede contener cuestiones técnicas, formales, de uso o comunicativas porque su función es gobernar el proyecto completo. En una lámpara existente puede estar documentado o reconstruido; en una lámpara nueva funciona como punto de partida y se relaciona progresivamente con las soluciones que lo materializan.",
+   "principio": "El Programa no vuelve a escribir toda la solución. Formula una intención, un principio o una condición y **se relaciona** con los campos que posteriormente la resuelven.",
+   "partes": {
+    "P1": {
+     "nombre": "Propósito",
+     "pregunta": "¿Qué problema, necesidad u oportunidad justifica el proyecto?",
+     "que_es": "Describe qué se busca conseguir antes de definir cómo se resolverá. Puede provenir del brief, del cliente, del diseñador o de una oportunidad detectada. Expresa una finalidad o necesidad, no una solución concreta. Debe poder seguir siendo válida aunque la geometría, el material o la tecnología todavía no estén definidos.",
+     "incluye": [
+      "necesidad del proyecto",
+      "objetivo principal",
+      "situación que se quiere transformar",
+      "brief esencial",
+      "oportunidad de diseño"
+     ],
+     "no_incluye": [
+      "la solución constructiva elegida",
+      "la forma final",
+      "el listado de componentes",
+      "una interpretación retrospectiva presentada como hecho si no está documentada"
+     ]
+    },
+    "P2": {
+     "nombre": "Principios rectores",
+     "pregunta": "¿Qué ideas deben orientar las decisiones del proyecto?",
+     "que_es": "Son las ideas conceptuales que organizan el proyecto y permiten evaluar si una decisión es coherente con él. Un principio rector puede relacionar forma, luz, material, uso o comunicación. No describe necesariamente una pieza o tecnología específica: describe la lógica que las futuras soluciones deben respetar.",
+     "incluye": [
+      "tesis proyectual",
+      "idea rectora",
+      "principios de organización",
+      "criterios de comportamiento",
+      "relaciones esenciales que orientan el proyecto"
+     ],
+     "no_incluye": [
+      "toda la historia del proceso",
+      "alternativas descartadas",
+      "especificaciones técnicas que sólo describen una solución puntual"
+     ]
+    },
+    "P3": {
+     "nombre": "Condiciones no negociables",
+     "pregunta": "¿Qué debe cumplirse para que la propuesta siga siendo válida?",
+     "que_es": "Registra restricciones, requisitos e invariantes del proyecto. Una condición puede venir del brief, del uso, de la producción, de la seguridad, de la identidad buscada o de una decisión del diseñador. Debe distinguirse claramente la condición de la solución que intenta cumplirla y de la verificación que demuestra que realmente se cumple.",
+     "incluye": [
+      "restricciones determinantes",
+      "requisitos obligatorios",
+      "invariantes deseados",
+      "límites conocidos",
+      "condiciones de compatibilidad"
+     ],
+     "no_incluye": [
+      "afirmar que una condición está resuelta porque existe una propuesta",
+      "confundir requisito con evidencia",
+      "copiar nuevamente todos los datos técnicos relacionados"
+     ]
+    }
+   }
+  },
+  "planes": {
+   "make": {
+    "name": "CÓMO SE HACE",
+    "nombre_teorico": "SINTAXIS",
+    "pregunta": "¿Qué forma tiene la lámpara, de qué está hecha, cómo se conectan sus partes y cómo produce la luz?",
+    "que_es": "Describe la constitución física de la lámpara. Parte del conjunto, identifica sus componentes, explica las relaciones que los conectan y describe el funcionamiento físico de la luz. No se limita a fabricación: incluye geometría, organización, materiales, procesos, uniones, fuente, alimentación, óptica y resultado luminoso medible o describible."
+   },
+   "use": {
+    "name": "CÓMO SE USA",
+    "nombre_teorico": "PRAGMÁTICA",
+    "pregunta": "¿Cómo participa la lámpara en las actividades de las personas y en el espacio?",
+    "que_es": "Describe la relación entre la luminaria, las personas y la situación de uso. Explica qué actividad acompaña, cómo se sitúa respecto de ella, qué acciones permite y qué aporta finalmente al uso. No vuelve a describir su mecanismo físico ni su significado simbólico."
+   },
+   "say": {
+    "name": "QUÉ COMUNICA",
+    "nombre_teorico": "SEMÁNTICA",
+    "pregunta": "¿Qué reconocemos en esta lámpara, cómo se presenta y qué evoca?",
+    "que_es": "Describe cómo el objeto es reconocido e interpretado. Distingue qué tipo de objeto entendemos que es, qué cualidades aparenta poseer y qué imágenes, referencias o valores puede evocar. Toda interpretación debe conservar su evidencia, atribución o grado de certeza."
+   }
+  },
+  "zones": {
+   "HA1": {
+    "code": "A1",
+    "nombre": "Forma del conjunto",
+    "pregunta": "¿Qué forma tiene y cómo está organizada?",
+    "que_es": "Describe la lámpara como un todo antes de descomponerla en piezas. Registra la forma global que ocupa en el espacio y la regla mediante la cual sus elementos se disponen. Permite describir tanto objetos cerrados como sistemas abiertos, configurables o no modulares."
+   },
+   "HA2": {
+    "code": "A2",
+    "nombre": "Partes",
+    "pregunta": "¿Qué componentes tiene y cómo es cada uno?",
+    "que_es": "Describe cada tipo de componente o subconjunto relevante una sola vez, asociando su función, geometría, material y fabricación. Las piezas repetidas se describen como un tipo con una cantidad. Una misma pieza puede cumplir varias funciones."
+   },
+   "HA3": {
+    "code": "A3",
+    "nombre": "Uniones",
+    "pregunta": "¿Cómo se conectan las partes y qué permiten esas conexiones?",
+    "que_es": "Describe las relaciones físicas entre componentes y entre la lámpara y su entorno. Explica tanto el mecanismo de conexión como lo que esa conexión sostiene, transmite o permite. Evita que el objeto quede reducido a una lista de piezas desconectadas."
+   },
+   "HA4": {
+    "code": "A4",
+    "nombre": "Luz",
+    "pregunta": "¿Cómo genera, transforma y emite la luz?",
+    "que_es": "Explica físicamente el funcionamiento luminoso del objeto desde la fuente y su alimentación hasta la luz que finalmente sale de la luminaria. Separa la generación de energía luminosa, el recorrido óptico y el resultado emitido."
+   },
+   "US1": {
+    "code": "B1",
+    "nombre": "Contexto de uso",
+    "pregunta": "¿En qué situaciones tiene sentido utilizarla?",
+    "que_es": "Sitúa la luminaria en relación con las actividades, las personas y el espacio donde se utiliza."
+   },
+   "US2": {
+    "code": "B2",
+    "nombre": "Interacción",
+    "pregunta": "¿Qué puede hacer la persona con la lámpara y cómo?",
+    "que_es": "Describe las posibilidades de intervención humana sobre el objeto, desde la operación cotidiana hasta acciones ocasionales relevantes."
+   },
+   "US3": {
+    "code": "B3",
+    "nombre": "Resultado de uso",
+    "pregunta": "¿Qué aporta la lámpara a la actividad y al espacio y qué condiciona ese aporte?",
+    "que_es": "Describe qué permite, facilita o aporta la luminaria una vez utilizada, incluyendo tanto la función práctica como la experiencia luminosa relevante. Distingue entre aporte previsto, documentado, observado o validado."
+   },
+   "CO1": {
+    "code": "C1",
+    "nombre": "Qué reconozco",
+    "pregunta": "¿Qué reconozco que es este objeto luminoso?",
+    "que_es": "Sitúa la luminaria dentro del universo conocido de la iluminación antes de describir su carácter o sus asociaciones."
+   },
+   "CO2": {
+    "code": "C2",
+    "nombre": "Cómo se presenta",
+    "pregunta": "¿Qué cualidades aparenta tener el objeto y qué las produce?",
+    "que_es": "Describe cualidades percibidas como pertenecientes al objeto, a alguna de sus partes o a su luz. No pregunta a qué recuerda, sino cómo se presenta."
+   },
+   "CO3": {
+    "code": "C3",
+    "nombre": "Qué evoca",
+    "pregunta": "¿A qué imágenes, referencias o valores remite?",
+    "que_es": "Describe asociaciones que el objeto puede activar más allá de su identificación y carácter inmediato. Pueden ser imágenes, objetos, fenómenos, referencias culturales o valores abstractos."
+   }
+  },
+  "fields": {
+   "HA1-1": {
+    "code": "A1.1",
+    "nombre": "Forma y dimensiones",
+    "pregunta": "¿Qué volumen, superficie o recorrido configura el objeto y cuánto ocupa?",
+    "que_es": "Describe la envolvente o configuración global, sus dimensiones y proporciones relevantes, y su carácter continuo, abierto, perforado o discontinuo. Se refiere al conjunto, no a la geometría de una pieza individual ni a la impresión subjetiva de ligereza o pesadez.",
+    "incluye": [
+     "envolvente",
+     "medidas globales",
+     "proporciones",
+     "vacíos globales",
+     "continuidad/discontinuidad"
+    ],
+    "no_incluye": [
+     "material",
+     "piezas",
+     "proceso productivo",
+     "peso visual"
+    ]
+   },
+   "HA1-2": {
+    "code": "A1.2",
+    "nombre": "Organización y reglas",
+    "pregunta": "¿Cómo se disponen los elementos para producir esa forma?",
+    "que_es": "Describe las relaciones espaciales que ordenan el conjunto: posición, orientación, jerarquía, repetición, simetría, distribución, secuencia y límites de configuración. Puede expresar una regla modular, una distribución no periódica o simplemente una organización singular. No obliga a que toda lámpara tenga una unidad repetida.",
+    "incluye": [
+     "ejes",
+     "simetrías",
+     "repetición",
+     "agregación",
+     "distribución",
+     "parámetros de organización",
+     "reglas de configuración"
+    ],
+    "no_incluye": [
+     "forma local de una pieza",
+     "mecanismo de unión",
+     "significado percibido"
+    ]
+   },
+   "HA2-1": {
+    "code": "A2.1",
+    "nombre": "Piezas y función",
+    "pregunta": "¿Qué piezas o subconjuntos hay, cuántos y qué hace cada uno?",
+    "que_es": "Identifica los componentes físicos del objeto, su cantidad y su papel dentro del sistema. Una pieza puede sostener, posicionar, conducir electricidad, emitir luz, disipar calor, almacenar energía, aislar, filtrar o cumplir varias funciones simultáneamente.",
+    "incluye": [
+     "nombre",
+     "cantidad",
+     "subsistema",
+     "funciones físicas"
+    ],
+    "no_incluye": [
+     "significado simbólico de la pieza",
+     "gesto del usuario",
+     "proceso de fabricación"
+    ]
+   },
+   "HA2-2": {
+    "code": "A2.2",
+    "nombre": "Forma de cada pieza",
+    "pregunta": "¿Qué geometría tiene cada componente y qué detalles la definen?",
+    "que_es": "Describe la geometría local de cada componente: dimensiones, sección, curvas, pliegues, ranuras, relieves, microgeometrías u operaciones necesarias para reconocerlo. Si la pieza cambia de forma durante el montaje, registra el estado inicial y el estado montado.",
+    "incluye": [
+     "geometría local",
+     "sección",
+     "pliegues",
+     "curvaturas",
+     "relieve óptico",
+     "cambios por montaje"
+    ],
+    "no_incluye": [
+     "forma global del objeto",
+     "material aparente",
+     "proceso industrial supuesto"
+    ]
+   },
+   "HA2-3": {
+    "code": "A2.3",
+    "nombre": "Material, acabado y fabricación",
+    "pregunta": "¿De qué está hecha la pieza, qué terminación tiene y cómo se obtiene?",
+    "que_es": "Registra el material real, el acabado o color relevante y el proceso productivo documentado de cada componente. Debe mantener separados material, apariencia y proceso: una forma compatible con extrusión, inyección o mecanizado no demuestra que ese haya sido el proceso utilizado.",
+    "incluye": [
+     "material real",
+     "acabado",
+     "color técnico",
+     "tratamiento superficial",
+     "proceso conocido",
+     "secuencia productiva crítica"
+    ],
+    "no_incluye": [
+     "material que sólo parece tener",
+     "metáforas materiales",
+     "proceso inferido sin evidencia"
+    ]
+   },
+   "HA3-1": {
+    "code": "A3.1",
+    "nombre": "Qué se une y cómo",
+    "pregunta": "¿Qué elementos se vinculan y mediante qué solución?",
+    "que_es": "Identifica los dos extremos de cada unión, el tipo de vínculo, el sistema de fijación, la posibilidad de separación y, cuando sea relevante, la secuencia de montaje. Incluye también la unión al techo, pared, suelo, mueble o superficie de apoyo.",
+    "incluye": [
+     "encastre",
+     "clip",
+     "tornillo",
+     "soldadura",
+     "adhesivo",
+     "apoyo",
+     "tensor",
+     "anclaje",
+     "montaje y desmontaje"
+    ],
+    "no_incluye": [
+     "una proximidad sin contacto",
+     "una asociación visual o un gesto de uso"
+    ]
+   },
+   "HA3-2": {
+    "code": "A3.2",
+    "nombre": "Qué sostienen, transmiten o permiten",
+    "pregunta": "¿Qué papel físico cumple cada conexión?",
+    "que_es": "Explica qué circula o qué comportamiento hace posible la unión: carga, electricidad, señal, calor o movimiento. También describe cómo el conjunto mantiene su forma y qué libertades o restricciones mecánicas existen.",
+    "incluye": [
+     "soporte",
+     "carga",
+     "conducción eléctrica",
+     "señal",
+     "calor",
+     "giro",
+     "deslizamiento",
+     "bloqueo",
+     "rigidez o deformación relevante"
+    ],
+    "no_incluye": [
+     "el gesto de la persona para utilizarla",
+     "la experiencia de uso o el circuito óptico completo"
+    ]
+   },
+   "HA4-1": {
+    "code": "A4.1",
+    "nombre": "Fuente y alimentación",
+    "pregunta": "¿Qué genera la luz y cómo recibe energía?",
+    "que_es": "Describe la fuente o fuentes luminosas, su cantidad y ubicación, y el sistema que las alimenta: red, batería, driver, fuente de alimentación, conexiones y arquitectura de control. Distingue fuente integrada de reemplazable y fuente de energía de fuente luminosa.",
+    "incluye": [
+     "LED",
+     "bombilla",
+     "módulo",
+     "cantidad",
+     "ubicación",
+     "driver",
+     "batería",
+     "tensión",
+     "alimentación",
+     "canales de control"
+    ],
+    "no_incluye": [
+     "gesto del usuario sobre el control ni resultado fotométrico final"
+    ]
+   },
+   "HA4-2": {
+    "code": "A4.2",
+    "nombre": "Recorrido y transformación",
+    "pregunta": "¿Qué le ocurre a la luz desde que se genera hasta que sale?",
+    "que_es": "Describe de forma causal qué elementos interceptan o conducen la luz y qué operación realizan: reflexión, refracción, difusión, transmisión, absorción, filtrado, guía o apantallamiento. Puede haber varios recorridos simultáneos.",
+    "incluye": [
+     "ópticas",
+     "reflectores",
+     "difusores",
+     "lentes",
+     "guías de luz",
+     "apantallamientos y trayectos"
+    ],
+    "no_incluye": [
+     "sólo una lista de verbos ópticos sin relación causal ni la interpretación simbólica del efecto"
+    ]
+   },
+   "HA4-3": {
+    "code": "A4.3",
+    "nombre": "Luz emitida",
+    "pregunta": "¿Qué luz entrega físicamente el objeto?",
+    "que_es": "Registra el resultado luminoso del conjunto o de una configuración concreta: dirección, apertura, flujo, distribución, temperatura de color, reproducción cromática y otras magnitudes disponibles. Todo valor debe estar asociado a una variante y condición de referencia.",
+    "incluye": [
+     "fotometría",
+     "dirección",
+     "reparto",
+     "apertura",
+     "flujo",
+     "CCT",
+     "CRI",
+     "estados físicos de emisión"
+    ],
+    "no_incluye": [
+     "si la luz sirve para leer, si resulta agradable o si comunica intimidad"
+    ]
+   },
+   "US1-1": {
+    "code": "B1.1",
+    "nombre": "Actividad",
+    "pregunta": "¿Qué actividad acompaña, para quién y qué necesita esa actividad de la luz?",
+    "que_es": "Registra la actividad o actividades relevantes y, cuando sea necesario, las características de las personas que modifican esa necesidad. Describe la demanda de la actividad sin afirmar todavía que la lámpara la satisface.",
+    "incluye": [
+     "leer",
+     "trabajar",
+     "comer",
+     "conversar",
+     "circular",
+     "descansar",
+     "contemplar",
+     "orientarse y necesidades asociadas"
+    ],
+    "no_incluye": [
+     "resultado garantizado",
+     "fotometría ni tipología"
+    ]
+   },
+   "US1-2": {
+    "code": "B1.2",
+    "nombre": "Relación espacial",
+    "pregunta": "¿Cómo se sitúa la lámpara respecto de las personas, la actividad y aquello que ilumina?",
+    "que_es": "Describe la relación espacial de uso: proximidad, altura, distancia, posición respecto del usuario, superficie o zona atendida y tipo general de ámbito cuando resulte relevante.",
+    "incluye": [
+     "junto al usuario",
+     "sobre una mesa",
+     "frente a una pared",
+     "en un recorrido",
+     "en el centro de un espacio"
+    ],
+    "no_incluye": [
+     "clasificación tipológica ni geometría constructiva del anclaje"
+    ]
+   },
+   "US2-1": {
+    "code": "B2.1",
+    "nombre": "Acciones posibles",
+    "pregunta": "¿Qué puede hacer una persona para utilizar, adaptar o mantener disponible la lámpara?",
+    "que_es": "Registra las acciones que la luminaria permite o requiere: encender, apagar, atenuar, orientar, desplazar, transportar, configurar, montar, recargar, limpiar o sustituir un elemento. Puede indicarse quién realiza la acción cuando sea importante.",
+    "incluye": [
+     "acción + actor cuando corresponde"
+    ],
+    "no_incluye": [
+     "descripción mecánica detallada de la unión o mecanismo"
+    ]
+   },
+   "US2-2": {
+    "code": "B2.2",
+    "nombre": "Modo de operación",
+    "pregunta": "¿Cómo se realiza cada acción y qué respuesta obtiene la persona?",
+    "que_es": "Relaciona cada acción con el control, gesto o procedimiento que la ejecuta y con la respuesta inmediata del objeto. Incluye feedback y límites de la operación cuando sean relevantes.",
+    "incluye": [
+     "botón",
+     "dimmer",
+     "sensor",
+     "app",
+     "agarre",
+     "giro",
+     "clic",
+     "indicador",
+     "respuesta"
+    ],
+    "no_incluye": [
+     "arquitectura eléctrica interna ni una evaluación completa de usabilidad"
+    ]
+   },
+   "US3-1": {
+    "code": "B3.1",
+    "nombre": "Aporte al uso",
+    "pregunta": "¿Qué permite, facilita o aporta esta lámpara?",
+    "que_es": "Registra la contribución del objeto a la actividad o a la situación: hacer visible una superficie, acompañar una estancia, orientar un recorrido, destacar un objeto, crear una zona de luz, permitir reconfiguración o aportar una experiencia luminosa concreta.",
+    "incluye": [
+     "resultados funcionales y experienciales de uso"
+    ],
+    "no_incluye": [
+     "mecanismo físico que los produce ni significado simbólico"
+    ]
+   },
+   "US3-2": {
+    "code": "B3.2",
+    "nombre": "Condiciones y límites relevantes",
+    "pregunta": "¿Qué debe cumplirse para obtener ese aporte y qué limita su utilización?",
+    "que_es": "Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas.",
+    "incluye": [
+     "condiciones de uso y límites reales"
+    ],
+    "no_incluye": [
+     "una lista preventiva de problemas hipotéticos sin evidencia"
+    ]
+   },
+   "CO1-1": {
+    "code": "C1.1",
+    "nombre": "Tipología",
+    "pregunta": "¿Qué tipo de luminaria es por su manera fundamental de existir en el espacio?",
+    "que_es": "Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas.",
+    "incluye": [],
+    "no_incluye": [],
+    "no_confundir": "arquetipo, función de uso o geometría."
+   },
+   "CO1-2": {
+    "code": "C1.2",
+    "nombre": "Arquetipo",
+    "pregunta": "¿Con qué modelo históricamente reconocible del mundo de la iluminación se relaciona?",
+    "que_es": "Identifica una configuración cultural y técnica consolidada, como chandelier, abat-jour, arco, lámpara de trabajo articulada, farol, spot o riel electrificado. Puede quedar `pendiente / no identificado` si no existe evidencia suficiente.",
+    "incluye": [],
+    "no_incluye": [],
+    "no_confundir": "metáforas naturales como flor, eclipse o nube."
+   },
+   "CO1-3": {
+    "code": "C1.3",
+    "nombre": "Relación con el arquetipo",
+    "pregunta": "¿Qué conserva y qué transforma del modelo reconocido?",
+    "que_es": "Explica cómo el proyecto se posiciona respecto del arquetipo: continuidad, reinterpretación, hibridación o transformación. Debe indicar brevemente qué conserva y qué cambia, evitando etiquetas vacías.",
+    "incluye": [],
+    "no_incluye": []
+   },
+   "CO2-1": {
+    "code": "C2.1",
+    "nombre": "Cualidades que transmite",
+    "pregunta": "¿Qué cualidades aparenta poseer el objeto, sus partes o su luz?",
+    "que_es": "Registra las cualidades dominantes relevantes: ligera, pesada, precisa, delicada, robusta, técnica, orgánica, austera, compleja, silenciosa, monumental, etc. Las cualidades deben tener un sujeto claro: conjunto, pieza, luz o estado.",
+    "incluye": [],
+    "no_incluye": []
+   },
+   "CO2-2": {
+    "code": "C2.2",
+    "nombre": "Rasgos que las explican",
+    "pregunta": "¿Qué rasgos visibles, materiales o luminosos sustentan cada cualidad?",
+    "que_es": "Vincula la interpretación expresiva con evidencias observables: transparencia, espesor, vacío, repetición, acabado, detalle, continuidad, contraste, encendido/apagado o punto de vista. Fundamenta una lectura sin convertirla en verdad universal.",
+    "incluye": [],
+    "no_incluye": []
+   },
+   "CO3-1": {
+    "code": "C3.1",
+    "nombre": "Asociaciones y valores",
+    "pregunta": "¿A qué imágenes, referencias o valores remite?",
+    "que_es": "Registra asociaciones como flor, joya, cielo, herramienta, correa, celebración, intimidad, libertad, tradición o tecnología cuando estén sustentadas. Debe distinguir una interpretación nuestra de una referencia documentada del autor o la marca.",
+    "incluye": [],
+    "no_incluye": []
+   },
+   "CO3-2": {
+    "code": "C3.2",
+    "nombre": "Rasgos que las explican",
+    "pregunta": "¿Qué rasgos producen esa asociación o qué referencia documentada la respalda?",
+    "que_es": "Relaciona cada asociación con sus evidencias: forma, material, luz, comportamiento, detalle, contexto o fuente autoral. Una asociación sin sustento suficiente debe mantenerse como hipótesis.",
+    "incluye": [],
+    "no_incluye": []
+   }
+  },
+  "identidad": {
+   "nombre": "Identidad",
+   "principio": "La Identidad **no es un cuarto plano radial**.",
+   "que_es": "Es una capa transversal externa que señala cuáles de los campos de la ficha son definitorios.",
+   "no_duplica": "La identidad no duplica datos.",
+   "proyeccion": "La identidad es una **proyección** del dato hacia el exterior.",
+   "objeto": {
+    "nombre": "Identidad del objeto",
+    "kicker": "IDENTIDAD · OBJETO",
+    "pregunta": "¿Qué conjunto mínimo de decisiones hace que este diseño siga siendo este diseño?",
+    "que_es": "Selecciona los pocos elementos del proyecto que resultan definitorios para reconocer su singularidad. Pueden pertenecer a Cómo se hace, Cómo se usa o Qué comunica. No equivale a “los datos más importantes” ni a una lista de todos los rasgos de la lámpara: identifica aquello cuya alteración comprometería la identidad específica del diseño.",
+    "debe_responder": [
+     "qué lo hace único",
+     "qué no debería perderse",
+     "qué campos concretos de la ficha sostienen esa afirmación"
+    ],
+    "regla": "3–6 elementos, salvo justificación excepcional."
+   },
+   "familia": {
+    "nombre": "Identidad de familia",
+    "kicker": "IDENTIDAD · FAMILIA",
+    "pregunta": "¿Qué debe permanecer para que distintas variantes sigan perteneciendo a la misma familia y qué puede cambiar?",
+    "que_es": "Extrae los invariantes que mantienen la continuidad de una familia y las variables que permiten extenderla sin perder pertenencia. Se construye comparando miembros de la familia y relacionando sus rasgos comunes con los campos originales de cada ficha. No es un simple listado comercial de variantes.",
+    "secciones": {
+     "invariantes": "Elementos cuya permanencia sostiene la identidad familiar.",
+     "variables": "Aspectos que pueden cambiar entre versiones sin romper la pertenencia.",
+     "regla": "Explicación breve de cuándo una variante empieza a dejar de pertenecer a la familia."
+    }
+   },
+   "marca_coleccion": {
+    "nombre": "Afinidad de marca / colección",
+    "kicker": "AFINIDAD · MARCA / COLECCIÓN",
+    "pregunta": "¿Con qué otras familias o colecciones debe dialogar este proyecto y mediante qué elementos?",
+    "que_es": "Describe la relación buscada o reconocida entre el proyecto y otras colecciones de una marca. La afinidad no significa necesariamente semejanza: puede ser continuidad, complementariedad, contraste deliberado o neutralidad. Cada afinidad debe explicarse mediante elementos concretos de la ficha, no con adjetivos genéricos.",
+    "secciones": {
+     "referencias": "Familias, colecciones o productos con los que se establece la relación.",
+     "tipo": [
+      "continuidad",
+      "complementariedad",
+      "contraste deliberado",
+      "neutralidad",
+      "otro, explicado"
+     ],
+     "elementos": [
+      "forma",
+      "material",
+      "luz",
+      "escala",
+      "uso",
+      "arquetipo",
+      "expresión",
+      "detalle"
+     ]
+    },
+    "regla": "no inferir identidad de marca a partir de una sola lámpara. Si el corpus de la marca es insuficiente, mostrar `pendiente de análisis`."
+   }
+  },
+  "importancia": {
+   "4": "clave",
+   "3": "determinante",
+   "2": "relevante",
+   "1": "contextual",
+   "nota": "`Identitario` deja de ser un nivel de importancia."
+  },
+  "estados": {
+   "evidencia": [
+    "documentado",
+    "observado",
+    "inferido",
+    "interpretado",
+    "desconocido",
+    "conflicto"
+   ],
+   "proyecto": [
+    "requisito",
+    "propuesta",
+    "definido",
+    "validado"
+   ],
+   "nota": "Este segundo estado no debe reemplazar el estado de evidencia."
+  },
+  "relaciones": {
+   "responde_a": "Un campo desarrolla o resuelve un ítem del Programa Proyectual.",
+   "permite": "Una decisión física permite un comportamiento o capacidad.",
+   "produce": "Una condición o solución produce un efecto físico, de uso o perceptivo.",
+   "define": "Un campo participa en un elemento de Identidad.",
+   "comparte": "Un rasgo se comparte con otra variante/familia/colección.",
+   "contrasta": "Un rasgo establece una diferencia deliberada respecto de otra colección.",
+   "nota": "No deducir estas relaciones automáticamente por compartir tags."
+  },
+  "direccion": {
+   "responde_a": [
+    "campo",
+    "programa"
+   ],
+   "permite": [
+    "campo",
+    "campo"
+   ],
+   "produce": [
+    "campo",
+    "campo"
+   ],
+   "define": [
+    "campo",
+    "identidad"
+   ],
+   "comparte": [
+    "identidad",
+    "externo"
+   ],
+   "contrasta": [
+    "identidad",
+    "externo"
+   ]
+  }
+ },
+ "fields": {
+  "O1-1": {
+   "nombre": "Nombre y código",
+   "definicion": "Nombre comercial y código de catálogo.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Identidad",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Nombre comercial y código de catálogo.",
+   "links": [],
+   "zona": "O1"
+  },
+  "O1-2": {
+   "nombre": "Fabricante y autores",
+   "definicion": "Quién la produce y quién la diseñó.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Identidad",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Quién la produce y quién la diseñó.",
+   "links": [],
+   "zona": "O1"
+  },
+  "O1-3": {
+   "nombre": "Fecha",
+   "definicion": "Cuándo se presentó y cuánto duró el desarrollo.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Identidad",
+   "unidad": "año",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cuándo se presentó y cuánto duró el desarrollo.",
+   "links": [],
+   "zona": "O1"
+  },
+  "O1-4": {
+   "nombre": "Variante descrita",
+   "definicion": "La versión exacta: medidas, cantidad de módulos, fuente, mercado.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Identidad",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "La versión exacta: medidas, cantidad de módulos, fuente, mercado.",
+   "links": [],
+   "zona": "O1"
+  },
+  "O1-5": {
+   "nombre": "Estado",
+   "definicion": "En qué punto de su vida comercial está.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Identidad",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "concepto",
+     "e": "canónico"
+    },
+    {
+     "t": "prototipo",
+     "e": "canónico"
+    },
+    {
+     "t": "producción",
+     "e": "canónico"
+    },
+    {
+     "t": "catálogo",
+     "e": "canónico"
+    },
+    {
+     "t": "discontinuada",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "En qué punto de su vida comercial está.",
+   "links": [],
+   "zona": "O1"
+  },
+  "O1-6": {
+   "nombre": "Premios y reconocimiento",
+   "definicion": "Reconocimientos que sitúan la pieza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Identidad",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Reconocimientos que sitúan la pieza.",
+   "links": [],
+   "zona": "O1"
+  },
+  "O2-1": {
+   "nombre": "Modo de instalación",
+   "definicion": "Cómo se fija al espacio.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Tipología",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "suspensión",
+     "e": "canónico"
+    },
+    {
+     "t": "techo",
+     "e": "canónico"
+    },
+    {
+     "t": "pared",
+     "e": "canónico"
+    },
+    {
+     "t": "pie",
+     "e": "canónico"
+    },
+    {
+     "t": "mesa",
+     "e": "canónico"
+    },
+    {
+     "t": "portátil",
+     "e": "canónico"
+    },
+    {
+     "t": "empotrada",
+     "e": "canónico"
+    },
+    {
+     "t": "riel/spot",
+     "e": "canónico"
+    },
+    {
+     "t": "exterior",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Cómo se fija al espacio.",
+   "links": [],
+   "zona": "O2"
+  },
+  "O2-2": {
+   "nombre": "Configuración",
+   "definicion": "Pieza única, conjunto de módulos o sistema.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Tipología",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "única",
+     "e": "canónico"
+    },
+    {
+     "t": "modular",
+     "e": "canónico"
+    },
+    {
+     "t": "sistema configurable",
+     "e": "canónico"
+    },
+    {
+     "t": "composición apilable",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Pieza única, conjunto de módulos o sistema.",
+   "links": [],
+   "zona": "O2"
+  },
+  "O2-3": {
+   "nombre": "Clase de luz",
+   "definicion": "Para qué tipo de iluminación está hecha.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Tipología",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "ambiente",
+     "e": "canónico"
+    },
+    {
+     "t": "tarea",
+     "e": "canónico"
+    },
+    {
+     "t": "acento",
+     "e": "canónico"
+    },
+    {
+     "t": "decorativa/presencia",
+     "e": "canónico"
+    },
+    {
+     "t": "señal",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Para qué tipo de iluminación está hecha.",
+   "links": [],
+   "zona": "O2"
+  },
+  "O3-1": {
+   "nombre": "Pedido de origen",
+   "definicion": "Qué se pidió y quién.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lógica del proyecto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué se pidió y quién.",
+   "links": [],
+   "zona": "O3"
+  },
+  "O3-2": {
+   "nombre": "Tesis",
+   "definicion": "La idea central en una frase.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lógica del proyecto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "La idea central en una frase.",
+   "links": [],
+   "zona": "O3"
+  },
+  "O3-3": {
+   "nombre": "Invención clave",
+   "definicion": "La solución técnica sin la cual no existe.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lógica del proyecto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "La solución técnica sin la cual no existe.",
+   "links": [],
+   "zona": "O3"
+  },
+  "O3-4": {
+   "nombre": "Restricción que definió la forma",
+   "definicion": "La condición no negociable.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lógica del proyecto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "La condición no negociable.",
+   "links": [],
+   "zona": "O3"
+  },
+  "O3-5": {
+   "nombre": "Camino descartado",
+   "definicion": "Qué se intentó y se abandonó.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lógica del proyecto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué se intentó y se abandonó.",
+   "links": [],
+   "zona": "O3"
+  },
+  "O3-6": {
+   "nombre": "Fijo y variable",
+   "definicion": "Qué no cambia y qué se parametriza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lógica del proyecto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué no cambia y qué se parametriza.",
+   "links": [],
+   "zona": "O3"
+  },
+  "O3-7": {
+   "nombre": "Referentes",
+   "definicion": "De dónde vino la inspiración, como lógica.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lógica del proyecto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "De dónde vino la inspiración, como lógica.",
+   "links": [],
+   "zona": "O3"
+  },
+  "O4-1": {
+   "nombre": "Medidas y volumen",
+   "definicion": "Ancho, alto y altura de montaje.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "El conjunto",
+   "unidad": "cm",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Ancho, alto y altura de montaje.",
+   "links": [],
+   "zona": "O4"
+  },
+  "O4-2": {
+   "nombre": "Forma global",
+   "definicion": "La envolvente que dibuja el conjunto.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "El conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "esfera",
+     "e": "canónico"
+    },
+    {
+     "t": "esferoide",
+     "e": "canónico"
+    },
+    {
+     "t": "disco",
+     "e": "canónico"
+    },
+    {
+     "t": "cilindro",
+     "e": "canónico"
+    },
+    {
+     "t": "toroide",
+     "e": "canónico"
+    },
+    {
+     "t": "lineal",
+     "e": "canónico"
+    },
+    {
+     "t": "irregular",
+     "e": "canónico"
+    },
+    {
+     "t": "poliedro",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "La envolvente que dibuja el conjunto.",
+   "links": [],
+   "zona": "O4"
+  },
+  "O4-3": {
+   "nombre": "Proporción",
+   "definicion": "Relación entre las medidas y en la familia.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "El conjunto",
+   "unidad": "razón",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Relación entre las medidas y en la familia.",
+   "links": [],
+   "zona": "O4"
+  },
+  "O4-4": {
+   "nombre": "Eje y simetría",
+   "definicion": "Alrededor de qué se ordena.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "El conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Alrededor de qué se ordena.",
+   "links": [],
+   "zona": "O4"
+  },
+  "O4-5": {
+   "nombre": "Apertura",
+   "definicion": "Qué tan cerrado o permeable es.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "El conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "cerrado",
+     "e": "canónico"
+    },
+    {
+     "t": "semiabierto",
+     "e": "canónico"
+    },
+    {
+     "t": "abierto/permeable",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Qué tan cerrado o permeable es.",
+   "links": [],
+   "zona": "O4"
+  },
+  "O4-6": {
+   "nombre": "Peso",
+   "definicion": "Peso montada.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "El conjunto",
+   "unidad": "kg",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Peso montada.",
+   "links": [],
+   "zona": "O4"
+  },
+  "O4-7": {
+   "nombre": "Huecos",
+   "definicion": "Vacíos y holguras del conjunto.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "El conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Vacíos y holguras del conjunto.",
+   "links": [],
+   "zona": "O4"
+  },
+  "O5-1": {
+   "nombre": "Inventario",
+   "definicion": "Tipos de pieza con cantidad, material y proceso.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "lista",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Tipos de pieza con cantidad, material y proceso.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O5-2": {
+   "nombre": "Subsistemas",
+   "definicion": "Cómo se agrupan.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se agrupan.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O5-3": {
+   "nombre": "Función de cada parte",
+   "definicion": "Qué hace cada tipo de pieza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué hace cada tipo de pieza.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O5-4": {
+   "nombre": "Uniones",
+   "definicion": "Cómo se une cada parte y si es reversible.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "encastre/clip",
+     "e": "canónico"
+    },
+    {
+     "t": "rosca",
+     "e": "canónico"
+    },
+    {
+     "t": "tornillo",
+     "e": "canónico"
+    },
+    {
+     "t": "pegado",
+     "e": "canónico"
+    },
+    {
+     "t": "soldado",
+     "e": "canónico"
+    },
+    {
+     "t": "cable",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Cómo se une cada parte y si es reversible.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O5-5": {
+   "nombre": "Qué circula",
+   "definicion": "Qué pasa por cada unión.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué pasa por cada unión.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O5-6": {
+   "nombre": "Da forma / sostiene",
+   "definicion": "Qué conforma y qué sólo sostiene.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué conforma y qué sólo sostiene.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O5-7": {
+   "nombre": "Montaje",
+   "definicion": "Orden de armado, quién lo hace y con qué.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Orden de armado, quién lo hace y con qué.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O5-8": {
+   "nombre": "Acceso y recambio",
+   "definicion": "Cómo se llega a las partes.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Partes y uniones",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se llega a las partes.",
+   "links": [],
+   "zona": "O5"
+  },
+  "O6-1": {
+   "nombre": "Constitución en una frase",
+   "definicion": "La forma entera en una oración.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Forma generada",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "La forma entera en una oración.",
+   "links": [],
+   "zona": "O6"
+  },
+  "O6-2": {
+   "nombre": "Pieza base y su operación",
+   "definicion": "Qué operación produce la unidad que se repite.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Forma generada",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué operación produce la unidad que se repite.",
+   "links": [],
+   "zona": "O6"
+  },
+  "O6-3": {
+   "nombre": "Ley de agregación",
+   "definicion": "Cómo se repite y organiza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Forma generada",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se repite y organiza.",
+   "links": [],
+   "zona": "O6"
+  },
+  "O6-4": {
+   "nombre": "Condición de agregación",
+   "definicion": "Qué deben cumplir las piezas para agregarse.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Forma generada",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué deben cumplir las piezas para agregarse.",
+   "links": [],
+   "zona": "O6"
+  },
+  "O6-5": {
+   "nombre": "Parámetros",
+   "definicion": "Los números que gobiernan la forma.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Forma generada",
+   "unidad": "lista",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Los números que gobiernan la forma.",
+   "links": [],
+   "zona": "O6"
+  },
+  "O6-6": {
+   "nombre": "Terminaciones y excepciones",
+   "definicion": "Cómo termina la forma y qué excepciones hay.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Forma generada",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo termina la forma y qué excepciones hay.",
+   "links": [],
+   "zona": "O6"
+  },
+  "O7-1": {
+   "nombre": "Material real por parte",
+   "definicion": "De qué es cada pieza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "De qué es cada pieza.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O7-2": {
+   "nombre": "Material aparente",
+   "definicion": "De qué parece hecha.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "De qué parece hecha.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O7-3": {
+   "nombre": "Acabado",
+   "definicion": "Terminación superficial.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Terminación superficial.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O7-4": {
+   "nombre": "Proceso por parte",
+   "definicion": "Cómo se fabrica cada pieza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se fabrica cada pieza.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O7-5": {
+   "nombre": "Capacidad que lo hace posible",
+   "definicion": "La herramienta sin la cual no existiría.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "La herramienta sin la cual no existiría.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O7-6": {
+   "nombre": "Rigidez",
+   "definicion": "Qué tan rígida es y de dónde sale.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué tan rígida es y de dónde sale.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O7-7": {
+   "nombre": "Espesores y masa",
+   "definicion": "Espesores y peso de las partes.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "mm / kg",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Espesores y peso de las partes.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O7-8": {
+   "nombre": "Envejecimiento y reparación",
+   "definicion": "Cómo envejece y qué se repara.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Materia y fabricación",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo envejece y qué se repara.",
+   "links": [],
+   "zona": "O7"
+  },
+  "O8-1": {
+   "nombre": "Fuente",
+   "definicion": "Tipo, cantidad y potencia.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Tipo, cantidad y potencia.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-2": {
+   "nombre": "Lo que depende de la lámpara",
+   "definicion": "Qué se elige al pedir, no en uso.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué se elige al pedir, no en uso.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-3": {
+   "nombre": "Flujo medido y rendimiento",
+   "definicion": "Cuánta luz sale realmente.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "lm",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cuánta luz sale realmente.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-4": {
+   "nombre": "Reparto medido",
+   "definicion": "Hacia dónde va la luz, con números.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "cd",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Hacia dónde va la luz, con números.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-5": {
+   "nombre": "Óptica de la pieza",
+   "definicion": "Qué hace la pieza con la luz.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "difunde",
+     "e": "canónico"
+    },
+    {
+     "t": "refracta",
+     "e": "canónico"
+    },
+    {
+     "t": "refleja",
+     "e": "canónico"
+    },
+    {
+     "t": "dirige",
+     "e": "canónico"
+    },
+    {
+     "t": "apantalla",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Qué hace la pieza con la luz.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-6": {
+   "nombre": "Recorrido de la luz",
+   "definicion": "De la fuente al ambiente.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "De la fuente al ambiente.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-7": {
+   "nombre": "Deslumbramiento",
+   "definicion": "Cómo evita ver la fuente.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo evita ver la fuente.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-8": {
+   "nombre": "Alimentación y control",
+   "definicion": "Cómo se alimenta y controla.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "V",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se alimenta y controla.",
+   "links": [],
+   "zona": "O8"
+  },
+  "O8-9": {
+   "nombre": "Fotometría disponible",
+   "definicion": "Archivo oficial.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Luz física",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Archivo oficial.",
+   "links": [],
+   "zona": "O8"
+  },
+  "U1-1": {
+   "nombre": "Ámbito y espacio",
+   "definicion": "Dónde se usa y en qué tipo de espacio.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Dónde y para qué",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "residencial",
+     "e": "canónico"
+    },
+    {
+     "t": "hospitality",
+     "e": "canónico"
+    },
+    {
+     "t": "retail",
+     "e": "canónico"
+    },
+    {
+     "t": "oficina",
+     "e": "canónico"
+    },
+    {
+     "t": "público",
+     "e": "canónico"
+    },
+    {
+     "t": "exterior",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Dónde se usa y en qué tipo de espacio.",
+   "links": [],
+   "zona": "U1"
+  },
+  "U1-2": {
+   "nombre": "Escala y altura",
+   "definicion": "A qué distancia se mira y a qué altura cuelga.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Dónde y para qué",
+   "unidad": "m",
+   "primario": "",
+   "vocab": [],
+   "lectura": "A qué distancia se mira y a qué altura cuelga.",
+   "links": [],
+   "zona": "U1"
+  },
+  "U1-3": {
+   "nombre": "Quién y desde dónde",
+   "definicion": "Quiénes intervienen y desde dónde la miran.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Dónde y para qué",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Quiénes intervienen y desde dónde la miran.",
+   "links": [],
+   "zona": "U1"
+  },
+  "U1-4": {
+   "nombre": "Actividad que acompaña",
+   "definicion": "Qué hacen las personas con esa luz.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Dónde y para qué",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "estar",
+     "e": "canónico"
+    },
+    {
+     "t": "comer",
+     "e": "canónico"
+    },
+    {
+     "t": "recibir",
+     "e": "canónico"
+    },
+    {
+     "t": "trabajar",
+     "e": "canónico"
+    },
+    {
+     "t": "leer",
+     "e": "canónico"
+    },
+    {
+     "t": "circular",
+     "e": "canónico"
+    },
+    {
+     "t": "contemplar",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Qué hacen las personas con esa luz.",
+   "links": [],
+   "zona": "U1"
+  },
+  "U1-5": {
+   "nombre": "Qué le pide la actividad a la luz",
+   "definicion": "Requisitos de la actividad.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Dónde y para qué",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Requisitos de la actividad.",
+   "links": [],
+   "zona": "U1"
+  },
+  "U1-6": {
+   "nombre": "Experiencia buscada",
+   "definicion": "Qué querían dar los autores.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Dónde y para qué",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué querían dar los autores.",
+   "links": [],
+   "zona": "U1"
+  },
+  "U2-1": {
+   "nombre": "Acciones del usuario",
+   "definicion": "Qué acciona la persona y con qué.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Cómo se maneja",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué acciona la persona y con qué.",
+   "links": [],
+   "zona": "U2"
+  },
+  "U2-2": {
+   "nombre": "Movimiento y regulación",
+   "definicion": "Qué se mueve o regula y entre qué límites.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Cómo se maneja",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "fija",
+     "e": "canónico"
+    },
+    {
+     "t": "altura regulable",
+     "e": "canónico"
+    },
+    {
+     "t": "orientable",
+     "e": "canónico"
+    },
+    {
+     "t": "extensible",
+     "e": "canónico"
+    },
+    {
+     "t": "dimerizable",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Qué se mueve o regula y entre qué límites.",
+   "links": [],
+   "zona": "U2"
+  },
+  "U2-3": {
+   "nombre": "Estado y respuesta",
+   "definicion": "Cómo sabe la persona el estado.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Cómo se maneja",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo sabe la persona el estado.",
+   "links": [],
+   "zona": "U2"
+  },
+  "U2-4": {
+   "nombre": "Errores y recuperación",
+   "definicion": "Qué se puede hacer mal y cómo se corrige.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Cómo se maneja",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué se puede hacer mal y cómo se corrige.",
+   "links": [],
+   "zona": "U2"
+  },
+  "U3-1": {
+   "nombre": "Dirección y reparto",
+   "definicion": "Hacia dónde va la luz.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "La luz en el espacio",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "directa abajo",
+     "e": "canónico"
+    },
+    {
+     "t": "indirecta arriba",
+     "e": "canónico"
+    },
+    {
+     "t": "omnidireccional",
+     "e": "canónico"
+    },
+    {
+     "t": "lateral",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Hacia dónde va la luz.",
+   "links": [],
+   "zona": "U3"
+  },
+  "U3-2": {
+   "nombre": "Alcance",
+   "definicion": "Qué área cubre.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz en el espacio",
+   "unidad": "m²",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué área cubre.",
+   "links": [],
+   "zona": "U3"
+  },
+  "U3-3": {
+   "nombre": "Intensidad percibida",
+   "definicion": "Qué tan brillante se siente.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz en el espacio",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué tan brillante se siente.",
+   "links": [],
+   "zona": "U3"
+  },
+  "U3-4": {
+   "nombre": "Uniformidad y sombras",
+   "definicion": "Cómo reparte y qué sombras produce.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz en el espacio",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo reparte y qué sombras produce.",
+   "links": [],
+   "zona": "U3"
+  },
+  "U3-5": {
+   "nombre": "Deslumbramiento",
+   "definicion": "Si encandila.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz en el espacio",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Si encandila.",
+   "links": [],
+   "zona": "U3"
+  },
+  "U3-6": {
+   "nombre": "Dibujo de luz",
+   "definicion": "Qué patrón visual produce.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz en el espacio",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué patrón visual produce.",
+   "links": [],
+   "zona": "U3"
+  },
+  "U3-7": {
+   "nombre": "Apagada y encendida",
+   "definicion": "Cómo se ve en cada estado.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz en el espacio",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se ve en cada estado.",
+   "links": [],
+   "zona": "U3"
+  },
+  "U4-1": {
+   "nombre": "Instalación",
+   "definicion": "Qué hace falta para colgarla.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Instalación y vida",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué hace falta para colgarla.",
+   "links": [],
+   "zona": "U4"
+  },
+  "U4-2": {
+   "nombre": "Kit y montaje",
+   "definicion": "Con qué viene y cómo se arma.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Instalación y vida",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Con qué viene y cómo se arma.",
+   "links": [],
+   "zona": "U4"
+  },
+  "U4-3": {
+   "nombre": "Limpieza",
+   "definicion": "Cómo se limpia.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Instalación y vida",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se limpia.",
+   "links": [],
+   "zona": "U4"
+  },
+  "U4-4": {
+   "nombre": "Repuestos y reparación",
+   "definicion": "Qué se reemplaza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Instalación y vida",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué se reemplaza.",
+   "links": [],
+   "zona": "U4"
+  },
+  "U4-5": {
+   "nombre": "Embalaje y transporte",
+   "definicion": "Cómo viaja.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Instalación y vida",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo viaja.",
+   "links": [],
+   "zona": "U4"
+  },
+  "U4-6": {
+   "nombre": "Duración y fin de vida",
+   "definicion": "Cuánto dura y qué pasa al final.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Instalación y vida",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cuánto dura y qué pasa al final.",
+   "links": [],
+   "zona": "U4"
+  },
+  "C1-1": {
+   "nombre": "Arquetipo principal",
+   "definicion": "El modelo cultural que organiza el sentido.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Arquetipo",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "araña/candelabro",
+     "e": "canónico"
+    },
+    {
+     "t": "farol",
+     "e": "canónico"
+    },
+    {
+     "t": "globo",
+     "e": "canónico"
+    },
+    {
+     "t": "pantalla",
+     "e": "canónico"
+    },
+    {
+     "t": "vela",
+     "e": "canónico"
+    },
+    {
+     "t": "lámpara técnica",
+     "e": "canónico"
+    },
+    {
+     "t": "otro",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "El modelo cultural que organiza el sentido.",
+   "links": [],
+   "zona": "C1"
+  },
+  "C1-2": {
+   "nombre": "Secundarios",
+   "definicion": "Otras imágenes que evoca.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Arquetipo",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Otras imágenes que evoca.",
+   "links": [],
+   "zona": "C1"
+  },
+  "C1-3": {
+   "nombre": "Distancia al arquetipo",
+   "definicion": "Qué tan lejos está.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Arquetipo",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué tan lejos está.",
+   "links": [],
+   "zona": "C1"
+  },
+  "C1-4": {
+   "nombre": "Linaje",
+   "definicion": "De qué historia desciende.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Arquetipo",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "De qué historia desciende.",
+   "links": [],
+   "zona": "C1"
+  },
+  "C1-5": {
+   "nombre": "Qué no es",
+   "definicion": "Lo que hay que descartar.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Arquetipo",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Lo que hay que descartar.",
+   "links": [],
+   "zona": "C1"
+  },
+  "C2-1": {
+   "nombre": "Peso visual",
+   "definicion": "Liviana o pesada a la vista.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje del conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "muy liviana",
+     "e": "canónico"
+    },
+    {
+     "t": "liviana",
+     "e": "canónico"
+    },
+    {
+     "t": "neutra",
+     "e": "canónico"
+    },
+    {
+     "t": "pesada",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Liviana o pesada a la vista.",
+   "links": [],
+   "zona": "C2"
+  },
+  "C2-2": {
+   "nombre": "Apertura",
+   "definicion": "Abierta o cerrada.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje del conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "cerrada",
+     "e": "canónico"
+    },
+    {
+     "t": "semiabierta",
+     "e": "canónico"
+    },
+    {
+     "t": "abierta",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Abierta o cerrada.",
+   "links": [],
+   "zona": "C2"
+  },
+  "C2-3": {
+   "nombre": "Orden y complejidad",
+   "definicion": "Qué orden se percibe.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje del conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué orden se percibe.",
+   "links": [],
+   "zona": "C2"
+  },
+  "C2-4": {
+   "nombre": "Tensiones",
+   "definicion": "Contradicciones expresivas.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje del conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Contradicciones expresivas.",
+   "links": [],
+   "zona": "C2"
+  },
+  "C2-5": {
+   "nombre": "Metáforas",
+   "definicion": "Con qué palabras la describen.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje del conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Con qué palabras la describen.",
+   "links": [],
+   "zona": "C2"
+  },
+  "C2-6": {
+   "nombre": "Cómo cambia la lectura",
+   "definicion": "Según distancia, luz y estado.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje del conjunto",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Según distancia, luz y estado.",
+   "links": [],
+   "zona": "C2"
+  },
+  "C3-1": {
+   "nombre": "Parte dominante",
+   "definicion": "La que manda en la percepción.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje de las partes",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "La que manda en la percepción.",
+   "links": [],
+   "zona": "C3"
+  },
+  "C3-2": {
+   "nombre": "Qué dice cada parte",
+   "definicion": "Significado de cada pieza.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje de las partes",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Significado de cada pieza.",
+   "links": [],
+   "zona": "C3"
+  },
+  "C3-3": {
+   "nombre": "Uniones a la vista",
+   "definicion": "Cómo se muestran las articulaciones.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje de las partes",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Cómo se muestran las articulaciones.",
+   "links": [],
+   "zona": "C3"
+  },
+  "C3-4": {
+   "nombre": "Tensión parte–todo",
+   "definicion": "Distancia entre pieza y conjunto.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Lenguaje de las partes",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Distancia entre pieza y conjunto.",
+   "links": [],
+   "zona": "C3"
+  },
+  "C4-1": {
+   "nombre": "Rol",
+   "definicion": "Qué comunica la luz.",
+   "tipo": "elección",
+   "cardinalidad": "1",
+   "alcance": "La luz como mensaje",
+   "unidad": "",
+   "primario": "",
+   "vocab": [
+    {
+     "t": "celebración",
+     "e": "canónico"
+    },
+    {
+     "t": "calma",
+     "e": "canónico"
+    },
+    {
+     "t": "señal",
+     "e": "canónico"
+    },
+    {
+     "t": "tarea",
+     "e": "canónico"
+    },
+    {
+     "t": "presencia",
+     "e": "canónico"
+    }
+   ],
+   "lectura": "Qué comunica la luz.",
+   "links": [],
+   "zona": "C4"
+  },
+  "C4-2": {
+   "nombre": "Fuente percibida",
+   "definicion": "De dónde parece salir.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz como mensaje",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "De dónde parece salir.",
+   "links": [],
+   "zona": "C4"
+  },
+  "C4-3": {
+   "nombre": "Transformación",
+   "definicion": "Qué pasa al encenderla.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz como mensaje",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué pasa al encenderla.",
+   "links": [],
+   "zona": "C4"
+  },
+  "C4-4": {
+   "nombre": "Atmósfera",
+   "definicion": "Qué clima crea.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz como mensaje",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué clima crea.",
+   "links": [],
+   "zona": "C4"
+  },
+  "C4-5": {
+   "nombre": "Apagada y encendida",
+   "definicion": "Dos lecturas.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz como mensaje",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Dos lecturas.",
+   "links": [],
+   "zona": "C4"
+  },
+  "C4-6": {
+   "nombre": "Condición del efecto",
+   "definicion": "Qué necesita para funcionar.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "La luz como mensaje",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué necesita para funcionar.",
+   "links": [],
+   "zona": "C4"
+  },
+  "C5-1": {
+   "nombre": "Miembros",
+   "definicion": "Quiénes componen la familia.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Familia",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Quiénes componen la familia.",
+   "links": [],
+   "zona": "C5"
+  },
+  "C5-2": {
+   "nombre": "Invariantes",
+   "definicion": "Lo que no cambia.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Familia",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Lo que no cambia.",
+   "links": [],
+   "zona": "C5"
+  },
+  "C5-3": {
+   "nombre": "Variables",
+   "definicion": "Lo que cambia.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Familia",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Lo que cambia.",
+   "links": [],
+   "zona": "C5"
+  },
+  "C5-4": {
+   "nombre": "Regla de pertenencia",
+   "definicion": "Qué decide que algo sea Wireflow.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Familia",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Qué decide que algo sea Wireflow.",
+   "links": [],
+   "zona": "C5"
+  },
+  "C5-5": {
+   "nombre": "Límites y combinaciones",
+   "definicion": "Hasta dónde llega el sistema.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Familia",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Hasta dónde llega el sistema.",
+   "links": [],
+   "zona": "C5"
+  },
+  "C5-6": {
+   "nombre": "Variaciones no exploradas",
+   "definicion": "Lo que la ley permitiría y nadie hizo.",
+   "tipo": "texto",
+   "cardinalidad": "1",
+   "alcance": "Familia",
+   "unidad": "",
+   "primario": "",
+   "vocab": [],
+   "lectura": "Lo que la ley permitiría y nadie hizo.",
+   "links": [],
+   "zona": "C5"
+  }
+ },
+ "zones": {
+  "OB-ID": {
+   "plano": "OBJETO",
+   "orden": 1,
+   "zona": "Identidad y tipología",
+   "entiende": "Dice qué objeto concreto estamos describiendo, qué variante es y cuál fue su intención de diseño. Permite que otra persona sepa exactamente de qué pieza se habla.",
+   "alcance": "WHOLE · VARIANT",
+   "campos": 10,
+   "repeticion": "Una vez por objeto/variante; repetir sólo si cambia la identidad congelada."
+  },
+  "OB-TO": {
+   "plano": "OBJETO",
+   "orden": 2,
+   "zona": "Todo",
+   "entiende": "Describe la luminaria como una totalidad: su presencia, escala, dimensiones globales, límites y proporciones. No reemplaza la descripción de sus partes.",
+   "alcance": "WHOLE",
+   "campos": 12,
+   "repeticion": "Un registro WHOLE por variante; dimensiones con unidad y condición de medida."
+  },
+  "OB-PA": {
+   "plano": "OBJETO",
+   "orden": 3,
+   "zona": "Partes",
+   "entiende": "Nombra las piezas que constituyen la luminaria, distingue tipos e instancias y explica qué función cumple cada una. Una parte se registra una sola vez y luego se referencia.",
+   "alcance": "WHOLE · PART · PART_TYPE",
+   "campos": 14,
+   "repeticion": "Una fila por Part_ID; las repeticiones idénticas comparten Part_Type_ID y las excepciones usan override."
+  },
+  "OB-RE": {
+   "plano": "OBJETO",
+   "orden": 4,
+   "zona": "Relaciones",
+   "entiende": "Explica cómo se conectan las partes y qué circula entre ellas: carga, electricidad, luz, calor, movimiento o información. Cada relación une dos IDs explícitos.",
+   "alcance": "RELATION",
+   "campos": 14,
+   "repeticion": "Una fila por Relation_ID con origen y destino; no describir conexiones sólo en prosa."
+  },
+  "OB-MO": {
+   "plano": "OBJETO",
+   "orden": 5,
+   "zona": "Morfología",
+   "entiende": "Primero describe la forma total en lenguaje corriente; después resume la forma de las partes decisivas. La capa humana no enumera todas las variables: selecciona J4 y J3.",
+   "alcance": "WHOLE|PART",
+   "campos": 20,
+   "repeticion": "El mismo registro se ejecuta con scope=WHOLE y con scope=PART para cada Part_ID o Part_Type_ID."
+  },
+  "OB-MA": {
+   "plano": "OBJETO",
+   "orden": 6,
+   "zona": "Materia / fabricación",
+   "entiende": "Explica de qué está hecho el objeto, cómo se fabrica y qué aspecto material presenta. Distingue material real, apariencia y proceso por parte.",
+   "alcance": "PART · RELATION · WHOLE|PART · PART|VARIANT",
+   "campos": 19,
+   "repeticion": "Un registro por Part_ID/material/proceso; agregar secuencia y compatibilidad cuando interviene un sistema productivo."
+  },
+  "OB-LF": {
+   "plano": "OBJETO",
+   "orden": 7,
+   "zona": "Luz física / electricidad",
+   "entiende": "Explica de dónde sale la luz, cómo se transforma, qué rendimiento tiene y cómo se alimenta y controla. Separa fuente, canal, óptica y variante.",
+   "alcance": "SOURCE · SOURCE|CHANNEL|VARIANT · SOURCE|VARIANT · CHANNEL|VARIANT · VARIANT · CHANNEL · SOURCE|CHANNEL · RELATION|VARIANT",
+   "campos": 24,
+   "repeticion": "Un registro por Source_ID y Channel_ID; fotometría y potencia siempre ligadas a la variante y condición de ensayo."
+  },
+  "US-CO": {
+   "plano": "USO",
+   "orden": 1,
+   "zona": "Contexto",
+   "entiende": "Sitúa la lámpara: dónde está, a qué altura, qué la rodea, desde dónde se la mira y bajo qué condiciones ambientales o normativas.",
+   "alcance": "SCENARIO · SCENARIO|VARIANT",
+   "campos": 10,
+   "repeticion": "Un registro por Scenario_ID; separar contexto previsto, observado y ensayado."
+  },
+  "US-AC": {
+   "plano": "USO",
+   "orden": 2,
+   "zona": "Actividad",
+   "entiende": "Cuenta qué hacen las personas con o alrededor de la lámpara, qué necesita cada actividad y qué prioridad tiene dentro del escenario.",
+   "alcance": "SCENARIO",
+   "campos": 10,
+   "repeticion": "Una fila por actividad dentro de cada Scenario_ID."
+  },
+  "US-IN": {
+   "plano": "USO",
+   "orden": 3,
+   "zona": "Interacción",
+   "entiende": "Explica qué puede hacer el usuario, dónde actúa, qué respuesta recibe y cómo sabe en qué estado está la luminaria.",
+   "alcance": "SCENARIO · PART|SCENARIO",
+   "campos": 10,
+   "repeticion": "Una fila por acción-respuesta y actor; registrar también error y accesibilidad."
+  },
+  "US-MO": {
+   "plano": "USO",
+   "orden": 4,
+   "zona": "Movimiento / regulación",
+   "entiende": "Describe qué se mueve o regula, alrededor de qué eje, entre qué límites y con qué efecto visible o luminoso.",
+   "alcance": "PART · PART|SCENARIO",
+   "campos": 12,
+   "repeticion": "Una fila por articulación, regulación o estado móvil."
+  },
+  "US-LU": {
+   "plano": "USO",
+   "orden": 5,
+   "zona": "Luz en uso",
+   "entiende": "Describe lo que la luz hace realmente en el espacio y sobre las personas: dónde llega, qué sombras produce, cuánto deslumbra y cómo cambia con el tiempo.",
+   "alcance": "SCENARIO|CHANNEL · SCENARIO",
+   "campos": 14,
+   "repeticion": "Una fila por Scenario_ID × Channel_ID × estado de control."
+  },
+  "US-SE": {
+   "plano": "USO",
+   "orden": 6,
+   "zona": "Instalación / servicio",
+   "entiende": "Explica cómo se instala, limpia, repara y reemplaza la luminaria, cuánto dura y qué ocurre cuando falla.",
+   "alcance": "WHOLE|PART · PART · PART|VARIANT · WHOLE",
+   "campos": 16,
+   "repeticion": "Una fila por tarea de instalación/servicio y por componente reemplazable."
+  },
+  "CO-AR": {
+   "plano": "COMUNICACIÓN",
+   "orden": 1,
+   "zona": "Arquetipo",
+   "entiende": "Nombra el modelo cultural reconocible al que la luminaria se acerca y explica qué evidencias lo sostienen, sin confundir arquetipo con tipología de instalación.",
+   "alcance": "WHOLE",
+   "campos": 9,
+   "repeticion": "Uno principal y cero o más secundarios; cada asignación exige evidencia y exclusiones."
+  },
+  "CO-LT": {
+   "plano": "COMUNICACIÓN",
+   "orden": 2,
+   "zona": "Lenguaje del todo",
+   "entiende": "Describe cómo se percibe el objeto completo: ligero o pesado, abierto o cerrado, técnico o doméstico. Presenta sólo los rasgos que verdaderamente dominan la lectura.",
+   "alcance": "WHOLE",
+   "campos": 14,
+   "repeticion": "Una observación por condición relevante: apagada/encendida, cerca/lejos y contexto."
+  },
+  "CO-LP": {
+   "plano": "COMUNICACIÓN",
+   "orden": 3,
+   "zona": "Lenguaje de las partes",
+   "entiende": "Explica qué partes dominan, cuáles desaparecen y si hablan el mismo lenguaje o producen una tensión deliberada.",
+   "alcance": "PART · RELATION",
+   "campos": 11,
+   "repeticion": "Una fila por Part_ID o Part_Type_ID significativo; no repetir el inventario técnico."
+  },
+  "CO-LC": {
+   "plano": "COMUNICACIÓN",
+   "orden": 4,
+   "zona": "Luz como comunicación",
+   "entiende": "Explica qué comunica la luz y cómo transforma la lectura del objeto al encenderse: si revela, oculta, refuerza o contradice su forma material.",
+   "alcance": "CHANNEL|SCENARIO · CHANNEL · SCENARIO · CHANNEL|PART",
+   "campos": 12,
+   "repeticion": "Una fila por Channel_ID × estado encendido × escenario de lectura."
+  },
+  "CO-FA": {
+   "plano": "COMUNICACIÓN",
+   "orden": 5,
+   "zona": "Familia / identidad / invariantes",
+   "entiende": "Explica qué debe permanecer para que distintas variantes sigan siendo la misma familia y qué puede cambiar sin perder identidad.",
+   "alcance": "FAMILY · VARIANT · FAMILY|VARIANT",
+   "campos": 15,
+   "repeticion": "Una fila por Family_ID y Variant_ID; herencia explícita, overrides y reglas de combinación."
+  },
+  "O1": {
+   "plano": "SINTAXIS",
+   "orden": 1,
+   "zona": "Identidad",
+   "entiende": "Los datos que fijan de qué objeto se habla, sin ambigüedad: nombre, autores, fecha, la variante concreta con sus medidas y en qué punto de su vida está. Pregunta: ¿Qué pieza exacta estamos describiendo?",
+   "alcance": "—",
+   "campos": 6,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "O2": {
+   "plano": "SINTAXIS",
+   "orden": 2,
+   "zona": "Tipología",
+   "entiende": "La clase a la que pertenece por cómo se instala, cómo se compone y para qué tipo de luz está hecha. No es el arquetipo cultural. Pregunta: ¿Qué clase de objeto es?",
+   "alcance": "—",
+   "campos": 3,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "O3": {
+   "plano": "SINTAXIS",
+   "orden": 3,
+   "zona": "Lógica del proyecto",
+   "entiende": "La parte que explica el objeto como proyecto: qué se pidió, la idea central, la invención que lo hizo posible, la restricción que le dio la forma, qué se descartó, qué está fijo y qué es variable. Pregunta: ¿Cuál fue la idea y cómo se llegó a esta solución?",
+   "alcance": "—",
+   "campos": 7,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "O4": {
+   "plano": "SINTAXIS",
+   "orden": 4,
+   "zona": "El conjunto",
+   "entiende": "El objeto entero antes de mirar sus partes: cuánto ocupa, qué forma global dibuja, su proporción, su eje, qué tan abierto es, cuánto pesa. Pregunta: ¿Qué forma y qué presencia tiene visto como una sola cosa?",
+   "alcance": "—",
+   "campos": 7,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "O5": {
+   "plano": "SINTAXIS",
+   "orden": 5,
+   "zona": "Partes y uniones",
+   "entiende": "El inventario completo con cantidad, material y función; cómo se une cada parte, qué circula, y el orden de montaje. Pregunta: ¿De qué piezas se compone y cómo se arma?",
+   "alcance": "—",
+   "campos": 8,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "O6": {
+   "plano": "SINTAXIS",
+   "orden": 6,
+   "zona": "Forma generada",
+   "entiende": "La forma como ley: qué operación genera la pieza base, cómo se repite y agrega, con qué condición y con qué números. Pregunta: ¿Cuál es la regla que produce la forma?",
+   "alcance": "—",
+   "campos": 6,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "O7": {
+   "plano": "SINTAXIS",
+   "orden": 7,
+   "zona": "Materia y fabricación",
+   "entiende": "Material real y aparente, acabado, proceso, la capacidad industrial que lo hace posible, la rigidez y cómo envejece. Pregunta: ¿De qué está hecha y cómo se fabrica?",
+   "alcance": "—",
+   "campos": 8,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "O8": {
+   "plano": "SINTAXIS",
+   "orden": 8,
+   "zona": "Luz física",
+   "entiende": "La fuente, lo que hace la pieza con esa luz y cómo se alimenta y controla. Se separa lo que es del objeto de lo que se elige al pedir. Pregunta: ¿Cómo produce y reparte la luz, físicamente?",
+   "alcance": "—",
+   "campos": 9,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "U1": {
+   "plano": "PRAGMÁTICA",
+   "orden": 1,
+   "zona": "Dónde y para qué",
+   "entiende": "El escenario de uso: ámbito, espacio, altura, quién la usa y desde dónde la mira, qué actividad acompaña y qué le pide a la luz. Pregunta: ¿En qué lugar va, para qué actividad y para quién?",
+   "alcance": "—",
+   "campos": 6,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "U2": {
+   "plano": "PRAGMÁTICA",
+   "orden": 2,
+   "zona": "Cómo se maneja",
+   "entiende": "Acciones posibles, lo que se mueve o regula, la respuesta y los errores. Pregunta: ¿Qué puede hacer el usuario con ella?",
+   "alcance": "—",
+   "campos": 4,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "U3": {
+   "plano": "PRAGMÁTICA",
+   "orden": 3,
+   "zona": "La luz en el espacio",
+   "entiende": "Hacia dónde va la luz, cuánto alcanza, cómo se percibe, qué sombras y qué dibujo produce, si deslumbra, y el paso de apagada a encendida. Pregunta: ¿Qué hace realmente la luz en el ambiente?",
+   "alcance": "—",
+   "campos": 7,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "U4": {
+   "plano": "PRAGMÁTICA",
+   "orden": 4,
+   "zona": "Instalación y vida",
+   "entiende": "Montaje, kit, acceso, limpieza, repuestos, embalaje y fin de vida. Pregunta: ¿Cómo se instala, se mantiene y termina?",
+   "alcance": "—",
+   "campos": 6,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "C1": {
+   "plano": "SEMÁNTICA",
+   "orden": 1,
+   "zona": "Arquetipo",
+   "entiende": "El modelo reconocible con el que se la asocia por lo que hace, los secundarios, la distancia, el linaje y lo que no es. Pregunta: ¿A qué modelo cultural se acerca, y a cuál no?",
+   "alcance": "—",
+   "campos": 5,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "C2": {
+   "plano": "SEMÁNTICA",
+   "orden": 2,
+   "zona": "Lenguaje del conjunto",
+   "entiende": "Peso visual, apertura, orden, complejidad, tensiones, metáforas y cómo cambia la lectura. Pregunta: ¿Cómo se percibe el objeto entero?",
+   "alcance": "—",
+   "campos": 6,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "C3": {
+   "plano": "SEMÁNTICA",
+   "orden": 3,
+   "zona": "Lenguaje de las partes",
+   "entiende": "Qué parte domina, qué significa cada una, cómo se muestran las uniones y la tensión parte–todo. Pregunta: ¿Qué partes hablan y qué dicen?",
+   "alcance": "—",
+   "campos": 4,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "C4": {
+   "plano": "SEMÁNTICA",
+   "orden": 4,
+   "zona": "La luz como mensaje",
+   "entiende": "Qué dice la luz, de dónde parece salir, qué transformación produce encenderla, qué atmósfera crea y qué necesita. Pregunta: ¿Qué comunica la luz y qué cambia al encenderla?",
+   "alcance": "—",
+   "campos": 6,
+   "repeticion": "Un registro por objeto descripto."
+  },
+  "C5": {
+   "plano": "SEMÁNTICA",
+   "orden": 5,
+   "zona": "Familia",
+   "entiende": "Miembros, invariantes, variables, regla de pertenencia, límites y variaciones no exploradas. Pregunta: ¿Qué la hace pertenecer a una familia y qué puede cambiar?",
+   "alcance": "—",
+   "campos": 6,
+   "repeticion": "Un registro por objeto descripto."
+  }
+ },
+ "sources": {
+  "F1": {
+   "name": "Luceplan · página de producto EU",
+   "url": "https://www.luceplan.com/products/hope-suspension/"
+  },
+  "F2": {
+   "name": "Luceplan · página US + ficha técnica",
+   "url": "https://www.luceplan.com/us/products/hope-suspension/"
+  },
+  "F3": {
+   "name": "Luceplan · hoja de montaje D66/42",
+   "url": "https://www.luceplan.com/wp-content/imports/products/usa/D66/Assembly-Hope-D66-suspension-42-USA.pdf"
+  },
+  "F4": {
+   "name": "Luceplan · hoja de montaje D66/12-18",
+   "url": "https://www.luceplan.com/wp-content/imports/products/eu/D66/Assembly-Hope-D66-suspension12-18.pdf"
+  },
+  "F5": {
+   "name": "Luceplan · brochure Hope 2013",
+   "url": "https://www.luceplan.com/assets/brochure/Hope-new_ID1793_2709340C58.pdf"
+  },
+  "F6": {
+   "name": "Luceplan · brochure USA",
+   "url": "https://www.luceplan.com/assets/brochure-usa/hopeusa_ID1388_7D7BABA905.pdf"
+  },
+  "F7": {
+   "name": "Luceplan · fotometría IES 2011 (D66/42, 3×23 W)",
+   "url": "https://www.luceplan.com/wp-content/imports/products/usa/D66/IES-HOPE_D66_Suspension.zip"
+  },
+  "F8": {
+   "name": "Estudio FGP · press kit 2009 (NAS)",
+   "url": ""
+  },
+  "F9": {
+   "name": "Entrevista Rizzatto – Gómez Paz (video)",
+   "url": "https://vimeo.com/23659665"
+  },
+  "F10": {
+   "name": "Diálogo FGP – Ali Filippini, Open Design (video)",
+   "url": "https://www.youtube.com/watch?v=AVO90HAlVJY"
+  },
+  "F11": {
+   "name": "Conferencias y entrevistas de FGP (vault del libro)",
+   "url": ""
+  },
+  "F12": {
+   "name": "Fotos de prensa del estudio (NAS)",
+   "url": ""
+  },
+  "F13": {
+   "name": "Fotos de taller del estudio (NAS)",
+   "url": ""
+  },
+  "F14": {
+   "name": "Hope — constitución sistemática (vault)",
+   "url": "obsidian://open?vault=obsidian-vault&file=Lighting%20Typologies%2FHope%20Constitucion%20Sistematica"
+  },
+  "F15": {
+   "name": "Dossier canónico Hope (vault)",
+   "url": ""
+  },
+  "F16": {
+   "name": "Premios: Compasso d'Oro 2011, Red Dot 2010, Premio dei Premi",
+   "url": "https://www.adi-design.org/compasso-d-oro.html"
+  },
+  "F17": {
+   "name": "Art Institute of Chicago · Hope Chandelier",
+   "url": "https://www.artic.edu/artworks/208469/hope-chandelier"
+  },
+  "F18": {
+   "name": "Fichas V1 del Atlas (vault)",
+   "url": ""
+  },
+  "F19": {
+   "name": "Fran · respuestas del 03/09/2026 (chat)",
+   "url": ""
+  }
+ }
+}
