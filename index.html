@@ -141,8 +141,13 @@ textarea:focus{outline:2px solid #d9d3c4}
 .plate .iband:hover{stroke-opacity:.9}
 .plate .iband.on{stroke:var(--ink);stroke-opacity:.7}
 .plate .iband:focus-visible{stroke-opacity:1}
-.plate .ibl{font-family:var(--f-ui);font-size:18px;font-weight:600;letter-spacing:.02em;fill:var(--ink);pointer-events:none}
-.plate .ibl.on{fill:var(--paper)}
+.plate .ibl{font-family:var(--f-ui);font-size:40px;font-weight:600;letter-spacing:.01em;fill:var(--ink);stroke:var(--paper);stroke-width:5px;paint-order:stroke;pointer-events:all;cursor:pointer}
+.plate .ibl.on{fill:var(--ink)}
+.plate .halo{transition:opacity .18s}
+.plate.identity-active .halo{opacity:0}
+.plate .identity-cloud{pointer-events:none}
+.plate .icloud{fill:var(--ink);fill-opacity:.055;stroke:var(--ink);stroke-opacity:.38;stroke-width:1.7;stroke-linejoin:round;fill-rule:evenodd}
+@media(prefers-reduced-motion:reduce){.plate .halo{transition:none}}
 .plate .iconn{stroke:var(--ink);stroke-opacity:.72;fill:none}
 .plate .xlinks,.plate .iconns,.plate .xlinks path,.plate .iconns path{pointer-events:none!important}
 .plate.dim .iband{opacity:.65}.plate.dim .iband.sel{opacity:1}.plate.dim .ibl{opacity:.85}.plate.dim .ibl.sel{opacity:1}
@@ -251,7 +256,7 @@ function render(){
   el('path',{id:'pp-center',d:arcPath(G.RPH-10,Math.PI/2-.95,Math.PI/2+.95),fill:'none'},defs);
   {const t=el('text',{class:'clabel','dominant-baseline':'central',id:'center-lbl'},svg);const tp=el('textPath',{href:'#pp-center',startOffset:'50%','text-anchor':'middle'},t);tp.textContent='PROGRAMA PROYECTUAL'}
   // halo: proyección de la importancia, por zona con su tono, desenfocada
-  const halo=el('g',{filter:'url(#blur)',opacity:TH().halo},svg);
+  const halo=el('g',{class:'halo',filter:'url(#blur)',opacity:TH().halo},svg);
   d.planes.forEach(p=>{
     const pts=[];p.zones.forEach(z=>z.fields.forEach(f=>pts.push([f.am,G.RF0+G.LEN[jn(f.importancia)]*G.HK+G.HADD])));
     const rs=pts.map(q=>q[1]);pts.forEach((q,i)=>q[1]=(rs[Math.max(0,i-1)]+2*rs[i]+rs[Math.min(rs.length-1,i+1)])/4);
@@ -306,27 +311,37 @@ function render(){
   const stg=svg.parentElement;if(!stg.dataset.bound){stg.dataset.bound='1';stg.addEventListener('click',e=>{if(e.target===stg)closeCard()})} // el fondo fuera del svg también cierra (la rueda ya no llena toda la stage)
 }
 
-/* ---------- V2 · Identidad: tres anillos concéntricos (bandas) Objeto → Familia → Marca, siempre visibles; al elegir uno, dos contornos finos que prolongan los bordes de las categorías hasta el anillo elegido ---------- */
+/* ---------- V2 · Identidad: tres anillos concéntricos (bandas) Objeto → Familia → Marca, siempre visibles; al elegir uno, una nube liviana que incluye las categorías que construyen la identidad elegida ---------- */
 function fieldById(id){for(const p of DATA[V].planes)for(const z of p.zones)for(const f of z.fields)if(f.id===id)return f;return null}
 function idItems(mode){const I=DATA[V].identidad||{};return mode==='objeto'?(I.objeto||[]):mode==='familia'?[...((I.familia||{}).invariantes||[]),...((I.familia||{}).variables||[])]:((I.marca_coleccion||{}).items||[])}
 function bandR(i){return G.RB0+G.BW/2+i*(G.BW+G.BG)}
 function drawIdentity(){
-  const svg=$('#plate'),gI=svg.querySelector('.ident'),defs=svg.querySelector('defs');if(!gI)return;gI.innerHTML='';defs.querySelectorAll('[id^="iarc-"]').forEach(e=>e.remove());
-  const gB=el('g',{class:'ibands'},gI),gC=el('g',{class:'iconns'},gI),gT=el('g',{class:'ibls'},gI);
+  const svg=$('#plate'),gI=svg.querySelector('.ident'),defs=svg.querySelector('defs');if(!gI)return;gI.innerHTML='';svg.querySelector('.identity-cloud')?.remove();svg.classList.toggle('identity-active',!!IMODE);defs.querySelectorAll('[id^="iarc-"]').forEach(e=>e.remove());
+  const gB=el('g',{class:'ibands'},gI),gT=el('g',{class:'ibls'},gI);
   MODES.forEach(([m,lbl],i)=>{const r=bandR(i);
     const c=el('circle',{cx:G.cx,cy:G.cy,r,class:'iband'+(IMODE===m?' on':''),'stroke-width':G.BW,id:'iband-'+m,tabindex:0,role:'button','aria-label':MODENAME[m],'data-m':m},gB);
     c.addEventListener('click',()=>openIdentityMode(m));c.addEventListener('keydown',e=>KEY(e,()=>openIdentityMode(m)));el('title',{},c).textContent=MODENAME[m];
-    el('path',{id:'iarc-'+m,d:arcPath(r,Math.PI/2-.9,Math.PI/2+.9),fill:'none'},defs);
-    const t=el('text',{class:'ibl'+(IMODE===m?' on':''),'dominant-baseline':'central',id:'ibl-'+m},gT);const tp=el('textPath',{href:'#iarc-'+m,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lbl});
+    const labelAngle=[Math.PI/4,Math.PI/2,Math.PI*3/4][i];
+    el('path',{id:'iarc-'+m,d:arcPath(r,labelAngle-.35,labelAngle+.35),fill:'none'},defs);
+    const t=el('text',{class:'ibl'+(IMODE===m?' on':''),'dominant-baseline':'central',id:'ibl-'+m},gT);const tp=el('textPath',{href:'#iarc-'+m,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lbl;t.addEventListener('click',()=>openIdentityMode(m))});
   if(!IMODE)return;
   const i=MODES.findIndex(x=>x[0]===IMODE),rMid=bandR(i);const items=ISEL?idItems(IMODE).filter(it=>it.id===ISEL):idItems(IMODE);
   const links=new Set();items.forEach(it=>(it.links||[]).forEach(l=>links.add(l)));
-  links.forEach(l=>{const f=fieldById(l);if(!f)return;const L=G.LEN[f.j]??G.LEN[1];
-    // Dirección de Fran: el color termina; sus dos bordes continúan sin relleno hasta contactar el anillo.
-    [f.a0+G.GAPZ/3,f.a1-G.GAPZ/3].forEach((angle,edge)=>{
-      const [x0,y0]=pol(G.RF0+L,angle),[x1,y1]=pol(rMid-G.BW/2,angle);
-      el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iconn','stroke-width':1.5,'data-f':l,'data-m':IMODE,'data-edge':edge},gC)
-    })});
+  const fields=[...links].map(fieldById).filter(Boolean);if(!fields.length)return;
+  // Una sola envolvente de pertenencia: no modifica la longitud coloreada ni inventa relaciones.
+  const outer=rMid+G.BW/2,base=outer-12,depth=base-(G.RF0-3),pts=[];
+  for(let n=0;n<720;n++){
+    const angle=n*2*Math.PI/720;let include=0;
+    for(const f of fields){const distance=Math.abs(Math.atan2(Math.sin(angle-f.am),Math.cos(angle-f.am))),half=(f.a1-f.a0)/2;
+      const t=Math.max(0,Math.min(1,(half+.22-distance)/.20));include=Math.max(include,t*t*(3-2*t));
+    }
+    pts.push(pol(base-depth*include,angle));
+  }
+  const inner='M'+pts.map(p=>p.join(' ')).join('L')+'Z';
+  const contour=`M${G.cx+outer} ${G.cy}A${outer} ${outer} 0 1 1 ${G.cx-outer} ${G.cy}A${outer} ${outer} 0 1 1 ${G.cx+outer} ${G.cy}Z`;
+  const g=el('g',{class:'identity-cloud','data-mode':IMODE},null);svg.insertBefore(g,svg.querySelector('.chords'));
+  el('path',{d:contour+inner,class:'icloud','data-fields':[...links].join(' '),'data-item':ISEL||''},g);
+
 }
 function clearX(){const g=$('#plate .xlinks');if(g)g.innerHTML=''}
 function lineCenterTo(f,g){const [u,v]=pol(G.RF0-1,f.am);const c=el('g',{class:'chord sel','data-f':f.id},g);el('path',{d:`M${G.cx} ${G.cy}L${u} ${v}`,class:'curve'},c)}
