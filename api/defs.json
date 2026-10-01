@@ -349,7 +349,7 @@
    },
    "HA4-2": {
     "code": "A4.2",
-    "nombre": "Recorrido y transformación",
+    "nombre": "Gestión de la luz",
     "pregunta": "¿Qué le ocurre a la luz desde que se genera hasta que sale?",
     "que_es": "Describe de forma causal qué elementos interceptan o conducen la luz y qué operación realizan: reflexión, refracción, difusión, transmisión, absorción, filtrado, guía o apantallamiento. Puede haber varios recorridos simultáneos.",
     "incluye": [
