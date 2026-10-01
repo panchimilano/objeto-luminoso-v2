@@ -206,8 +206,8 @@ const ALPHA={documentado:1,observado:.8,inferido:.55,interpretado:.45,otro:.5,de
 const JWORD={4:'clave',3:'determinante',2:'relevante',1:'contextual'}; // V2 §8: identidad ≠ importancia
 const PSEC={P1:'Propósito',P2:'Principios rectores',P3:'Condiciones no negociables'};
 let IMODE=null,ISEL=null,PER=0; // modo activo de Identidad (objeto | familia | marca) · ítem que afina las conexiones · ángulo por campo
-const MODES=[['objeto','Objeto'],['familia','Familia'],['marca','Marca']];
-const MODENAME={objeto:'Identidad del objeto',familia:'Identidad de familia',marca:'Identidad de marca / colección'};
+const MODES=[['objeto','Producto'],['familia','Familia'],['marca','Marca']];
+const MODENAME={objeto:'Identidad de producto',familia:'Identidad de familia',marca:'Identidad de marca'};
 const KEY=(e,fn)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}};
 const CHORDS={S:[['O3-3','O7-4'],['O3-4','O6-4'],['O8-5','C4-3'],['O6-3','C5-2'],['U3-6','C4-2'],['O5-4','U4-2'],['O3-2','C1-3'],['O7-1','U4-4']],
               W:[['O3-3','O7-5'],['O3-4','C2-1'],['O5-3','O6-2'],['O8-5','C4-2'],['U3-1','C4-4'],['O6-3','C5-2'],['O3-2','C1-3'],['O5-7','U4-2']]};
@@ -312,8 +312,8 @@ function fieldById(id){for(const p of DATA[V].planes)for(const z of p.zones)for(
 function idItems(mode){const I=DATA[V].identidad||{};return mode==='objeto'?(I.objeto||[]):mode==='familia'?[...((I.familia||{}).invariantes||[]),...((I.familia||{}).variables||[])]:((I.marca_coleccion||{}).items||[])}
 function drawIdentity(){
   const svg=$('#plate'),gI=svg.querySelector('.ident'),defs=svg.querySelector('defs');if(!gI)return;gI.innerHTML='';defs.querySelectorAll('[id^="iarc-"]').forEach(e=>e.remove());svg.querySelectorAll('.flabel.ia').forEach(e=>{e.classList.remove('ia');e.removeAttribute('dy')});
-  // tres frases concéntricas, sin círculo: Objeto adentro, Familia, Marca/Colección afuera; crecen con el alcance
-  [['objeto','IDENTIDAD DEL OBJETO'],['familia','IDENTIDAD DE FAMILIA'],['marca','IDENTIDAD DE MARCA · COLECCIÓN']].forEach(([m,lbl],i)=>{const r=G.RID[m];
+  // tres frases concéntricas, sin círculo: Producto adentro, Familia, Marca afuera; crecen con el alcance
+  [['objeto','IDENTIDAD DE PRODUCTO'],['familia','IDENTIDAD DE FAMILIA'],['marca','IDENTIDAD DE MARCA']].forEach(([m,lbl],i)=>{const r=G.RID[m];
     el('path',{id:'iarc-sel-'+m,d:arcPath(r,Math.PI/2-.9,Math.PI/2+.9),fill:'none'},defs);
     const t=el('text',{class:'isel i'+i+(IMODE===m?' on':IMODE?' off':''),'dominant-baseline':'central',id:'isel-'+m,tabindex:0,role:'button','aria-label':MODENAME[m]},gI);
     const tp=el('textPath',{href:'#iarc-sel-'+m,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lbl;
@@ -445,7 +445,7 @@ function iitemRow(it){return `<div class="pitem" onclick="openIdentityItem('${it
 function modeSelector(m,items){const links=new Set();items.forEach(it=>(it.links||[]).forEach(l=>links.add(l)));return `#isel-${m}`+items.map(it=>`,#il-${it.id},#in-${it.id},#ilb-${it.id}`).join('')+[...links].map(l=>`,#blk-${l},#fl-${l}`).join('')}
 function showIdentityMode(m){IMODE=m;ISEL=null;drawIdentity();const I=DATA[V].identidad||{},D2=V2().identidad||{},AL=((DATA[V].meta||{}).alcance)||{},LEC=(I.lecturas||{})[m]||'';let html='';
   const lect=`<div class="sec"><div class="kicker">Lectura · Hope</div><div class="human">${paras(LEC)}</div></div>`;
-  if(m==='objeto'){const d=D2.objeto||{};html=`<div class="kicker">Identidad · <b>Objeto</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.objeto)}</h2>${helpBtn('identity','objeto')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
+  if(m==='objeto'){const d=D2.objeto||{};html=`<div class="kicker">Identidad · <b>Producto</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.objeto)}</h2>${helpBtn('identity','objeto')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
     <div class="sec"><div class="kicker">Elementos definitorios · ${(I.objeto||[]).length}</div>${(I.objeto||[]).map(iitemRow).join('')}</div>
     <div class="sec"><div class="kicker">Alcance</div><div class="human"><p>${esc(AL.objeto||'')}</p></div></div>`}
   else if(m==='familia'){const d=D2.familia||{},F=I.familia||{};const blk=(k,tit)=>F[k]?`<div class="sec"><div class="kicker">${tit}</div><div class="human"><p>${esc(F[k].texto)}</p></div><div class="det"><div class="m">${esc(F[k].estado||'')}${F[k].confianza?' · confianza '+esc(F[k].confianza):''}${F[k].fuente?' · '+esc(F[k].fuente):''}${(F[k].legacy_ids||[]).length?' · '+lpills(F[k].legacy_ids):''}</div></div></div>`:'';
@@ -453,7 +453,7 @@ function showIdentityMode(m){IMODE=m;ISEL=null;drawIdentity();const I=DATA[V].id
     <div class="sec"><div class="kicker">Invariantes · ${(F.invariantes||[]).length}</div>${(F.invariantes||[]).map(iitemRow).join('')}</div>
     <div class="sec"><div class="kicker">Variables admitidas · ${(F.variables||[]).length}</div>${(F.variables||[]).map(iitemRow).join('')}</div>
     ${blk('regla_pertenencia','Regla / límite de pertenencia')}<div class="sec"><div class="kicker">Comparación disponible</div><div class="human"><p>${esc(F.nota||'')}</p><p>${esc(AL.familia||'')}</p></div></div>${blk('miembros','Miembros')}${blk('limites','Límites documentales y comerciales')}${blk('no_realizadas','Variaciones no realizadas')}${blk('descartado','Descartado como invariante')}`}
-  else{const d=D2.marca_coleccion||{},M=I.marca_coleccion||{};html=`<div class="kicker">Identidad · <b>Marca / Colección</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.marca)}</h2>${helpBtn('identity','marca')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
+  else{const d=D2.marca_coleccion||{},M=I.marca_coleccion||{};html=`<div class="kicker">Identidad · <b>Marca</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.marca)}</h2>${helpBtn('identity','marca')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
     <div class="sec"><div class="kicker">Rasgos de identidad de marca · ${(M.items||[]).length}</div>${(M.items||[]).length?(M.items||[]).map(iitemRow).join(''):`<div class="human"><p><span class="pill unk">${esc(M.estado||'pendiente de análisis de colección')}</span></p></div>`}</div>
     <div class="sec"><div class="kicker">Referencias</div><div class="human"><p>${(M.referencias||[]).length?esc(M.referencias.join(' · ')):'—'}</p></div></div>
     <div class="sec"><div class="kicker">Tipo de relación</div><div class="human"><p>${esc(M.tipo_relacion||'—')}${(M.elementos||[]).length?' · por '+esc(M.elementos.join(', ')):''}</p></div></div>
