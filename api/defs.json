@@ -83,7 +83,7 @@
   "zones": {
    "HA1": {
     "code": "A1",
-    "nombre": "Forma del conjunto",
+    "nombre": "Forma general",
     "pregunta": "¿Qué forma tiene y cómo está organizada?",
     "que_es": "Describe la lámpara como un todo antes de descomponerla en piezas. Registra la forma global que ocupa en el espacio y la regla mediante la cual sus elementos se disponen. Permite describir tanto objetos cerrados como sistemas abiertos, configurables o no modulares."
    },
@@ -164,7 +164,7 @@
    },
    "HA1-2": {
     "code": "A1.2",
-    "nombre": "Organización y reglas",
+    "nombre": "Ley formal",
     "pregunta": "¿Cómo se disponen los elementos para producir esa forma?",
     "que_es": "Describe las relaciones espaciales que ordenan el conjunto: posición, orientación, jerarquía, repetición, simetría, distribución, secuencia y límites de configuración. Puede expresar una regla modular, una distribución no periódica o simplemente una organización singular. No obliga a que toda lámpara tenga una unidad repetida.",
     "incluye": [
@@ -494,8 +494,8 @@
    "no_duplica": "La identidad no duplica datos.",
    "proyeccion": "La identidad es una **proyección** del dato hacia el exterior.",
    "objeto": {
-    "nombre": "Identidad del objeto",
-    "kicker": "IDENTIDAD · OBJETO",
+    "nombre": "Identidad de producto",
+    "kicker": "IDENTIDAD · PRODUCTO",
     "pregunta": "¿Qué conjunto mínimo de decisiones hace que este diseño siga siendo este diseño?",
     "que_es": "Selecciona los pocos elementos del proyecto que resultan definitorios para reconocer su singularidad. Pueden pertenecer a Cómo se hace, Cómo se usa o Qué comunica. No equivale a “los datos más importantes” ni a una lista de todos los rasgos de la lámpara: identifica aquello cuya alteración comprometería la identidad específica del diseño.",
     "debe_responder": [
@@ -517,8 +517,8 @@
     }
    },
    "marca_coleccion": {
-    "nombre": "Identidad de marca / colección",
-    "kicker": "IDENTIDAD · MARCA / COLECCIÓN",
+    "nombre": "Identidad de marca",
+    "kicker": "IDENTIDAD · MARCA",
     "pregunta": "¿Qué rasgos de este proyecto expresan la identidad de la marca o de la colección?",
     "que_es": "Describe la lógica de diseño que conecta este proyecto con una marca o una colección. Se explica mediante decisiones concretas de forma, material, luz, uso, expresión y detalle. La relación puede ser de continuidad, complementariedad o contraste deliberado; cada lectura conecta esos principios con categorías del objeto.",
     "secciones": {
