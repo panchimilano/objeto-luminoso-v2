@@ -22,7 +22,11 @@
       "la forma final",
       "el listado de componentes",
       "una interpretación retrospectiva presentada como hecho si no está documentada"
-     ]
+     ],
+     "lectura": {
+      "grupo": "G",
+      "por_que": "Formular qué problema o necesidad justifica el proyecto exige interpretar el encargo y elegir una finalidad: no hay regla que lo derive."
+     }
     },
     "P2": {
      "nombre": "Principios rectores",
@@ -39,7 +43,11 @@
       "toda la historia del proceso",
       "alternativas descartadas",
       "especificaciones técnicas que sólo describen una solución puntual"
-     ]
+     ],
+     "lectura": {
+      "grupo": "G",
+      "por_que": "Las ideas que orientan las decisiones se construyen comparando referencias y formulándolas en lenguaje; son una tesis, no un parámetro."
+     }
     },
     "P3": {
      "nombre": "Condiciones no negociables",
@@ -56,7 +64,12 @@
       "afirmar que una condición está resuelta porque existe una propuesta",
       "confundir requisito con evidencia",
       "copiar nuevamente todos los datos técnicos relacionados"
-     ]
+     ],
+     "lectura": {
+      "grupo": "M",
+      "decide": "El brief y el diseñador fijan qué restricciones, requisitos e invariantes no pueden perderse.",
+      "se_calcula": "Cada condición se traduce a límites medibles (dimensiones, potencia, normativa, compatibilidad) que después se verifican."
+     }
     }
    }
   },
@@ -160,7 +173,12 @@
      "piezas",
      "proceso productivo",
      "peso visual"
-    ]
+    ],
+    "lectura": {
+     "grupo": "M",
+     "decide": "La envolvente global, su escala y su carácter continuo, abierto o discontinuo son decisión proyectual.",
+     "se_calcula": "Medidas, proporciones y volumen ocupado se fijan como parámetros a partir de esa decisión."
+    }
    },
    "HA1-2": {
     "code": "A1.2",
@@ -180,7 +198,12 @@
      "forma local de una pieza",
      "mecanismo de unión",
      "significado percibido"
-    ]
+    ],
+    "lectura": {
+     "grupo": "M",
+     "decide": "La regla de organización (ejes, simetrías, repetición, agregación) es la decisión formal central.",
+     "se_calcula": "Elegida la regla, módulos, cantidades, pasos y límites de configuración se parametrizan y se calculan."
+    }
    },
    "HA2-1": {
     "code": "A2.1",
@@ -197,7 +220,11 @@
      "significado simbólico de la pieza",
      "gesto del usuario",
      "proceso de fabricación"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "Decidido el principio constructivo, las piezas, su cantidad y su función salen de descomponer el conjunto: es un inventario, no una interpretación."
+    }
    },
    "HA2-2": {
     "code": "A2.2",
@@ -216,7 +243,11 @@
      "forma global del objeto",
      "material aparente",
      "proceso industrial supuesto"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "La geometría de cada componente se deriva de la forma global, la ley formal y las uniones; se modela y se parametriza."
+    }
    },
    "HA2-3": {
     "code": "A2.3",
@@ -235,7 +266,11 @@
      "material que sólo parece tener",
      "metáforas materiales",
      "proceso inferido sin evidencia"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "Material, acabado y proceso se eligen de catálogo y especificación técnica; cada opción fija valores comprobables."
+    }
    },
    "HA3-1": {
     "code": "A3.1",
@@ -256,7 +291,11 @@
     "no_incluye": [
      "una proximidad sin contacto",
      "una asociación visual o un gesto de uso"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "Dadas las piezas, cada unión se resuelve con un sistema de fijación conocido y una secuencia de montaje verificable."
+    }
    },
    "HA3-2": {
     "code": "A3.2",
@@ -277,7 +316,11 @@
     "no_incluye": [
      "el gesto de la persona para utilizarla",
      "la experiencia de uso o el circuito óptico completo"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "Carga, conducción, calor y movimiento de cada unión se calculan o se ensayan a partir de la solución elegida."
+    }
    },
    "HA4-1": {
     "code": "A4.1",
@@ -298,7 +341,11 @@
     ],
     "no_incluye": [
      "gesto del usuario sobre el control ni resultado fotométrico final"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "Fuente, cantidad, driver y tensiones se seleccionan de catálogo según el requisito luminoso; son datos de especificación."
+    }
    },
    "HA4-2": {
     "code": "A4.2",
@@ -315,7 +362,11 @@
     ],
     "no_incluye": [
      "sólo una lista de verbos ópticos sin relación causal ni la interpretación simbólica del efecto"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "El camino de la luz por reflectores, difusores y lentes se simula ópticamente a partir de la geometría y los materiales."
+    }
    },
    "HA4-3": {
     "code": "A4.3",
@@ -334,7 +385,11 @@
     ],
     "no_incluye": [
      "si la luz sirve para leer, si resulta agradable o si comunica intimidad"
-    ]
+    ],
+    "lectura": {
+     "grupo": "D",
+     "por_que": "Flujo, distribución, apertura, temperatura de color y reproducción cromática son magnitudes medidas o simuladas en condiciones de referencia."
+    }
    },
    "US1-1": {
     "code": "B1.1",
@@ -354,7 +409,12 @@
     "no_incluye": [
      "resultado garantizado",
      "fotometría ni tipología"
-    ]
+    ],
+    "lectura": {
+     "grupo": "M",
+     "decide": "Para qué actividad y para quién se proyecta la luminaria viene del brief o del encargo.",
+     "se_calcula": "La demanda de esa actividad se traduce en niveles, distribución y confort visual de referencia."
+    }
    },
    "US1-2": {
     "code": "B1.2",
@@ -370,7 +430,12 @@
     ],
     "no_incluye": [
      "clasificación tipológica ni geometría constructiva del anclaje"
-    ]
+    ],
+    "lectura": {
+     "grupo": "M",
+     "decide": "Dónde se sitúa la lámpara respecto de las personas y de lo que ilumina es una decisión de uso.",
+     "se_calcula": "Alturas, distancias y zona atendida quedan como parámetros derivados de esa posición."
+    }
    },
    "US2-1": {
     "code": "B2.1",
@@ -382,7 +447,12 @@
     ],
     "no_incluye": [
      "descripción mecánica detallada de la unión o mecanismo"
-    ]
+    ],
+    "lectura": {
+     "grupo": "M",
+     "decide": "Qué puede hacer la persona con el objeto (encender, orientar, desplazar, configurar) se decide al definir el uso.",
+     "se_calcula": "Cada acción admitida se traduce en recorridos, rangos y componentes que deben existir para permitirla."
+    }
    },
    "US2-2": {
     "code": "B2.2",
@@ -402,7 +472,12 @@
     ],
     "no_incluye": [
      "arquitectura eléctrica interna ni una evaluación completa de usabilidad"
-    ]
+    ],
+    "lectura": {
+     "grupo": "M",
+     "decide": "El tipo de control y el gesto que lo activa son decisión de diseño de la interacción.",
+     "se_calcula": "La respuesta del objeto (rangos de atenuación, tiempos, indicadores) se especifica y se verifica como parámetro."
+    }
    },
    "US3-1": {
     "code": "B3.1",
@@ -414,7 +489,11 @@
     ],
     "no_incluye": [
      "mecanismo físico que los produce ni significado simbólico"
-    ]
+    ],
+    "lectura": {
+     "grupo": "G",
+     "por_que": "Qué aporta la lámpara a la actividad se interpreta a partir del uso real y de la experiencia, más allá de las magnitudes."
+    }
    },
    "US3-2": {
     "code": "B3.2",
@@ -426,7 +505,12 @@
     ],
     "no_incluye": [
      "una lista preventiva de problemas hipotéticos sin evidencia"
-    ]
+    ],
+    "lectura": {
+     "grupo": "M",
+     "decide": "Qué condiciones de uso se consideran relevantes es un criterio del proyecto.",
+     "se_calcula": "Distancias, autonomía, orientación o compatibilidad se cuantifican y se comprueban."
+    }
    },
    "CO1-1": {
     "code": "C1.1",
@@ -435,7 +519,12 @@
     "que_es": "Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas.",
     "incluye": [],
     "no_incluye": [],
-    "no_confundir": "arquetipo, función de uso o geometría."
+    "no_confundir": "arquetipo, función de uso o geometría.",
+    "lectura": {
+     "grupo": "M",
+     "decide": "La tipología (suspensión, pie, aplique, sistema…) es una decisión de partida, casi siempre dada por el brief.",
+     "se_calcula": "Fijada la tipología, anclaje, alimentación y relación con el espacio se desprenden de ella como datos de catálogo."
+    }
    },
    "CO1-2": {
     "code": "C1.2",
@@ -444,7 +533,12 @@
     "que_es": "Identifica una configuración cultural y técnica consolidada, como chandelier, abat-jour, arco, lámpara de trabajo articulada, farol, spot o riel electrificado. Puede quedar `pendiente / no identificado` si no existe evidencia suficiente.",
     "incluye": [],
     "no_incluye": [],
-    "no_confundir": "metáforas naturales como flor, eclipse o nube."
+    "no_confundir": "metáforas naturales como flor, eclipse o nube.",
+    "lectura": {
+     "grupo": "M",
+     "decide": "Con qué modelo histórico de la iluminación se dialoga es una elección cultural y de proyecto.",
+     "se_calcula": "Reconocido el arquetipo, su configuración y sus rasgos técnicos se registran como vocabulario controlado."
+    }
    },
    "CO1-3": {
     "code": "C1.3",
@@ -452,7 +546,11 @@
     "pregunta": "¿Qué conserva y qué transforma del modelo reconocido?",
     "que_es": "Explica cómo el proyecto se posiciona respecto del arquetipo: continuidad, reinterpretación, hibridación o transformación. Debe indicar brevemente qué conserva y qué cambia, evitando etiquetas vacías.",
     "incluye": [],
-    "no_incluye": []
+    "no_incluye": [],
+    "lectura": {
+     "grupo": "G",
+     "por_que": "Explicar qué conserva y qué transforma del modelo reconocido exige comparación e interpretación argumentada."
+    }
    },
    "CO2-1": {
     "code": "C2.1",
@@ -460,7 +558,11 @@
     "pregunta": "¿Qué cualidades aparenta poseer el objeto, sus partes o su luz?",
     "que_es": "Registra las cualidades dominantes relevantes: ligera, pesada, precisa, delicada, robusta, técnica, orgánica, austera, compleja, silenciosa, monumental, etc. Las cualidades deben tener un sujeto claro: conjunto, pieza, luz o estado.",
     "incluye": [],
-    "no_incluye": []
+    "no_incluye": [],
+    "lectura": {
+     "grupo": "G",
+     "por_que": "Las cualidades aparentes (ligera, precisa, orgánica…) son una lectura perceptiva que necesita lenguaje y comparación."
+    }
    },
    "CO2-2": {
     "code": "C2.2",
@@ -468,7 +570,12 @@
     "pregunta": "¿Qué rasgos visibles, materiales o luminosos sustentan cada cualidad?",
     "que_es": "Vincula la interpretación expresiva con evidencias observables: transparencia, espesor, vacío, repetición, acabado, detalle, continuidad, contraste, encendido/apagado o punto de vista. Fundamenta una lectura sin convertirla en verdad universal.",
     "incluye": [],
-    "no_incluye": []
+    "no_incluye": [],
+    "lectura": {
+     "grupo": "M",
+     "decide": "Qué cualidad se quiere transmitir y a qué rasgo atribuirla es una decisión expresiva.",
+     "se_calcula": "Los rasgos invocados (transparencia, espesor, repetición, acabado) son observables y se verifican en el objeto."
+    }
    },
    "CO3-1": {
     "code": "C3.1",
@@ -476,7 +583,11 @@
     "pregunta": "¿A qué imágenes, referencias o valores remite?",
     "que_es": "Registra asociaciones como flor, joya, cielo, herramienta, correa, celebración, intimidad, libertad, tradición o tecnología cuando estén sustentadas. Debe distinguir una interpretación nuestra de una referencia documentada del autor o la marca.",
     "incluye": [],
-    "no_incluye": []
+    "no_incluye": [],
+    "lectura": {
+     "grupo": "G",
+     "por_que": "Las imágenes y valores que evoca se construyen con referencias culturales e interpretación, distinguiendo lectura propia de fuente documentada."
+    }
    },
    "CO3-2": {
     "code": "C3.2",
@@ -484,7 +595,12 @@
     "pregunta": "¿Qué rasgos producen esa asociación o qué referencia documentada la respalda?",
     "que_es": "Relaciona cada asociación con sus evidencias: forma, material, luz, comportamiento, detalle, contexto o fuente autoral. Una asociación sin sustento suficiente debe mantenerse como hipótesis.",
     "incluye": [],
-    "no_incluye": []
+    "no_incluye": [],
+    "lectura": {
+     "grupo": "M",
+     "decide": "Qué referencia o asociación se sostiene y con qué evidencia es una decisión de lectura.",
+     "se_calcula": "Los rasgos y fuentes que la respaldan se documentan y se comprueban uno por uno."
+    }
    }
   },
   "identidad": {
@@ -602,6 +718,20 @@
     "identidad",
     "externo"
    ]
+  },
+  "lectura": {
+   "D": {
+    "nombre": "Determinístico",
+    "definicion": "Una vez tomada la decisión, se resuelve con reglas, parámetros, catálogo, cálculo o simulación."
+   },
+   "M": {
+    "nombre": "Mixto",
+    "definicion": "Empieza como decisión o intención proyectual y después se traduce a parámetros."
+   },
+   "G": {
+    "nombre": "Generativo",
+    "definicion": "Necesita interpretación, elección, comparación, lenguaje, referencias o IA."
+   }
   }
  },
  "fields": {

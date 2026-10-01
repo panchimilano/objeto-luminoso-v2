@@ -53,6 +53,20 @@ svg.plate{width:min(100vh,100%);height:min(100vh,100vw);max-width:100%;display:b
 .legend{position:fixed;bottom:24px;right:36px;display:flex;gap:22px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;color:var(--muted);align-items:center}
 .legend i{display:inline-block;vertical-align:middle;margin-right:6px;background:var(--ink);width:8px}
 .legend .st{display:inline-flex;gap:3px;align-items:center;margin-right:4px}.legend .st i{width:10px;height:8px}
+/* V2 · capa de lectura D·M·G (01/10): tercer grupo de la leyenda, un activo a la vez; no recolorea los planos — punto de tinta en la punta de la barra */
+.legend .lect{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;margin-left:8px}
+.lbtn{border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);font:inherit;padding:3px 9px;line-height:1.3;cursor:pointer}
+.lbtn:hover{border-color:var(--ink);color:var(--ink)}.lbtn.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}.lbtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.plate .ldot,.plate .pdot{fill:var(--ink);pointer-events:none}
+.plate .pmark{font-family:var(--f-mono);font-size:7.5px;letter-spacing:.1em;fill:var(--ink);pointer-events:none}.plate .pmark.off{fill-opacity:.25}
+.plate.lect .clabel{fill-opacity:.25}
+.card .kicker a{cursor:pointer;color:var(--ink)}.card .kicker a:hover{text-decoration:underline}
+.lrow{display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line);font-size:13.5px;line-height:1.4}
+.lrow a{flex:1;cursor:pointer;color:inherit}.lrow a:hover{text-decoration:underline}.lrow a small{font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-right:6px}.lrow a small.z{margin:0 0 0 6px}
+.lmv{display:inline-flex;gap:3px;flex:none}.lmv button{width:22px;height:22px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);font-family:var(--f-mono);font-size:10.5px;padding:0;cursor:pointer}
+.lmv button:hover{border-color:var(--ink);color:var(--ink)}.lmv button.on{background:var(--ink);color:var(--paper);border-color:var(--ink);cursor:default}.lmv button:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.lacts{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}.lacts button{border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);padding:5px 11px;font:inherit;font-size:11.5px;cursor:pointer}.lacts button:disabled{opacity:.4;cursor:default}
+.lcopy{display:none;margin-top:8px}.lcopy.on{display:block}.lcopy textarea{font-family:var(--f-mono);font-size:11px;min-height:90px}
 /* la tarjeta */
 .card{position:fixed;right:36px;top:50%;transform:translateY(-50%);width:440px;max-height:86vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px 24px;box-shadow:var(--shadow);display:none}
 .card.on{display:block}
@@ -195,7 +209,7 @@ details.trace summary::before{content:'+ '}details.trace[open] summary::before{c
   <div class="bgrp" id="oolJobsHead">Trabajos del experto</div>
   <div id="oolJobs"><div class="ool-empty">cargando…</div></div>
 </div>
-<div class="legend"><span><i style="height:14px"></i>J4</span><span><i style="height:9px"></i>J3</span><span><i style="height:5px"></i>J2</span><span><i style="height:3px"></i>J1</span><span style="margin-left:8px"><span class="st"><i></i></span><span class="st"><i style="opacity:.8"></i></span><span class="st"><i style="opacity:.55"></i></span><span class="st"><i style="opacity:.42"></i></span><span class="st"><i style="background:none;border:1px solid var(--ink)"></i></span> documentado → desconocido</span></div>
+<div class="legend"><span><i style="height:14px"></i>J4</span><span><i style="height:9px"></i>J3</span><span><i style="height:5px"></i>J2</span><span><i style="height:3px"></i>J1</span><span style="margin-left:8px"><span class="st"><i></i></span><span class="st"><i style="opacity:.8"></i></span><span class="st"><i style="opacity:.55"></i></span><span class="st"><i style="opacity:.42"></i></span><span class="st"><i style="background:none;border:1px solid var(--ink)"></i></span> documentado → desconocido</span><span class="lect" id="lect" role="group" aria-label="Lectura"><span>Lectura</span><button class="lbtn" data-g="D" aria-pressed="false">Determinístico</button><button class="lbtn" data-g="M" aria-pressed="false">Mixto</button><button class="lbtn" data-g="G" aria-pressed="false">Generativo</button><span id="lectN" title="campos e ítems del Programa por grupo · D · M · G"></span></span></div>
 <div class="card" id="card"><button class="close" onclick="closeCard()">×</button><div id="cardBody"></div></div>
 <script>
 const $=(s,r=document)=>r.querySelector(s);
@@ -208,6 +222,8 @@ const PSEC={P1:'Propósito',P2:'Principios rectores',P3:'Condiciones no negociab
 let IMODE=null,ISEL=null,PER=0; // modo activo de Identidad (objeto | familia | marca) · ítem que afina las conexiones · ángulo por campo
 const MODES=[['objeto','Producto'],['familia','Familia'],['marca','Marca']];
 const MODENAME={objeto:'Identidad de producto',familia:'Identidad de familia',marca:'Identidad de marca'};
+let LMODE=null,LECT={}; // V2 · capa de lectura D·M·G: grupo activo (D | M | G | null) · clasificación vigente {id: grupo} (oficial de defs.json + ediciones del navegador)
+const LKEY='ool-v2-lectura-v1',LNAME={D:'Determinístico',M:'Mixto',G:'Generativo'};
 const KEY=(e,fn)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}};
 const CHORDS={S:[['O3-3','O7-4'],['O3-4','O6-4'],['O8-5','C4-3'],['O6-3','C5-2'],['U3-6','C4-2'],['O5-4','U4-2'],['O3-2','C1-3'],['O7-1','U4-4']],
               W:[['O3-3','O7-5'],['O3-4','C2-1'],['O5-3','O6-2'],['O8-5','C4-2'],['U3-1','C4-4'],['O6-3','C5-2'],['O3-2','C1-3'],['O5-7','U4-2']]};
@@ -263,7 +279,7 @@ function render(){
   });
   // anillos de escala
   [1,2,3,4].forEach(j=>el('circle',{cx:G.cx,cy:G.cy,r:G.RF0+G.LEN[j],class:'scale'},svg));
-  const gC=el('g',{class:'chords'},svg),gX=el('g',{class:'chords xlinks'},svg),gZ=el('g',{},svg),gB=el('g',{},svg),gL=el('g',{},svg),gP=el('g',{},svg),gT=el('g',{},svg),gI=el('g',{class:'ident'},svg); // gX: líneas de Programa/Identidad por selección (por atrás, como las cuerdas) · gI: anillo exterior
+  const gC=el('g',{class:'chords'},svg),gX=el('g',{class:'chords xlinks'},svg),gZ=el('g',{},svg),gD=el('g',{class:'ldots'},svg),gB=el('g',{},svg),gL=el('g',{},svg),gP=el('g',{},svg),gT=el('g',{},svg),gI=el('g',{class:'ident'},svg); // gX: líneas de Programa/Identidad por selección (por atrás, como las cuerdas) · gD: puntos de lectura D·M·G (bajo los bloques: el punto rojo de conflicto queda encima) · gI: anillo exterior
   d.planes.forEach(p=>{
     p.zones.forEach((z,zi)=>{
       // arco del plano (degradé por zona) + anillo de zona
@@ -301,7 +317,7 @@ function render(){
     el('path',{d:`M${u0} ${v0}L${x0} ${y0}Q${G.cx} ${G.cy} ${x1} ${y1}L${u1} ${v1}`,class:'curve'},c);
     el('title',{},c).textContent='#'+t+' · '+a.name+' ↔ '+b.name;if(fs.length<=4)nCh++}});
   const _nch=nCh;
-  drawIdentity();
+  drawIdentity();drawLect();
   // centro: la pieza
   svg.addEventListener('click',e=>{if(e.target===svg)closeCard()});
   const stg=svg.parentElement;if(!stg.dataset.bound){stg.dataset.bound='1';stg.addEventListener('click',e=>{if(e.target===stg)closeCard()})} // el fondo fuera del svg también cierra (la rueda ya no llena toda la stage)
@@ -345,6 +361,32 @@ function drawIdentity(){
 function clearX(){const g=$('#plate .xlinks');if(g)g.innerHTML=''}
 function lineCenterTo(f,g){const [u,v]=pol(G.RF0-1,f.am);const c=el('g',{class:'chord sel','data-f':f.id},g);el('path',{d:`M${G.cx} ${G.cy}L${u} ${v}`,class:'curve'},c)}
 
+/* ---------- V2 · capa de lectura D·M·G (01/10): transversal, no toca la ontología ni la Identidad; editable en el panel, persistida en el navegador ---------- */
+function lectOfficial(){const D=V2(),m={};['P1','P2','P3'].forEach(k=>{const g=((((D.programa||{}).partes||{})[k]||{}).lectura||{}).grupo;if(g)m[k]=g});if(DATA&&V)DATA[V].planes.forEach(p=>p.zones.forEach(z=>z.fields.forEach(f=>{const g=(((D.fields||{})[f.id]||{}).lectura||{}).grupo;if(g)m[f.id]=g})));return m}
+function lectLoad(){LECT=lectOfficial();try{const s=JSON.parse(localStorage.getItem(LKEY)||'{}');Object.keys(s).forEach(k=>{if(k in LECT&&/^[DMG]$/.test(s[k]))LECT[k]=s[k]})}catch(e){}lectCount()}
+function lectCount(){const n={D:0,M:0,G:0};Object.values(LECT).forEach(g=>n[g]++);const e=$('#lectN');if(e)e.textContent=`${n.D} · ${n.M} · ${n.G}`;return n}
+function lectEdits(){const o=lectOfficial();return Object.keys(LECT).filter(k=>LECT[k]!==o[k])}
+function lectInfo(id){const D=V2();const src=(/^P\d$/.test(id)?(((D.programa||{}).partes||{})[id]||{}):((D.fields||{})[id]||{})).lectura||{};return Object.assign({oficial:src.grupo},src,{grupo:LECT[id]||src.grupo})}
+function lectLine(id){const i=lectInfo(id);if(!i.grupo)return '';const txt=(i.decide||i.se_calcula)?`<p><b>Decide:</b> ${esc(i.decide||'—')}</p><p><b>Se calcula:</b> ${esc(i.se_calcula||'—')}</p>`:`<p>${esc(i.por_que||'')}</p>`;
+  return `<div class="sec" id="lect-line"><div class="kicker">Lectura · <a onclick="openLectura('${i.grupo}')" title="ver el grupo">${LNAME[i.grupo]}</a>${i.grupo!==i.oficial?` <span class="pill" title="clasificación editada en este navegador">editada · oficial: ${LNAME[i.oficial]||'—'}</span>`:''}</div><div class="human">${txt}</div></div>`}
+function lectOff(){if(LMODE){LMODE=null;drawLect()}}
+function drawLect(){const svg=$('#plate'),g=svg.querySelector('.ldots');document.querySelectorAll('#lect .lbtn').forEach(b=>{const on=b.dataset.g===LMODE;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});svg.classList.toggle('lect',!!LMODE);if(!g)return;g.innerHTML='';if(!LMODE||!DATA)return;
+  DATA[V].planes.forEach(p=>p.zones.forEach(z=>z.fields.forEach(f=>{if(LECT[f.id]!==LMODE)return;const [x,y]=pol(G.RF0+(G.LEN[f.j]??G.LEN[1])+4,f.am);el('circle',{cx:x,cy:y,r:2.6,class:'ldot',id:'ld-'+f.id},g)})));
+  // Programa: P1 · P2 · P3 bajo la leyenda del centro; los del grupo con su punto, el resto atenuados (el centro sigue clickeable: sin pointer-events)
+  ['P1','P2','P3'].forEach((k,i)=>{const a=Math.PI/2-(i-1)*.3,r=G.RPH-24,on=LECT[k]===LMODE;const [x,y]=pol(r,a);el('text',{class:'pmark'+(on?'':' off'),x,y,'text-anchor':'middle','dominant-baseline':'central',id:'pm-'+k},g).textContent=k;if(on){const [dx,dy]=pol(r,a+.1);el('circle',{cx:dx,cy:dy,r:2.6,class:'pdot',id:'pd-'+k},g)}})}
+function openLectura(g){if(!LNAME[g]||!DATA)return;if(IMODE){IMODE=null;ISEL=null;drawIdentity()}LMODE=g;drawLect();const D=(V2().lectura||{})[g]||{},n=lectCount(),ids=Object.keys(LECT).filter(k=>LECT[k]===g),ed=lectEdits().length;
+  const row=id=>{const P=/^P\d$/.test(id),f=P?null:fieldById(id),name=P?`${id} · ${PSEC[id]}`:(f?f.name:id);
+    return `<div class="lrow" data-id="${id}"><a onclick="${P?'openProgram()':`openFieldId('${id}')`}"><small>${P?'Programa':esc(f?f.code:id)}</small>${esc(name)}${f?`<small class="z">· ${esc(f.zone.name)}</small>`:''}</a><span class="lmv">${['D','M','G'].map(x=>`<button data-g="${x}" class="${x===g?'on':''}"${x===g?' disabled':''} title="${x===g?LNAME[x]:'Mover a '+LNAME[x]}" aria-label="${x===g?esc(name)+' está en '+LNAME[x]:'Mover '+esc(name)+' a '+LNAME[x]}" onclick="event.stopPropagation();moveLectura('${id}','${x}')">${x}</button>`).join('')}</span></div>`};
+  showCard(`<div class="kicker">Lectura · <b>D · M · G</b></div><div class="hrow"><h2>${esc(D.nombre||LNAME[g])}</h2>${helpBtn('lectura',g)}</div><div class="q">${esc(D.definicion||'')}</div>
+    <div class="sec"><div class="kicker">${LNAME[g]} · ${n[g]} de ${n.D+n.M+n.G} <small>(D ${n.D} · M ${n.M} · G ${n.G})</small></div>${ids.map(row).join('')||'<div class="human"><p>—</p></div>'}
+      <div class="human" style="margin-top:8px"><p><small>Las letras D · M · G mueven el campo a otro grupo; la rueda y el conteo cambian al instante. Un campo siempre pertenece a un grupo.</small></p></div></div>
+    <div class="sec"><div class="kicker">Clasificación ${ed?`<b>editada · ${ed} cambio${ed>1?'s':''}</b>`:'oficial'}</div><div class="lacts"><button onclick="copyLectura()" id="lectCopy">Copiar clasificación</button><button onclick="resetLectura()" id="lectReset"${ed?'':' disabled'}>Volver a la oficial</button></div><div class="lcopy" id="lectCopyBox"><textarea readonly id="lectJson" aria-label="clasificación en JSON"></textarea></div><div class="saved" id="lectSaved"></div></div>`,
+    ids.filter(i=>!/^P/.test(i)).map(i=>`#blk-${i},#fl-${i}`).join(',')+(ids.some(i=>/^P/.test(i))?',#center-lbl':''))}
+function moveLectura(id,g){if(!(id in LECT)||!LNAME[g]||LECT[id]===g)return;LECT[id]=g;try{localStorage.setItem(LKEY,JSON.stringify(LECT))}catch(e){}lectCount();if(LMODE){const st=$('#card').scrollTop;openLectura(LMODE);$('#card').scrollTop=st}else drawLect()}
+function resetLectura(){try{localStorage.removeItem(LKEY)}catch(e){}lectLoad();if(LMODE)openLectura(LMODE);else drawLect()}
+async function copyLectura(){const json=JSON.stringify(LECT,null,1),box=$('#lectCopyBox'),ta=$('#lectJson'),msg=$('#lectSaved');ta.value=json;
+  try{if(!navigator.clipboard)throw 0;await navigator.clipboard.writeText(json);box.classList.remove('on');msg.textContent='copiado al portapapeles · {id: "D|M|G"}'}catch(e){box.classList.add('on');ta.focus();ta.select();msg.textContent='sin acceso al portapapeles: copiá el texto seleccionado'}}
+
 /* ---------- la tarjeta ---------- */
 const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const paras=s=>(s||'').split(/\n{2,}/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/_(.+?)_/g,'<i>$1</i>')}</p>`).join('');
@@ -352,7 +394,7 @@ function showCard(html,selector){HELP=null;clearX();const c=$('#card');$('#cardB
   c.querySelectorAll('a[onclick],.pitem,.pill.lg,.zlist .z,.flist .f').forEach(e=>{if(!e.hasAttribute('tabindex'))e.setAttribute('tabindex','0');if(!e.getAttribute('role'))e.setAttribute('role','button')}); // teclado: Enter/Espacio en los enlaces internos (ver keydown delegado)
   if(innerWidth<=900)setTimeout(()=>c.scrollIntoView({behavior:'smooth',block:'start'}),60);
   const svg=$('#plate');svg.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'));if(selector){svg.classList.add('dim');svg.querySelectorAll(selector).forEach(e=>e.classList.add('sel'))}else svg.classList.remove('dim')}
-function closeCard(){$('#card').classList.remove('on');document.body.classList.remove('hascard');const svg=$('#plate');svg.classList.remove('dim');svg.querySelectorAll('.sel,.rel').forEach(e=>e.classList.remove('sel','rel'));clearX();ISEL=null;if(IMODE){IMODE=null;drawIdentity()}}
+function closeCard(){$('#card').classList.remove('on');document.body.classList.remove('hascard');const svg=$('#plate');svg.classList.remove('dim');svg.querySelectorAll('.sel,.rel').forEach(e=>e.classList.remove('sel','rel'));clearX();ISEL=null;if(IMODE){IMODE=null;drawIdentity()}lectOff()}
 function introRest(p){const lines=(p.intro||'').split('\n').map(l=>l.trim()).filter(Boolean);return lines.filter(l=>!l.startsWith('#')).slice(1).join('\n\n')}
 const cap=s=>(s||'').charAt(0)+(s||'').slice(1).toLowerCase();
 const V2=()=>DEFS.v2||{};
@@ -401,6 +443,7 @@ function openField(f,hl){
   showCard(`<div class="kicker">${esc(f.plane.name)} · <b>${esc(f.zone.name)}</b> · ${esc(f.code||'')} · ${f.id}</div><div class="hrow"><h2>${esc(f.titular||f.name)}</h2>${helpBtn('field',f.id)}</div><div class="q">${f.titular?`<b>${esc(f.name)}</b> · `:''}${esc(dv.pregunta||f.def||'')}</div>
     <div class="sec"><div class="kicker">Dato</div><div class="val">${esc(f.valor||'—')}</div>
       <div class="kv"><b>Unidad</b><span>${esc(f.unidad||'—')}</span><b>Importancia</b><span>J${f.j} · ${JWORD[f.j]||''}</span><b>Estado</b><span>${f.st==='conflicto'?'<span class="pill conf">conflicto</span> ':''}${f.desconocido_parcial?'<span class="pill unk">desconocido parcial</span> ':''}${esc(f.estado||'')}</span><b>Confianza</b><span>${esc(f.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(f.fuente)||'—'}</span>${f.estado_proyecto?`<b>Proyecto</b><span>${esc(f.estado_proyecto)}</span>`:''}<b>Incertidumbre</b><span>${['desconocidos','conflictos','pendientes','inferidos'].map(k=>inc[k]?`${inc[k]} ${k}`:'').filter(Boolean).join(' · ')||'—'}</span></div></div>
+    ${lectLine(f.id)}
     <div class="sec"><div class="kicker">Detalle · ${(f.detalle||[]).length} registros</div>${(f.detalle||[]).map(detHtml).join('')}</div>
     ${byT.responde_a?`<div class="sec"><div class="kicker">Responde al Programa · ${byT.responde_a.length}</div>${byT.responde_a.map(r=>relLine(r,f.id)).join('')}</div>`:''}
     ${byT.define?`<div class="sec"><div class="kicker">Define Identidad · ${byT.define.length}</div>${byT.define.map(r=>relLine(r,f.id)).join('')}</div>`:''}
@@ -430,6 +473,7 @@ function openProgram(hl){const P=DATA[V].programa||{},MV=metaOf(V);const n=new S
 function openPItem(id){const it=pitemById(id);if(!it||!it.seccion)return openProgram(id);const code=it.seccion,pd=((V2().programa||{}).partes||{})[code]||{};const rels=REL().filter(r=>r.type==='responde_a'&&r.to===id);
   showCard(`<div class="kicker">Programa · <b>${esc(PSEC[code])}</b> · ${id}</div><div class="hrow"><h2>${esc(PSEC[code])}</h2>${helpBtn('pitem',code)}</div><div class="q">${esc(pd.pregunta||'')}</div>
     <div class="sec"><div class="kicker">Enunciado</div><div class="val">${esc(it.enunciado||it.texto)}</div><div class="human">${paras(it.desarrollo||'')}</div></div>
+    ${lectLine(code)}
     <div class="sec"><div class="kicker">Responden a este enunciado · ${rels.length} categorías</div>${rels.map(r=>relLine(r,id)).join('')||'<div class="human"><p>—</p></div>'}</div>
     <details class="trace"><summary>Trazabilidad · origen y evidencia</summary><div class="sec"><div class="kv"><b>Testimonio</b><span>${esc(it.testimonio||'—')}</span><b>Origen</b><span>${esc(it.procedencia||'—')}</span><b>Estado</b><span>${esc(it.estado||'')}</span><b>Confianza</b><span>${esc(it.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(it.fuente)||'—'}</span><b>Proyecto</b><span>${esc(it.estado_proyecto||'— (ficha de objeto existente)')}</span><b>Legacy</b><span>${lpills(it.legacy_ids)||'—'}</span></div>${it.nota?`<div class="human" style="margin-top:8px"><p><i>${esc(it.nota)}</i></p></div>`:''}</div></details>
     <div class="rel"><a onclick="openProgram()">← Programa proyectual</a></div>`,'#center-lbl,'+(it.links||[]).map(l=>`#blk-${l},#fl-${l}`).join(','));
@@ -443,7 +487,7 @@ function openDocs(hl){const D=DATA[V].documentacion||[];
 function openIdentityMode(m){if(IMODE===m&&!ISEL){IMODE=null;ISEL=null;drawIdentity();closeCard();return}showIdentityMode(m)}
 function iitemRow(it){return `<div class="pitem" onclick="openIdentityItem('${it.id}')"><span class="e">● ${esc(it.label)}</span><span class="w">${esc(it.why||it.texto||'')}</span><small>${(it.links||[]).map(l=>{const f=fieldById(l);return f?f.name:l}).join(' · ')} · ${esc(it.estado||'')}</small></div>`}
 function modeSelector(m,items){const links=new Set();items.forEach(it=>(it.links||[]).forEach(l=>links.add(l)));return `#isel-${m}`+items.map(it=>`,#il-${it.id},#in-${it.id},#ilb-${it.id}`).join('')+[...links].map(l=>`,#blk-${l},#fl-${l}`).join('')}
-function showIdentityMode(m){IMODE=m;ISEL=null;drawIdentity();const I=DATA[V].identidad||{},D2=V2().identidad||{},AL=((DATA[V].meta||{}).alcance)||{},LEC=(I.lecturas||{})[m]||'';let html='';
+function showIdentityMode(m){lectOff();IMODE=m;ISEL=null;drawIdentity();const I=DATA[V].identidad||{},D2=V2().identidad||{},AL=((DATA[V].meta||{}).alcance)||{},LEC=(I.lecturas||{})[m]||'';let html='';
   const lect=`<div class="sec"><div class="kicker">Lectura · Hope</div><div class="human">${paras(LEC)}</div></div>`;
   if(m==='objeto'){const d=D2.objeto||{};html=`<div class="kicker">Identidad · <b>Producto</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.objeto)}</h2>${helpBtn('identity','objeto')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
     <div class="sec"><div class="kicker">Elementos definitorios · ${(I.objeto||[]).length}</div>${(I.objeto||[]).map(iitemRow).join('')}</div>
@@ -459,7 +503,7 @@ function showIdentityMode(m){IMODE=m;ISEL=null;drawIdentity();const I=DATA[V].id
     <div class="sec"><div class="kicker">Tipo de relación</div><div class="human"><p>${esc(M.tipo_relacion||'—')}${(M.elementos||[]).length?' · por '+esc(M.elementos.join(', ')):''}</p></div></div>
     <div class="sec"><div class="kicker">Estado y fuente de la lectura</div><div class="kv"><b>Estado</b><span>${esc(M.estado||'')}</span><b>Fuente</b><span>${srcHtml(M.fuente)||'—'}</span></div><div class="human" style="margin-top:8px"><p><small>${esc(M.nota||'')}</small></p><p><small>${esc(AL.coleccion||'')}</small></p></div></div>`}
   showCard(html,modeSelector(m,idItems(m)))}
-function openIdentityItem(id){const it=iitemById(id);if(!it)return;const modo=it.modo||'objeto';IMODE=modo;ISEL=id;drawIdentity();const D2=V2().identidad||{};const kind=it.variable?'variable admitida':(modo==='objeto'?'elemento definitorio':modo==='familia'?'invariante':'elemento de afinidad');
+function openIdentityItem(id){const it=iitemById(id);if(!it)return;lectOff();const modo=it.modo||'objeto';IMODE=modo;ISEL=id;drawIdentity();const D2=V2().identidad||{};const kind=it.variable?'variable admitida':(modo==='objeto'?'elemento definitorio':modo==='familia'?'invariante':'elemento de afinidad');
   const links=(it.links||[]).map(l=>{const f=fieldById(l),via=(it.via||{})[l];return `<div class="rel"><a onclick="openFieldId('${l}')"><small>${l}</small>${esc(f?f.name:l)} <small>· ${esc(f?f.zone.name:'')}${it.anchor===l?' · ancla':''}</small></a>${via?`<small><a onclick="goRef('${via}')" style="display:inline">→ ${esc(via)}</a></small>`:''}</div>`}).join('');
   const roles=(it.roles||[modo]).map(r=>MODENAME[r]||r).join(' · ');
   const prog=(it.programa||[]).map(p=>{const pi=pitemById(p);return `<div class="rel"><span class="tag">${esc(id)} responde a ${esc(p)} <small>(vía sus categorías)</small></span><a onclick="openPItem('${p}')"><small>${p}</small>${esc(pi?pi.texto:p)}</a></div>`}).join('');
@@ -504,6 +548,8 @@ function guideHtml(kind,obj){const D=V2();const li=a=>(a||[]).length?`<ul>${a.ma
     <div class="sec guide"><div class="kicker">Sus tres partes</div>${['P1','P2','P3'].map(k=>{const p=(d.partes||{})[k]||{};return `<div class="def"><b><small>${k}</small> ${esc(p.nombre||'')}</b><i>${esc(p.pregunta||'')}</i><br>${esc(p.que_es||'')}<br><small>Incluye: ${esc((p.incluye||[]).join(' · '))}</small><br><small>No incluye: ${esc((p.no_incluye||[]).join(' · '))}</small></div>`}).join('')}</div>
     <div class="sec guide"><div class="kicker">Relaciones</div><div class="human"><p><b>responde_a</b>: ${esc((D.relaciones||{}).responde_a||'')} Dirección: campo o decisión → ítem del Programa. ${esc((D.relaciones||{}).nota||'')} Un requisito documentado no es una solución validada: el estado de proyecto es un eje aparte del estado de evidencia.</p></div></div>`}
   if(kind==='pitem'){const k=obj,p=((D.programa||{}).partes||{})[k]||{};return `<div class="kicker">Qué es · Programa proyectual · ${k}</div><div class="hrow"><h2>${esc(p.nombre||'')}</h2>${helpBtn('pitem',k)}</div><div class="q">${esc(p.pregunta||'')}</div>${block(p)}`}
+  if(kind==='lectura'){const L=D.lectura||{};return `<div class="kicker">Qué es · Lectura D · M · G</div><div class="hrow"><h2>${esc((L[obj]||{}).nombre||LNAME[obj]||'')}</h2>${helpBtn('lectura',obj)}</div><div class="q">Capa transversal sobre la ficha: no cambia la ontología ni la Identidad; dice cómo se resuelve cada campo una vez tomada la decisión.</div>
+    <div class="sec guide"><div class="kicker">Tres grupos</div>${['D','M','G'].map(k=>`<div class="def"><b>${k} · ${esc((L[k]||{}).nombre||LNAME[k])}</b>${esc((L[k]||{}).definicion||'')}</div>`).join('')}<div class="human"><p><small>Identidad (producto / familia / marca) no se clasifica: selecciona y valora campos de cualquier grupo. En los Mixtos la tarjeta separa qué se decide y qué se calcula después.</small></p></div></div>`}
   if(kind==='identity'||kind==='iitem'){const m=obj.m,d=D.identidad||{},md=d[m==='marca'?'marca_coleccion':m]||{};const secs=md.secciones?Object.entries(md.secciones).map(([k,v])=>`<div class="def"><b>${esc(k)}</b>${Array.isArray(v)?esc(v.join(' · ')):esc(v)}</div>`).join(''):'';
     return `<div class="kicker">Qué es · Identidad</div><div class="hrow"><h2>${esc(md.nombre||'')}</h2>${helpBtn(kind,kind==='iitem'?obj.id:m)}</div><div class="q">${esc(md.pregunta||'')}</div>
     <div class="sec guide"><div class="kicker">Qué es la Identidad</div><div class="human"><p>${esc(unbold(d.principio))} ${esc(d.que_es||'')} ${esc(d.no_duplica||'')} ${esc(unbold(d.proyeccion))} Es una lectura transversal: selecciona y conecta campos existentes; no es un lugar donde copiar datos.</p></div></div>
@@ -513,7 +559,7 @@ function guideHtml(kind,obj){const D=V2();const li=a=>(a||[]).length?`<ul>${a.ma
   return ''}
 function toggleHelp(kind,id){const body=$('#cardBody');
   if(HELP&&HELP.kind===kind&&HELP.id===id){body.innerHTML=HELP.html;HELP=null;$('#card').scrollTop=0;return}
-  let obj=null;if(kind==='plane')obj=DATA[V].planes.find(p=>p.id===id||p.name===id);else if(kind==='zone'){for(const p of DATA[V].planes)for(const z of p.zones)if(z.nodeId===id)obj=z}else if(kind==='field')obj=fieldById(id);else if(kind==='program')obj='programa';else if(kind==='pitem')obj=id;else if(kind==='identity')obj={m:id};else if(kind==='iitem'){const it=iitemById(id);obj=it?{m:it.modo||'objeto',id}:null}
+  let obj=null;if(kind==='plane')obj=DATA[V].planes.find(p=>p.id===id||p.name===id);else if(kind==='zone'){for(const p of DATA[V].planes)for(const z of p.zones)if(z.nodeId===id)obj=z}else if(kind==='field')obj=fieldById(id);else if(kind==='program')obj='programa';else if(kind==='pitem')obj=id;else if(kind==='identity')obj={m:id};else if(kind==='iitem'){const it=iitemById(id);obj=it?{m:it.modo||'objeto',id}:null}else if(kind==='lectura')obj=LNAME[id]?id:null;
   if(!obj)return;HELP={kind,id,html:body.innerHTML};body.innerHTML=guideHtml(kind,obj);$('#card').scrollTop=0;const b=body.querySelector('.help');if(b)b.classList.add('on')}
 async function saveComment(ta){const key=ta.dataset.key,label=ta.dataset.label,text=ta.value;const prev=COMMENTS[key]?COMMENTS[key].text:'';if(text===prev)return;
   const r=await fetch('api/comments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,label,text})});
@@ -539,11 +585,12 @@ async function loadOolJobs(){try{const before=OOLJOBS.map(j=>j.id+':'+j.etapa).j
 async function answerOol(id){const ta=document.getElementById('ans-'+id),respuestas=(ta?.value||'').trim();if(!respuestas)return;$('#oolMsg').textContent='enviando respuestas…';try{await apiPost('api/ool/respond',{id,respuestas});$('#oolMsg').textContent='respuestas enviadas';await loadOolJobs()}catch(e){$('#oolMsg').textContent=e.message}}
 function pick(id){V=id;closeCard();render();closeBase();history.replaceState(null,'','#'+encodeURIComponent(id))}
 $('#baseBtn').addEventListener('click',()=>$('#base').classList.contains('on')?closeBase():openBase());
+document.querySelectorAll('#lect .lbtn').forEach(b=>b.addEventListener('click',()=>{if(!DATA)return;LMODE===b.dataset.g?closeCard():openLectura(b.dataset.g)})); // un solo activo; volver a tocarlo lo apaga
 $('#baseQ').addEventListener('input',renderBase);
 document.querySelectorAll('.seg2 button').forEach(b=>b.addEventListener('click',()=>{GROUP=b.dataset.g;document.querySelectorAll('.seg2 button').forEach(x=>x.classList.toggle('on',x===b));renderBase()}));
 setTheme('fgp');
 setInterval(()=>{if($('#base').classList.contains('on'))loadOolJobs()},5000);
-(async()=>{const [d,c,df,ls]=await Promise.all([fetch('api/data.json').then(r=>r.json()),fetch('api/comments.json').then(r=>r.json()),fetch('api/defs.json').then(r=>r.json()),fetch('api/lamps.json').then(r=>r.json())]);DATA=d;COMMENTS=c;DEFS=df;LAMPS=ls;const h=decodeURIComponent(location.hash.slice(1));V=(h&&DATA[h])?h:(LAMPS[0]||{}).id||Object.keys(DATA)[0];render()})();
+(async()=>{const [d,c,df,ls]=await Promise.all([fetch('api/data.json').then(r=>r.json()),fetch('api/comments.json').then(r=>r.json()),fetch('api/defs.json').then(r=>r.json()),fetch('api/lamps.json').then(r=>r.json())]);DATA=d;COMMENTS=c;DEFS=df;LAMPS=ls;const h=decodeURIComponent(location.hash.slice(1));V=(h&&DATA[h])?h:(LAMPS[0]||{}).id||Object.keys(DATA)[0];lectLoad();render()})();
 </script>
 <!-- OOL · exportación estática 2026-09-07 17:41 · generada por build_static.py -->
 </body>
