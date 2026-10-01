@@ -120,20 +120,20 @@
    },
    "US1": {
     "code": "B1",
-    "nombre": "Contexto de uso",
-    "pregunta": "¿En qué situaciones tiene sentido utilizarla?",
+    "nombre": "Situación",
+    "pregunta": "¿Dónde, para quién y para qué?",
     "que_es": "Sitúa la luminaria en relación con las actividades, las personas y el espacio donde se utiliza."
    },
    "US2": {
     "code": "B2",
     "nombre": "Interacción",
-    "pregunta": "¿Qué puede hacer la persona con la lámpara y cómo?",
+    "pregunta": "¿Qué quiero que pueda hacer la persona?",
     "que_es": "Describe las posibilidades de intervención humana sobre el objeto, desde la operación cotidiana hasta acciones ocasionales relevantes."
    },
    "US3": {
     "code": "B3",
-    "nombre": "Desempeño",
-    "pregunta": "¿Qué aporta la lámpara a la actividad y al espacio y qué condiciona ese aporte?",
+    "nombre": "Experiencia",
+    "pregunta": "¿Qué quiero que ocurra cuando lo usa?",
     "que_es": "Describe qué permite, facilita o aporta la luminaria una vez utilizada, incluyendo tanto la función práctica como la experiencia luminosa relevante. Distingue entre aporte previsto, documentado, observado o validado."
    },
    "CO1": {
