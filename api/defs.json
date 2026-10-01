@@ -520,10 +520,27 @@
     "incluye": [],
     "no_incluye": [],
     "no_confundir": "arquetipo, función de uso o geometría.",
+    "estructura": {
+     "que_es": "Tipología = término(s) del vocabulario —uno principal y, si corresponde, secundarios— + sus rasgos + qué hace la lámpara con cada rasgo. Cada rasgo recibe una operación con una línea de cómo; lo que la lámpara hace y la tipología normalmente no hace se registra como «introduce». La adhesión no se declara: sale de las operaciones, una por término. El modo creativo hace las mismas tres preguntas para proyectar; en una ficha existente, las respuestas se reconstruyen desde la ficha y quedan como interpretación.",
+     "operaciones": {
+      "conserva": "La lámpara mantiene el rasgo de la tipología.",
+      "transforma": "La lámpara mantiene el rasgo pero lo resuelve de otro modo (componente, escala, configuración o quién decide).",
+      "rechaza": "La lámpara renuncia deliberadamente al rasgo.",
+      "introduce": "La lámpara hace algo que la tipología normalmente no hace; no está atado a un rasgo del vocabulario."
+     },
+     "adhesion": "Se deriva, no se declara, por término: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta.",
+     "preguntas": {
+      "interesa": "¿Qué te interesa de la tipología?",
+      "no_quiero": "¿Qué no querés de ella?",
+      "quisiera": "¿Qué te gustaría que hiciera y normalmente no hace?"
+     },
+     "frase_proyectual": "Síntesis en una frase de lo que el proyecto toma, deja y agrega respecto de su tipología.",
+     "libre": "Lo que no se decidió: aspectos que la tipología y el proyecto dejan abiertos."
+    },
     "lectura": {
      "grupo": "M",
      "decide": "La tipología (suspensión, pie, aplique, sistema…) es una decisión de partida, casi siempre dada por el brief.",
-     "se_calcula": "Fijada la tipología, anclaje, alimentación y relación con el espacio se desprenden de ella como datos de catálogo."
+     "se_calcula": "Fijada la tipología, sus rasgos salen del vocabulario controlado y la adhesión se calcula de lo que la lámpara hace con cada uno; anclaje, alimentación y relación con el espacio se desprenden de ella como datos de catálogo."
     },
     "vocabulario": {
      "version": "1.0",
@@ -536,6 +553,11 @@
        "grupo": "interior",
        "definicion": "Luminaria que cuelga del techo mediante cable, varilla o cadena, con el cuerpo separado del plano de fijación.",
        "criterio": "El cuerpo queda separado del techo por un elemento de suspensión; si se apoya contra el techo es plafón, y si la línea es continua de muchos tramos se registra además como lineal.",
+       "rasgos": [
+        "Fijada al techo",
+        "Cuelga de un elemento de suspensión: cable, varilla o cadena",
+        "Cuerpo separado del plano de fijación"
+       ],
        "subtipos": [
         "de punto único",
         "multipunto o racimo (varias suspensiones desde un mismo florón)",
@@ -576,6 +598,11 @@
        "grupo": "interior",
        "definicion": "Luminaria fijada directamente contra el techo, sin elemento de suspensión que la separe del plano.",
        "criterio": "Toca el plano del techo; el semiplafón tiene un vástago corto pero rígido. Si el cuerpo queda dentro del cielorraso es empotrada.",
+       "rasgos": [
+        "Fijada directamente contra el techo",
+        "Sin elemento de suspensión que la separe del plano",
+        "Cuerpo por fuera del cielorraso"
+       ],
        "subtipos": [
         "plafón",
         "semiplafón"
@@ -616,6 +643,11 @@
        "grupo": "interior",
        "definicion": "Luminaria alojada dentro del cielorraso, con la boca enrasada o casi enrasada con el plano del techo.",
        "criterio": "El cuerpo queda dentro del plano y sólo se ve la boca; si sobresale el cuerpo entero es plafón.",
+       "rasgos": [
+        "Cuerpo alojado dentro del cielorraso",
+        "Boca enrasada o casi enrasada con el plano del techo",
+        "Del aparato sólo se ve la boca"
+       ],
        "subtipos": [
         "downlight fijo",
         "downlight orientable (ojo de buey)",
@@ -659,6 +691,10 @@
        "grupo": "interior",
        "definicion": "Luminaria fijada a un plano vertical, con el cuerpo sobre la pared.",
        "criterio": "El soporte es la pared y el cuerpo queda por fuera de ella; si queda dentro del muro es empotrada de pared.",
+       "rasgos": [
+        "Fijada a un plano vertical: la pared es el soporte",
+        "Cuerpo por fuera de la pared"
+       ],
        "subtipos": [
         "aplique fijo",
         "aplique orientable o de brazo",
@@ -699,6 +735,11 @@
        "grupo": "interior",
        "definicion": "Luminaria alojada dentro del muro, con la boca enrasada con el plano vertical; incluye las balizas de escalón y de paso.",
        "criterio": "El cuerpo queda dentro del muro; su luz suele ir al suelo o a un recorrido. Si sobresale entero es aplique.",
+       "rasgos": [
+        "Cuerpo alojado dentro del muro",
+        "Boca enrasada con el plano vertical",
+        "Luz dirigida al suelo o a un recorrido"
+       ],
        "subtipos": [
         "baliza de escalón o de paso",
         "empotrable de pared orientable"
@@ -732,6 +773,11 @@
        "grupo": "interior",
        "definicion": "Luminaria apoyada en el suelo que eleva la fuente mediante un mástil, trípode o estructura propia.",
        "criterio": "Se apoya en el suelo y se desplaza sin herramientas; si se ancla al suelo en exterior es baliza o farola.",
+       "rasgos": [
+        "Apoyada en el suelo",
+        "Eleva la fuente con mástil, trípode o estructura propia",
+        "Se desplaza sin herramientas"
+       ],
        "subtipos": [
         "de iluminación general",
         "de lectura"
@@ -771,6 +817,11 @@
        "grupo": "interior",
        "definicion": "Luminaria que se apoya o se fija a un mueble —mesa, escritorio, estante— y alimenta desde la red.",
        "criterio": "Su soporte es un mueble, no la arquitectura; si no tiene cable y se lleva de un lugar a otro es portátil.",
+       "rasgos": [
+        "El soporte es un mueble —mesa, escritorio, estante—, no la arquitectura",
+        "Apoyada con base o fijada con pinza",
+        "Alimentada desde la red"
+       ],
        "subtipos": [
         "apoyada (con base)",
         "con pinza o mordaza"
@@ -811,6 +862,11 @@
        "grupo": "interior/exterior",
        "definicion": "Luminaria autónoma, con batería, que se transporta y se usa sin conexión permanente a la red.",
        "criterio": "No depende de un punto de instalación: su condición es el desplazamiento. Una lámpara de mesa con enchufe es sobremesa aunque se pueda mover.",
+       "rasgos": [
+        "Autónoma, con batería",
+        "Se usa sin conexión permanente a la red",
+        "Se transporta: no depende de un punto de instalación"
+       ],
        "subtipos": [
         "recargable de mesa",
         "de mano o de colgar"
@@ -851,6 +907,11 @@
        "grupo": "sistema",
        "definicion": "Conjunto de luminarias que se enganchan, desplazan y conectan a lo largo de un perfil que las sostiene y las alimenta.",
        "criterio": "La luminaria vale por su adaptador al perfil: se cambia de lugar sin obra. Puede coexistir con suspensión, plafón o empotrada (el perfil se instala así).",
+       "rasgos": [
+        "Un perfil que sostiene y alimenta a la vez",
+        "Luminarias que se enganchan al perfil con un adaptador",
+        "Se desplazan y cambian de lugar sin obra"
+       ],
        "subtipos": [
         "carril de red (mono o trifásico)",
         "carril magnético de muy baja tensión"
@@ -892,6 +953,11 @@
        "grupo": "sistema",
        "definicion": "Luminarias que cuelgan de dos cables o varillas tendidos que a la vez las sostienen y les llevan corriente de muy baja tensión.",
        "criterio": "El soporte y el conductor son el mismo elemento tendido de pared a pared; sin los cables no hay luminaria.",
+       "rasgos": [
+        "Dos cables o varillas tendidos de pared a pared",
+        "Los cables sostienen y llevan corriente de muy baja tensión",
+        "Luminarias que cuelgan de los cables"
+       ],
        "subtipos": [],
        "sinonimos": "it. sistema a cavi tesi · en. low-voltage cable system",
        "ejemplos": [
@@ -913,6 +979,11 @@
        "grupo": "sistema",
        "definicion": "Luminaria formada por módulos que se agregan, se encadenan o forman estructura para componer piezas de distinto tamaño o recorrido.",
        "criterio": "No es una pieza cerrada: el usuario o el instalador decide la cantidad o la configuración. Se registra junto a su montaje (por ejemplo, suspensión + sistema modular).",
+       "rasgos": [
+        "Módulos que se agregan, se encadenan o forman estructura",
+        "Piezas de distinto tamaño o recorrido con los mismos módulos",
+        "No es una pieza cerrada: el usuario o el instalador decide cantidad o configuración"
+       ],
        "subtipos": [
         "por agregación de módulos iguales",
         "estructural (la luminaria forma la estructura que la sostiene)"
@@ -945,6 +1016,11 @@
        "grupo": "interior",
        "definicion": "Luminaria de desarrollo longitudinal que se instala como recorrido continuo, encadenando tramos.",
        "criterio": "Lo que la define es la continuidad de la línea en obra; un solo cuerpo alargado colgado es una suspensión.",
+       "rasgos": [
+        "Desarrollo longitudinal",
+        "Se instala como recorrido continuo en obra",
+        "Tramos encadenados"
+       ],
        "subtipos": [
         "suspendida",
         "adosada",
@@ -987,6 +1063,11 @@
        "grupo": "interior",
        "definicion": "Luz incorporada a la construcción —perfil en placa de yeso, nicho, moldura, cornisa— de modo que la fuente queda oculta en el plano construido.",
        "criterio": "No se percibe un objeto luminaria: se percibe la arquitectura iluminada. Si se ve la boca de un aparato, es empotrada.",
+       "rasgos": [
+        "Luz incorporada a la construcción: perfil, nicho, moldura o cornisa",
+        "Fuente oculta en el plano construido",
+        "No se percibe una luminaria: se percibe la arquitectura iluminada"
+       ],
        "subtipos": [
         "perfil en yeso",
         "cornisa o moldura (cove)",
@@ -1020,6 +1101,11 @@
        "grupo": "interior",
        "definicion": "Luz incorporada a un mueble —estante, cabecera, vitrina, cocina— de modo que forma parte de él.",
        "criterio": "Se instala y se vende con el mueble o dentro de él; si se apoya sobre el mueble es sobremesa.",
+       "rasgos": [
+        "Luz incorporada a un mueble: estante, cabecera, vitrina o cocina",
+        "Forma parte del mueble",
+        "Se instala y se vende con el mueble o dentro de él"
+       ],
        "subtipos": [],
        "sinonimos": "en. furniture integrated, under-cabinet",
        "ejemplos": [
@@ -1041,6 +1127,11 @@
        "grupo": "exterior/interior",
        "definicion": "Luminaria alojada en el pavimento, con la boca enrasada y pisable, que ilumina hacia arriba o marca un recorrido.",
        "criterio": "Está dentro del suelo y soporta ser pisada; si sobresale del suelo es baliza.",
+       "rasgos": [
+        "Alojada en el pavimento",
+        "Boca enrasada y pisable",
+        "Ilumina hacia arriba o marca un recorrido"
+       ],
        "subtipos": [
         "de proyección hacia arriba",
         "de señalización"
@@ -1083,6 +1174,11 @@
        "grupo": "exterior",
        "definicion": "Luminaria de exterior de baja altura anclada al suelo que ilumina un recorrido o un borde.",
        "criterio": "Altura de persona o menor, anclada; si eleva la fuente sobre una columna para alumbrar un espacio amplio es farola.",
+       "rasgos": [
+        "Exterior y de baja altura: de persona o menor",
+        "Anclada al suelo",
+        "Ilumina un recorrido o un borde"
+       ],
        "subtipos": [],
        "sinonimos": "it. paletto · en. bollard",
        "ejemplos": [
@@ -1112,6 +1208,11 @@
        "grupo": "exterior",
        "definicion": "Luminaria de alumbrado público o de grandes espacios exteriores, elevada sobre una columna o brazo.",
        "criterio": "Eleva la fuente para alumbrar calzada, plaza o recorrido desde arriba; es la tipología del alumbrado público.",
+       "rasgos": [
+        "Fuente elevada sobre una columna o un brazo",
+        "Alumbra desde arriba calzada, plaza o recorrido",
+        "Alumbrado público o de grandes espacios exteriores"
+       ],
        "subtipos": [
         "sobre columna (post-top)",
         "de brazo"
@@ -1151,6 +1252,12 @@
        "grupo": "exterior/interior",
        "definicion": "Luminaria orientable de haz concentrado montada sobre estaca, brazo, horquilla o superficie, para bañar o acentuar fachadas, árboles u objetos.",
        "criterio": "Su condición es apuntar: se monta en un soporte orientable fuera del plano. El proyector de carril pertenece al sistema de riel.",
+       "rasgos": [
+        "Haz concentrado",
+        "Orientable: su condición es apuntar",
+        "Montado sobre estaca, brazo, horquilla o superficie, fuera del plano",
+        "Baña o acentúa fachadas, árboles u objetos"
+       ],
        "subtipos": [
         "sobre estaca",
         "sobre horquilla o brazo"
@@ -1192,6 +1299,11 @@
        "grupo": "exterior",
        "definicion": "Luminaria diseñada para funcionar bajo el agua, en piscinas, estanques o fuentes.",
        "criterio": "Su condición de instalación es el agua: hermeticidad y alimentación de muy baja tensión.",
+       "rasgos": [
+        "Funciona bajo el agua: piscinas, estanques o fuentes",
+        "Hermética",
+        "Alimentación de muy baja tensión"
+       ],
        "subtipos": [],
        "sinonimos": "en. underwater, pool light",
        "ejemplos": [
@@ -1222,6 +1334,11 @@
        "grupo": "exterior/interior",
        "definicion": "Conjunto de puntos de luz repartidos a lo largo de un cable que se tiende o se cuelga entre puntos.",
        "criterio": "La luminaria es el cable con sus portalámparas y se instala tendiéndolo; no tiene un cuerpo principal.",
+       "rasgos": [
+        "Puntos de luz repartidos a lo largo de un cable",
+        "Se instala tendiendo o colgando el cable entre puntos",
+        "Sin cuerpo principal: la luminaria es el cable con sus portalámparas"
+       ],
        "subtipos": [],
        "sinonimos": "it. catenaria luminosa · en. festoon, string lights",
        "ejemplos": [
@@ -1262,7 +1379,8 @@
         "nota": "La ficha la registra como objeto modular de un sistema con cuatro tamaños y kits apilables."
        }
       ]
-     }
+     },
+     "nota_rasgos": "`rasgos` se deriva de la definición y el criterio de cada tipología, sin agregar sentido: es la lista contra la que una ficha declara, rasgo por rasgo, qué conserva, transforma o rechaza (Fran, 01/10/2026). A diferencia de los arquetipos, el vocabulario de tipologías no traía rasgos técnicos escritos."
     }
    },
    "CO1-2": {

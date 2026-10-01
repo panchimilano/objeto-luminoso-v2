@@ -3835,6 +3835,293 @@
           ]
          }
         ],
+        "tipologia": {
+         "terminos": [
+          {
+           "id": "suspension",
+           "termino": "Suspensión",
+           "definicion": "Luminaria que cuelga del techo mediante cable, varilla o cadena, con el cuerpo separado del plano de fijación.",
+           "rol": "principal",
+           "ref": "CO1-1.d1",
+           "rasgos": [
+            "Fijada al techo",
+            "Cuelga de un elemento de suspensión: cable, varilla o cadena",
+            "Cuerpo separado del plano de fijación"
+           ],
+           "adhesion": {
+            "conserva": 3,
+            "transforma": 0,
+            "rechaza": 0,
+            "total": 3,
+            "porcentaje": 100,
+            "derivada": true,
+            "texto": "conserva 3 de 3 rasgos · 100 %",
+            "formula": "Se deriva, no se declara, por término: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta."
+           }
+          },
+          {
+           "id": "sistema-modular",
+           "termino": "Sistema modular o estructural",
+           "definicion": "Luminaria formada por módulos que se agregan, se encadenan o forman estructura para componer piezas de distinto tamaño o recorrido.",
+           "rol": "secundaria",
+           "ref": "CO1-1.d2",
+           "rasgos": [
+            "Módulos que se agregan, se encadenan o forman estructura",
+            "Piezas de distinto tamaño o recorrido con los mismos módulos",
+            "No es una pieza cerrada: el usuario o el instalador decide cantidad o configuración"
+           ],
+           "adhesion": {
+            "conserva": 2,
+            "transforma": 1,
+            "rechaza": 0,
+            "total": 3,
+            "porcentaje": 83,
+            "derivada": true,
+            "texto": "conserva 2 de 3 rasgos · transforma 1 · 83 %",
+            "formula": "Se deriva, no se declara, por término: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta."
+           }
+          }
+         ],
+         "operaciones": [
+          {
+           "id": "CO1-1.o1",
+           "termino": "suspension",
+           "rasgo": "Fijada al techo",
+           "operacion": "conserva",
+           "como": "Una placa atornillada al techo, con la conexión eléctrica, la instala un electricista; de ahí cuelga todo.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F3",
+           "ref": [
+            "HA3-1.u4",
+            "HA2-1.p6",
+            "US2-1.d2"
+           ],
+           "legacy_ids": [
+            "O2-1",
+            "O5-1",
+            "U4-1"
+           ]
+          },
+          {
+           "id": "CO1-1.o2",
+           "termino": "suspension",
+           "rasgo": "Cuelga de un elemento de suspensión: cable, varilla o cadena",
+           "operacion": "conserva",
+           "como": "Tres cables de acero desde un florón con regulación sostienen la estructura; un cable eléctrico lleva la red a los portalámparas.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F3",
+           "ref": [
+            "HA2-1.p5",
+            "HA2-1.p7",
+            "HA3-1.u3",
+            "HA2-1.p8"
+           ],
+           "legacy_ids": [
+            "O5-1",
+            "O5-3",
+            "O5-4"
+           ]
+          },
+          {
+           "id": "CO1-1.o3",
+           "termino": "suspension",
+           "rasgo": "Cuerpo separado del plano de fijación",
+           "operacion": "conserva",
+           "como": "El cuerpo queda entre 60 y 410 cm bajo el techo, a la altura que se fija al instalar; en uso no se mueve.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F3",
+           "ref": [
+            "HA1-1.d3",
+            "US1-2.d3",
+            "HA3-2.d7"
+           ],
+           "legacy_ids": [
+            "O2-1",
+            "O4-1",
+            "U1-2",
+            "U2-2"
+           ]
+          },
+          {
+           "id": "CO1-1.o4",
+           "termino": "sistema-modular",
+           "rasgo": "Módulos que se agregan, se encadenan o forman estructura",
+           "operacion": "conserva",
+           "como": "Un módulo de tres piezas (brazo + dos hojas) se cuelga 42 veces de una sola estructura, en tres coronas.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F1,F3,F9,F19",
+           "ref": [
+            "HA2-1.s1",
+            "HA1-2.d1"
+           ],
+           "legacy_ids": [
+            "O2-2",
+            "O3-3",
+            "O5-2",
+            "O6-3"
+           ]
+          },
+          {
+           "id": "CO1-1.o5",
+           "termino": "sistema-modular",
+           "rasgo": "Piezas de distinto tamaño o recorrido con los mismos módulos",
+           "operacion": "conserva",
+           "como": "Con el mismo módulo la familia va de 3 a 105 módulos: cuatro tamaños de suspensión, plafón de una corona y kits apilables.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F1,F3,F5",
+           "ref": [
+            "HA1-2.d11",
+            "HA1-2.d10",
+            "CO1-1.d2"
+           ],
+           "legacy_ids": [
+            "C5-1",
+            "C5-3",
+            "O2-2",
+            "O6-6"
+           ]
+          },
+          {
+           "id": "CO1-1.o6",
+           "termino": "sistema-modular",
+           "rasgo": "No es una pieza cerrada: el usuario o el instalador decide cantidad o configuración",
+           "operacion": "transforma",
+           "como": "La cantidad la fija el miembro del catálogo (el código dice cuántos módulos, no cualquier número): se elige un tamaño o se apilan kits para atrios y escaleras; el cliente arma la pieza y puede descolgar cualquier módulo sin desarmar el resto.",
+           "estado": "documentado + interpretado",
+           "confianza": "alta",
+           "fuente": "F1,F3,F5",
+           "ref": [
+            "HA1-2.d11",
+            "US1-2.d2",
+            "HA3-2.d6"
+           ],
+           "legacy_ids": [
+            "C5-1",
+            "C5-3",
+            "O5-8",
+            "U1-1"
+           ]
+          },
+          {
+           "id": "CO1-1.o7",
+           "rasgo": "Viaja plana y se arma en casa",
+           "operacion": "introduce",
+           "como": "Llega desarmada en una caja chica y liviana —84 hojas planas apiladas, brazos, estructura y florón— y el cliente la arma sin herramientas; sólo la placa pide electricista.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F3,F8,F19",
+           "ref": [
+            "DOC-6",
+            "HA3-1.u6",
+            "HA3-1.a1",
+            "US2-1.d3"
+           ],
+           "legacy_ids": [
+            "O5-4",
+            "O5-7",
+            "U2-1",
+            "U4-2",
+            "U4-4",
+            "U4-5"
+           ]
+          },
+          {
+           "id": "CO1-1.o8",
+           "rasgo": "La misma pieza en otras tipologías",
+           "operacion": "introduce",
+           "como": "El mismo módulo arma también plafón (una sola corona), aplique y pie: la familia cambia de tipología sin cambiar de pieza.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F1,F3,F5",
+           "ref": [
+            "CO1-1.d2",
+            "HA1-2.d10",
+            "IV3"
+           ],
+           "legacy_ids": [
+            "C5-1",
+            "C5-3",
+            "O2-2",
+            "O6-6"
+           ]
+          }
+         ],
+         "modo_creativo": {
+          "nota": "Respuestas reconstruidas desde la ficha, no dichas por los autores con estas palabras.",
+          "respuestas": [
+           {
+            "id": "interesa",
+            "pregunta": "¿Qué te interesa de una suspensión?",
+            "respuesta": "Colgar en el centro de un ambiente amplio —comedor, hall, salón, restaurante— a la altura que se elija entre 60 y 410 cm bajo el techo, para mirarla desde lejos y pasar por debajo, con la red llegando por el mismo florón.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "media-alta",
+            "fuente": "F1,F3,F5",
+            "ref": [
+             "US1-2.d2",
+             "US1-2.d3",
+             "US1-2.d4",
+             "HA3-2.d2"
+            ]
+           },
+           {
+            "id": "no_quiero",
+            "pregunta": "¿Qué no querés de ella?",
+            "respuesta": "Un cuerpo único y voluminoso que viaja armado y existe en un solo tamaño. Hope viaja en una caja chica y liviana, con las hojas planas, y con el mismo módulo arma toda una familia.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "alta",
+            "fuente": "F1,F3,F8,F9,F19",
+            "ref": [
+             "DOC-6",
+             "P2-3",
+             "HA1-2.d11"
+            ]
+           },
+           {
+            "id": "quisiera",
+            "pregunta": "¿Qué te gustaría que hiciera y normalmente no hace?",
+            "respuesta": "Que se venda plana y se arme en casa sin herramientas (sólo la placa pide electricista), que crezca o se achique con el mismo módulo, se apile en kits para atrios y escaleras y pase a plafón, aplique o pie sin cambiar de pieza.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "alta",
+            "fuente": "F1,F3,F5,F8,F19",
+            "ref": [
+             "CO1-1.o7",
+             "CO1-1.o8",
+             "HA1-2.d11",
+             "US1-2.d2"
+            ]
+           }
+          ],
+          "frase_proyectual": {
+           "texto": "Una suspensión que es un sistema: un solo módulo que viaja plano, se arma en casa y, repetido, cuelga a la altura elegida, crece de 3 a 105 módulos, se apila en kits o pasa a plafón, aplique y pie.",
+           "estado": "interpretado (síntesis)",
+           "confianza": "media-alta",
+           "fuente": "F1,F3,F5,F8,F19",
+           "ref": [
+            "CO1-1.d1",
+            "CO1-1.d2",
+            "P2-3",
+            "DOC-6"
+           ]
+          },
+          "libre": {
+           "texto": "Queda abierto lo que la ficha no fija: el techo mínimo (≥ 3 m es una inferencia, no una indicación del fabricante), qué cantidades de módulos existen dentro del intervalo de 3 a 105 y qué miembros de la familia siguen disponibles hoy.",
+           "estado": "interpretado (desde los límites documentados)",
+           "confianza": "media-alta",
+           "fuente": "F1,F3,F5",
+           "ref": [
+            "US1-2.d2",
+            "HA1-2.d11",
+            "IV3"
+           ]
+          }
+         },
+         "estado": "interpretado (desde registros documentados)"
+        },
         "code": "C1.1",
         "def": "Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas.",
         "pregunta": "¿Qué tipo de luminaria es por su manera fundamental de existir en el espacio?",
