@@ -75,7 +75,7 @@
   },
   "planes": {
    "make": {
-    "name": "CÓMO SE HACE",
+    "name": "CÓMO ES",
     "nombre_teorico": "SINTAXIS",
     "pregunta": "¿Qué forma tiene la lámpara, de qué está hecha, cómo se conectan sus partes y cómo produce la luz?",
     "que_es": "Describe la constitución física de la lámpara. Parte del conjunto, identifica sus componentes, explica las relaciones que los conectan y describe el funcionamiento físico de la luz. No se limita a fabricación: incluye geometría, organización, materiales, procesos, uniones, fuente, alimentación, óptica y resultado luminoso medible o describible."
@@ -2563,7 +2563,7 @@
     "nombre": "Identidad de producto",
     "kicker": "IDENTIDAD · PRODUCTO",
     "pregunta": "¿Qué conjunto mínimo de decisiones hace que este diseño siga siendo este diseño?",
-    "que_es": "Selecciona los pocos elementos del proyecto que resultan definitorios para reconocer su singularidad. Pueden pertenecer a Cómo se hace, Cómo se usa o Qué comunica. No equivale a “los datos más importantes” ni a una lista de todos los rasgos de la lámpara: identifica aquello cuya alteración comprometería la identidad específica del diseño.",
+    "que_es": "Selecciona los pocos elementos del proyecto que resultan definitorios para reconocer su singularidad. Pueden pertenecer a Cómo es, Cómo se usa o Qué comunica. No equivale a “los datos más importantes” ni a una lista de todos los rasgos de la lámpara: identifica aquello cuya alteración comprometería la identidad específica del diseño.",
     "debe_responder": [
      "qué lo hace único",
      "qué no debería perderse",
