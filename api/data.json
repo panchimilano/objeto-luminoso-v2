@@ -26,7 +26,7 @@
     "Solape para ocultar la fuente",
     "Un módulo × 42, tres coronas"
    ],
-   "campos": 23,
+   "campos": 22,
    "zonas": 10,
    "dibujo": "hope-dibujo.png",
    "foto": "hope-foto.jpg",
@@ -54,7 +54,7 @@
    {
     "id": "h",
     "title": "Hope Suspension D66/42",
-    "text": "Luceplan · Francisco Gómez Paz + Paolo Rizzatto · 2009. Genoma del objeto luminoso V2: Programa proyectual · 3 planos · 10 zonas · 23 campos · Identidad (objeto / familia / marca-colección). Los 104 campos de la ficha V1 se conservan en `legacy` y se citan desde cada registro por `legacy_ids`."
+    "text": "Luceplan · Francisco Gómez Paz + Paolo Rizzatto · 2009. Genoma del objeto luminoso V2: Programa proyectual · 3 planos · 10 zonas · 22 campos · Identidad (objeto / familia / marca-colección). Los 104 campos de la ficha V1 se conservan en `legacy` y se citan desde cada registro por `legacy_ids`."
    }
   ],
   "footer": [],
@@ -73,7 +73,7 @@
     {
      "id": "P1-1",
      "enunciado": "Crear un candelabro contemporáneo para Luceplan: una lámpara de gran presencia que celebre la luz sin ser un objeto decorativo.",
-     "desarrollo": "Es el encargo que origina el proyecto y la vara con la que se juzga cada decisión. La pieza debe identificarse dentro del linaje del candelabro y, a la vez, reinterpretarlo con la lógica técnica de una empresa que no hace decoración: de ahí que Cómo se identifica y Relación con el arquetipo respondan directamente a este propósito.",
+     "desarrollo": "Es el encargo que origina el proyecto y la vara con la que se juzga cada decisión. La pieza debe identificarse dentro del linaje del candelabro y, a la vez, reinterpretarlo con la lógica técnica de una empresa que no hace decoración: de ahí que el Arquetipo —qué toma y qué deja del candelabro— responda directamente a este propósito.",
      "testimonio": "Luceplan pidió «un candelabro moderno», algo que hacía veinte años quería hacer, para una empresa que no hace decoración.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado (discurso)",
@@ -90,16 +90,15 @@
        "nota": "el arquetipo reconocido responde al encargo"
       },
       {
-       "campo": "CO1-3",
-       "via": "CO1-3.d1",
+       "campo": "CO1-2",
+       "via": "CO1-2.d4",
        "nota": "la reinterpretación responde al pedido de un candelabro moderno"
       }
      ],
      "seccion": "P1",
      "texto": "Crear un candelabro contemporáneo para Luceplan: una lámpara de gran presencia que celebre la luz sin ser un objeto decorativo.",
      "links": [
-      "CO1-2",
-      "CO1-3"
+      "CO1-2"
      ]
     },
     {
@@ -139,7 +138,7 @@
     {
      "id": "P2-1",
      "enunciado": "Tomar la esencia del candelabro y no su forma: multiplicar una fuente en cientos de reflejos y producir luz de fiesta con medios nuevos.",
-     "desarrollo": "Orienta toda la óptica. Cada componente debe refractar y multiplicar la fuente en lugar de difundirla (Recorrido y transformación); la relación con el arquetipo se define por esa continuidad de efecto y no por brazos, colgantes ni cristal (Relación con el arquetipo); el brillo percibido al encender es la lectura que se busca (Cualidades que transmite).",
+     "desarrollo": "Orienta toda la óptica. Cada componente debe refractar y multiplicar la fuente en lugar de difundirla (Recorrido y transformación); la relación con el arquetipo se define por esa continuidad de efecto y no por brazos, colgantes ni cristal (Arquetipo); el brillo percibido al encender es la lectura que se busca (Cualidades que transmite).",
      "testimonio": "Tomar la esencia del candelabro —una fuente multiplicada en cientos de reflejos, luz festiva— y no su forma.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado (autores)",
@@ -157,8 +156,8 @@
        "nota": "la refracción y multiplicación óptica materializa el principio"
       },
       {
-       "campo": "CO1-3",
-       "via": "CO1-3.d1",
+       "campo": "CO1-2",
+       "via": "CO1-2.d4",
        "nota": "la relación con el arquetipo enuncia el principio"
       },
       {
@@ -171,7 +170,7 @@
      "texto": "Tomar la esencia del candelabro y no su forma: multiplicar una fuente en cientos de reflejos y producir luz de fiesta con medios nuevos.",
      "links": [
       "HA4-2",
-      "CO1-3",
+      "CO1-2",
       "CO2-1"
      ]
     },
@@ -3856,22 +3855,30 @@
         "name": "Arquetipo",
         "importancia": "J3",
         "titular": "",
-        "valor": "Araña / candelabro de cristal: «interpretación moderna del candelabro clásico», antecedente declarado por la marca y los autores",
+        "valor": "Araña / candelabro de cristal: «interpretación moderna del candelabro clásico», antecedente declarado por la marca y los autores. Reinterpretación: conserva la multiplicación de una fuente en muchos reflejos y la luz de fiesta; transforma la materia (lámina plástica en vez de cristal), los componentes y la configuración (módulos repetidos en lugar de brazos curvos, colgantes y velas). «La esencia, no la forma»",
         "unidad": "—",
-        "estado": "documentado",
+        "estado": "documentado (marca y autores) + interpretado",
         "confianza": "alta",
-        "fuente": "F5,F8,F9,F10,F11",
+        "fuente": "F5,F8,F9,F10,F11,F14",
         "tags": [
          "candelabro",
          "arquetipo",
          "reinterpretacion",
          "linaje",
          "cristal",
-         "fresnel"
+         "fresnel",
+         "distancia-al-arquetipo",
+         "multiplicacion",
+         "no-tarea",
+         "no-difusa",
+         "que-no-es",
+         "tesis"
         ],
         "legacy_ids": [
          "C1-1",
-         "C1-4"
+         "C1-4",
+         "C1-3",
+         "C1-5"
         ],
         "detalle": [
          {
@@ -3924,49 +3931,9 @@
            "CO3-1.d1",
            "CO3-1.d3"
           ]
-         }
-        ],
-        "code": "C1.2",
-        "def": "Identifica una configuración cultural y técnica consolidada, como chandelier, abat-jour, arco, lámpara de trabajo articulada, farol, spot o riel electrificado. Puede quedar `pendiente / no identificado` si no existe evidencia suficiente.",
-        "pregunta": "¿Con qué modelo históricamente reconocible del mundo de la iluminación se relaciona?",
-        "extra": [],
-        "estado_proyecto": null,
-        "desconocido": false,
-        "conflicto": false,
-        "incertidumbre": {
-         "desconocidos": 0,
-         "conflictos": 0,
-         "pendientes": 0,
-         "inferidos": 0
-        },
-        "body": "_Identifica una configuración cultural y técnica consolidada, como chandelier, abat-jour, arco, lámpara de trabajo articulada, farol, spot o riel electrificado. Puede quedar `pendiente / no identificado` si no existe evidencia suficiente._\nValor: Araña / candelabro de cristal: «interpretación moderna del candelabro clásico», antecedente declarado por la marca y los autores · Unidad: — · Importancia: J3\nFuente/estado/confianza: F5,F8,F9,F10,F11 · documentado · alta\nEtiquetas: #candelabro #arquetipo #reinterpretacion #linaje #cristal #fresnel\nLegacy: C1-1 C1-4"
-       },
-       {
-        "id": "CO1-3",
-        "name": "Relación con el arquetipo",
-        "importancia": "J2",
-        "titular": "",
-        "valor": "Reinterpretación: conserva la multiplicación de una fuente en muchos reflejos y la luz de fiesta; transforma la materia (lámina plástica en vez de cristal), los componentes y la configuración (módulos repetidos en lugar de brazos curvos, colgantes y velas). «La esencia, no la forma»",
-        "unidad": "—",
-        "estado": "documentado (autores) + interpretado",
-        "confianza": "alta",
-        "fuente": "F9,F10,F11,F14",
-        "tags": [
-         "candelabro",
-         "distancia-al-arquetipo",
-         "multiplicacion",
-         "no-tarea",
-         "no-difusa",
-         "que-no-es",
-         "tesis"
-        ],
-        "legacy_ids": [
-         "C1-3",
-         "C1-5"
-        ],
-        "detalle": [
+         },
          {
-          "id": "CO1-3.d1",
+          "id": "CO1-2.d4",
           "tipo": "relacion",
           "sujeto": "conjunto D66/42",
           "texto": "«Tomar la esencia del candelabro y no su forma»: conserva la multiplicación de una fuente en cientos de reflejos y la luz festiva.",
@@ -3985,7 +3952,7 @@
           ]
          },
          {
-          "id": "CO1-3.d2",
+          "id": "CO1-2.d5",
           "tipo": "relacion",
           "sujeto": "conjunto D66/42",
           "texto": "Formalmente lejos del candelabro histórico: sin brazos curvos, colgantes ni velas; materia y componentes distintos.",
@@ -4001,7 +3968,7 @@
           "atribucion": "autores"
          },
          {
-          "id": "CO1-3.d3",
+          "id": "CO1-2.d6",
           "tipo": "relacion",
           "sujeto": "conjunto D66/42",
           "texto": "«Funcionalmente idéntica» (multiplica una fuente en cientos de reflejos) es una analogía de los autores, no una equivalencia fotométrica ni una categoría técnica.",
@@ -4016,7 +3983,7 @@
           "desconocido": false
          },
          {
-          "id": "CO1-3.d4",
+          "id": "CO1-2.d7",
           "tipo": "delimitacion",
           "sujeto": "conjunto D66/42",
           "texto": "Qué no es: no es luminaria técnica ni de tarea; no es una esfera opalina (no difunde); no es una réplica formal de araña. «No es decoración» es una posición atribuida al discurso de los autores.",
@@ -4031,9 +3998,274 @@
           "desconocido": false
          }
         ],
-        "code": "C1.3",
-        "def": "Explica cómo el proyecto se posiciona respecto del arquetipo: continuidad, reinterpretación, hibridación o transformación. Debe indicar brevemente qué conserva y qué cambia, evitando etiquetas vacías.",
-        "pregunta": "¿Qué conserva y qué transforma del modelo reconocido?",
+        "arquetipo": {
+         "termino": {
+          "id": "arana",
+          "termino": "Araña (chandelier)",
+          "definicion": "Luminaria suspendida de muchas fuentes repartidas en brazos alrededor de un eje, con colgantes de cristal que multiplican la luz en destellos.",
+          "ref": "CO1-2.d1"
+         },
+         "rasgos": [
+          "Suspensión central",
+          "Brazos radiales que portan muchas fuentes (velas, luego bombillas)",
+          "Colgantes o prismas que refractan",
+          "Simetría radial",
+          "Luz centelleante de múltiples puntos brillantes"
+         ],
+         "operaciones": [
+          {
+           "id": "CO1-2.o1",
+           "rasgo": "Suspensión central",
+           "operacion": "conserva",
+           "como": "Cuelga del techo, regulable en altura, y marca el centro del espacio.",
+           "estado": "documentado + interpretado",
+           "confianza": "alta",
+           "fuente": "F1,F3,F8,F9,F10",
+           "ref": [
+            "CO1-1.d1",
+            "CO3-1.d5"
+           ],
+           "legacy_ids": [
+            "C4-1",
+            "C4-4",
+            "O2-1"
+           ]
+          },
+          {
+           "id": "CO1-2.o2",
+           "rasgo": "Brazos radiales que portan muchas fuentes (velas, luego bombillas)",
+           "operacion": "transforma",
+           "como": "Los 42 brazos no llevan fuentes sino hojas-lente; tres lámparas comunes en el centro se multiplican ópticamente. Sin brazos curvos ni velas.",
+           "estado": "documentado (autores) + interpretado",
+           "confianza": "alta",
+           "fuente": "F1,F3,F5,F9,F11,F19",
+           "ref": [
+            "HA2-1.p2",
+            "HA4-1.d1",
+            "CO1-2.d5"
+           ],
+           "legacy_ids": [
+            "C1-3",
+            "O1-4",
+            "O5-1",
+            "O5-3",
+            "O8-1"
+           ]
+          },
+          {
+           "id": "CO1-2.o3",
+           "rasgo": "Colgantes o prismas que refractan",
+           "operacion": "transforma",
+           "como": "Los prismas colgantes de cristal pasan a ser hojas-lente Fresnel de lámina plástica calzadas en cada brazo: refractan y multiplican, no cuelgan.",
+           "estado": "documentado (autores) + interpretado",
+           "confianza": "alta",
+           "fuente": "F3,F8,F9,F10,F11,F12,F19",
+           "ref": [
+            "HA2-1.p3",
+            "HA4-2.d2",
+            "CO2-1.d5",
+            "CO1-2.d5"
+           ],
+           "legacy_ids": [
+            "C1-3",
+            "O5-1",
+            "O5-3",
+            "O7-2",
+            "O8-5"
+           ]
+          },
+          {
+           "id": "CO1-2.o4",
+           "rasgo": "Simetría radial",
+           "operacion": "conserva",
+           "como": "Tres coronas de módulos iguales, desfasadas medio paso alrededor del eje vertical.",
+           "estado": "documentado + interpretado",
+           "confianza": "alta",
+           "fuente": "F12,F14,F19",
+           "ref": [
+            "HA1-2.d2",
+            "CO2-1.d3"
+           ],
+           "legacy_ids": [
+            "C2-3",
+            "O4-4",
+            "O6-3"
+           ]
+          },
+          {
+           "id": "CO1-2.o5",
+           "rasgo": "Luz centelleante de múltiples puntos brillantes",
+           "operacion": "conserva",
+           "como": "Multiplica la fuente en cientos de reflejos —«la esencia, no la forma»—: un campo de destellos que cambia al moverse.",
+           "estado": "documentado (autores) + observado",
+           "confianza": "alta",
+           "fuente": "F8,F9,F10,F11,F12",
+           "ref": [
+            "CO1-2.d4",
+            "HA4-2.d2",
+            "US3-1.d3"
+           ],
+           "legacy_ids": [
+            "C1-3",
+            "O8-5",
+            "U3-6"
+           ]
+          },
+          {
+           "id": "CO1-2.o6",
+           "rasgo": "Un solo módulo repetido",
+           "operacion": "introduce",
+           "como": "Un módulo de tres piezas (brazo + dos hojas) repetido 42 veces construye la lámpara y, con otra cantidad, toda la familia (de 3 a 105 módulos).",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F1,F3,F5,F9,F10,F19",
+           "ref": [
+            "HA2-1.s1",
+            "HA1-2.d11",
+            "P2-3"
+           ],
+           "legacy_ids": [
+            "C5-1",
+            "C5-3",
+            "O3-3",
+            "O3-6",
+            "O5-2"
+           ]
+          },
+          {
+           "id": "CO1-2.o7",
+           "rasgo": "Fuente oculta",
+           "operacion": "introduce",
+           "como": "El solape de hojas y coronas busca que la lámpara común no quede a la vista: intención de los autores, no verificada por ángulos.",
+           "estado": "documentado (autores) + desconocido (verificación)",
+           "confianza": "media-alta",
+           "fuente": "F9,F19",
+           "ref": [
+            "HA1-2.d5",
+            "HA4-2.d5",
+            "P3-1"
+           ],
+           "legacy_ids": [
+            "O3-4",
+            "O6-4",
+            "O8-7"
+           ]
+          },
+          {
+           "id": "CO1-2.o8",
+           "rasgo": "Viaja plana y se arma en casa",
+           "operacion": "introduce",
+           "como": "Las 84 hojas viajan planas y apiladas y se vuelven rígidas al calzarse en el brazo; el cliente la arma sin herramientas.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "F3,F8,F19",
+           "ref": [
+            "DOC-6",
+            "HA2-2.d5",
+            "HA3-2.d3",
+            "HA3-1.u1",
+            "US2-1.d3"
+           ],
+           "legacy_ids": [
+            "O3-3",
+            "O5-4",
+            "O6-2",
+            "O7-6",
+            "U2-1",
+            "U4-2",
+            "U4-5"
+           ]
+          }
+         ],
+         "adhesion": {
+          "conserva": 3,
+          "transforma": 2,
+          "rechaza": 0,
+          "introduce": 3,
+          "total": 5,
+          "porcentaje": 80,
+          "derivada": true,
+          "texto": "conserva 3 de 5 rasgos · transforma 2 · 80 %",
+          "formula": "Se deriva, no se declara: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta."
+         },
+         "modo_creativo": {
+          "nota": "Respuestas reconstruidas desde la ficha, no dichas por los autores con estas palabras.",
+          "respuestas": [
+           {
+            "id": "interesa",
+            "pregunta": "¿Qué te interesa de la araña?",
+            "respuesta": "Su efecto, no su forma: una fuente multiplicada en cientos de reflejos, una luz de fiesta que marca el centro del espacio y que no se puede ignorar.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "alta",
+            "fuente": "F8,F9,F10,F11",
+            "ref": [
+             "CO1-2.d4",
+             "P1-2",
+             "P2-1",
+             "CO1-2.o5"
+            ]
+           },
+           {
+            "id": "no_quiero",
+            "pregunta": "¿Qué no querés de la araña?",
+            "respuesta": "Su forma y su materia: brazos curvos, colgantes y velas, y el peso, el costo, la fragilidad y el montaje del cristal. Tampoco las fuentes a la vista.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "alta",
+            "fuente": "F8,F9,F10,F11,F19",
+            "ref": [
+             "CO1-2.d5",
+             "P2-2",
+             "P3-1",
+             "CO1-2.o2",
+             "CO1-2.o3"
+            ]
+           },
+           {
+            "id": "quisiera",
+            "pregunta": "¿Qué te gustaría que hiciera y normalmente no hace?",
+            "respuesta": "Que salga de un solo módulo liviano repetido en coronas, con hojas-lente que viajan planas y se arman sin herramientas, y que la lámpara común del centro no quede a la vista aunque el volumen sea abierto.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "alta",
+            "fuente": "F8,F9,F10,F19",
+            "ref": [
+             "P2-3",
+             "P3-1",
+             "CO1-2.o6",
+             "CO1-2.o7",
+             "CO1-2.o8"
+            ]
+           }
+          ],
+          "frase_proyectual": {
+           "texto": "Una araña sin forma de araña: la luz de fiesta multiplicada en cientos de reflejos, hecha con una sola hoja-lente plana repetida en coronas, liviana y con la fuente oculta.",
+           "estado": "interpretado (síntesis)",
+           "confianza": "media-alta",
+           "fuente": "F8,F9,F10,F11,F19",
+           "ref": [
+            "CO1-2.d4",
+            "P2-1",
+            "P2-3",
+            "P3-1"
+           ]
+          },
+          "libre": {
+           "texto": "Queda abierto lo que la ficha no ata al arquetipo: la cantidad de módulos y de coronas (de 3 a 105 en la familia), el material de la hoja (policarbonato, hoy metacrilato) y la lámpara común que se enrosque, siempre que sea puntual o de filamento visible.",
+           "estado": "interpretado (desde las variables de familia)",
+           "confianza": "media-alta",
+           "fuente": "F1,F3,F5,F19,F9,F10",
+           "ref": [
+            "HA1-2.d11",
+            "IV1",
+            "HA2-3.d3",
+            "P3-3"
+           ]
+          }
+         },
+         "estado": "interpretado (desde registros documentados)"
+        },
+        "code": "C1.2",
+        "def": "Identifica una configuración cultural y técnica consolidada, como chandelier, abat-jour, arco, lámpara de trabajo articulada, farol, spot o riel electrificado. Puede quedar `pendiente / no identificado` si no existe evidencia suficiente.",
+        "pregunta": "¿Con qué modelo históricamente reconocible del mundo de la iluminación se relaciona?",
         "extra": [],
         "estado_proyecto": null,
         "desconocido": false,
@@ -4044,7 +4276,7 @@
          "pendientes": 0,
          "inferidos": 0
         },
-        "body": "_Explica cómo el proyecto se posiciona respecto del arquetipo: continuidad, reinterpretación, hibridación o transformación. Debe indicar brevemente qué conserva y qué cambia, evitando etiquetas vacías._\nValor: Reinterpretación: conserva la multiplicación de una fuente en muchos reflejos y la luz de fiesta; transforma la materia (lámina plástica en vez de cristal), los componentes y la configuración (módulos repetidos en lugar de brazos curvos, colgantes y velas). «La esencia, no la forma» · Unidad: — · Importancia: J2\nFuente/estado/confianza: F9,F10,F11,F14 · documentado (autores) + interpretado · alta\nEtiquetas: #candelabro #distancia-al-arquetipo #multiplicacion #no-tarea #no-difusa #que-no-es #tesis\nLegacy: C1-3 C1-5"
+        "body": "_Identifica una configuración cultural y técnica consolidada, como chandelier, abat-jour, arco, lámpara de trabajo articulada, farol, spot o riel electrificado. Puede quedar `pendiente / no identificado` si no existe evidencia suficiente._\nValor: Araña / candelabro de cristal: «interpretación moderna del candelabro clásico», antecedente declarado por la marca y los autores. Reinterpretación: conserva la multiplicación de una fuente en muchos reflejos y la luz de fiesta; transforma la materia (lámina plástica en vez de cristal), los componentes y la configuración (módulos repetidos en lugar de brazos curvos, colgantes y velas). «La esencia, no la forma» · Unidad: — · Importancia: J3\nFuente/estado/confianza: F5,F8,F9,F10,F11,F14 · documentado (marca y autores) + interpretado · alta\nEtiquetas: #candelabro #arquetipo #reinterpretacion #linaje #cristal #fresnel #distancia-al-arquetipo #multiplicacion #no-tarea #no-difusa #que-no-es #tesis\nLegacy: C1-1 C1-4 C1-3 C1-5"
        }
       ]
      },
@@ -5270,13 +5502,13 @@
        "HA4-2",
        "HA1-2",
        "US3-1",
-       "CO1-3"
+       "CO1-2"
       ],
       "via": {
        "HA4-2": "HA4-2.d1",
        "HA1-2": "HA1-2.d1",
        "US3-1": "US3-1.d3",
-       "CO1-3": "CO1-3.d1"
+       "CO1-2": "CO1-2.d4"
       },
       "why": "La lente Fresnel no es un accesorio: su lógica decide cómo se multiplica la luz, cómo se organizan los módulos y qué clase de iluminación se obtiene. Para Francisco, esa cadena —de la solución óptica a la forma y a la luz— es lo que conecta a Hope con la identidad de Luceplan.",
       "alcance": "marca (lectura de autor)",
@@ -5300,21 +5532,10 @@
     "to": "P1-1",
     "type": "responde_a",
     "via": [
-     "CO1-2.d1"
+     "CO1-2.d1",
+     "CO1-2.d4"
     ],
-    "why": "el arquetipo reconocido responde al encargo",
-    "estado": "documentado (discurso)",
-    "fuente": "F10,F11",
-    "origen": "programa.vinculos"
-   },
-   {
-    "from": "CO1-3",
-    "to": "P1-1",
-    "type": "responde_a",
-    "via": [
-     "CO1-3.d1"
-    ],
-    "why": "la reinterpretación responde al pedido de un candelabro moderno",
+    "why": "el arquetipo reconocido responde al encargo · la reinterpretación responde al pedido de un candelabro moderno",
     "estado": "documentado (discurso)",
     "fuente": "F10,F11",
     "origen": "programa.vinculos"
@@ -5356,11 +5577,11 @@
     "origen": "programa.vinculos"
    },
    {
-    "from": "CO1-3",
+    "from": "CO1-2",
     "to": "P2-1",
     "type": "responde_a",
     "via": [
-     "CO1-3.d1"
+     "CO1-2.d4"
     ],
     "why": "la relación con el arquetipo enuncia el principio",
     "estado": "documentado (autores)",
@@ -6018,11 +6239,11 @@
     "anchor": false
    },
    {
-    "from": "CO1-3",
+    "from": "CO1-2",
     "to": "IM3",
     "type": "define",
     "via": [
-     "CO1-3.d1"
+     "CO1-2.d4"
     ],
     "why": "La lente Fresnel no es un accesorio: su lógica decide cómo se multiplica la luz, cómo se organizan los módulos y qué clase de iluminación se obtiene. Para Francisco, esa cadena —de la solución óptica a la forma y a la luz— es lo que conecta a Hope con la identidad de Luceplan.",
     "estado": "interpretado (lectura de autor)",
@@ -6868,6 +7089,17 @@
      "IM2",
      "IM3"
     ],
+    "C1-3": [
+     "CO1-2",
+     "CO1-2.d4",
+     "CO1-2.d5",
+     "CO1-2.d6",
+     "P2-1"
+    ],
+    "C1-5": [
+     "CO1-2",
+     "CO1-2.d7"
+    ],
     "C1-2": [
      "CO1-2.d3",
      "CO3-1",
@@ -6879,17 +7111,6 @@
      "CO3-2.d1",
      "CO3-2.d3",
      "CO3-2.d4"
-    ],
-    "C1-3": [
-     "CO1-3",
-     "CO1-3.d1",
-     "CO1-3.d2",
-     "CO1-3.d3",
-     "P2-1"
-    ],
-    "C1-5": [
-     "CO1-3",
-     "CO1-3.d4"
     ],
     "C2-1": [
      "CO2-1",
@@ -9596,7 +9817,7 @@
    }
   },
   "stats": {
-   "fields": 23,
+   "fields": 22,
    "zones": 10,
    "desconocidos": 0,
    "conflictos": 2,
@@ -9604,7 +9825,7 @@
    "detalle": 171,
    "detalle_desconocidos": 8,
    "detalle_conflictos": 2,
-   "relations": 66,
+   "relations": 65,
    "programa_items": 8,
    "identidad_objeto": 4,
    "legacy_fields": 104

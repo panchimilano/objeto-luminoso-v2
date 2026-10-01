@@ -194,6 +194,25 @@ details.vocabulario summary:focus-visible,.vt>button:focus-visible{outline:2px s
 .vt .vd{display:none;padding:0 0 10px;font-size:13px;line-height:1.5;overflow-wrap:anywhere}.vt.open .vd{display:block}
 .vt .vd p{margin:0 0 6px}.vt .vd small{display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;line-height:1.6}
 .vt .vd a{cursor:pointer;color:inherit;text-decoration:underline}
+/* V2 · Arquetipo con rasgos y operaciones (01/10): misma tinta, grises y contorno; las cuatro operaciones se distinguen por relleno, contorno, trazo y un signo, sin colores nuevos */
+.arow{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
+.arow .rh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}.arow .rn{flex:1 1 auto;min-width:0;font-size:13.5px;overflow-wrap:anywhere}
+.arow .como{margin-top:2px;overflow-wrap:anywhere}
+.arow .m,.arq-modo .m,.arq-term .m{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:3px;line-height:1.7;overflow-wrap:anywhere}
+.arow .m a,.arq-modo .m a,.arq-term .m a{cursor:pointer;color:inherit}.arow .m a:hover,.arq-modo .m a:hover,.arq-term .m a:hover{text-decoration:underline}
+.op{flex:none;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink);border-radius:999px;padding:0 7px;line-height:1.6;white-space:nowrap}
+.op[data-op=conserva]{background:var(--ink);color:var(--paper)}
+.op[data-op=transforma]{background:transparent;color:var(--ink)}
+.op[data-op=rechaza]{background:transparent;color:var(--muted);border-color:var(--muted);border-style:dashed}
+.op[data-op=introduce]{background:var(--muted);color:var(--paper);border-color:var(--muted)}
+.arq-rasgos .kicker.sub{margin-top:14px}
+.arq-term p{margin:4px 0 0}
+.arq-adh{margin-top:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.03em;overflow-wrap:anywhere}
+.arq-modo .mr{padding:8px 0;border-bottom:1px dashed var(--line)}
+.arq-modo .mq{font-size:13.5px;font-weight:600;line-height:1.45}
+.arq-modo .ma{font-size:13px;line-height:1.5;margin-top:2px;overflow-wrap:anywhere}
+.arq-modo .frase,.arq-modo .libre{padding:8px 0;font-size:13px;line-height:1.5;overflow-wrap:anywhere}.arq-modo .libre{border-top:1px dashed var(--line)}
+.arq-modo .t{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .card [tabindex="0"]:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
 .hdr{max-width:calc(100vw - 260px)}body.hascard .hdr{max-width:calc(100vw - 540px)}
 .hdr .meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -238,7 +257,7 @@ let IMODE=null,ISEL=null,PER=0; // modo activo de Identidad (objeto | familia | 
 const MODES=[['objeto','Producto'],['familia','Familia'],['marca','Marca']];
 const MODENAME={objeto:'Identidad de producto',familia:'Identidad de familia',marca:'Identidad de marca'};
 let LMODE=null,LECT={}; // V2 · capa de lectura D·M·G: grupo activo (D | M | G | null) · clasificación vigente {id: grupo} (oficial de defs.json + ediciones del navegador)
-const LKEY='ool-v2-lectura-v1',LNAME={D:'Determinístico',M:'Mixto',G:'Generativo'};
+const LKEYP='ool-v2-lectura-v1',LKEY=()=>LKEYP+':'+V,LKEY_OLD_OWNER='Hope D66-42 — Luceplan',LNAME={D:'Determinístico',M:'Mixto',G:'Generativo'}; // etapa 01 (01/10): persistencia de la lectura aislada por id de lámpara · la clave global previa (LKEYP) sólo pudo contener ediciones de Hope: se lee para Hope si su clave nueva no existe, sin copiarla ni borrarla
 const KEY=(e,fn)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}};
 const CHORDS={S:[['O3-3','O7-4'],['O3-4','O6-4'],['O8-5','C4-3'],['O6-3','C5-2'],['U3-6','C4-2'],['O5-4','U4-2'],['O3-2','C1-3'],['O7-1','U4-4']],
               W:[['O3-3','O7-5'],['O3-4','C2-1'],['O5-3','O6-2'],['O8-5','C4-2'],['U3-1','C4-4'],['O6-3','C5-2'],['O3-2','C1-3'],['O5-7','U4-2']]};
@@ -383,7 +402,7 @@ function lineCenterTo(f,g){const [u,v]=pol(G.RF0-1,f.am);const c=el('g',{class:'
 
 /* ---------- V2 · capa de lectura D·M·G (01/10): transversal, no toca la ontología ni la Identidad; editable en el panel, persistida en el navegador ---------- */
 function lectOfficial(){const D=V2(),m={};['P1','P2','P3'].forEach(k=>{const g=((((D.programa||{}).partes||{})[k]||{}).lectura||{}).grupo;if(g)m[k]=g});if(DATA&&V)DATA[V].planes.forEach(p=>p.zones.forEach(z=>z.fields.forEach(f=>{const g=(((D.fields||{})[f.id]||{}).lectura||{}).grupo;if(g)m[f.id]=g})));return m}
-function lectLoad(){LECT=lectOfficial();try{const s=JSON.parse(localStorage.getItem(LKEY)||'{}');Object.keys(s).forEach(k=>{if(k in LECT&&/^[DMG]$/.test(s[k]))LECT[k]=s[k]})}catch(e){}lectCount()}
+function lectLoad(){LECT=lectOfficial();try{let raw=localStorage.getItem(LKEY());if(raw===null&&V===LKEY_OLD_OWNER)raw=localStorage.getItem(LKEYP);const s=JSON.parse(raw||'{}');Object.keys(s).forEach(k=>{if(k in LECT&&/^[DMG]$/.test(s[k]))LECT[k]=s[k]})}catch(e){}lectCount()}
 function lectCount(){const n={D:0,M:0,G:0};Object.values(LECT).forEach(g=>n[g]++);const e=$('#lectN');if(e)e.textContent=`${n.D} · ${n.M} · ${n.G}`;return n}
 function lectEdits(){const o=lectOfficial();return Object.keys(LECT).filter(k=>LECT[k]!==o[k])}
 function lectInfo(id){const D=V2();const src=(/^P\d$/.test(id)?(((D.programa||{}).partes||{})[id]||{}):((D.fields||{})[id]||{})).lectura||{};return Object.assign({oficial:src.grupo},src,{grupo:LECT[id]||src.grupo})}
@@ -402,8 +421,8 @@ function openLectura(g){if(!LNAME[g]||!DATA)return;if(IMODE){IMODE=null;ISEL=nul
       <div class="human" style="margin-top:8px"><p><small>Las letras D · M · G mueven el campo a otro grupo; la rueda y el conteo cambian al instante. Un campo siempre pertenece a un grupo.</small></p></div></div>
     <div class="sec"><div class="kicker">Clasificación ${ed?`<b>editada · ${ed} cambio${ed>1?'s':''}</b>`:'oficial'}</div><div class="lacts"><button onclick="copyLectura()" id="lectCopy">Copiar clasificación</button><button onclick="resetLectura()" id="lectReset"${ed?'':' disabled'}>Volver a la oficial</button></div><div class="lcopy" id="lectCopyBox"><textarea readonly id="lectJson" aria-label="clasificación en JSON"></textarea></div><div class="saved" id="lectSaved"></div></div>`,
     ids.filter(i=>!/^P/.test(i)).map(i=>`#blk-${i},#fl-${i}`).join(',')+(ids.some(i=>/^P/.test(i))?',#center-lbl':''))}
-function moveLectura(id,g){if(!(id in LECT)||!LNAME[g]||LECT[id]===g)return;LECT[id]=g;try{localStorage.setItem(LKEY,JSON.stringify(LECT))}catch(e){}lectCount();if(LMODE){const st=$('#card').scrollTop;openLectura(LMODE);$('#card').scrollTop=st}else drawLect()}
-function resetLectura(){try{localStorage.removeItem(LKEY)}catch(e){}lectLoad();if(LMODE)openLectura(LMODE);else drawLect()}
+function moveLectura(id,g){if(!(id in LECT)||!LNAME[g]||LECT[id]===g)return;LECT[id]=g;try{localStorage.setItem(LKEY(),JSON.stringify(LECT))}catch(e){}lectCount();if(LMODE){const st=$('#card').scrollTop;openLectura(LMODE);$('#card').scrollTop=st}else drawLect()}
+function resetLectura(){try{if(V===LKEY_OLD_OWNER&&localStorage.getItem(LKEYP)!==null)localStorage.setItem(LKEY(),'{}');else localStorage.removeItem(LKEY())}catch(e){}lectLoad();if(LMODE)openLectura(LMODE);else drawLect()} // si hay clave global vieja, Hope guarda «oficial» ({}) bajo su clave nueva para que lectLoad no resucite la edición antigua; la vieja no se toca
 async function copyLectura(){const json=JSON.stringify(LECT,null,1),box=$('#lectCopyBox'),ta=$('#lectJson'),msg=$('#lectSaved');ta.value=json;
   try{if(!navigator.clipboard)throw 0;await navigator.clipboard.writeText(json);box.classList.remove('on');msg.textContent='copiado al portapapeles · {id: "D|M|G"}'}catch(e){box.classList.add('on');ta.focus();ta.select();msg.textContent='sin acceso al portapapeles: copiá el texto seleccionado'}}
 
@@ -425,9 +444,9 @@ function openPlane(p){
   const zones=p.zones.map(z=>`<div class="z" onclick="openZoneId('${z.nodeId}')"><i style="background:${z.col}"></i>${esc(z.name)}<small>${esc(z.code||'')} · ${z.fields.length} campos</small></div>`).join('');
   const LP=legacyPlaneOf(p);
   showCard(`<div class="kicker">Plano</div><div class="hrow"><h2>${esc(cap(p.name))}</h2>${helpBtn('plane',p.id)}</div><div class="q">${esc(p.question||'')}</div>
-    <div class="sec"><div class="kicker">Lectura humana · Hope</div><div class="human">${paras(p.descripcion)}</div></div>
+    <div class="sec"><div class="kicker">Lectura humana · ${esc(metaOf(V).title)}</div><div class="human">${paras(p.descripcion)}</div></div>
     <div class="sec"><div class="kicker">Zonas · ${p.zones.length}</div><div class="zlist">${zones}</div></div>
-    ${LP?`<div class="sec"><div class="kicker">Relato V1 · legacy</div><div class="human"><p><small>El plano ${esc(LP.name)} de la ficha V1 se conserva sin editar para auditoría: contiene el antiguo J4 «identitario», «bombitas a la vista» y «14 por corona» tal como estaban.</small></p></div><div class="rel"><a onclick="openLegacyPlane('${p.id}')">Ver el relato y los campos V1 →</a></div></div>`:''}`,
+    ${LP?`<div class="sec"><div class="kicker">Relato V1 · legacy</div><div class="human"><p><small>El plano ${esc(LP.name)} de la ficha V1 de ${esc(metaOf(V).title)} se conserva sin editar para auditoría. ${esc((DATA[V].legacy||{}).nota||'')}</small></p></div><div class="rel"><a onclick="openLegacyPlane('${p.id}')">Ver el relato y los campos V1 →</a></div></div>`:''}`,
     p.zones.map(z=>`#parc-${z.nodeId},#zr-${z.nodeId},[data-z="${z.nodeId}"]`).join(',')+',.plabel');
 }
 function openZoneId(id){for(const p of DATA[V].planes)for(const z of p.zones)if(z.nodeId===id)return openZone(z)}
@@ -435,11 +454,11 @@ function openFieldId(id){const f=fieldById(id);if(f)return openField(f)}
 function openZone(z){
   const rows=z.fields.map(f=>`<div class="f" onclick="openFieldId('${f.id}')"><span class="id">${esc(f.code||f.id)}</span><span class="n">${esc(f.name)}</span><span class="bar"><i style="width:${[0,12,30,58,100][f.j]||10}%;background:${z.col};opacity:${ALPHA[f.st]||.5}"></i></span><span class="st">${f.st}</span></div>`).join('');
   showCard(`<div class="kicker">${esc(z.plane.name)} · zona ${esc(z.code||z.num)}</div><div class="hrow"><h2>${esc(z.name)}</h2>${helpBtn('zone',z.nodeId)}</div><div class="q">${esc(z.pregunta||'')}</div>
-    <div class="sec"><div class="kicker">Lectura humana · Hope</div><div class="human">${paras(z.lectura||'')}</div></div>
+    <div class="sec"><div class="kicker">Lectura humana · ${esc(metaOf(V).title)}</div><div class="human">${paras(z.lectura||'')}</div></div>
     <div class="sec"><div class="kicker">Campos · ${z.fields.length}</div><div class="flist">${rows}</div></div>`,
     `#zr-${z.nodeId},[data-z="${z.nodeId}"],`+z.fields.map(f=>`#blk-${f.id},#fl-${f.id},.chord[data-f~="${f.id}"]`).join(','));
 }
-function srcHtml(codes){const S=(DEFS.sources||{});return (codes||'').split(/[,;\s]+/).filter(Boolean).map(c=>{const s=S[c];if(!s)return`<span class="pill">${esc(c)}</span>`;return s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(c)} · ${esc(s.name)}</a>`:`${esc(c)} · ${esc(s.name)}`}).join('<br>')}
+function srcHtml(codes){const S=DATA[V].fuentes||DEFS.sources||{}; /* etapa 01: una ficha puede traer su propio registro de fuentes (códigos V1 propios); si no, el de defs.json */return (codes||'').split(/[,;\s]+/).filter(Boolean).map(c=>{const s=S[c];if(!s)return`<span class="pill">${esc(c)}</span>`;return s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(c)} · ${esc(s.name)}</a>`:`${esc(c)} · ${esc(s.name)}`}).join('<br>')}
 /* ---------- V2 · detalle atómico, relaciones tipadas, legacy ---------- */
 function goRef(r){if(/^P[123]-/.test(r))return openPItem(r);if(/^PA-/.test(r))return openProgram(r);if(/^I[OFVM]\d/.test(r))return openIdentityItem(r);if(/^DOC-/.test(r))return openDocs(r);if(/^LEGACY-/.test(r))return openLegacyPlane(r.slice(7));if(/^familia\./.test(r))return showIdentityMode('familia');
   const m=r.match(/^([A-Z]{2}\d-\d)(?:\.(.+))?$/);if(m)return m[2]?openDetail(m[1],r):openFieldId(m[1]);if(/^[OUC]\d-\d$/.test(r))return openLegacy(r)}
@@ -460,11 +479,9 @@ function relLine(r,me){const other=r.from===me?r.to:r.from,dir=r.from===me;const
   return `<div class="rel"><span class="tag">${dir?`${esc(me)} <b>${t}</b> ${esc(other)}`:`${esc(other)} <b>${t}</b> ${esc(me)}`}${r.anchor?' · ancla':''}</span><a onclick="${fnOf(other)}"><small>${esc(other)}</small>${esc(nameOf(other))}${f?` <small>· ${esc(f.zone.name)}</small>`:''}</a>${r.why?`<span class="why">${esc(r.why)}</span>`:''}${(r.via||[]).length?`<small>${r.via.map(v=>`<a onclick="goRef('${v}')" style="display:inline">→ ${esc(v)}</a>`).join(' ')}</small>`:''}</div>`}
 function openField(f,hl){
   const dv=(V2().fields||{})[f.id]||{};const rels=REL().filter(r=>r.from===f.id||r.to===f.id),byT={};rels.forEach(r=>(byT[r.type]=byT[r.type]||[]).push(r));const inc=f.incertidumbre||{};
-  showCard(`<div class="kicker">${esc(f.plane.name)} · <b>${esc(f.zone.name)}</b> · ${esc(f.code||'')} · ${f.id}</div><div class="hrow"><h2>${esc(f.titular||f.name)}</h2>${helpBtn('field',f.id)}</div><div class="q">${f.titular?`<b>${esc(f.name)}</b> · `:''}${esc(dv.pregunta||f.def||'')}</div>
-    <div class="sec"><div class="kicker">Dato</div><div class="val">${esc(f.valor||'—')}</div>
-      <div class="kv"><b>Unidad</b><span>${esc(f.unidad||'—')}</span><b>Importancia</b><span>J${f.j} · ${JWORD[f.j]||''}</span><b>Estado</b><span>${f.st==='conflicto'?'<span class="pill conf">conflicto</span> ':''}${f.desconocido_parcial?'<span class="pill unk">desconocido parcial</span> ':''}${esc(f.estado||'')}</span><b>Confianza</b><span>${esc(f.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(f.fuente)||'—'}</span>${f.estado_proyecto?`<b>Proyecto</b><span>${esc(f.estado_proyecto)}</span>`:''}<b>Incertidumbre</b><span>${['desconocidos','conflictos','pendientes','inferidos'].map(k=>inc[k]?`${inc[k]} ${k}`:'').filter(Boolean).join(' · ')||'—'}</span></div></div>
-    ${lectLine(f.id)}
-    ${vocabSec(f)}
+  const arq=!!(f.arquetipo&&f.arquetipo.termino),dato=`<div class="sec"><div class="kicker">Dato</div><div class="val">${esc(f.valor||'—')}</div>
+      <div class="kv"><b>Unidad</b><span>${esc(f.unidad||'—')}</span><b>Importancia</b><span>${f.importancia?`J${f.j} · ${JWORD[f.j]||''}`:'sin asignar (borrador)'}</span><b>Estado</b><span>${f.st==='conflicto'?'<span class="pill conf">conflicto</span> ':''}${f.desconocido_parcial?'<span class="pill unk">desconocido parcial</span> ':''}${esc(f.estado||'')}</span><b>Confianza</b><span>${esc(f.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(f.fuente)||'—'}</span>${f.estado_proyecto?`<b>Proyecto</b><span>${esc(f.estado_proyecto)}</span>`:''}<b>Incertidumbre</b><span>${['desconocidos','conflictos','pendientes','inferidos'].map(k=>inc[k]?`${inc[k]} ${k}`:'').filter(Boolean).join(' · ')||'—'}</span></div></div>
+    ${lectLine(f.id)}`,resto=`
     <div class="sec"><div class="kicker">Detalle ·${(f.detalle||[]).length} registros</div>${(f.detalle||[]).map(detHtml).join('')}</div>
     ${byT.responde_a?`<div class="sec"><div class="kicker">Responde al Programa · ${byT.responde_a.length}</div>${byT.responde_a.map(r=>relLine(r,f.id)).join('')}</div>`:''}
     ${byT.define?`<div class="sec"><div class="kicker">Define Identidad · ${byT.define.length}</div>${byT.define.map(r=>relLine(r,f.id)).join('')}</div>`:''}
@@ -472,11 +489,27 @@ function openField(f,hl){
     <div class="sec"><div class="kicker">Legacy V1 · ${(f.legacy_ids||[]).length} campos de origen</div><div class="tags">${lpills(f.legacy_ids)||'—'}</div></div>
     ${f.tags.length?`<div class="sec"><div class="kicker">Etiquetas</div><div class="tags">${f.tags.map(t=>`<span>#${esc(t)}</span>`).join('')}</div></div>`:''}
     ${f.rel.length?`<div class="sec"><div class="kicker">Se cruza con · ${f.rel.length} <small>(exploratorio, por etiquetas)</small></div>${Object.entries(f.rel.reduce((m,r)=>((m[r.tag]=m[r.tag]||[]).push(r.f),m),{})).map(([t,fs])=>`<div class="rel"><span class="tag">#${esc(t)}</span>${fs.map(o=>`<a onclick="openFieldId('${o.id}')"><small>${o.id}</small>${esc(o.name)} <small>· ${esc(o.zone.name)}</small></a>`).join('')}</div>`).join('')}</div>`:''}
-    `,
+    `;
+  showCard(`<div class="kicker">${esc(f.plane.name)} · <b>${esc(f.zone.name)}</b> · ${esc(f.code||'')} · ${f.id}</div><div class="hrow"><h2>${esc(f.titular||f.name)}</h2>${helpBtn('field',f.id)}</div><div class="q">${f.titular?`<b>${esc(f.name)}</b> · `:''}${esc(dv.pregunta||f.def||'')}</div>
+    ${arq?`${arqSec(f)}${vocabSec(f)}<details class="trace"><summary>Trazabilidad · dato, detalle, relaciones y legacy</summary>${dato}${resto}</details>`:`${dato}${arqSec(f)}${vocabSec(f)}${resto}`}`,
     `#blk-${f.id},#fl-${f.id},#zr-${f.zone.nodeId},[data-z="${f.zone.nodeId}"],.chord[data-f~="${f.id}"]`);
   const svg=$('#plate');svg.querySelectorAll('.rel').forEach(e=>e.classList.remove('rel'));f.rel.forEach(r=>{['#blk-','#fl-'].forEach(pre=>{const e=svg.querySelector(pre+CSS.escape(r.f.id));if(e)e.classList.add('rel')})});
-  if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}
+  if(hl){const e=document.getElementById('det-'+hl);if(e){const d=e.closest('details');if(d)d.open=true;e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}
 }
+/* ---------- V2 · Arquetipo con rasgos y operaciones (Fran, 01/10/2026): término del vocabulario → cada rasgo con su operación y cómo → adhesión derivada → modo creativo. Todo viene de data.json (el migrador valida y deriva la adhesión) ---------- */
+const OPSIG={conserva:'=',transforma:'≈',rechaza:'×',introduce:'+'};
+function arqRefs(x){return (x.ref||[]).map(r=>`<a onclick="goRef('${esc(r)}')">→ ${esc(r)}</a>`).join(' ')}
+function arqMeta(x){return `<div class="m">${[esc(x.estado||''),x.confianza?`confianza ${esc(x.confianza)}`:'',esc(x.fuente||'')].filter(Boolean).join(' · ')}${(x.ref||[]).length?' · '+arqRefs(x):''}</div>`}
+function opRow(o,E){return `<div class="arow" id="det-${esc(o.id)}"><div class="rh"><span class="rn">${esc(o.rasgo)}</span><span class="op" data-op="${esc(o.operacion)}" title="${esc((E.operaciones||{})[o.operacion]||'')}">${OPSIG[o.operacion]||''} ${esc(o.operacion)}</span></div><div class="como">${esc(o.como)}</div>${arqMeta(o)}</div>`}
+function arqSec(f){const A=f.arquetipo;if(!A)return '';
+  if(!A.termino)return `<div class="sec arq-pend"><div class="kicker">Rasgos del arquetipo</div><div class="human"><p>${esc(A.estado||'pendiente')}</p></div></div>`;
+  const E=((V2().fields||{})[f.id]||{}).estructura||{},ops=A.operaciones||[],der=ops.filter(o=>o.operacion!=='introduce'),intro=ops.filter(o=>o.operacion==='introduce'),M=A.modo_creativo||{},ad=A.adhesion||{},T=A.termino;
+  return `<div class="sec arq-term"><div class="kicker">Término del vocabulario</div><div class="det hl"><b>${esc(T.termino)}</b><p>${esc(T.definicion||'')}</p>${T.ref?`<div class="m"><a onclick="goRef('${esc(T.ref)}')">→ ${esc(T.ref)}</a></div>`:''}</div></div>
+    <div class="sec arq-rasgos"><div class="kicker">Rasgos del arquetipo · ${der.length}</div>${der.map(o=>opRow(o,E)).join('')}${intro.length?`<div class="kicker sub">Introduce · lo que el arquetipo normalmente no hace · ${intro.length}</div>${intro.map(o=>opRow(o,E)).join('')}`:''}
+      <div class="arq-adh" title="${esc(ad.formula||'')}"><b>Adhesión derivada</b> · ${esc(ad.texto||'—')}</div></div>
+    ${M.respuestas?`<div class="sec arq-modo"><div class="kicker">Modo creativo</div>${M.nota?`<div class="vh">${esc(M.nota)}</div>`:''}${M.respuestas.map(r=>`<div class="mr"><div class="mq">${esc(r.pregunta)}</div><div class="ma">${esc(r.respuesta)}</div>${arqMeta(r)}</div>`).join('')}
+      ${M.frase_proyectual?`<div class="frase"><span class="t">Frase proyectual</span><div class="val">${esc(M.frase_proyectual.texto)}</div>${arqMeta(M.frase_proyectual)}</div>`:''}
+      ${M.libre?`<div class="libre"><span class="t">Libre</span>${esc(M.libre.texto)}${arqMeta(M.libre)}</div>`:''}</div>`:''}`}
 function openDetail(fid,did){const f=fieldById(fid);if(f)openField(f,did)}
 /* ---------- V2 · Vocabulario controlado (01/10): cualquier campo con `vocabulario` en defs muestra la sección; `aplica[lámpara]` sólo ordena y resalta, no es dato de la ficha ---------- */
 function vocabSec(f){const VO=((V2().fields||{})[f.id]||{}).vocabulario;if(!VO||!(VO.terminos||[]).length)return '';
@@ -519,7 +552,7 @@ function openIdentityMode(m){if(IMODE===m&&!ISEL){IMODE=null;ISEL=null;drawIdent
 function iitemRow(it){return `<div class="pitem" onclick="openIdentityItem('${it.id}')"><span class="e">● ${esc(it.label)}</span><span class="w">${esc(it.why||it.texto||'')}</span><small>${(it.links||[]).map(l=>{const f=fieldById(l);return f?f.name:l}).join(' · ')} · ${esc(it.estado||'')}</small></div>`}
 function modeSelector(m,items){const links=new Set();items.forEach(it=>(it.links||[]).forEach(l=>links.add(l)));return `#isel-${m}`+items.map(it=>`,#il-${it.id},#in-${it.id},#ilb-${it.id}`).join('')+[...links].map(l=>`,#blk-${l},#fl-${l}`).join('')}
 function showIdentityMode(m){lectOff();IMODE=m;ISEL=null;drawIdentity();const I=DATA[V].identidad||{},D2=V2().identidad||{},AL=((DATA[V].meta||{}).alcance)||{},LEC=(I.lecturas||{})[m]||'';let html='';
-  const lect=`<div class="sec"><div class="kicker">Lectura · Hope</div><div class="human">${paras(LEC)}</div></div>`;
+  const lect=`<div class="sec"><div class="kicker">Lectura · ${esc(metaOf(V).title)}</div><div class="human">${paras(LEC)}</div></div>`;
   if(m==='objeto'){const d=D2.objeto||{};html=`<div class="kicker">Identidad · <b>Producto</b></div><div class="hrow"><h2>${esc(d.nombre||MODENAME.objeto)}</h2>${helpBtn('identity','objeto')}</div><div class="q">${esc(d.pregunta||'')}</div>${lect}
     <div class="sec"><div class="kicker">Elementos definitorios · ${(I.objeto||[]).length}</div>${(I.objeto||[]).map(iitemRow).join('')}</div>
     <div class="sec"><div class="kicker">Alcance</div><div class="human"><p>${esc(AL.objeto||'')}</p></div></div>`}
@@ -567,13 +600,13 @@ function guideHtml(kind,obj){const D=V2();const li=a=>(a||[]).length?`<ul>${a.ma
   const block=d=>`<div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p></div></div><div class="sec guide"><div class="kicker">Qué pregunta responde</div><div class="human"><p>${esc(d.pregunta||'')}</p></div></div><div class="sec guide"><div class="kicker">Qué incluye</div><div class="human">${li(d.incluye)}</div></div><div class="sec guide"><div class="kicker">Qué no incluye</div><div class="human">${li(d.no_incluye)}${d.no_confundir?`<p><small>No confundir con: ${esc(d.no_confundir)}</small></p>`:''}</div></div>`;
   const leer=`<div class="sec guide"><div class="kicker">Cómo se lee</div><div class="human"><p>Estado del dato (evidencia): ${esc((D.estados||{}).evidencia?.join(' · ')||'')}. Estado de proyecto (eje aparte, sólo si existe): ${esc((D.estados||{}).proyecto?.join(' · ')||'')}. Confianza: cuánto fiarse. Fuentes: de dónde sale. Importancia J4 clave · J3 determinante · J2 relevante · J1 contextual: es la longitud de la barra; la identidad es una relación explícita del anillo exterior, no una altura.</p></div></div>`;
   if(kind==='plane'){const p=obj,d=(D.planes||{})[p.id]||{};return `<div class="kicker">Qué es este plano${p.nombre_teorico?` · nombre teórico: ${esc(p.nombre_teorico)}`:''}</div><div class="hrow"><h2>${esc(cap(p.name))}</h2>${helpBtn('plane',p.id)}</div><div class="q">${esc(d.pregunta||'')}</div>
-    <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p><p><small>La tarjeta muestra la lectura humana del caso Hope; esta ayuda explica el concepto.</small></p></div></div>
+    <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p><p><small>La tarjeta muestra la lectura humana del caso ${esc(metaOf(V).title)}; esta ayuda explica el concepto.</small></p></div></div>
     <div class="sec guide"><div class="kicker">Sus zonas y qué se carga en cada una</div>${p.zones.map(z=>{const zd=(D.zones||{})[z.id]||{};return `<div class="def"><b><small>${esc(z.code||'')}</small> ${esc(z.name)} <small>· ${z.fields.length} campos</small></b><i>${esc(zd.pregunta||'')}</i><br>${esc(zd.que_es||'')}</div>`}).join('')}</div>${leer}`}
   if(kind==='zone'){const z=obj,d=(D.zones||{})[z.id]||{};return `<div class="kicker">Qué es esta zona · ${esc(z.plane.name)} · ${esc(z.code||'')}</div><div class="hrow"><h2>${esc(z.name)}</h2>${helpBtn('zone',z.nodeId)}</div><div class="q">${esc(d.pregunta||'')}</div>
     <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p></div></div>
-    <div class="sec guide"><div class="kicker">Sus campos, uno por uno</div>${z.fields.map(f=>{const fd=(D.fields||{})[f.id]||{};return `<div class="def"><b><small>${esc(f.code||f.id)}</small> ${esc(f.name)} <small>· J${f.j} ${JWORD[f.j]||''}</small></b><i>${esc(fd.pregunta||'')}</i><br>${esc(fd.que_es||'')}${(fd.incluye||[]).length?`<br><small>Incluye: ${esc(fd.incluye.join(' · '))}</small>`:''}${(fd.no_incluye||[]).length?`<br><small>No incluye: ${esc(fd.no_incluye.join(' · '))}</small>`:''}${fd.no_confundir?`<br><small>No confundir con: ${esc(fd.no_confundir)}</small>`:''}</div>`}).join('')}</div>${leer}`}
-  if(kind==='field'){const f=obj,d=(D.fields||{})[f.id]||{};return `<div class="kicker">Qué es este campo · ${esc(f.plane.name)} · ${esc(f.zone.name)}</div><div class="hrow"><h2>${esc(f.name)}</h2>${helpBtn('field',f.id)}</div><div class="q">${esc(f.code||'')} · ${f.id}</div>${block(d)}
-    <div class="sec guide"><div class="kicker">Importancia</div><div class="human"><p><b>J${f.j} · ${JWORD[f.j]||''}</b>. ${esc(unbold((D.importancia||{}).nota||''))} Un campo puede ser J4 y no pertenecer a Identidad; un elemento identitario puede apoyarse en un campo J3 o J2.</p></div></div>${leer}`}
+    <div class="sec guide"><div class="kicker">Sus campos, uno por uno</div>${z.fields.map(f=>{const fd=(D.fields||{})[f.id]||{};return `<div class="def"><b><small>${esc(f.code||f.id)}</small> ${esc(f.name)} <small>${f.importancia?`· J${f.j} ${JWORD[f.j]||''}`:'· importancia sin asignar (borrador)'}</small></b><i>${esc(fd.pregunta||'')}</i><br>${esc(fd.que_es||'')}${(fd.incluye||[]).length?`<br><small>Incluye: ${esc(fd.incluye.join(' · '))}</small>`:''}${(fd.no_incluye||[]).length?`<br><small>No incluye: ${esc(fd.no_incluye.join(' · '))}</small>`:''}${fd.no_confundir?`<br><small>No confundir con: ${esc(fd.no_confundir)}</small>`:''}</div>`}).join('')}</div>${leer}`}
+  if(kind==='field'){const f=obj,d=(D.fields||{})[f.id]||{};return `<div class="kicker">Qué es este campo · ${esc(f.plane.name)} · ${esc(f.zone.name)}</div><div class="hrow"><h2>${esc(f.name)}</h2>${helpBtn('field',f.id)}</div><div class="q">${esc(f.code||'')} · ${f.id}</div>${block(d)}${d.estructura?(e=>`<div class="sec guide"><div class="kicker">Cómo se carga · rasgos y operaciones</div><div class="human"><p>${esc(e.que_es||'')}</p></div><ul>${Object.entries(e.operaciones||{}).map(([k,v])=>`<li><span class="op" data-op="${esc(k)}">${OPSIG[k]||''} ${esc(k)}</span> ${esc(v)}</li>`).join('')}</ul><div class="human"><p><b>La adhesión</b> ${esc(e.adhesion||'')}</p><p><b>Modo creativo</b> · ${Object.values(e.preguntas||{}).map(esc).join(' · ')} · <b>Frase proyectual:</b> ${esc(e.frase_proyectual||'')} <b>Libre:</b> ${esc(e.libre||'')}</p></div></div>`)(d.estructura):''}
+    <div class="sec guide"><div class="kicker">Importancia</div><div class="human"><p><b>${f.importancia?`J${f.j} · ${JWORD[f.j]||''}`:'Sin asignar (borrador)'}</b>.${esc(unbold((D.importancia||{}).nota||''))} Un campo puede ser J4 y no pertenecer a Identidad; un elemento identitario puede apoyarse en un campo J3 o J2.</p></div></div>${leer}`}
   if(kind==='program'){const d=D.programa||{};return `<div class="kicker">Qué es el Programa proyectual</div><div class="hrow"><h2>${esc(d.nombre||'')}</h2>${helpBtn('program','programa')}</div><div class="q">${esc(d.pregunta||'')}</div>
     <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p><p>${esc(unbold(d.principio))}</p></div></div>
     <div class="sec guide"><div class="kicker">Sus tres partes</div>${['P1','P2','P3'].map(k=>{const p=(d.partes||{})[k]||{};return `<div class="def"><b><small>${k}</small> ${esc(p.nombre||'')}</b><i>${esc(p.pregunta||'')}</i><br>${esc(p.que_es||'')}<br><small>Incluye: ${esc((p.incluye||[]).join(' · '))}</small><br><small>No incluye: ${esc((p.no_incluye||[]).join(' · '))}</small></div>`}).join('')}</div>
@@ -604,7 +637,7 @@ function renderBase(){const q=($('#baseQ').value||'').toLowerCase();$('#baseN').
   const groups={};LAMPS.forEach(l=>{const hay=(l.objeto+' '+l.nombre+' '+l.empresa+' '+(l.disenadores||[]).join(' ')+' '+l.anio).toLowerCase();if(q&&!hay.includes(q))return;
     const keys=GROUP==='empresa'?[l.empresa||'—']:(l.disenadores&&l.disenadores.length?l.disenadores:['—']);keys.forEach(k=>(groups[k]=groups[k]||[]).push(l))});
   const found=Object.keys(groups).length>0;
-  $('#baseList').innerHTML=Object.keys(groups).sort().map(k=>`<div class="bgrp">${esc(k)}</div>`+groups[k].map(l=>`<div class="bl ${l.id===V?'on':''}" onclick="pick('${l.id.replace(/'/g,"\\'")}')"><img src="img/${esc(l.foto||l.dibujo||'')}" alt=""><div class="n">${esc(l.nombre)}${l.codigo?' <small style="display:inline">'+esc(l.codigo)+'</small>':''}<small>${esc(GROUP==='empresa'?(l.disenadores||[]).join(' + '):l.empresa)}${l.anio?' · '+l.anio:''}${l.existe===false||l.estado_ficha==='proyecto'?' · proyecto':''}</small></div><span class="st">${l.campos} c · ${l.desconocidos} ?</span></div>`).join('')).join('')||'<div class="bgrp">sin resultados</div>';
+  $('#baseList').innerHTML=Object.keys(groups).sort().map(k=>`<div class="bgrp">${esc(k)}</div>`+groups[k].map(l=>`<div class="bl ${l.id===V?'on':''}" onclick="pick('${l.id.replace(/'/g,"\\'")}')"><img src="img/${esc(l.foto||l.dibujo||'')}" alt=""><div class="n">${esc(l.nombre)}${l.codigo?' <small style="display:inline">'+esc(l.codigo)+'</small>':''}<small>${esc(GROUP==='empresa'?(l.disenadores||[]).join(' + '):l.empresa)}${l.anio?' · '+l.anio:''}${l.existe===false?' · proyecto':(l.estado_ficha&&l.estado_ficha!=='definitiva'?' · '+esc(l.estado_ficha):'')}</small></div><span class="st">${l.campos} c · ${l.desconocidos} ?</span></div>`).join('')).join('')||'<div class="bgrp">sin resultados</div>';
   $('#oolCreate').innerHTML=!found&&q?`<div class="ool-actions"><button onclick="startOol('existente')">Pedirle la ficha al experto</button><button onclick="showNewOol()">Proyecto nuevo</button></div><div class="ool-brief" id="oolBrief"><textarea id="oolBriefText" placeholder="Contame en pocas líneas qué objeto querés proyectar, cómo se usa y qué debería lograr."></textarea><button class="ool-send" onclick="startOol('nuevo')">Crear proyecto</button></div>`:''}
 function showNewOol(){$('#oolBrief').classList.add('on');$('#oolBriefText').focus()}
 async function apiPost(url,body){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw new Error(d.error||'no se pudo completar');return d}
@@ -614,7 +647,7 @@ function renderOolJobs(){const root=$('#oolJobs');root.innerHTML=OOLJOBS.length?
 async function refreshLamps(){const [d,ls]=await Promise.all([fetch('api/data.json').then(r=>r.json()),fetch('api/lamps.json').then(r=>r.json())]);DATA=d;LAMPS=ls;renderBase()}
 async function loadOolJobs(){try{const before=OOLJOBS.map(j=>j.id+':'+j.etapa).join('|');OOLJOBS=await fetch('api/ool/jobs.json').then(r=>r.json());renderOolJobs();const after=OOLJOBS.map(j=>j.id+':'+j.etapa).join('|');if(before&&before!==after&&OOLJOBS.some(j=>j.etapa==='terminado'))await refreshLamps()}catch(e){$('#oolJobs').innerHTML='<div class="ool-empty">no se pudieron leer los trabajos</div>'}}
 async function answerOol(id){const ta=document.getElementById('ans-'+id),respuestas=(ta?.value||'').trim();if(!respuestas)return;$('#oolMsg').textContent='enviando respuestas…';try{await apiPost('api/ool/respond',{id,respuestas});$('#oolMsg').textContent='respuestas enviadas';await loadOolJobs()}catch(e){$('#oolMsg').textContent=e.message}}
-function pick(id){V=id;closeCard();render();closeBase();history.replaceState(null,'','#'+encodeURIComponent(id))}
+function pick(id){const im=IMODE,lm=LMODE;V=id;closeCard();lectLoad();render();closeBase();history.replaceState(null,'','#'+encodeURIComponent(id));if(im)showIdentityMode(im);else if(lm)openLectura(lm)} // etapa 01: cambiar de lámpara conserva el modo activo (Identidad o Lectura) y carga la lectura guardada de ESA lámpara
 $('#baseBtn').addEventListener('click',()=>$('#base').classList.contains('on')?closeBase():openBase());
 document.querySelectorAll('#lect .lbtn').forEach(b=>b.addEventListener('click',()=>{if(!DATA)return;LMODE===b.dataset.g?closeCard():openLectura(b.dataset.g)})); // un solo activo; volver a tocarlo lo apaga
 $('#baseQ').addEventListener('input',renderBase);

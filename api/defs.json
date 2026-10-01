@@ -1273,10 +1273,27 @@
     "incluye": [],
     "no_incluye": [],
     "no_confundir": "metáforas naturales como flor, eclipse o nube.",
+    "estructura": {
+     "que_es": "Arquetipo = término del vocabulario + sus rasgos + qué hace la lámpara con cada rasgo. Cada rasgo del término recibe una operación con una línea de cómo; lo que la lámpara agrega y el arquetipo normalmente no hace se registra como «introduce». La adhesión no se declara: sale de las operaciones. El modo creativo hace las mismas tres preguntas para proyectar; en una ficha existente, las respuestas se reconstruyen desde la ficha y quedan como interpretación.",
+     "operaciones": {
+      "conserva": "La lámpara mantiene el rasgo del arquetipo.",
+      "transforma": "La lámpara mantiene el rasgo pero lo resuelve de otro modo (materia, componente, escala o configuración).",
+      "rechaza": "La lámpara renuncia deliberadamente al rasgo.",
+      "introduce": "La lámpara hace algo que el arquetipo normalmente no hace; no está atado a un rasgo del vocabulario."
+     },
+     "adhesion": "Se deriva, no se declara: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta.",
+     "preguntas": {
+      "interesa": "¿Qué te interesa del arquetipo?",
+      "no_quiero": "¿Qué no querés de él?",
+      "quisiera": "¿Qué te gustaría que hiciera y normalmente no hace?"
+     },
+     "frase_proyectual": "Síntesis en una frase de lo que el proyecto toma, deja y agrega respecto del arquetipo.",
+     "libre": "Lo que no se decidió: aspectos que el arquetipo y el proyecto dejan abiertos."
+    },
     "lectura": {
      "grupo": "M",
      "decide": "Con qué modelo histórico de la iluminación se dialoga es una elección cultural y de proyecto.",
-     "se_calcula": "Identificado el arquetipo, su configuración y sus rasgos técnicos se registran como vocabulario controlado."
+     "se_calcula": "Identificado el arquetipo, sus rasgos salen del vocabulario controlado y la adhesión se calcula de lo que la lámpara hace con cada uno."
     },
     "vocabulario": {
      "version": "1.0",
@@ -1288,6 +1305,13 @@
        "termino": "Araña (chandelier)",
        "definicion": "Luminaria suspendida de muchas fuentes repartidas en brazos alrededor de un eje, con colgantes de cristal que multiplican la luz en destellos.",
        "rasgos_tecnicos": "Suspensión central; brazos radiales que portan muchas fuentes (velas, luego bombillas); colgantes o prismas que refractan; simetría radial; luz centelleante de múltiples puntos brillantes.",
+       "rasgos": [
+        "Suspensión central",
+        "Brazos radiales que portan muchas fuentes (velas, luego bombillas)",
+        "Colgantes o prismas que refractan",
+        "Simetría radial",
+        "Luz centelleante de múltiples puntos brillantes"
+       ],
        "epoca_origen": "Cruces de madera con velas en iglesias medievales; araña de cristal de roca en el s. XVII; cristal de Bohemia y de Murano en los s. XVII–XVIII (la «ciocca» de Giuseppe Briati, Murano, c. 1737).",
        "ejemplos": [
         {
@@ -1324,6 +1348,11 @@
        "termino": "Candelabro",
        "definicion": "Soporte de pie o de mesa con varios brazos que sostiene velas, o su versión eléctrica.",
        "rasgos_tecnicos": "Base y fuste vertical apoyados; dos o más brazos que abren a la misma altura; una fuente puntual en la punta de cada brazo.",
+       "rasgos": [
+        "Base y fuste vertical apoyados",
+        "Dos o más brazos que abren a la misma altura",
+        "Una fuente puntual en la punta de cada brazo"
+       ],
        "epoca_origen": "Antigüedad grecorromana (candelabrum); los candelabros de mesa de varios brazos se consolidan en la platería europea de los s. XVII–XVIII.",
        "ejemplos": [
         {
@@ -1354,6 +1383,12 @@
        "termino": "Vela o cirio",
        "definicion": "Fuente única y puntual sobre un vástago o un cuerpo cilíndrico vertical, con la llama —o una bombilla que la evoca— en el extremo.",
        "rasgos_tecnicos": "Un solo punto de luz en la cima; cuerpo cilíndrico o vástago; escala de mano; luz cálida y cercana.",
+       "rasgos": [
+        "Un solo punto de luz en la cima",
+        "Cuerpo cilíndrico o vástago",
+        "Escala de mano",
+        "Luz cálida y cercana"
+       ],
        "epoca_origen": "Antigüedad (velas de sebo y de cera); la bombilla en forma de llama, a fines del s. XIX.",
        "ejemplos": [
         {
@@ -1383,6 +1418,13 @@
        "termino": "Lámpara de aceite o quinqué",
        "definicion": "Lámpara con depósito de combustible, mecha y chimenea de vidrio; el quinqué es la versión con mecha tubular y tubo de vidrio que aviva la llama.",
        "rasgos_tecnicos": "Depósito abajo; mecha; tubo o chimenea de vidrio sobre la llama; a menudo pantalla o globo; regulación por rueda de mecha.",
+       "rasgos": [
+        "Depósito abajo",
+        "Mecha",
+        "Tubo o chimenea de vidrio sobre la llama",
+        "A menudo pantalla o globo",
+        "Regulación por rueda de mecha"
+       ],
        "epoca_origen": "Lámpara de Argand (Ami Argand, 1780, mecha tubular); Antoine Quinquet le agregó la chimenea de vidrio (1783) y le dio el nombre en castellano.",
        "ejemplos": [
         {
@@ -1422,6 +1464,12 @@
        "termino": "Farol o linterna",
        "definicion": "Caja de paneles transparentes o translúcidos en un marco, con la fuente dentro, para llevar, colgar o fijar.",
        "rasgos_tecnicos": "Marco + paneles (vidrio, mica, chapa perforada); fuente protegida dentro; asa o gancho; luz lateral filtrada por los paños.",
+       "rasgos": [
+        "Marco + paneles (vidrio, mica, chapa perforada)",
+        "Fuente protegida dentro",
+        "Asa o gancho",
+        "Luz lateral filtrada por los paños"
+       ],
        "epoca_origen": "Linternas de marco metálico con paneles de vidrio o de asta; el farol de vestíbulo doméstico se consolida en el s. XVIII.",
        "ejemplos": [
         {
@@ -1452,6 +1500,13 @@
        "termino": "Linterna de papel",
        "definicion": "Pantalla de papel tensado sobre una estructura de varillas, plegable o no, que envuelve la fuente y difunde la luz en todas direcciones.",
        "rasgos_tecnicos": "Esqueleto de varillas (bambú, alambre); piel de papel o equivalente; difusión total; peso casi nulo; a menudo plegable.",
+       "rasgos": [
+        "Esqueleto de varillas (bambú, alambre)",
+        "Piel de papel o equivalente",
+        "Difusión total",
+        "Peso casi nulo",
+        "A menudo plegable"
+       ],
        "epoca_origen": "Chōchin japonés, tradición de Gifu (época Edo según la tradición; sin fuente primaria verificada).",
        "ejemplos": [
         {
@@ -1480,6 +1535,12 @@
        "termino": "Farola",
        "definicion": "Farol o cabezal luminoso elevado sobre un poste o columna para alumbrar la calle o la plaza.",
        "rasgos_tecnicos": "Columna o poste; cabezal en la punta o en un brazo; altura que domina el espacio público; luz hacia abajo y alrededor.",
+       "rasgos": [
+        "Columna o poste",
+        "Cabezal en la punta o en un brazo",
+        "Altura que domina el espacio público",
+        "Luz hacia abajo y alrededor"
+       ],
        "epoca_origen": "Faroles de aceite en París desde el s. XVII; la farola de gas sobre columna de fundición, en el París del Segundo Imperio (1850–1860).",
        "ejemplos": [
         {
@@ -1516,6 +1577,12 @@
        "termino": "Antorcha o torchère",
        "definicion": "Lámpara de pie alta que envía toda su luz hacia arriba desde una copa en lo alto de un fuste, para iluminar el techo y devolver luz indirecta.",
        "rasgos_tecnicos": "Fuste alto; copa o cuenco reflector arriba; flujo indirecto hacia el techo; fuente no visible desde abajo.",
+       "rasgos": [
+        "Fuste alto",
+        "Copa o cuenco reflector arriba",
+        "Flujo indirecto hacia el techo",
+        "Fuente no visible desde abajo"
+       ],
        "epoca_origen": "Torchère (pie para vela o antorcha), Francia, fines del s. XVII; el uplighter eléctrico de luz indirecta, con el Luminator de Chiesa (1933).",
        "ejemplos": [
         {
@@ -1554,6 +1621,11 @@
        "termino": "Abat-jour (lámpara de pantalla)",
        "definicion": "Lámpara de mesa con base, fuste y pantalla —de tela, papel, vidrio o metal— que rodea la fuente y abre la luz hacia arriba y hacia abajo.",
        "rasgos_tecnicos": "Base lastrada + fuste + pantalla troncocónica o cilíndrica (tambor); difusión filtrada por la pantalla; fuente oculta.",
+       "rasgos": [
+        "Base lastrada + fuste + pantalla troncocónica o cilíndrica (tambor)",
+        "Difusión filtrada por la pantalla",
+        "Fuente oculta"
+       ],
        "epoca_origen": "La pantalla ya existe en lámparas de vela y de aceite; la lámpara eléctrica de mesa con pantalla aparece hacia 1880–1890, tras la incandescente.",
        "ejemplos": [
         {
@@ -1590,6 +1662,10 @@
        "termino": "Piantana (lámpara de pie con pantalla)",
        "definicion": "Lámpara de pie con un fuste alto y una pantalla en la punta que difunde la luz hacia arriba y hacia abajo.",
        "rasgos_tecnicos": "Base o trípode + fuste alto + pantalla; luz difusa a la altura de la persona sentada o de pie.",
+       "rasgos": [
+        "Base o trípode + fuste alto + pantalla",
+        "Luz difusa a la altura de la persona sentada o de pie"
+       ],
        "epoca_origen": "Lámpara eléctrica de pie con pantalla, fines del s. XIX – principios del s. XX (sin fuente específica verificada).",
        "ejemplos": [
         {
@@ -1627,6 +1703,12 @@
        "termino": "Lámpara de arco",
        "definicion": "Lámpara de pie que lleva la fuente lejos de su base mediante un arco en voladizo, para iluminar desde arriba un punto alejado.",
        "rasgos_tecnicos": "Base pesada (contrapeso); arco largo en voladizo; cabezal colgado en la punta; ilumina una mesa sin instalación en el techo.",
+       "rasgos": [
+        "Base pesada (contrapeso)",
+        "Arco largo en voladizo",
+        "Cabezal colgado en la punta",
+        "Ilumina una mesa sin instalación en el techo"
+       ],
        "epoca_origen": "1962: Arco, de los Castiglioni, tomada del alumbrado público para dar luz cenital sin anclaje al techo.",
        "ejemplos": [
         {
@@ -1655,6 +1737,12 @@
        "termino": "Lámpara de trabajo articulada (flexo)",
        "definicion": "Lámpara de brazo articulado con resortes o contrapesos que permite orientar y fijar la fuente en cualquier posición.",
        "rasgos_tecnicos": "Brazos articulados; equilibrio por resortes o contrapesos; cabezal orientable con reflector; luz directa concentrada.",
+       "rasgos": [
+        "Brazos articulados",
+        "Equilibrio por resortes o contrapesos",
+        "Cabezal orientable con reflector",
+        "Luz directa concentrada"
+       ],
        "epoca_origen": "George Carwardine patenta el brazo equilibrado por resortes en 1932; Herbert Terry & Sons produce la Anglepoise 1227 desde 1935.",
        "ejemplos": [
         {
@@ -1693,6 +1781,11 @@
        "termino": "Lámpara de banquero",
        "definicion": "Lámpara de escritorio con base y fuste de latón y pantalla horizontal de vidrio verde opalino, alargada sobre el plano de trabajo.",
        "rasgos_tecnicos": "Pantalla horizontal en semicilindro de vidrio de color (verde por fuera, opal por dentro); base y fuste de latón; luz sobre el escritorio sin deslumbrar.",
+       "rasgos": [
+        "Pantalla horizontal en semicilindro de vidrio de color (verde por fuera, opal por dentro)",
+        "Base y fuste de latón",
+        "Luz sobre el escritorio sin deslumbrar"
+       ],
        "epoca_origen": "Patente presentada el 11/05/1909 por Harrison D. McFaddin; marca Emeralite.",
        "ejemplos": [
         {
@@ -1714,6 +1807,12 @@
        "termino": "Aplique de brazo",
        "definicion": "Luminaria de pared con un brazo —fijo, pivotante o articulado— que separa la fuente del muro y la lleva hacia el espacio.",
        "rasgos_tecnicos": "Fijación a pared; brazo que pivota o se articula; cabezal en el extremo; heredero del brazo de luz para velas.",
+       "rasgos": [
+        "Fijación a pared",
+        "Brazo que pivota o se articula",
+        "Cabezal en el extremo",
+        "Heredero del brazo de luz para velas"
+       ],
        "epoca_origen": "«Bras de lumière» de pared con velas, generalizado en el s. XVII.",
        "ejemplos": [
         {
@@ -1750,6 +1849,12 @@
        "termino": "Campana o cono industrial",
        "definicion": "Pantalla reflectora de metal en forma de campana o cono, suspendida, que oculta la fuente y concentra la luz hacia abajo.",
        "rasgos_tecnicos": "Reflector opaco cónico o acampanado (chapa esmaltada, aluminio); fuente oculta en el interior; haz descendente; origen fabril.",
+       "rasgos": [
+        "Reflector opaco cónico o acampanado (chapa esmaltada, aluminio)",
+        "Fuente oculta en el interior",
+        "Haz descendente",
+        "Origen fabril"
+       ],
        "epoca_origen": "Reflector esmaltado industrial de Benjamin Electric (Chicago, fundada en 1901; patente de pantalla reflectora de 1910).",
        "ejemplos": [
         {
@@ -1787,6 +1892,12 @@
        "termino": "Plato o disco reflector",
        "definicion": "Pantalla plana o casi plana, como un plato, que refleja la luz de una fuente puesta delante o debajo.",
        "rasgos_tecnicos": "Disco reflector de poco fondo; fuente delante o por debajo; luz difusa reflejada; perfil delgado visto de canto.",
+       "rasgos": [
+        "Disco reflector de poco fondo",
+        "Fuente delante o por debajo",
+        "Luz difusa reflejada",
+        "Perfil delgado visto de canto"
+       ],
        "epoca_origen": "Sin origen único documentable; la forma se consolida con el acrílico opal de posguerra (Sarfatti, 1950).",
        "ejemplos": [
         {
@@ -1823,6 +1934,12 @@
        "termino": "Globo o esfera opalina",
        "definicion": "Esfera de vidrio o polímero opal que envuelve la fuente y difunde la luz por igual en todas direcciones.",
        "rasgos_tecnicos": "Esfera difusora cerrada (vidrio opal, polímero); fuente oculta; emisión difusa en 360°; transversal al montaje.",
+       "rasgos": [
+        "Esfera difusora cerrada (vidrio opal, polímero)",
+        "Fuente oculta",
+        "Emisión difusa en 360°",
+        "Transversal al montaje"
+       ],
        "epoca_origen": "Globos de vidrio opal en las luminarias eléctricas de comienzos del s. XX; en el diseño moderno, la lámpara de la Bauhaus (1923–1924).",
        "ejemplos": [
         {
@@ -1860,6 +1977,12 @@
        "termino": "Cilindro o cañón de luz",
        "definicion": "Cuerpo cilíndrico opaco que aloja la fuente y dirige el haz por su boca, adosado, suspendido o apoyado.",
        "rasgos_tecnicos": "Tubo o cilindro opaco; fuente al fondo; haz recortado por la boca; luz dirigida, sin difusión lateral.",
+       "rasgos": [
+        "Tubo o cilindro opaco",
+        "Fuente al fondo",
+        "Haz recortado por la boca",
+        "Luz dirigida, sin difusión lateral"
+       ],
        "epoca_origen": "Downlight de Richard Kelly y Edison Price para el Seagram Building (Nueva York, 1958).",
        "ejemplos": [
         {
@@ -1890,6 +2013,12 @@
        "termino": "Bombilla desnuda",
        "definicion": "La bombilla vista, sin pantalla, colgada de su cable o montada sobre un soporte mínimo, como figura en sí misma.",
        "rasgos_tecnicos": "Fuente visible; sin difusor ni reflector; cable o soporte mínimo; brillo directo de la fuente.",
+       "rasgos": [
+        "Fuente visible",
+        "Sin difusor ni reflector",
+        "Cable o soporte mínimo",
+        "Brillo directo de la fuente"
+       ],
        "epoca_origen": "Lámpara incandescente de filamento de carbono: Swan (1878) y Edison (1879).",
        "ejemplos": [
         {
@@ -1927,6 +2056,12 @@
        "termino": "Guirnalda de bombillas",
        "definicion": "Hilera de bombillas vistas a lo largo de un cable colgado en curvas entre puntos, figura de la fiesta al aire libre.",
        "rasgos_tecnicos": "Cable en catenaria; portalámparas repetidos; bombillas vistas; luz festiva de muchos puntos.",
+       "rasgos": [
+        "Cable en catenaria",
+        "Portalámparas repetidos",
+        "Bombillas vistas",
+        "Luz festiva de muchos puntos"
+       ],
        "epoca_origen": "1882: Edward H. Johnson, socio de Edison, cablea 80 bombillas en un árbol de Navidad en Nueva York; la guirnalda de verbena es vernácula.",
        "ejemplos": [
         {
@@ -1956,6 +2091,12 @@
        "termino": "Spot o proyector orientable",
        "definicion": "Cabezal con reflector y a veces lente que concentra la luz en un haz y se orienta sobre un soporte con horquilla o rótula.",
        "rasgos_tecnicos": "Cabezal con reflector o lente; haz concentrado y recortable; orientación por horquilla o rótula; origen escénico y fotográfico.",
+       "rasgos": [
+        "Cabezal con reflector o lente",
+        "Haz concentrado y recortable",
+        "Orientación por horquilla o rótula",
+        "Origen escénico y fotográfico"
+       ],
        "epoca_origen": "Luz de calcio de Thomas Drummond (uso escénico desde 1826; Covent Garden, 1837).",
        "ejemplos": [
         {
@@ -1993,6 +2134,12 @@
        "termino": "Riel de proyectores",
        "definicion": "Perfil electrificado del que cuelgan proyectores que se desplazan y se orientan libremente, figura de la luz de exposición.",
        "rasgos_tecnicos": "Perfil continuo; adaptadores; varios spots móviles; luz reconfigurable sin obra.",
+       "rasgos": [
+        "Perfil continuo",
+        "Adaptadores",
+        "Varios spots móviles",
+        "Luz reconfigurable sin obra"
+       ],
        "epoca_origen": "Lightolier Lytespan, desarrollado hacia 1961–1962.",
        "ejemplos": [
         {
@@ -2029,6 +2176,12 @@
        "termino": "Tubo o línea de luz",
        "definicion": "Fuente lineal que emite por todo su largo —del tubo fluorescente a la barra de LED—, vista o tras un difusor alargado.",
        "rasgos_tecnicos": "Geometría de extrusión; emisión a lo largo de la línea; chasis y difusor lineales; tiende a encadenarse.",
+       "rasgos": [
+        "Geometría de extrusión",
+        "Emisión a lo largo de la línea",
+        "Chasis y difusor lineales",
+        "Tiende a encadenarse"
+       ],
        "epoca_origen": "General Electric pone en venta la lámpara fluorescente el 21/04/1938.",
        "ejemplos": [
         {
@@ -2066,6 +2219,12 @@
        "termino": "Bañador de pared",
        "definicion": "Luminaria que distribuye la luz de forma asimétrica para bañar un plano vertical de manera uniforme.",
        "rasgos_tecnicos": "Óptica asimétrica; haz rasante sobre la pared; el aparato tiende a desaparecer; se define encendido.",
+       "rasgos": [
+        "Óptica asimétrica",
+        "Haz rasante sobre la pared",
+        "El aparato tiende a desaparecer",
+        "Se define encendido"
+       ],
        "epoca_origen": "Richard Kelly y Edison Price, bañado con lámparas PAR en el Seagram Building (Nueva York, 1957–1958).",
        "ejemplos": [
         {
@@ -2096,6 +2255,12 @@
        "termino": "Anillo o aro luminoso",
        "definicion": "Aro delgado que emite luz por todo su contorno, suspendido o apoyado, sin cuerpo detrás.",
        "rasgos_tecnicos": "Perfil circular continuo; fuente lineal distribuida en el aro; vacío central; desmaterialización del cuerpo.",
+       "rasgos": [
+        "Perfil circular continuo",
+        "Fuente lineal distribuida en el aro",
+        "Vacío central",
+        "Desmaterialización del cuerpo"
+       ],
        "epoca_origen": "Era LED, década de 2010; antecedente: LightDisc (Rizzatto y Meda, Luceplan, 2002), sobre el tubo fluorescente circular.",
        "ejemplos": [
         {
@@ -2133,6 +2298,12 @@
        "termino": "Pantallas escalonadas antideslumbrantes",
        "definicion": "Juego de pantallas superpuestas y escalonadas que ocultan la fuente desde cualquier ángulo y reparten la luz reflejada.",
        "rasgos_tecnicos": "Varias pantallas o láminas concéntricas; cálculo de reflexiones; fuente invisible; luz sin deslumbramiento.",
+       "rasgos": [
+        "Varias pantallas o láminas concéntricas",
+        "Cálculo de reflexiones",
+        "Fuente invisible",
+        "Luz sin deslumbramiento"
+       ],
        "epoca_origen": "Sistema de tres pantallas de Poul Henningsen, 1925–1926, con Louis Poulsen.",
        "ejemplos": [
         {
@@ -2170,6 +2341,11 @@
        "termino": "Suspensión de contrapeso",
        "definicion": "Suspensión cuya altura se regula a mano mediante un contrapeso o una polea que equilibra la luminaria.",
        "rasgos_tecnicos": "Cable que pasa por polea o florón; contrapeso visible; altura regulable a mano.",
+       "rasgos": [
+        "Cable que pasa por polea o florón",
+        "Contrapeso visible",
+        "Altura regulable a mano"
+       ],
        "epoca_origen": "Colgantes de gas y de aceite «rise and fall» del s. XIX; poleas con contrapeso en los bistrós franceses de comienzos del s. XX.",
        "ejemplos": [
         {
@@ -2204,19 +2380,8 @@
         "nota": "La ficha la registra como araña o «candelabro de cristal», antecedente declarado por la marca y los autores."
        }
       ]
-     }
-    }
-   },
-   "CO1-3": {
-    "code": "C1.3",
-    "nombre": "Relación con el arquetipo",
-    "pregunta": "¿Qué conserva y qué transforma del modelo reconocido?",
-    "que_es": "Explica cómo el proyecto se posiciona respecto del arquetipo: continuidad, reinterpretación, hibridación o transformación. Debe indicar brevemente qué conserva y qué cambia, evitando etiquetas vacías.",
-    "incluye": [],
-    "no_incluye": [],
-    "lectura": {
-     "grupo": "G",
-     "por_que": "Explicar qué conserva y qué transforma del modelo reconocido exige comparación e interpretación argumentada."
+     },
+     "nota_rasgos": "`rasgos` es `rasgos_tecnicos` partido en sus elementos (separador «;»), sin cambiar su sentido: es la lista contra la que una ficha declara, rasgo por rasgo, qué conserva, transforma o rechaza (Fran, 01/10/2026)."
     }
    },
    "CO2-1": {
