@@ -152,7 +152,7 @@ textarea:focus{outline:2px solid #d9d3c4}
 .plate [tabindex]:focus{outline:none}.plate #center:focus-visible{stroke:var(--ink);stroke-width:1.5}
 .plate .blk:focus-visible{stroke:var(--ink);stroke-width:1.5}
 .plate .iring{fill:none;stroke:#8e8981;stroke-width:1.5}
-.plate .isel{font-family:var(--f-mono);letter-spacing:.2em;fill:var(--muted);text-transform:uppercase}.plate .isel.i0{font-size:19px}.plate .isel.i1{font-size:21px}.plate .isel.i2{font-size:23px}.plate .isel.off{fill-opacity:.3}
+.plate .isel{font-family:var(--f-mono);font-size:24px;letter-spacing:.2em;fill:var(--muted);text-transform:uppercase}.plate .isel.off{fill-opacity:.3} /* Fran (01/10): las tres en el mismo círculo, un solo tamaño, lo más grande posible; las inactivas en gris clarito */
 .plate .isel{cursor:pointer}.plate .isel:hover,.plate .isel.on{fill:var(--ink);fill-opacity:1}
 .plate .inode{fill:#8e8981}
 .plate .iline{stroke:#8e8981;stroke-width:1.5;fill:none}
@@ -197,7 +197,7 @@ details.trace summary::before{content:'+ '}details.trace[open] summary::before{c
 </style>
 </head>
 <body>
-<div class="stage"><svg class="plate" id="plate" viewBox="-60 -60 1120 1120"></svg></div>
+<div class="stage"><svg class="plate" id="plate" viewBox="-30 -30 1060 1060"></svg></div>
 <div class="hdr"><h1 id="title">—</h1><div class="sub" id="sub"></div><div class="meta" id="meta"></div></div>
 <div class="sel" id="sel"><button id="baseBtn">Database</button></div>
 <div class="base" id="base"><button class="close" onclick="closeBase()">×</button>
@@ -214,7 +214,7 @@ details.trace summary::before{content:'+ '}details.trace[open] summary::before{c
 <script>
 const $=(s,r=document)=>r.querySelector(s);
 const NS='http://www.w3.org/2000/svg';
-const G={cx:500,cy:500,RPH:121,RP0:125,RP1:148,RZ0:153,RZ1:213,RF0:219,LEN:{4:96,3:54,2:27,1:11,0:7},HOUT:17,HK:1.6,HADD:54,GAPP:.07,GAPZ:.009,RI:327,RIL:334,RLBL:350,RID:{objeto:434,familia:462,marca:492}}; // V2: RI anillo de Identidad · RIL rótulos del anillo · RLBL rótulos de campo (antes 340)
+const G={cx:500,cy:500,RPH:121,RP0:125,RP1:148,RZ0:153,RZ1:213,RF0:219,LEN:{4:96,3:54,2:27,1:11,0:7},HOUT:17,HK:1.6,HADD:54,GAPP:.07,GAPZ:.009,RI:327,RIL:334,RLBL:350,RI2:460,IGAP:.15}; // V2: RI anillo de Identidad · RIL rótulos del anillo · RLBL rótulos de campo (antes 340) · RI2 círculo único de las tres identidades (justo por fuera del rótulo de campo más largo, r≈447, y de los halos) · IGAP hueco angular entre las tres palabras
 const HUE={make:212,use:73,say:341,'SINTAXIS':212,'PRAGMÁTICA':73,'SEMÁNTICA':341}; // un color por plano, mismos tres tonos que V1
 const ALPHA={documentado:1,observado:.8,inferido:.55,interpretado:.45,otro:.5,desconocido:0,conflicto:.9};
 const JWORD={4:'clave',3:'determinante',2:'relevante',1:'contextual'}; // V2 §8: identidad ≠ importancia
@@ -323,35 +323,40 @@ function render(){
   const stg=svg.parentElement;if(!stg.dataset.bound){stg.dataset.bound='1';stg.addEventListener('click',e=>{if(e.target===stg)closeCard()})} // el fondo fuera del svg también cierra (la rueda ya no llena toda la stage)
 }
 
-/* ---------- V2 · Identidad: anillo simple y tres categorías en la misma línea, como la primera V2; conexiones ligeramente más gruesas ---------- */
+/* ---------- V2 · Identidad: las tres identidades son estaciones de UN mismo círculo (Fran, 01/10); el círculo gris sólo aparece al activar una ---------- */
 function fieldById(id){for(const p of DATA[V].planes)for(const z of p.zones)for(const f of z.fields)if(f.id===id)return f;return null}
 function idItems(mode){const I=DATA[V].identidad||{};return mode==='objeto'?(I.objeto||[]):mode==='familia'?[...((I.familia||{}).invariantes||[]),...((I.familia||{}).variables||[])]:((I.marca_coleccion||{}).items||[])}
 function drawIdentity(){
   const svg=$('#plate'),gI=svg.querySelector('.ident'),defs=svg.querySelector('defs');if(!gI)return;gI.innerHTML='';defs.querySelectorAll('[id^="iarc-"]').forEach(e=>e.remove());svg.querySelectorAll('.flabel.ia').forEach(e=>{e.classList.remove('ia');e.removeAttribute('dy')});
-  // tres frases concéntricas, sin círculo: Producto adentro, Familia, Marca afuera; crecen con el alcance
-  [['objeto','IDENTIDAD DE PRODUCTO'],['familia','IDENTIDAD DE FAMILIA'],['marca','IDENTIDAD DE MARCA']].forEach(([m,lbl],i)=>{const r=G.RID[m];
-    el('path',{id:'iarc-sel-'+m,d:arcPath(r,Math.PI/2-.9,Math.PI/2+.9),fill:'none'},defs);
-    const t=el('text',{class:'isel i'+i+(IMODE===m?' on':IMODE?' off':''),'dominant-baseline':'central',id:'isel-'+m,tabindex:0,role:'button','aria-label':MODENAME[m]},gI);
+  // las tres palabras sobre el mismo círculo (G.RI2), mitad inferior, un solo tamaño: Familia centrada abajo, Producto a su izquierda, Marca a su derecha, mismo hueco (G.IGAP) entre ellas; sin círculo en reposo
+  const R=G.RI2,W={},C={familia:Math.PI/2};
+  [['objeto','IDENTIDAD DE PRODUCTO'],['familia','IDENTIDAD DE FAMILIA'],['marca','IDENTIDAD DE MARCA']].forEach(([m,lbl])=>{
+    el('path',{id:'iarc-sel-'+m,d:arcPath(R,.05,Math.PI-.05),fill:'none'},defs); // provisional: sirve para medir la palabra
+    const t=el('text',{class:'isel'+(IMODE===m?' on':IMODE?' off':''),'dominant-baseline':'central',id:'isel-'+m,tabindex:0,role:'button','aria-label':MODENAME[m]},gI);
     const tp=el('textPath',{href:'#iarc-sel-'+m,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lbl;
-    t.addEventListener('click',e=>{e.stopPropagation();openIdentityMode(m)});t.addEventListener('keydown',e=>KEY(e,()=>openIdentityMode(m)))});
+    t.addEventListener('click',e=>{e.stopPropagation();openIdentityMode(m)});t.addEventListener('keydown',e=>KEY(e,()=>openIdentityMode(m)));W[m]=t.getComputedTextLength()/2/R});
+  C.objeto=C.familia+W.familia+G.IGAP+W.objeto;C.marca=C.familia-W.familia-G.IGAP-W.marca;
+  Object.keys(C).forEach(m=>defs.querySelector('#iarc-sel-'+m).setAttribute('d',arcPath(R,C[m]-W[m]-.05,C[m]+W[m]+.05)));
   if(!IMODE)return;
-  const R=G.RID[IMODE];
+  // las tres palabras (con margen) son obstáculo: el círculo se corta en ellas; un nodo que cae bajo una palabra la atraviesa y queda por fuera (R2) con su rótulo; un rótulo que las pisaría se corre al costado del bloque más cercano a su ancla
+  const PAD=14/R,words=['marca','familia','objeto'].map(m=>[C[m]-W[m]-PAD,C[m]+W[m]+PAD]),blk=[words[0][0],words[2][1]],under=a=>words.some(([u,v])=>a>u&&a<v);
+  const FS=parseFloat(getComputedStyle(svg.querySelector('#isel-'+IMODE)).fontSize)||24,R2=R+FS*.45+6;
   const items=ISEL?idItems(IMODE).filter(it=>it.id===ISEL):idItems(IMODE),angs=items.map(it=>(fieldById(it.anchor||(ISEL?(it.links||[])[0]:null))||{}).am).filter(a=>a!==undefined);
-  items.forEach(it=>{const f=fieldById(it.anchor||(ISEL?(it.links||[])[0]:null));if(!f)return;const L=G.LEN[f.j]??G.LEN[1];
-    const fl=svg.querySelector('#fl-'+f.id);if(fl){fl.classList.add('ia');fl.setAttribute('dy',-7)}const [x0,y0]=pol(G.RF0+L+3,f.am),[x1,y1]=pol(R,f.am);el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iline',id:'il-'+it.id},gI);
+  items.forEach(it=>{const f=fieldById(it.anchor||(ISEL?(it.links||[])[0]:null));if(!f)return;const L=G.LEN[f.j]??G.LEN[1],RN=under(f.am)?R2:R,RL=RN+9;
+    const fl=svg.querySelector('#fl-'+f.id);if(fl){fl.classList.add('ia');fl.setAttribute('dy',-7)}const [x0,y0]=pol(G.RF0+L+3,f.am),[x1,y1]=pol(RN,f.am);el('path',{d:`M${x0} ${y0}L${x1} ${y1}`,class:'iline',id:'il-'+it.id},gI);
     el('circle',{cx:x1,cy:y1,r:3.2,class:'inode hit',id:'in-'+it.id},gI).addEventListener('click',()=>openIdentityItem(it.id));
     let half=PER*1.5;angs.forEach(a=>{if(a!==f.am){let d=Math.abs(a-f.am);d=Math.min(d,2*Math.PI-d);half=Math.min(half,d/2-.01)}});half=Math.max(half,PER/2-.004);
-    // si el rótulo del elemento caería sobre la palabra del nivel, se corre a un costado de la palabra
-    const wt0=svg.querySelector('#isel-'+IMODE),hW0=((wt0?wt0.getComputedTextLength():0)/2+18)/(R+9);let c0=f.am-half,c1=f.am+half;const wa=Math.PI/2-hW0,wb=Math.PI/2+hW0;
-    if(c0<wb&&c1>wa){if(f.am>=Math.PI/2){c0=wb;c1=wb+2*half}else{c1=wa;c0=wa-2*half}}
-    el('path',{id:'iarc-'+it.id,d:arcPath(R+9,c0,c1),fill:'none'},defs);
+    let c0=f.am-half,c1=f.am+half;
+    if(RN===R&&c0<blk[1]&&c1>blk[0]){if(f.am>=Math.PI/2){c0=blk[1];c1=blk[1]+2*half}else{c1=blk[0];c0=blk[0]-2*half}}
+    el('path',{id:'iarc-'+it.id,d:arcPath(RL,c0,c1),fill:'none'},defs);
     const tx=el('text',{class:'ilabel','dominant-baseline':'central',id:'ilb-'+it.id},gI);const tpp=el('textPath',{href:'#iarc-'+it.id,startOffset:'50%','text-anchor':'middle'},tx);
-    let lbl=it.rotulo||it.label;tpp.textContent=lbl;const avail=(R+9)*2*half-6;while(tx.getComputedTextLength()>avail&&lbl.length>3){lbl=lbl.slice(0,-2)+'…';tpp.textContent=lbl}
+    let lbl=it.rotulo||it.label;tpp.textContent=lbl;const avail=RL*2*half-6;while(tx.getComputedTextLength()>avail&&lbl.length>3){lbl=lbl.slice(0,-2)+'…';tpp.textContent=lbl}
     el('title',{},tx).textContent=it.label+' · '+(it.why||'');tx.addEventListener('click',()=>openIdentityItem(it.id));
   });
-  // el círculo del nivel: gris, mismo espesor que las líneas, cortado donde está la palabra y donde llega cada línea con su punto
-  const wt=svg.querySelector('#isel-'+IMODE);const halfW=((wt?wt.getComputedTextLength():0)/2+14)/R,gN=7.5/R;
-  const cuts=[[Math.PI/2-halfW,Math.PI/2+halfW],...angs.map(a=>[a-gN,a+gN])].map(([a,b])=>[((a%(2*Math.PI))+2*Math.PI)%(2*Math.PI),((b%(2*Math.PI))+2*Math.PI)%(2*Math.PI)]);
+  gI.querySelectorAll('.isel').forEach(t=>gI.appendChild(t)); // las palabras quedan por encima de las líneas que las atraviesan
+  // el círculo: gris, mismo espesor que las líneas, cortado en las tres palabras y donde llega cada línea con su punto
+  const gN=7.5/R;
+  const cuts=[...words,...angs.map(a=>[a-gN,a+gN])].map(([a,b])=>[((a%(2*Math.PI))+2*Math.PI)%(2*Math.PI),((b%(2*Math.PI))+2*Math.PI)%(2*Math.PI)]);
   const segs=[];cuts.forEach(([a,b])=>{if(a<=b)segs.push([a,b]);else{segs.push([a,2*Math.PI]);segs.push([0,b])}});segs.sort((u,v)=>u[0]-v[0]);
   const merged=[];segs.forEach(sg=>{const L=merged[merged.length-1];if(L&&sg[0]<=L[1])L[1]=Math.max(L[1],sg[1]);else merged.push([...sg])});
   const arc=(a0,a1)=>{if(a1-a0<.002)return '';const [x0,y0]=pol(R,a0),[x1,y1]=pol(R,a1);return `M${x0.toFixed(2)} ${y0.toFixed(2)}A${R} ${R} 0 ${(a1-a0)>Math.PI?1:0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`};
@@ -590,7 +595,7 @@ $('#baseQ').addEventListener('input',renderBase);
 document.querySelectorAll('.seg2 button').forEach(b=>b.addEventListener('click',()=>{GROUP=b.dataset.g;document.querySelectorAll('.seg2 button').forEach(x=>x.classList.toggle('on',x===b));renderBase()}));
 setTheme('fgp');
 setInterval(()=>{if($('#base').classList.contains('on'))loadOolJobs()},5000);
-(async()=>{const [d,c,df,ls]=await Promise.all([fetch('api/data.json').then(r=>r.json()),fetch('api/comments.json').then(r=>r.json()),fetch('api/defs.json').then(r=>r.json()),fetch('api/lamps.json').then(r=>r.json())]);DATA=d;COMMENTS=c;DEFS=df;LAMPS=ls;const h=decodeURIComponent(location.hash.slice(1));V=(h&&DATA[h])?h:(LAMPS[0]||{}).id||Object.keys(DATA)[0];lectLoad();render()})();
+(async()=>{const [d,c,df,ls]=await Promise.all([fetch('api/data.json').then(r=>r.json()),fetch('api/comments.json').then(r=>r.json()),fetch('api/defs.json').then(r=>r.json()),fetch('api/lamps.json').then(r=>r.json())]);DATA=d;COMMENTS=c;DEFS=df;LAMPS=ls;const h=decodeURIComponent(location.hash.slice(1));V=(h&&DATA[h])?h:(LAMPS[0]||{}).id||Object.keys(DATA)[0];lectLoad();render();if(document.fonts)document.fonts.addEventListener('loadingdone',()=>{if(DATA)drawIdentity()})})(); // las palabras de identidad se miden con la fuente real: si llega después, se reparten de nuevo
 </script>
 <!-- OOL · exportación estática 2026-09-07 17:41 · generada por build_static.py -->
 </body>
