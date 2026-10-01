@@ -245,7 +245,7 @@ details.vocabulario summary:focus-visible,.vt>button:focus-visible{outline:2px s
   <div class="bgrp" id="oolJobsHead">Trabajos del experto</div>
   <div id="oolJobs"><div class="ool-empty">cargando…</div></div>
 </div>
-<div class="legend"><span><i style="height:14px"></i>J4</span><span><i style="height:9px"></i>J3</span><span><i style="height:5px"></i>J2</span><span><i style="height:3px"></i>J1</span><span style="margin-left:8px"><span class="st"><i></i></span><span class="st"><i style="opacity:.8"></i></span><span class="st"><i style="opacity:.55"></i></span><span class="st"><i style="opacity:.42"></i></span><span class="st"><i style="background:none;border:1px solid var(--ink)"></i></span> documentado → desconocido</span><span class="lect" id="lect" role="group" aria-label="Lectura"><span>Lectura</span><button class="lbtn" data-g="D" aria-pressed="false">Determinístico</button><button class="lbtn" data-g="M" aria-pressed="false">Mixto</button><button class="lbtn" data-g="G" aria-pressed="false">Generativo</button><span id="lectN" title="campos e ítems del Programa por grupo · D · M · G"></span></span></div>
+<div class="legend"><span><i style="height:14px"></i>J4</span><span><i style="height:9px"></i>J3</span><span><i style="height:5px"></i>J2</span><span><i style="height:3px"></i>J1</span><span class="lect" id="lect" role="group" aria-label="Lectura"><span>Lectura</span><button class="lbtn" data-g="D" aria-pressed="false">Determinístico</button><button class="lbtn" data-g="M" aria-pressed="false">Mixto</button><button class="lbtn" data-g="G" aria-pressed="false">Generativo</button><span id="lectN" title="campos e ítems del Programa por grupo · D · M · G"></span></span></div>
 <div class="card" id="card"><button class="close" onclick="closeCard()">×</button><div id="cardBody"></div></div>
 <script>
 const $=(s,r=document)=>r.querySelector(s);
@@ -330,7 +330,7 @@ function render(){
       // campos: bloques + rótulo radial
       z.fields.forEach(f=>{const j=jn(f.importancia),st=state(f.estado),L=G.LEN[j]??G.LEN[1];f.j=j;f.st=st;
         const at={d:sectorPath(G.RF0,G.RF0+L,f.a0+G.GAPZ/3,f.a1-G.GAPZ/3),class:'blk hit',id:'blk-'+f.id};
-        if(st==='desconocido'){at.fill=getComputedStyle(document.body).getPropertyValue('--paper').trim()||'#f1eee7';at.stroke=z.col;at['stroke-width']=.8}else{at.fill=z.col;at['fill-opacity']=ALPHA[st]*.92}
+        at.fill=z.col;at['fill-opacity']=.92; // Fran 01/10 23:38: la rueda no muestra el estado de evidencia (queda en la trazabilidad de cada campo)
         {at.tabindex=0;at.role='button';at['aria-label']=f.name;const b=el('path',at,gB);b.addEventListener('click',()=>openField(f));b.addEventListener('keydown',e=>KEY(e,()=>openField(f)))}
         if(st==='conflicto'){const [x,y]=pol(G.RF0+L+4,f.am);el('circle',{cx:x,cy:y,r:2,fill:TH().conf},gB)}
         const deg=f.am*180/Math.PI,left=Math.cos(f.am)<0;const [x,y]=pol(G.RF0+L+11,f.am); // el rótulo arranca donde termina la barra y la acompaña
