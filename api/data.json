@@ -222,7 +222,7 @@
     {
      "id": "P2-3",
      "enunciado": "Construir la lámpara con un solo módulo repetido —elementos fijos y una estructura variable— para que el mismo sistema genere una familia.",
-     "desarrollo": "Define la organización del objeto y de la familia. Una unidad repetida sobre coronas (Organización y reglas), un módulo de tres piezas como unidad de proyecto (Piezas y función) y uniones reversibles que permiten agregar, quitar y reemplazar (Qué se une y cómo). Lo que es fijo —hoja en dos tamaños, brazo, lámpara comercial— y lo que es variable —estructura, cantidad, montaje— sale de este principio.",
+     "desarrollo": "Define la organización del objeto y de la familia. Una unidad repetida sobre coronas (Ley formal), un módulo de tres piezas como unidad de proyecto (Piezas y función) y uniones reversibles que permiten agregar, quitar y reemplazar (Qué se une y cómo). Lo que es fijo —hoja en dos tamaños, brazo, lámpara comercial— y lo que es variable —estructura, cantidad, montaje— sale de este principio.",
      "testimonio": "Un solo módulo repetido, con elementos fijos (hoja en dos tamaños, brazo, lámpara comercial) y una estructura variable, para generar una familia.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado",
@@ -262,7 +262,7 @@
     {
      "id": "P3-1",
      "enunciado": "Mantener la fuente fuera de la línea de visión desde cualquier punto, aunque el volumen sea abierto.",
-     "desarrollo": "Es la condición que ordena la geometría: coronas desfasadas con la hoja grande afuera (Organización y reglas), doble hoja por módulo y solape entre módulos y coronas (Recorrido y transformación) y vacíos calculados para que las hojas no se crucen (Forma y dimensiones). Se proyecta como requisito; el estado físico de su cumplimiento se registra aparte, en los datos.",
+     "desarrollo": "Es la condición que ordena la geometría: coronas desfasadas con la hoja grande afuera (Ley formal), doble hoja por módulo y solape entre módulos y coronas (Recorrido y transformación) y vacíos calculados para que las hojas no se crucen (Forma y dimensiones). Se proyecta como requisito; el estado físico de su cumplimiento se registra aparte, en los datos.",
      "testimonio": "Que la fuente no se vea desde ningún punto, aunque el volumen sea abierto.",
      "procedencia": "testimonio autoral posterior (Rizzatto F9; Fran F19: «parte fundamental del proyecto»)",
      "estado": "documentado (Fran, Rizzatto)",
@@ -418,7 +418,7 @@
       "nodeId": "HA1",
       "num": "01",
       "code": "A1",
-      "name": "Forma del conjunto",
+      "name": "Forma general",
       "pregunta": "¿Qué forma tiene y cómo está organizada?",
       "razon": "Describe la lámpara como un todo antes de descomponerla en piezas. Registra la forma global que ocupa en el espacio y la regla mediante la cual sus elementos se disponen. Permite describir tanto objetos cerrados como sistemas abiertos, configurables o no modulares.",
       "lectura": "Vista entera, Hope D66/42 es un esferoide achatado de Ø 110 × h 66 cm que no tiene superficie: la forma la dibujan los bordes de 84 hojas y los vacíos entre ellas, con los polos abiertos para que pasen los cables. Se organiza en tres coronas de módulos iguales desfasadas medio paso alrededor del eje vertical, con la hoja grande hacia afuera y la chica hacia adentro. Los vacíos entre hojas vecinas y entre coronas están calculados para que las hojas no se crucen y para que la fuente no quede en línea de visión. El peso documentado es 7 kg (conflicto con una referencia US); el reparto de 14 módulos por corona es inferido.",
@@ -646,7 +646,7 @@
        },
        {
         "id": "HA1-2",
-        "name": "Organización y reglas",
+        "name": "Ley formal",
         "importancia": "J4",
         "titular": "Un módulo × 42, tres coronas",
         "valor": "42 módulos iguales en tres coronas horizontales alrededor de un eje vertical: una con hojas horizontales, una hacia arriba y una hacia abajo, desfasadas medio paso; hoja grande afuera y chica adentro, con solape calculado para que no se crucen ni dejen ver la fuente. Polos abiertos, sin piezas de borde",
