@@ -524,6 +524,745 @@
      "grupo": "M",
      "decide": "La tipología (suspensión, pie, aplique, sistema…) es una decisión de partida, casi siempre dada por el brief.",
      "se_calcula": "Fijada la tipología, anclaje, alimentación y relación con el espacio se desprenden de ella como datos de catálogo."
+    },
+    "vocabulario": {
+     "version": "1.0",
+     "fecha": "2026-10-01",
+     "fuente_general": "Normas IEC 60598-2 (una parte por tipo de instalación) e IEC 60570 (carriles); clasificación por instalación de los catálogos de fabricantes; los nueve tipos de montaje del vault del estudio",
+     "terminos": [
+      {
+       "id": "suspension",
+       "termino": "Suspensión",
+       "grupo": "interior",
+       "definicion": "Luminaria que cuelga del techo mediante cable, varilla o cadena, con el cuerpo separado del plano de fijación.",
+       "criterio": "El cuerpo queda separado del techo por un elemento de suspensión; si se apoya contra el techo es plafón, y si la línea es continua de muchos tramos se registra además como lineal.",
+       "subtipos": [
+        "de punto único",
+        "multipunto o racimo (varias suspensiones desde un mismo florón)",
+        "lineal suspendida"
+       ],
+       "sinonimos": "it. sospensione · en. pendant",
+       "ejemplos": [
+        {
+         "pieza": "PH 5",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Poul Henningsen",
+         "anio": "1958",
+         "url": "https://www.moma.org/collection/works/3219",
+         "verificado": true
+        },
+        {
+         "pieza": "Caravaggio",
+         "fabricante": "Lightyears (hoy Fritz Hansen)",
+         "disenador": "Cecilie Manz",
+         "anio": "2005",
+         "url": "https://ceciliemanz.com/content/caravaggio",
+         "verificado": true
+        },
+        {
+         "pieza": "Glo-Ball S",
+         "fabricante": "Flos",
+         "disenador": "Jasper Morrison",
+         "anio": "1998",
+         "url": "https://flos.com/en/us/glo-ball-suspension/M-glo-ball-suspension.html",
+         "verificado": true
+        }
+       ],
+       "fuente": "IEC 60598-2-1; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "plafon",
+       "termino": "Plafón (adosada a techo)",
+       "grupo": "interior",
+       "definicion": "Luminaria fijada directamente contra el techo, sin elemento de suspensión que la separe del plano.",
+       "criterio": "Toca el plano del techo; el semiplafón tiene un vástago corto pero rígido. Si el cuerpo queda dentro del cielorraso es empotrada.",
+       "subtipos": [
+        "plafón",
+        "semiplafón"
+       ],
+       "sinonimos": "it. plafoniera / soffitto · en. ceiling, flush mount",
+       "ejemplos": [
+        {
+         "pieza": "Mini Glo-Ball C/W",
+         "fabricante": "Flos",
+         "disenador": "Jasper Morrison",
+         "anio": "2002",
+         "url": "https://flos.com/en/us/mini-glo-ball-ceiling-wall/M-mini-glo-ball-wall-ceiling.html",
+         "verificado": true
+        },
+        {
+         "pieza": "Logico soffitto",
+         "fabricante": "Artemide",
+         "disenador": "Michele De Lucchi y Gerhard Reichert",
+         "anio": "2001",
+         "url": "https://www.artemide.com/en/subfamily/22141/logico-ceiling-3x120%C2%B0",
+         "verificado": true,
+         "nota": "año por fuentes secundarias"
+        },
+        {
+         "pieza": "IC Lights C/W (semiplafón)",
+         "fabricante": "Flos",
+         "disenador": "Michael Anastassiades",
+         "anio": "2014",
+         "url": "https://flos.com/en/us/ic-lights-ceiling-wall/M-ic-lights-ceiling-wall.html",
+         "verificado": true
+        }
+       ],
+       "fuente": "IEC 60598-2-1; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "empotrada-techo",
+       "termino": "Empotrada de techo",
+       "grupo": "interior",
+       "definicion": "Luminaria alojada dentro del cielorraso, con la boca enrasada o casi enrasada con el plano del techo.",
+       "criterio": "El cuerpo queda dentro del plano y sólo se ve la boca; si sobresale el cuerpo entero es plafón.",
+       "subtipos": [
+        "downlight fijo",
+        "downlight orientable (ojo de buey)",
+        "empotrada sin marco (enrasada a yeso)"
+       ],
+       "sinonimos": "it. incasso · en. recessed, downlight",
+       "ejemplos": [
+        {
+         "pieza": "Quintessence",
+         "fabricante": "ERCO",
+         "disenador": "ERCO",
+         "anio": "",
+         "url": "https://press.erco.com/en/press-release/products/digital-all-round-star-the-new-generation-of-erco-quintessence-lighting-tools_2543",
+         "verificado": true,
+         "nota": "pieza verificada; año de la primera generación no"
+        },
+        {
+         "pieza": "Laser Blade",
+         "fabricante": "iGuzzini",
+         "disenador": "iGuzzini",
+         "anio": "",
+         "url": "https://www.iguzzini.com/us/laser-blade/",
+         "verificado": true,
+         "nota": "pieza verificada; año no"
+        },
+        {
+         "pieza": "Light Shadow",
+         "fabricante": "Flos Architectural",
+         "disenador": "Flos Architectural",
+         "anio": "",
+         "url": "https://professional.flos.com/en/global/family/light-shadow/",
+         "verificado": true,
+         "nota": "pieza verificada; año no"
+        }
+       ],
+       "fuente": "IEC 60598-2-2; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "aplique",
+       "termino": "Aplique de pared",
+       "grupo": "interior",
+       "definicion": "Luminaria fijada a un plano vertical, con el cuerpo sobre la pared.",
+       "criterio": "El soporte es la pared y el cuerpo queda por fuera de ella; si queda dentro del muro es empotrada de pared.",
+       "subtipos": [
+        "aplique fijo",
+        "aplique orientable o de brazo",
+        "aplique con cable y enchufe"
+       ],
+       "sinonimos": "it. applique / parete · en. wall light, sconce",
+       "ejemplos": [
+        {
+         "pieza": "Potence",
+         "fabricante": "Vitra (reedición)",
+         "disenador": "Jean Prouvé",
+         "anio": "1950",
+         "url": "https://www.vitra.com/en-us/product/potence",
+         "verificado": true
+        },
+        {
+         "pieza": "Lampe Gras n.º 304",
+         "fabricante": "DCW éditions (reedición)",
+         "disenador": "Bernard-Albin Gras",
+         "anio": "1921",
+         "url": "https://dcw-editions.com/en/products/lampe-gras-304-bathroom",
+         "verificado": true
+        },
+        {
+         "pieza": "265",
+         "fabricante": "Flos",
+         "disenador": "Paolo Rizzatto",
+         "anio": "1973",
+         "url": "https://flos.com/en/us/265/M-265.html",
+         "verificado": true
+        }
+       ],
+       "fuente": "IEC 60598-2-1; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "empotrada-pared",
+       "termino": "Empotrada de pared",
+       "grupo": "interior",
+       "definicion": "Luminaria alojada dentro del muro, con la boca enrasada con el plano vertical; incluye las balizas de escalón y de paso.",
+       "criterio": "El cuerpo queda dentro del muro; su luz suele ir al suelo o a un recorrido. Si sobresale entero es aplique.",
+       "subtipos": [
+        "baliza de escalón o de paso",
+        "empotrable de pared orientable"
+       ],
+       "sinonimos": "it. incasso a parete · en. recessed wall light, step light",
+       "ejemplos": [
+        {
+         "pieza": "Empotrables para muros y escaleras",
+         "fabricante": "BEGA",
+         "disenador": "BEGA",
+         "anio": "",
+         "url": "https://www.bega.com/en-gb/products/outdoor-luminaires/recessed-wall-luminaires/recessed-luminaires-for-walls-and-staircases-33109/",
+         "verificado": true,
+         "nota": "familia de catálogo, sin pieza de autor"
+        },
+        {
+         "pieza": "Walky empotrable",
+         "fabricante": "iGuzzini",
+         "disenador": "iGuzzini",
+         "anio": "",
+         "url": "https://www.iguzzini.com/walky-rectangular-recessed/",
+         "verificado": true,
+         "nota": "año no verificado"
+        }
+       ],
+       "fuente": "IEC 60598-2-2; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "de-pie",
+       "termino": "De pie",
+       "grupo": "interior",
+       "definicion": "Luminaria apoyada en el suelo que eleva la fuente mediante un mástil, trípode o estructura propia.",
+       "criterio": "Se apoya en el suelo y se desplaza sin herramientas; si se ancla al suelo en exterior es baliza o farola.",
+       "subtipos": [
+        "de iluminación general",
+        "de lectura"
+       ],
+       "sinonimos": "it. lampada da terra · en. floor lamp",
+       "ejemplos": [
+        {
+         "pieza": "Arco",
+         "fabricante": "Flos",
+         "disenador": "Achille y Pier Giacomo Castiglioni",
+         "anio": "1962",
+         "url": "https://www.moma.org/collection/works/1942",
+         "verificado": true
+        },
+        {
+         "pieza": "Luminator",
+         "fabricante": "FontanaArte",
+         "disenador": "Pietro Chiesa",
+         "anio": "1933",
+         "url": "https://www.fontanaarte.com/en/story/1933-pietro-chiesa-designs-the-luminator/",
+         "verificado": true
+        },
+        {
+         "pieza": "Costanza terra",
+         "fabricante": "Luceplan",
+         "disenador": "Paolo Rizzatto",
+         "anio": "1986",
+         "url": "https://www.luceplan.com/stories/costanza-40-years/",
+         "verificado": true
+        }
+       ],
+       "fuente": "IEC 60598-2-4; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "sobremesa",
+       "termino": "De sobremesa o escritorio",
+       "grupo": "interior",
+       "definicion": "Luminaria que se apoya o se fija a un mueble —mesa, escritorio, estante— y alimenta desde la red.",
+       "criterio": "Su soporte es un mueble, no la arquitectura; si no tiene cable y se lleva de un lugar a otro es portátil.",
+       "subtipos": [
+        "apoyada (con base)",
+        "con pinza o mordaza"
+       ],
+       "sinonimos": "it. lampada da tavolo · en. table lamp, desk lamp",
+       "ejemplos": [
+        {
+         "pieza": "Atollo 233",
+         "fabricante": "Oluce",
+         "disenador": "Vico Magistretti",
+         "anio": "1977",
+         "url": "https://www.oluce.com/en/lampada/233/",
+         "verificado": true
+        },
+        {
+         "pieza": "Eclisse",
+         "fabricante": "Artemide",
+         "disenador": "Vico Magistretti",
+         "anio": "1965",
+         "url": "https://www.artemide.com/en/subfamily/32542/eclisse",
+         "verificado": true
+        },
+        {
+         "pieza": "Tolomeo Pinza (con pinza)",
+         "fabricante": "Artemide",
+         "disenador": "Michele De Lucchi y Giancarlo Fassina",
+         "anio": "1987",
+         "url": "https://www.artemide.com/en/subfamily/1846841/tolomeo-pinza",
+         "verificado": true,
+         "nota": "1987 es el año de la familia Tolomeo"
+        }
+       ],
+       "fuente": "IEC 60598-2-4; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "portatil",
+       "termino": "Portátil o recargable",
+       "grupo": "interior/exterior",
+       "definicion": "Luminaria autónoma, con batería, que se transporta y se usa sin conexión permanente a la red.",
+       "criterio": "No depende de un punto de instalación: su condición es el desplazamiento. Una lámpara de mesa con enchufe es sobremesa aunque se pueda mover.",
+       "subtipos": [
+        "recargable de mesa",
+        "de mano o de colgar"
+       ],
+       "sinonimos": "it. portatile · en. portable, cordless",
+       "ejemplos": [
+        {
+         "pieza": "Bellhop",
+         "fabricante": "Flos",
+         "disenador": "Edward Barber y Jay Osgerby",
+         "anio": "2018",
+         "url": "https://flos.com/en/us/bellhop-unplugged-ed.-2018/M-bellhop.html",
+         "verificado": true
+        },
+        {
+         "pieza": "FollowMe",
+         "fabricante": "Marset",
+         "disenador": "Inma Bermúdez",
+         "anio": "2014",
+         "url": "https://www.marset.com/en/indoor-lighting/portable-lamps/followme-table/",
+         "verificado": true
+        },
+        {
+         "pieza": "Africa",
+         "fabricante": "Vibia",
+         "disenador": "Francisco Gómez Paz",
+         "anio": "",
+         "url": "https://vibia.com/us/sculpting-light-introducing-africa/",
+         "verificado": false,
+         "nota": "pieza y fabricante verificados; año dudoso (2023–2024)"
+        }
+       ],
+       "fuente": "IEC 60598-2-4 · IEC 60598-2-7 (jardín); clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "riel",
+       "termino": "Sistema de riel o carril electrificado",
+       "grupo": "sistema",
+       "definicion": "Conjunto de luminarias que se enganchan, desplazan y conectan a lo largo de un perfil que las sostiene y las alimenta.",
+       "criterio": "La luminaria vale por su adaptador al perfil: se cambia de lugar sin obra. Puede coexistir con suspensión, plafón o empotrada (el perfil se instala así).",
+       "subtipos": [
+        "carril de red (mono o trifásico)",
+        "carril magnético de muy baja tensión"
+       ],
+       "sinonimos": "it. binario · en. track lighting",
+       "ejemplos": [
+        {
+         "pieza": "Lytespan",
+         "fabricante": "Lightolier",
+         "disenador": "Lightolier",
+         "anio": "c. 1961–1962",
+         "url": "https://interiordesign.net/designwire/1959-2000-halogens-track-lighting-and-controls/",
+         "verificado": true,
+         "nota": "origen del riel comercial; año según la fuente, 1961 o 1962"
+        },
+        {
+         "pieza": "Infra-Structure",
+         "fabricante": "Flos",
+         "disenador": "Vincent Van Duysen",
+         "anio": "2016",
+         "url": "https://vincentvanduysen.com/projects/infra-structure",
+         "verificado": true
+        },
+        {
+         "pieza": "The Running Magnet",
+         "fabricante": "Flos Architectural",
+         "disenador": "Flos Architectural",
+         "anio": "c. 2014",
+         "url": "https://professional.flos.com/en/global/family/the-running-magnet/",
+         "verificado": false,
+         "nota": "año 2014 o 2015 según la fuente"
+        }
+       ],
+       "fuente": "IEC 60570; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "cable-tensado",
+       "termino": "Sistema de cable tensado",
+       "grupo": "sistema",
+       "definicion": "Luminarias que cuelgan de dos cables o varillas tendidos que a la vez las sostienen y les llevan corriente de muy baja tensión.",
+       "criterio": "El soporte y el conductor son el mismo elemento tendido de pared a pared; sin los cables no hay luminaria.",
+       "subtipos": [],
+       "sinonimos": "it. sistema a cavi tesi · en. low-voltage cable system",
+       "ejemplos": [
+        {
+         "pieza": "YaYaHo",
+         "fabricante": "Ingo Maurer",
+         "disenador": "Ingo Maurer",
+         "anio": "1984",
+         "url": "https://www.moma.org/collection/works/2561",
+         "verificado": true,
+         "nota": "MoMA: 1983–1984; 12 V"
+        }
+       ],
+       "fuente": "IEC 60598-2-23; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "sistema-modular",
+       "termino": "Sistema modular o estructural",
+       "grupo": "sistema",
+       "definicion": "Luminaria formada por módulos que se agregan, se encadenan o forman estructura para componer piezas de distinto tamaño o recorrido.",
+       "criterio": "No es una pieza cerrada: el usuario o el instalador decide la cantidad o la configuración. Se registra junto a su montaje (por ejemplo, suspensión + sistema modular).",
+       "subtipos": [
+        "por agregación de módulos iguales",
+        "estructural (la luminaria forma la estructura que la sostiene)"
+       ],
+       "sinonimos": "it. sistema modulare · en. modular system",
+       "ejemplos": [
+        {
+         "pieza": "Synapse",
+         "fabricante": "Luceplan",
+         "disenador": "Francisco Gómez Paz",
+         "anio": "2011",
+         "url": "https://collabcubed.com/2011/05/13/synapse-by-francisco-gomez-paz/",
+         "verificado": true,
+         "nota": "presentado en 2011; lanzamiento comercial 2013"
+        },
+        {
+         "pieza": "Alphabet of Light",
+         "fabricante": "Artemide",
+         "disenador": "BIG – Bjarke Ingels Group",
+         "anio": "2016",
+         "url": "https://www.metalocus.es/en/news/big-alphabet-light-artemide-big",
+         "verificado": true
+        }
+       ],
+       "fuente": "clasificación de catálogo; clasificación de catálogo de los fabricantes"
+      },
+      {
+       "id": "lineal",
+       "termino": "Lineal continua",
+       "grupo": "interior",
+       "definicion": "Luminaria de desarrollo longitudinal que se instala como recorrido continuo, encadenando tramos.",
+       "criterio": "Lo que la define es la continuidad de la línea en obra; un solo cuerpo alargado colgado es una suspensión.",
+       "subtipos": [
+        "suspendida",
+        "adosada",
+        "empotrada"
+       ],
+       "sinonimos": "it. lineare · en. linear, continuous row",
+       "ejemplos": [
+        {
+         "pieza": "Slotlight",
+         "fabricante": "Zumtobel",
+         "disenador": "Zumtobel",
+         "anio": "1999",
+         "url": "https://www.zumtobel.com/PDB/teaser/en/slotlightII.pdf",
+         "verificado": true
+        },
+        {
+         "pieza": "Underscore",
+         "fabricante": "iGuzzini",
+         "disenador": "Dean Skira",
+         "anio": "",
+         "url": "https://www.archiproducts.com/en/products/iguzzini/linear-lighting-profile-for-led-modules-underscore-6_414188",
+         "verificado": true,
+         "nota": "pieza y autor verificados; año no"
+        },
+        {
+         "pieza": "A.24",
+         "fabricante": "Artemide",
+         "disenador": "Carlotta de Bevilacqua",
+         "anio": "",
+         "url": "https://www.artemide.com/en/subfamily/4439164/a-24-diffused-emission",
+         "verificado": true,
+         "nota": "año no verificado"
+        }
+       ],
+       "fuente": "IEC 60598-2-1 · IEC 60598-2-2; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "integrada-arquitectura",
+       "termino": "Integrada en arquitectura",
+       "grupo": "interior",
+       "definicion": "Luz incorporada a la construcción —perfil en placa de yeso, nicho, moldura, cornisa— de modo que la fuente queda oculta en el plano construido.",
+       "criterio": "No se percibe un objeto luminaria: se percibe la arquitectura iluminada. Si se ve la boca de un aparato, es empotrada.",
+       "subtipos": [
+        "perfil en yeso",
+        "cornisa o moldura (cove)",
+        "nicho"
+       ],
+       "sinonimos": "en. architectural integrated, cove lighting",
+       "ejemplos": [
+        {
+         "pieza": "Soft Architecture (colección)",
+         "fabricante": "Flos",
+         "disenador": "varios autores",
+         "anio": "2010",
+         "url": "https://flos.com/en/us/blog/architectural-lighting-soft-architecture-collection-us.html",
+         "verificado": true
+        },
+        {
+         "pieza": "Borderline",
+         "fabricante": "Delta Light",
+         "disenador": "Delta Light",
+         "anio": "",
+         "url": "https://deltalight.com/en/products/borderline",
+         "verificado": true,
+         "nota": "perfil sin marco; año no verificado"
+        }
+       ],
+       "fuente": "clasificación del estudio (vault, 9 montajes); clasificación del estudio (vault Lighting Typologies, 9 tipos de montaje)"
+      },
+      {
+       "id": "integrada-mobiliario",
+       "termino": "Integrada en mobiliario",
+       "grupo": "interior",
+       "definicion": "Luz incorporada a un mueble —estante, cabecera, vitrina, cocina— de modo que forma parte de él.",
+       "criterio": "Se instala y se vende con el mueble o dentro de él; si se apoya sobre el mueble es sobremesa.",
+       "subtipos": [],
+       "sinonimos": "en. furniture integrated, under-cabinet",
+       "ejemplos": [
+        {
+         "pieza": "USM Haller E",
+         "fabricante": "USM",
+         "disenador": "USM",
+         "anio": "2017",
+         "url": "https://www.smow.com/blog/2017/04/usm-haller-e-a-new-storage-generation/",
+         "verificado": true,
+         "nota": "único ejemplo canónico verificable"
+        }
+       ],
+       "fuente": "clasificación del estudio (vault, 9 montajes); clasificación del estudio (vault Lighting Typologies, 9 tipos de montaje)"
+      },
+      {
+       "id": "empotrada-suelo",
+       "termino": "Empotrada de suelo",
+       "grupo": "exterior/interior",
+       "definicion": "Luminaria alojada en el pavimento, con la boca enrasada y pisable, que ilumina hacia arriba o marca un recorrido.",
+       "criterio": "Está dentro del suelo y soporta ser pisada; si sobresale del suelo es baliza.",
+       "subtipos": [
+        "de proyección hacia arriba",
+        "de señalización"
+       ],
+       "sinonimos": "en. in-ground, recessed floor, uplight",
+       "ejemplos": [
+        {
+         "pieza": "Tesis",
+         "fabricante": "ERCO",
+         "disenador": "ERCO",
+         "anio": "",
+         "url": "https://www.erco.com/en_us/products/outdoor/in-ground-luminaires/tesis-5747/",
+         "verificado": true,
+         "nota": "año no verificado"
+        },
+        {
+         "pieza": "Light Up",
+         "fabricante": "iGuzzini",
+         "disenador": "iGuzzini",
+         "anio": "",
+         "url": "https://www.iguzzini.com/us/recessed-in-ground-lights/",
+         "verificado": false,
+         "nota": "familia verificada; año y autor no"
+        },
+        {
+         "pieza": "Empotrables transitables",
+         "fabricante": "BEGA",
+         "disenador": "BEGA",
+         "anio": "",
+         "url": "https://www.bega.com/en/products/drive-over-in-ground-luminaires-88671/",
+         "verificado": true,
+         "nota": "familia de catálogo"
+        }
+       ],
+       "fuente": "IEC 60598-2-13; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "baliza",
+       "termino": "Baliza o bollard",
+       "grupo": "exterior",
+       "definicion": "Luminaria de exterior de baja altura anclada al suelo que ilumina un recorrido o un borde.",
+       "criterio": "Altura de persona o menor, anclada; si eleva la fuente sobre una columna para alumbrar un espacio amplio es farola.",
+       "subtipos": [],
+       "sinonimos": "it. paletto · en. bollard",
+       "ejemplos": [
+        {
+         "pieza": "Flindt Bollard",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Christian Flindt",
+         "anio": "2014",
+         "url": "https://www.louispoulsen.com/en-us/catalog/private/outdoor/flindt-bollard",
+         "verificado": true
+        },
+        {
+         "pieza": "Balizas de sistema",
+         "fabricante": "BEGA",
+         "disenador": "BEGA",
+         "anio": "",
+         "url": "https://www.bega.com/en/products/outdoor-luminaires/bollards/system-bollards-85298/",
+         "verificado": true,
+         "nota": "familia de catálogo"
+        }
+       ],
+       "fuente": "IEC 60598-2-1; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "farola",
+       "termino": "Farola o luminaria sobre columna",
+       "grupo": "exterior",
+       "definicion": "Luminaria de alumbrado público o de grandes espacios exteriores, elevada sobre una columna o brazo.",
+       "criterio": "Eleva la fuente para alumbrar calzada, plaza o recorrido desde arriba; es la tipología del alumbrado público.",
+       "subtipos": [
+        "sobre columna (post-top)",
+        "de brazo"
+       ],
+       "sinonimos": "it. lampione · en. street light, post top",
+       "ejemplos": [
+        {
+         "pieza": "Albertslund Post",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Jens Møller-Jensen",
+         "anio": "1963",
+         "url": "https://www.louispoulsen.com/en-us/professional/about-us/designers/jens-moller-jensen",
+         "verificado": true
+        },
+        {
+         "pieza": "LamparaAlta",
+         "fabricante": "Santa & Cole",
+         "disenador": "Beth Galí y Màrius Quintana",
+         "anio": "1983",
+         "url": "https://usa.santacole.com/en/biography/beth-gali-2/",
+         "verificado": true
+        },
+        {
+         "pieza": "Archilede",
+         "fabricante": "iGuzzini (para ENEL Sole)",
+         "disenador": "iGuzzini",
+         "anio": "2010",
+         "url": "https://ifdesign.com/en/winner-ranking/project/archilede/54842",
+         "verificado": true
+        }
+       ],
+       "fuente": "IEC 60598-2-3; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "proyector",
+       "termino": "Proyector",
+       "grupo": "exterior/interior",
+       "definicion": "Luminaria orientable de haz concentrado montada sobre estaca, brazo, horquilla o superficie, para bañar o acentuar fachadas, árboles u objetos.",
+       "criterio": "Su condición es apuntar: se monta en un soporte orientable fuera del plano. El proyector de carril pertenece al sistema de riel.",
+       "subtipos": [
+        "sobre estaca",
+        "sobre horquilla o brazo"
+       ],
+       "sinonimos": "it. proiettore · en. floodlight, spotlight",
+       "ejemplos": [
+        {
+         "pieza": "Palco",
+         "fabricante": "iGuzzini",
+         "disenador": "artec3 Studio",
+         "anio": "2012",
+         "url": "https://www.iguzzini.com/us/palco-inout-4-integral/",
+         "verificado": true
+        },
+        {
+         "pieza": "Grasshopper",
+         "fabricante": "ERCO",
+         "disenador": "ERCO",
+         "anio": "",
+         "url": "https://www.erco.com/en_us/products/outdoor/projectors/",
+         "verificado": true,
+         "nota": "pieza verificada; año no"
+        },
+        {
+         "pieza": "Proyector LED con estaca",
+         "fabricante": "BEGA",
+         "disenador": "BEGA",
+         "anio": "",
+         "url": "https://www.bega.com/en/products/outdoor-luminaires/garden-luminaires/led-floodlight-with-earth-spike-84367/",
+         "verificado": true,
+         "nota": "familia de catálogo"
+        }
+       ],
+       "fuente": "IEC 60598-2-5; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "sumergible",
+       "termino": "Sumergible",
+       "grupo": "exterior",
+       "definicion": "Luminaria diseñada para funcionar bajo el agua, en piscinas, estanques o fuentes.",
+       "criterio": "Su condición de instalación es el agua: hermeticidad y alimentación de muy baja tensión.",
+       "subtipos": [],
+       "sinonimos": "en. underwater, pool light",
+       "ejemplos": [
+        {
+         "pieza": "Empotrables para piscinas",
+         "fabricante": "BEGA",
+         "disenador": "BEGA",
+         "anio": "",
+         "url": "https://www.bega.com/en/products/outdoor-luminaires/underwater-luminaires/recessed-luminaires-for-swimming-pools-88913/",
+         "verificado": true,
+         "nota": "familia de catálogo"
+        },
+        {
+         "pieza": "Proyectores subacuáticos de acero inoxidable",
+         "fabricante": "BEGA",
+         "disenador": "BEGA",
+         "anio": "",
+         "url": "https://www.bega.com/en/products/underwater-floodlights-99115/",
+         "verificado": true,
+         "nota": "estanques y fuentes"
+        }
+       ],
+       "fuente": "IEC 60598-2-18; clasificación de catálogo del fabricante de los ejemplos"
+      },
+      {
+       "id": "guirnalda",
+       "termino": "Guirnalda o cadena luminosa",
+       "grupo": "exterior/interior",
+       "definicion": "Conjunto de puntos de luz repartidos a lo largo de un cable que se tiende o se cuelga entre puntos.",
+       "criterio": "La luminaria es el cable con sus portalámparas y se instala tendiéndolo; no tiene un cuerpo principal.",
+       "subtipos": [],
+       "sinonimos": "it. catenaria luminosa · en. festoon, string lights",
+       "ejemplos": [
+        {
+         "pieza": "Santorini",
+         "fabricante": "Marset",
+         "disenador": "Sputnik Estudio",
+         "anio": "2014",
+         "url": "https://www.marset.com/usa/outdoor-lighting/pendant-light-fixtures/santorini/",
+         "verificado": true,
+         "nota": "el fabricante la describe para colgar como guirnalda"
+        },
+        {
+         "pieza": "String Lights",
+         "fabricante": "Flos",
+         "disenador": "Michael Anastassiades",
+         "anio": "2014",
+         "url": "https://flos.com/en/us/string-light-cone/M-string-cone.html",
+         "verificado": true,
+         "nota": "caso límite: Flos la cataloga como suspensión de cable conducido"
+        }
+       ],
+       "fuente": "IEC 60598-2-20; clasificación de catálogo del fabricante de los ejemplos"
+      }
+     ],
+     "aplica": {
+      "Hope D66-42 — Luceplan": [
+       {
+        "id": "suspension",
+        "rol": "principal",
+        "ref": "CO1-1.d1",
+        "nota": "La ficha la registra como suspensión interior a techo, regulable en altura."
+       },
+       {
+        "id": "sistema-modular",
+        "rol": "secundaria",
+        "ref": "CO1-1.d2",
+        "nota": "La ficha la registra como objeto modular de un sistema con cuatro tamaños y kits apilables."
+       }
+      ]
+     }
     }
    },
    "CO1-2": {
@@ -538,6 +1277,934 @@
      "grupo": "M",
      "decide": "Con qué modelo histórico de la iluminación se dialoga es una elección cultural y de proyecto.",
      "se_calcula": "Identificado el arquetipo, su configuración y sus rasgos técnicos se registran como vocabulario controlado."
+    },
+    "vocabulario": {
+     "version": "1.0",
+     "fecha": "2026-10-01",
+     "fuente_general": "Colecciones MoMA, V&A, Met, Cooper Hewitt y Smithsonian; fabricantes de referencia; glosario de arquetipos de la sonda del estudio (agosto 2026) y Test del arquetipo",
+     "terminos": [
+      {
+       "id": "arana",
+       "termino": "Araña (chandelier)",
+       "definicion": "Luminaria suspendida de muchas fuentes repartidas en brazos alrededor de un eje, con colgantes de cristal que multiplican la luz en destellos.",
+       "rasgos_tecnicos": "Suspensión central; brazos radiales que portan muchas fuentes (velas, luego bombillas); colgantes o prismas que refractan; simetría radial; luz centelleante de múltiples puntos brillantes.",
+       "epoca_origen": "Cruces de madera con velas en iglesias medievales; araña de cristal de roca en el s. XVII; cristal de Bohemia y de Murano en los s. XVII–XVIII (la «ciocca» de Giuseppe Briati, Murano, c. 1737).",
+       "ejemplos": [
+        {
+         "pieza": "Metropolitan",
+         "fabricante": "J. & L. Lobmeyr",
+         "disenador": "Hans Harald Rath",
+         "anio": "1966",
+         "url": "https://adeenidesigngroup.com/products/metropolitan-chandelier-by-hans-harald-rath",
+         "verificado": true
+        },
+        {
+         "pieza": "Smoke Chandelier",
+         "fabricante": "Moooi",
+         "disenador": "Maarten Baas",
+         "anio": "2002",
+         "url": "https://www.moooi.com/en/story/what-happens-when-a-designer-plays-with-fire",
+         "verificado": true
+        },
+        {
+         "pieza": "Hope",
+         "fabricante": "Luceplan",
+         "disenador": "Paolo Rizzatto y Francisco Gómez Paz",
+         "anio": "2009",
+         "url": "https://www.luceplan.com/wp-content/uploads/LP_Brochure-Hope_2024.pdf",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es la tipología suspensión (una araña puede ser de pared o de pie, aunque rara vez). No confundir con flor, racimo o joya (metáforas, van a Qué sugiere). En castellano corriente se la llama también «candelabro de cristal»: es la misma figura, distinta del candelabro de apoyo.",
+       "sinonimos": "it. lampadario · fr. lustre · en. chandelier",
+       "fuente": "https://www.archantiques.com/blog/2018/1/23/history-of-the-crystal-chandelier"
+      },
+      {
+       "id": "candelabro",
+       "termino": "Candelabro",
+       "definicion": "Soporte de pie o de mesa con varios brazos que sostiene velas, o su versión eléctrica.",
+       "rasgos_tecnicos": "Base y fuste vertical apoyados; dos o más brazos que abren a la misma altura; una fuente puntual en la punta de cada brazo.",
+       "epoca_origen": "Antigüedad grecorromana (candelabrum); los candelabros de mesa de varios brazos se consolidan en la platería europea de los s. XVII–XVIII.",
+       "ejemplos": [
+        {
+         "pieza": "Candelabro de doce luces",
+         "fabricante": "Matthew Boulton (Soho, Birmingham)",
+         "disenador": "Matthew Boulton",
+         "anio": "s. XVIII",
+         "url": "https://www.metmuseum.org/art/collection/search/202395",
+         "verificado": true,
+         "nota": "pieza de museo (Met)"
+        },
+        {
+         "pieza": "Spider (portavelas)",
+         "fabricante": "Dansk International Designs",
+         "disenador": "Jens Quistgaard",
+         "anio": "1962",
+         "url": "https://www.metmuseum.org/art/collection/search/485016",
+         "verificado": true,
+         "nota": "Met"
+        }
+       ],
+       "no_confundir": "No es la araña (cuelga); el uso corriente de «candelabro» para la araña de cristal se registra como sinónimo de araña.",
+       "sinonimos": "it. candelabro · en. candelabrum, candelabra",
+       "fuente": "https://www.metmuseum.org/art/collection/search/202395"
+      },
+      {
+       "id": "vela",
+       "termino": "Vela o cirio",
+       "definicion": "Fuente única y puntual sobre un vástago o un cuerpo cilíndrico vertical, con la llama —o una bombilla que la evoca— en el extremo.",
+       "rasgos_tecnicos": "Un solo punto de luz en la cima; cuerpo cilíndrico o vástago; escala de mano; luz cálida y cercana.",
+       "epoca_origen": "Antigüedad (velas de sebo y de cera); la bombilla en forma de llama, a fines del s. XIX.",
+       "ejemplos": [
+        {
+         "pieza": "My New Flame",
+         "fabricante": "Ingo Maurer",
+         "disenador": "Moritz Waldemeyer con Ingo Maurer y equipo",
+         "anio": "2012",
+         "url": "https://www.moma.org/collection/works/169654",
+         "verificado": true,
+         "nota": "MoMA"
+        },
+        {
+         "pieza": "Cirio",
+         "fabricante": "Santa & Cole",
+         "disenador": "Antoni Arola",
+         "anio": "2010",
+         "url": "https://www.santacole.com/es/cirio-simple-501/",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es el candelabro (que reúne varias). La forma de llama de una bombilla no basta: el arquetipo es la configuración vástago + punto.",
+       "sinonimos": "it. candela · en. candle",
+       "fuente": "colecciones y fabricantes de los ejemplos"
+      },
+      {
+       "id": "aceite",
+       "termino": "Lámpara de aceite o quinqué",
+       "definicion": "Lámpara con depósito de combustible, mecha y chimenea de vidrio; el quinqué es la versión con mecha tubular y tubo de vidrio que aviva la llama.",
+       "rasgos_tecnicos": "Depósito abajo; mecha; tubo o chimenea de vidrio sobre la llama; a menudo pantalla o globo; regulación por rueda de mecha.",
+       "epoca_origen": "Lámpara de Argand (Ami Argand, 1780, mecha tubular); Antoine Quinquet le agregó la chimenea de vidrio (1783) y le dio el nombre en castellano.",
+       "ejemplos": [
+        {
+         "pieza": "Lámpara Argand",
+         "fabricante": "Matthew Boulton",
+         "disenador": "Matthew Boulton (sistema Argand)",
+         "anio": "1784–1800",
+         "url": "https://collections.vam.ac.uk/item/O78052/lamp-boulton-matthew/",
+         "verificado": true,
+         "nota": "V&A"
+        },
+        {
+         "pieza": "Lámpara Argand",
+         "fabricante": "s/d",
+         "disenador": "sistema Argand",
+         "anio": "s. XIX",
+         "url": "https://americanhistory.si.edu/collections/object/nmah_1184328",
+         "verificado": true,
+         "nota": "Smithsonian"
+        },
+        {
+         "pieza": "Holocene No. 1",
+         "fabricante": "Wästberg",
+         "disenador": "Ilse Crawford",
+         "anio": "2017",
+         "url": "https://www.twentytwentyone.com/products/wastberg-ilse-crawford-holocene-no-1-oil-lamp",
+         "verificado": true,
+         "nota": "reinterpretación contemporánea; quema aceite"
+        }
+       ],
+       "no_confundir": "No es el farol (caja de paneles). Candil y lucerna son variantes de la misma figura.",
+       "sinonimos": "fr. quinquet · en. oil lamp, Argand lamp · it. lucerna",
+       "fuente": "https://www.chemistryworld.com/opinion/argands-lamp/3009536.article"
+      },
+      {
+       "id": "farol",
+       "termino": "Farol o linterna",
+       "definicion": "Caja de paneles transparentes o translúcidos en un marco, con la fuente dentro, para llevar, colgar o fijar.",
+       "rasgos_tecnicos": "Marco + paneles (vidrio, mica, chapa perforada); fuente protegida dentro; asa o gancho; luz lateral filtrada por los paños.",
+       "epoca_origen": "Linternas de marco metálico con paneles de vidrio o de asta; el farol de vestíbulo doméstico se consolida en el s. XVIII.",
+       "ejemplos": [
+        {
+         "pieza": "Farol",
+         "fabricante": "Inglaterra, s/d",
+         "disenador": "anónimo",
+         "anio": "c. 1770",
+         "url": "https://www.metmuseum.org/art/collection/search/4743",
+         "verificado": true,
+         "nota": "Met"
+        },
+        {
+         "pieza": "Farol de vestíbulo",
+         "fabricante": "Estados Unidos, s/d",
+         "disenador": "anónimo",
+         "anio": "c. 1850",
+         "url": "https://www.metmuseum.org/art/collection/search/4155",
+         "verificado": true,
+         "nota": "Met"
+        }
+       ],
+       "no_confundir": "No es la farola (la farola es farol + columna para la calle). La linterna de papel tiene arquetipo propio.",
+       "sinonimos": "it. lanterna · en. lantern",
+       "fuente": "https://www.metmuseum.org/art/collection/search/4743"
+      },
+      {
+       "id": "linterna-papel",
+       "termino": "Linterna de papel",
+       "definicion": "Pantalla de papel tensado sobre una estructura de varillas, plegable o no, que envuelve la fuente y difunde la luz en todas direcciones.",
+       "rasgos_tecnicos": "Esqueleto de varillas (bambú, alambre); piel de papel o equivalente; difusión total; peso casi nulo; a menudo plegable.",
+       "epoca_origen": "Chōchin japonés, tradición de Gifu (época Edo según la tradición; sin fuente primaria verificada).",
+       "ejemplos": [
+        {
+         "pieza": "Akari",
+         "fabricante": "Ozeki & Co. (Gifu)",
+         "disenador": "Isamu Noguchi",
+         "anio": "1951",
+         "url": "https://shop.noguchi.org/products/akari-1a",
+         "verificado": true
+        },
+        {
+         "pieza": "Le Klint 101",
+         "fabricante": "Le Klint",
+         "disenador": "Kaare Klint",
+         "anio": "1944",
+         "url": "https://www.leklint.com/products/le-klint-101-lantern",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es la esfera opalina (vidrio o polímero rígido). La forma de esfera no la define: la define la piel tensada sobre varillas.",
+       "sinonimos": "jp. chōchin, akari · en. paper lantern",
+       "fuente": "https://en.wikipedia.org/wiki/Gifu_lanterns"
+      },
+      {
+       "id": "farola",
+       "termino": "Farola",
+       "definicion": "Farol o cabezal luminoso elevado sobre un poste o columna para alumbrar la calle o la plaza.",
+       "rasgos_tecnicos": "Columna o poste; cabezal en la punta o en un brazo; altura que domina el espacio público; luz hacia abajo y alrededor.",
+       "epoca_origen": "Faroles de aceite en París desde el s. XVII; la farola de gas sobre columna de fundición, en el París del Segundo Imperio (1850–1860).",
+       "ejemplos": [
+        {
+         "pieza": "Candelabros y faroles de la Ville de Paris",
+         "fabricante": "Ville de Paris",
+         "disenador": "Gabriel Davioud",
+         "anio": "1850–1860",
+         "url": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/lanterne-et-candelabre-de-la-ville-de-paris",
+         "verificado": true
+        },
+        {
+         "pieza": "Farolas de la Plaça Reial",
+         "fabricante": "Ajuntament de Barcelona",
+         "disenador": "Antoni Gaudí",
+         "anio": "1878–1879",
+         "url": "https://ca.wikipedia.org/wiki/Fanals_de_la_Pla%C3%A7a_Reial",
+         "verificado": true
+        },
+        {
+         "pieza": "Albertslund Post",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Jens Møller-Jensen",
+         "anio": "1963",
+         "url": "https://www.louispoulsen.com/en-us/professional/about-us/designers/jens-moller-jensen",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "Como tipología (alumbrado sobre columna) describe la instalación; como arquetipo, la figura cultural del farol de calle, que puede citarse en una lámpara de interior.",
+       "sinonimos": "it. lampione · fr. réverbère, candélabre · en. lamppost, streetlamp",
+       "fuente": "https://www.napoleon.org/histoire-des-2-empires/objets/la-ville-lumiere-le-candelabre-ou-la-revolution-nocturne-de-paris-au-xixe-siecle/"
+      },
+      {
+       "id": "antorcha",
+       "termino": "Antorcha o torchère",
+       "definicion": "Lámpara de pie alta que envía toda su luz hacia arriba desde una copa en lo alto de un fuste, para iluminar el techo y devolver luz indirecta.",
+       "rasgos_tecnicos": "Fuste alto; copa o cuenco reflector arriba; flujo indirecto hacia el techo; fuente no visible desde abajo.",
+       "epoca_origen": "Torchère (pie para vela o antorcha), Francia, fines del s. XVII; el uplighter eléctrico de luz indirecta, con el Luminator de Chiesa (1933).",
+       "ejemplos": [
+        {
+         "pieza": "Luminator",
+         "fabricante": "FontanaArte",
+         "disenador": "Pietro Chiesa",
+         "anio": "1933",
+         "url": "https://www.fontanaarte.com/us/1933-pietro-chiesa-designs-luminator-the-emblem-of-indirect-emission-floor-lamps",
+         "verificado": true
+        },
+        {
+         "pieza": "Luminator",
+         "fabricante": "Gilardi & Barzaghi → Arform → Flos",
+         "disenador": "Achille y Pier Giacomo Castiglioni",
+         "anio": "1955",
+         "url": "https://www.moma.org/collection/works/2888",
+         "verificado": true,
+         "nota": "MoMA"
+        },
+        {
+         "pieza": "Megaron",
+         "fabricante": "Artemide",
+         "disenador": "Gianfranco Frattini",
+         "anio": "1979",
+         "url": "https://primariedstudio.com/products/1979-megaron-floor-lamp-by-gianfranco-frattini-for-artemide",
+         "verificado": true,
+         "nota": "fuente de mercado"
+        }
+       ],
+       "no_confundir": "No es la piantana (pantalla que deja salir luz arriba y abajo). «Uplighter» es el nombre técnico de la misma figura.",
+       "sinonimos": "it. lampada a stelo, luminator · fr. torchère · en. torchiere, uplighter",
+       "fuente": "https://www.fontanaarte.com/us/1933-pietro-chiesa-designs-luminator-the-emblem-of-indirect-emission-floor-lamps"
+      },
+      {
+       "id": "abat-jour",
+       "termino": "Abat-jour (lámpara de pantalla)",
+       "definicion": "Lámpara de mesa con base, fuste y pantalla —de tela, papel, vidrio o metal— que rodea la fuente y abre la luz hacia arriba y hacia abajo.",
+       "rasgos_tecnicos": "Base lastrada + fuste + pantalla troncocónica o cilíndrica (tambor); difusión filtrada por la pantalla; fuente oculta.",
+       "epoca_origen": "La pantalla ya existe en lámparas de vela y de aceite; la lámpara eléctrica de mesa con pantalla aparece hacia 1880–1890, tras la incandescente.",
+       "ejemplos": [
+        {
+         "pieza": "Atollo 233",
+         "fabricante": "Oluce",
+         "disenador": "Vico Magistretti",
+         "anio": "1977",
+         "url": "https://www.oluce.com/en/lampada/233/",
+         "verificado": true
+        },
+        {
+         "pieza": "Costanza",
+         "fabricante": "Luceplan",
+         "disenador": "Paolo Rizzatto",
+         "anio": "1986",
+         "url": "https://www.luceplan.com/stories/costanza-40-years/",
+         "verificado": true
+        },
+        {
+         "pieza": "Bourgie",
+         "fabricante": "Kartell",
+         "disenador": "Ferruccio Laviani",
+         "anio": "2004",
+         "url": "https://www.designboom.com/design/kartell-goes-bourgie-in-paris-to-celebrate-10-years-of-ferruccio-lavianis-lamp-01-23-2014/",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es la tipología sobremesa (hay sobremesas que no son abat-jour). La pantalla de tela o de tambor es una variante de este arquetipo, no un arquetipo propio.",
+       "sinonimos": "it. abat-jour, lume · fr. lampe à abat-jour · en. table lamp with shade",
+       "fuente": "https://en.wikipedia.org/wiki/Abat-jour"
+      },
+      {
+       "id": "piantana",
+       "termino": "Piantana (lámpara de pie con pantalla)",
+       "definicion": "Lámpara de pie con un fuste alto y una pantalla en la punta que difunde la luz hacia arriba y hacia abajo.",
+       "rasgos_tecnicos": "Base o trípode + fuste alto + pantalla; luz difusa a la altura de la persona sentada o de pie.",
+       "epoca_origen": "Lámpara eléctrica de pie con pantalla, fines del s. XIX – principios del s. XX (sin fuente específica verificada).",
+       "ejemplos": [
+        {
+         "pieza": "Costanza terra",
+         "fabricante": "Luceplan",
+         "disenador": "Paolo Rizzatto",
+         "anio": "1986",
+         "url": "https://www.luceplan.com/stories/costanza-40-years/",
+         "verificado": true
+        },
+        {
+         "pieza": "2431",
+         "fabricante": "Svenskt Tenn",
+         "disenador": "Josef Frank",
+         "anio": "1938",
+         "url": "https://www.svenskttenn.com/se/en/the-story-behind-our-statement-pieces/three-iconic-floor-lamps/",
+         "verificado": true
+        },
+        {
+         "pieza": "A809",
+         "fabricante": "Valaistustyö / Artek",
+         "disenador": "Alvar Aalto",
+         "anio": "1959",
+         "url": "https://www.scandinavia-design.fr/ARTEK/a809-floor-lamp-alvar-aalto-1959.html",
+         "verificado": true,
+         "nota": "pantalla de lamas metálicas; fuente de mercado"
+        }
+       ],
+       "no_confundir": "No es la antorcha (luz sólo hacia arriba) ni la lámpara de arco (voladizo). «De pie» a secas es tipología.",
+       "sinonimos": "it. piantana · en. standard lamp, floor lamp with shade",
+       "fuente": "colecciones y fabricantes de los ejemplos"
+      },
+      {
+       "id": "arco",
+       "termino": "Lámpara de arco",
+       "definicion": "Lámpara de pie que lleva la fuente lejos de su base mediante un arco en voladizo, para iluminar desde arriba un punto alejado.",
+       "rasgos_tecnicos": "Base pesada (contrapeso); arco largo en voladizo; cabezal colgado en la punta; ilumina una mesa sin instalación en el techo.",
+       "epoca_origen": "1962: Arco, de los Castiglioni, tomada del alumbrado público para dar luz cenital sin anclaje al techo.",
+       "ejemplos": [
+        {
+         "pieza": "Arco",
+         "fabricante": "Flos",
+         "disenador": "Achille y Pier Giacomo Castiglioni",
+         "anio": "1962",
+         "url": "https://flos.com/en/wo/arco/M-arco.html",
+         "verificado": true
+        },
+        {
+         "pieza": "Twiggy",
+         "fabricante": "Foscarini",
+         "disenador": "Marc Sadler",
+         "anio": "2006",
+         "url": "https://www.foscarini.com/en/product/twiggy-twiggy-f-en/",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es la suspensión (no cuelga del techo) ni el flexo (no se articula).",
+       "sinonimos": "it. lampada ad arco · en. arc lamp (sentido de mobiliario)",
+       "fuente": "https://flos.com/en/us/stories/arco-a-design-icon.html"
+      },
+      {
+       "id": "flexo",
+       "termino": "Lámpara de trabajo articulada (flexo)",
+       "definicion": "Lámpara de brazo articulado con resortes o contrapesos que permite orientar y fijar la fuente en cualquier posición.",
+       "rasgos_tecnicos": "Brazos articulados; equilibrio por resortes o contrapesos; cabezal orientable con reflector; luz directa concentrada.",
+       "epoca_origen": "George Carwardine patenta el brazo equilibrado por resortes en 1932; Herbert Terry & Sons produce la Anglepoise 1227 desde 1935.",
+       "ejemplos": [
+        {
+         "pieza": "Anglepoise 1227",
+         "fabricante": "Herbert Terry & Sons",
+         "disenador": "George Carwardine",
+         "anio": "1935",
+         "url": "https://collections.vam.ac.uk/item/O301712/anglepoise-lamp-1227-carwardine-george/",
+         "verificado": true,
+         "nota": "V&A"
+        },
+        {
+         "pieza": "Tizio",
+         "fabricante": "Artemide",
+         "disenador": "Richard Sapper",
+         "anio": "1972",
+         "url": "https://www.moma.org/collection/works/2599",
+         "verificado": true,
+         "nota": "MoMA la data en 1971; producción 1972"
+        },
+        {
+         "pieza": "Tolomeo",
+         "fabricante": "Artemide",
+         "disenador": "Michele De Lucchi y Giancarlo Fassina",
+         "anio": "1987",
+         "url": "https://www.adidesignmuseum.org/i-premiati/serie-di-lampade-tolomeo/",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es la tipología sobremesa (hay flexos de pie, de pinza y de pared). Lo define el movimiento, no el soporte.",
+       "sinonimos": "en. task lamp, balanced-arm lamp, Anglepoise · it. lampada da lavoro",
+       "fuente": "https://designmuseum.org/design/anglepoise"
+      },
+      {
+       "id": "banquero",
+       "termino": "Lámpara de banquero",
+       "definicion": "Lámpara de escritorio con base y fuste de latón y pantalla horizontal de vidrio verde opalino, alargada sobre el plano de trabajo.",
+       "rasgos_tecnicos": "Pantalla horizontal en semicilindro de vidrio de color (verde por fuera, opal por dentro); base y fuste de latón; luz sobre el escritorio sin deslumbrar.",
+       "epoca_origen": "Patente presentada el 11/05/1909 por Harrison D. McFaddin; marca Emeralite.",
+       "ejemplos": [
+        {
+         "pieza": "Emeralite",
+         "fabricante": "H. G. McFaddin & Co.",
+         "disenador": "Harrison D. McFaddin",
+         "anio": "1909",
+         "url": "https://www.apartmenttherapy.com/history-of-bankers-lamp-36892669",
+         "verificado": true,
+         "nota": "único ejemplo verificable; las versiones de competidores (Amronlite, Verdelite) sólo tienen fuente de anticuario"
+        }
+       ],
+       "no_confundir": "No es el flexo (no se articula) ni la abat-jour (pantalla horizontal, no alrededor de la fuente).",
+       "sinonimos": "en. banker's lamp, Emeralite",
+       "fuente": "https://en.wikipedia.org/wiki/Banker's_lamp"
+      },
+      {
+       "id": "aplique-brazo",
+       "termino": "Aplique de brazo",
+       "definicion": "Luminaria de pared con un brazo —fijo, pivotante o articulado— que separa la fuente del muro y la lleva hacia el espacio.",
+       "rasgos_tecnicos": "Fijación a pared; brazo que pivota o se articula; cabezal en el extremo; heredero del brazo de luz para velas.",
+       "epoca_origen": "«Bras de lumière» de pared con velas, generalizado en el s. XVII.",
+       "ejemplos": [
+        {
+         "pieza": "Potence",
+         "fabricante": "Vitra (reedición)",
+         "disenador": "Jean Prouvé",
+         "anio": "1950",
+         "url": "https://www.vitra.com/en-un/product/details/potence",
+         "verificado": true
+        },
+        {
+         "pieza": "Lampe Gras n.º 304",
+         "fabricante": "DCW éditions (reedición)",
+         "disenador": "Bernard-Albin Gras",
+         "anio": "1921",
+         "url": "https://dcw-editions.com/en/products/lampe-gras-304-bathroom",
+         "verificado": true
+        },
+        {
+         "pieza": "Aplique de brazos pivotantes",
+         "fabricante": "Éditions Serge Mouille",
+         "disenador": "Serge Mouille",
+         "anio": "1953",
+         "url": "https://www.artcurial.com/en/sales/3963/lots/96-a",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "«Aplique» a secas es tipología (montaje en pared); el arquetipo es la figura del brazo que sale del muro.",
+       "sinonimos": "fr. bras de lumière, applique à potence · en. swing-arm wall lamp",
+       "fuente": "https://collections.louvre.fr/en/ark:/53355/cl010113586"
+      },
+      {
+       "id": "campana",
+       "termino": "Campana o cono industrial",
+       "definicion": "Pantalla reflectora de metal en forma de campana o cono, suspendida, que oculta la fuente y concentra la luz hacia abajo.",
+       "rasgos_tecnicos": "Reflector opaco cónico o acampanado (chapa esmaltada, aluminio); fuente oculta en el interior; haz descendente; origen fabril.",
+       "epoca_origen": "Reflector esmaltado industrial de Benjamin Electric (Chicago, fundada en 1901; patente de pantalla reflectora de 1910).",
+       "ejemplos": [
+        {
+         "pieza": "AJ Royal",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Arne Jacobsen",
+         "anio": "1957",
+         "url": "https://www.louispoulsen.com/en-us/catalog/private/pendants/aj-royal2",
+         "verificado": true
+        },
+        {
+         "pieza": "Caravaggio",
+         "fabricante": "Lightyears (hoy Fritz Hansen)",
+         "disenador": "Cecilie Manz",
+         "anio": "2005",
+         "url": "https://ceciliemanz.com/content/caravaggio",
+         "verificado": true
+        },
+        {
+         "pieza": "Beat",
+         "fabricante": "Tom Dixon",
+         "disenador": "Tom Dixon",
+         "anio": "c. 2006",
+         "url": "https://www.whoppah.com/blog/brand-story-tom-dixon",
+         "verificado": false,
+         "nota": "pieza verificada; año 2006 o 2003 según la fuente"
+        }
+       ],
+       "no_confundir": "No es la geometría «cono» en abstracto: el arquetipo es el reflector suspendido que concentra la luz hacia abajo.",
+       "sinonimos": "it. campana, sospensione a cono · en. industrial pendant, bell shade",
+       "fuente": "https://www.vintage-electrical.com/blogs/news/the-story-behind-an-icon-of-industrial-lighting"
+      },
+      {
+       "id": "plato",
+       "termino": "Plato o disco reflector",
+       "definicion": "Pantalla plana o casi plana, como un plato, que refleja la luz de una fuente puesta delante o debajo.",
+       "rasgos_tecnicos": "Disco reflector de poco fondo; fuente delante o por debajo; luz difusa reflejada; perfil delgado visto de canto.",
+       "epoca_origen": "Sin origen único documentable; la forma se consolida con el acrílico opal de posguerra (Sarfatti, 1950).",
+       "ejemplos": [
+        {
+         "pieza": "2065",
+         "fabricante": "Arteluce (reedición Astep)",
+         "disenador": "Gino Sarfatti",
+         "anio": "1950",
+         "url": "https://hivemodern.com/pages/product16760/model-2065-pendant-lamp-gino-sarfatti-astep",
+         "verificado": true
+        },
+        {
+         "pieza": "Frisbi",
+         "fabricante": "Flos",
+         "disenador": "Achille Castiglioni",
+         "anio": "1978",
+         "url": "https://flos.com/en/us/frisbi/M-frisbi-us.html",
+         "verificado": true
+        },
+        {
+         "pieza": "Smithfield",
+         "fabricante": "Flos",
+         "disenador": "Jasper Morrison",
+         "anio": "2009",
+         "url": "https://jaspermorrison.com/projects/lighting/smithfield",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es la campana (que envuelve la fuente) ni la geometría «disco» en abstracto.",
+       "sinonimos": "en. dish shade, disc",
+       "fuente": "https://hivemodern.com/pages/product16760/model-2065-pendant-lamp-gino-sarfatti-astep"
+      },
+      {
+       "id": "globo",
+       "termino": "Globo o esfera opalina",
+       "definicion": "Esfera de vidrio o polímero opal que envuelve la fuente y difunde la luz por igual en todas direcciones.",
+       "rasgos_tecnicos": "Esfera difusora cerrada (vidrio opal, polímero); fuente oculta; emisión difusa en 360°; transversal al montaje.",
+       "epoca_origen": "Globos de vidrio opal en las luminarias eléctricas de comienzos del s. XX; en el diseño moderno, la lámpara de la Bauhaus (1923–1924).",
+       "ejemplos": [
+        {
+         "pieza": "WA24 (lámpara Bauhaus)",
+         "fabricante": "Bauhaus; reedición Tecnolumen",
+         "disenador": "Wilhelm Wagenfeld y Carl Jakob Jucker",
+         "anio": "1923–1924",
+         "url": "https://www.moma.org/collection/works/4056",
+         "verificado": true,
+         "nota": "MoMA"
+        },
+        {
+         "pieza": "Glo-Ball",
+         "fabricante": "Flos",
+         "disenador": "Jasper Morrison",
+         "anio": "1998",
+         "url": "https://flos.com/en/us/glo-ball-suspension/M-glo-ball-suspension.html",
+         "verificado": true
+        },
+        {
+         "pieza": "IC Lights",
+         "fabricante": "Flos",
+         "disenador": "Michael Anastassiades",
+         "anio": "2014",
+         "url": "https://flos.com/en/us/ic-lights-suspension/M-ic-lights-suspension.html",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No fija tipología (hay globos colgantes, de techo, de mesa y de pie). No es la linterna de papel (piel sobre varillas).",
+       "sinonimos": "it. globo, sfera · en. globe, opal sphere",
+       "fuente": "https://www.moma.org/collection/works/4056"
+      },
+      {
+       "id": "cilindro",
+       "termino": "Cilindro o cañón de luz",
+       "definicion": "Cuerpo cilíndrico opaco que aloja la fuente y dirige el haz por su boca, adosado, suspendido o apoyado.",
+       "rasgos_tecnicos": "Tubo o cilindro opaco; fuente al fondo; haz recortado por la boca; luz dirigida, sin difusión lateral.",
+       "epoca_origen": "Downlight de Richard Kelly y Edison Price para el Seagram Building (Nueva York, 1958).",
+       "ejemplos": [
+        {
+         "pieza": "Pipe",
+         "fabricante": "Artemide",
+         "disenador": "Herzog & de Meuron",
+         "anio": "2002",
+         "url": "https://www.moma.org/collection/works/95215",
+         "verificado": true,
+         "nota": "MoMA"
+        },
+        {
+         "pieza": "Cylinder",
+         "fabricante": "ERCO",
+         "disenador": "ERCO",
+         "anio": "",
+         "url": "https://www.erco.com/products/indoor/surf-mounted-dl/cylinder-1477/en/",
+         "verificado": true,
+         "nota": "pieza verificada; año no"
+        }
+       ],
+       "no_confundir": "No es la geometría «cilindro» en abstracto ni el tubo fluorescente (línea que emite por todo su largo).",
+       "sinonimos": "en. cylinder, downlight cylinder",
+       "fuente": "https://richardkellygrant.org/exhibit/seagram-building/"
+      },
+      {
+       "id": "bombilla",
+       "termino": "Bombilla desnuda",
+       "definicion": "La bombilla vista, sin pantalla, colgada de su cable o montada sobre un soporte mínimo, como figura en sí misma.",
+       "rasgos_tecnicos": "Fuente visible; sin difusor ni reflector; cable o soporte mínimo; brillo directo de la fuente.",
+       "epoca_origen": "Lámpara incandescente de filamento de carbono: Swan (1878) y Edison (1879).",
+       "ejemplos": [
+        {
+         "pieza": "Bulb",
+         "fabricante": "Ingo Maurer",
+         "disenador": "Ingo Maurer",
+         "anio": "1966",
+         "url": "https://www.ingo-maurer.com/en/products/bulb/",
+         "verificado": true
+        },
+        {
+         "pieza": "Lampadina",
+         "fabricante": "Flos",
+         "disenador": "Achille Castiglioni",
+         "anio": "1972",
+         "url": "https://www.fondazioneachillecastiglioni.it/progetto/lampada-da-tavolo-lampadina/",
+         "verificado": true
+        },
+        {
+         "pieza": "Plumen 001",
+         "fabricante": "Plumen (Hulger)",
+         "disenador": "Hulger y Samuel Wilkinson",
+         "anio": "2010",
+         "url": "https://collections.vam.ac.uk/item/O1243438/plumen-001-bulb-wilkinson-sam/",
+         "verificado": true,
+         "nota": "V&A"
+        }
+       ],
+       "no_confundir": "Hipótesis del glosario anterior: podría ser un modo de emitir más que un arquetipo; se mantiene porque tiene piezas canónicas que la citan como figura.",
+       "sinonimos": "en. bare bulb · it. lampadina",
+       "fuente": "https://ethw.org/Edison's_Incandescent_Lamp"
+      },
+      {
+       "id": "guirnalda",
+       "termino": "Guirnalda de bombillas",
+       "definicion": "Hilera de bombillas vistas a lo largo de un cable colgado en curvas entre puntos, figura de la fiesta al aire libre.",
+       "rasgos_tecnicos": "Cable en catenaria; portalámparas repetidos; bombillas vistas; luz festiva de muchos puntos.",
+       "epoca_origen": "1882: Edward H. Johnson, socio de Edison, cablea 80 bombillas en un árbol de Navidad en Nueva York; la guirnalda de verbena es vernácula.",
+       "ejemplos": [
+        {
+         "pieza": "String Lights",
+         "fabricante": "Flos",
+         "disenador": "Michael Anastassiades",
+         "anio": "2014",
+         "url": "https://michaelanastassiades.com/exhibitions/string-lights-at-flos-showroom-milan-april-2014/",
+         "verificado": true,
+         "nota": "pantallas sobre cable en catenaria, no bombillas vistas"
+        },
+        {
+         "pieza": "Santorini",
+         "fabricante": "Marset",
+         "disenador": "Sputnik Estudio",
+         "anio": "2014",
+         "url": "https://www.marset.com/usa/outdoor-lighting/pendant-light-fixtures/santorini/",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "La tipología «guirnalda o cadena luminosa» describe la instalación; el arquetipo, la figura festiva de bombillas vistas.",
+       "sinonimos": "en. festoon, string lights · it. festone",
+       "fuente": "https://www.loc.gov/everyday-mysteries/technology/item/who-invented-electric-christmas-lights/"
+      },
+      {
+       "id": "spot",
+       "termino": "Spot o proyector orientable",
+       "definicion": "Cabezal con reflector y a veces lente que concentra la luz en un haz y se orienta sobre un soporte con horquilla o rótula.",
+       "rasgos_tecnicos": "Cabezal con reflector o lente; haz concentrado y recortable; orientación por horquilla o rótula; origen escénico y fotográfico.",
+       "epoca_origen": "Luz de calcio de Thomas Drummond (uso escénico desde 1826; Covent Garden, 1837).",
+       "ejemplos": [
+        {
+         "pieza": "Fortuny (Moda)",
+         "fabricante": "Pallucco / Venetia Studium",
+         "disenador": "Mariano Fortuny y Madrazo",
+         "anio": "1907",
+         "url": "https://www.pallucco.com/collection/fortuny",
+         "verificado": true
+        },
+        {
+         "pieza": "Toio",
+         "fabricante": "Flos",
+         "disenador": "Achille y Pier Giacomo Castiglioni",
+         "anio": "1962",
+         "url": "https://www.moma.org/collection/works/3870",
+         "verificado": true,
+         "nota": "MoMA"
+        },
+        {
+         "pieza": "Parentesi",
+         "fabricante": "Flos",
+         "disenador": "Achille Castiglioni y Pio Manzù",
+         "anio": "1971",
+         "url": "https://flos.com/en/us/stories/parentesi-a-design-icon-us.html",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "La tipología «proyector» describe la instalación; el arquetipo es la figura del foco escénico, que también aparece en lámparas de pie y de mesa.",
+       "sinonimos": "en. spotlight, theatre light · it. faretto, proiettore",
+       "fuente": "https://radianthistory.com/in-the-limelight-the-first-theatrical-follow-spot-light/"
+      },
+      {
+       "id": "riel-proyectores",
+       "termino": "Riel de proyectores",
+       "definicion": "Perfil electrificado del que cuelgan proyectores que se desplazan y se orientan libremente, figura de la luz de exposición.",
+       "rasgos_tecnicos": "Perfil continuo; adaptadores; varios spots móviles; luz reconfigurable sin obra.",
+       "epoca_origen": "Lightolier Lytespan, desarrollado hacia 1961–1962.",
+       "ejemplos": [
+        {
+         "pieza": "Lytespan",
+         "fabricante": "Lightolier",
+         "disenador": "Lightolier",
+         "anio": "c. 1961–1962",
+         "url": "https://interiordesign.net/designwire/1959-2000-halogens-track-lighting-and-controls/",
+         "verificado": true
+        },
+        {
+         "pieza": "Pollux y Light Board",
+         "fabricante": "ERCO",
+         "disenador": "ERCO",
+         "anio": "2014",
+         "url": "https://www.erco.com/fr/projets/zoom/fond/if-product-design-award-2014-light-board-et-pollux-5950/",
+         "verificado": true
+        },
+        {
+         "pieza": "Infra-Structure",
+         "fabricante": "Flos",
+         "disenador": "Vincent Van Duysen",
+         "anio": "2016",
+         "url": "https://vincentvanduysen.com/projects/infra-structure",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "La tipología «sistema de riel» es la instalación; el arquetipo es la figura de la galería con focos móviles.",
+       "sinonimos": "en. track lighting · it. binario con proiettori",
+       "fuente": "https://interiordesign.net/designwire/1959-2000-halogens-track-lighting-and-controls/"
+      },
+      {
+       "id": "tubo",
+       "termino": "Tubo o línea de luz",
+       "definicion": "Fuente lineal que emite por todo su largo —del tubo fluorescente a la barra de LED—, vista o tras un difusor alargado.",
+       "rasgos_tecnicos": "Geometría de extrusión; emisión a lo largo de la línea; chasis y difusor lineales; tiende a encadenarse.",
+       "epoca_origen": "General Electric pone en venta la lámpara fluorescente el 21/04/1938.",
+       "ejemplos": [
+        {
+         "pieza": "1063",
+         "fabricante": "Arteluce (reedición Astep)",
+         "disenador": "Gino Sarfatti",
+         "anio": "1954",
+         "url": "https://www.moma.org/collection/works/3128",
+         "verificado": true,
+         "nota": "MoMA"
+        },
+        {
+         "pieza": "Alphabet of Light",
+         "fabricante": "Artemide",
+         "disenador": "BIG – Bjarke Ingels Group",
+         "anio": "2016",
+         "url": "https://www.artemide.com/en/subfamily/4746318/alphabet-of-light-system",
+         "verificado": true
+        },
+        {
+         "pieza": "Coordinates",
+         "fabricante": "Flos",
+         "disenador": "Michael Anastassiades",
+         "anio": "2020",
+         "url": "https://www.canadianinteriors.com/2020/07/20/flos-debuts-coordinates-by-michael-anastassiades/",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es el cilindro (que dirige por la boca). La tipología «lineal continua» es la instalación en recorrido.",
+       "sinonimos": "en. fluorescent tube, linear light · it. tubo, lineare",
+       "fuente": "https://edisontechcenter.org/fluorescent/"
+      },
+      {
+       "id": "banador",
+       "termino": "Bañador de pared",
+       "definicion": "Luminaria que distribuye la luz de forma asimétrica para bañar un plano vertical de manera uniforme.",
+       "rasgos_tecnicos": "Óptica asimétrica; haz rasante sobre la pared; el aparato tiende a desaparecer; se define encendido.",
+       "epoca_origen": "Richard Kelly y Edison Price, bañado con lámparas PAR en el Seagram Building (Nueva York, 1957–1958).",
+       "ejemplos": [
+        {
+         "pieza": "Bañador del vestíbulo del Seagram",
+         "fabricante": "Edison Price",
+         "disenador": "Richard Kelly y Edison Price",
+         "anio": "1957–1958",
+         "url": "https://richardkellygrant.org/richard-kelly-works/the-four-seasons-restaurant/",
+         "verificado": true,
+         "nota": "instalación prototipo, no producto de catálogo"
+        },
+        {
+         "pieza": "Compar Linear (bañador de lente)",
+         "fabricante": "ERCO",
+         "disenador": "ERCO",
+         "anio": "",
+         "url": "https://www.erco.com/en/products/indoor/recessed-luminaires/compar-linear-6353/",
+         "verificado": true,
+         "nota": "año no verificado"
+        }
+       ],
+       "no_confundir": "Arquetipo puramente lumínico: no tiene forma propia reconocible apagado. No es el proyector (haz concentrado sobre un objeto).",
+       "sinonimos": "en. wall washer",
+       "fuente": "https://richardkellygrant.org/exhibit/seagram-building/"
+      },
+      {
+       "id": "anillo",
+       "termino": "Anillo o aro luminoso",
+       "definicion": "Aro delgado que emite luz por todo su contorno, suspendido o apoyado, sin cuerpo detrás.",
+       "rasgos_tecnicos": "Perfil circular continuo; fuente lineal distribuida en el aro; vacío central; desmaterialización del cuerpo.",
+       "epoca_origen": "Era LED, década de 2010; antecedente: LightDisc (Rizzatto y Meda, Luceplan, 2002), sobre el tubo fluorescente circular.",
+       "ejemplos": [
+        {
+         "pieza": "Discovery",
+         "fabricante": "Artemide",
+         "disenador": "Ernesto Gismondi",
+         "anio": "2017",
+         "url": "https://www.artemide.net/en/pressroom/discovery-selected-2017-adi-design-index/",
+         "verificado": true
+        },
+        {
+         "pieza": "Arrangements",
+         "fabricante": "Flos",
+         "disenador": "Michael Anastassiades",
+         "anio": "2018",
+         "url": "https://flos.com/en/us/arrangements-round-large-black-arrangements-round-large/F0408030.html",
+         "verificado": true
+        },
+        {
+         "pieza": "Halo Circular",
+         "fabricante": "Vibia",
+         "disenador": "Martín Azúa",
+         "anio": "2015",
+         "url": "https://vibia.com/us/usa/pendants-halo-circular-pendant",
+         "verificado": true,
+         "nota": "año por fuente de mercado"
+        }
+       ],
+       "no_confundir": "Arquetipo contemporáneo, sin antecedente en la llama: nace de la fuente lineal (fluorescente circular, luego LED). No es el plafón circular.",
+       "sinonimos": "en. ring, halo · it. anello",
+       "fuente": "https://www.stylepark.com/en/luceplan/lightdisc"
+      },
+      {
+       "id": "pantallas-escalonadas",
+       "termino": "Pantallas escalonadas antideslumbrantes",
+       "definicion": "Juego de pantallas superpuestas y escalonadas que ocultan la fuente desde cualquier ángulo y reparten la luz reflejada.",
+       "rasgos_tecnicos": "Varias pantallas o láminas concéntricas; cálculo de reflexiones; fuente invisible; luz sin deslumbramiento.",
+       "epoca_origen": "Sistema de tres pantallas de Poul Henningsen, 1925–1926, con Louis Poulsen.",
+       "ejemplos": [
+        {
+         "pieza": "PH 5",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Poul Henningsen",
+         "anio": "1958",
+         "url": "https://www.moma.org/collection/works/3219",
+         "verificado": true
+        },
+        {
+         "pieza": "PH Artichoke",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Poul Henningsen",
+         "anio": "1958",
+         "url": "https://www.moma.org/collection/works/3215",
+         "verificado": true,
+         "nota": "MoMA"
+        },
+        {
+         "pieza": "Enigma",
+         "fabricante": "Louis Poulsen",
+         "disenador": "Shoichi Uchiyama",
+         "anio": "2003",
+         "url": "https://www.louispoulsen.com/en-us/catalog/professional/decorative-lighting/pendants/enigma-pendant",
+         "verificado": true
+        }
+       ],
+       "no_confundir": "No es la campana (una sola pantalla). Nace del sistema de pantallas de Poul Henningsen y quedó como modelo reconocible.",
+       "sinonimos": "en. multi-shade glare-free lamp, PH-system",
+       "fuente": "https://www.cooperhewitt.org/2014/12/24/what-lies-beneath-the-artichoke/"
+      },
+      {
+       "id": "contrapeso",
+       "termino": "Suspensión de contrapeso",
+       "definicion": "Suspensión cuya altura se regula a mano mediante un contrapeso o una polea que equilibra la luminaria.",
+       "rasgos_tecnicos": "Cable que pasa por polea o florón; contrapeso visible; altura regulable a mano.",
+       "epoca_origen": "Colgantes de gas y de aceite «rise and fall» del s. XIX; poleas con contrapeso en los bistrós franceses de comienzos del s. XX.",
+       "ejemplos": [
+        {
+         "pieza": "Saliscendi",
+         "fabricante": "Stilnovo",
+         "disenador": "Stilnovo",
+         "anio": "1957",
+         "url": "https://www.arteluceonline.com/en/design-lamps/stilnovo-suspension-saliscendi-10061.html",
+         "verificado": true
+        },
+        {
+         "pieza": "1967 con contrapeso",
+         "fabricante": "Taito; reedición GUBI",
+         "disenador": "Paavo Tynell",
+         "anio": "1948",
+         "url": "https://hivemodern.com/pages/product17976/1967-pendant-lamp-paavo-tynell-gubi",
+         "verificado": true,
+         "nota": "año del lenguaje de diseño; reedición actual"
+        }
+       ],
+       "no_confundir": "No es la tipología suspensión a secas: el arquetipo es la figura del contrapeso visible que sube y baja la luz.",
+       "sinonimos": "fr. suspension à contrepoids · en. rise-and-fall pendant",
+       "fuente": "https://www.buildingconservation.com/articles/lighting/lighting.htm"
+      }
+     ],
+     "aplica": {
+      "Hope D66-42 — Luceplan": [
+       {
+        "id": "arana",
+        "rol": "principal",
+        "ref": "CO1-2.d1",
+        "nota": "La ficha la registra como araña o «candelabro de cristal», antecedente declarado por la marca y los autores."
+       }
+      ]
+     }
     }
    },
    "CO1-3": {

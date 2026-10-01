@@ -179,6 +179,21 @@ details.trace{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
 details.trace summary{cursor:pointer;font-family:var(--f-mono);font-size:10.5px;letter-spacing:var(--ls-kicker);text-transform:uppercase;color:var(--muted);list-style:none}
 details.trace summary::-webkit-details-marker{display:none}
 details.trace summary::before{content:'+ '}details.trace[open] summary::before{content:'− '}
+/* V2 · Vocabulario controlado (01/10): sección genérica de la tarjeta de campo, para todo campo con `vocabulario` en defs; los términos que aplican a la lámpara abierta van primero y resaltados como .det.hl */
+details.vocabulario{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+details.vocabulario summary{cursor:pointer;font-family:var(--f-mono);font-size:10.5px;letter-spacing:var(--ls-kicker);text-transform:uppercase;color:var(--muted);list-style:none}
+details.vocabulario summary::-webkit-details-marker{display:none}
+details.vocabulario summary::before{content:'− '}details.vocabulario:not([open]) summary::before{content:'+ '}
+details.vocabulario summary:focus-visible,.vt>button:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
+.vh{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin:8px 0 4px;line-height:1.6}
+.vt{border-bottom:1px dashed var(--line)}.vt.on{background:rgba(0,0,0,.05);border-radius:6px;padding:0 6px}
+.vt>button{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;width:100%;border:0;background:none;color:var(--ink);font:inherit;font-size:13.5px;line-height:1.45;text-align:left;padding:8px 0;cursor:pointer}
+.vt>button:hover .vn{text-decoration:underline}
+.vt .vn{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}.vt.on .vn{font-weight:600}
+.vt .va{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.vt .vd{display:none;padding:0 0 10px;font-size:13px;line-height:1.5;overflow-wrap:anywhere}.vt.open .vd{display:block}
+.vt .vd p{margin:0 0 6px}.vt .vd small{display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;line-height:1.6}
+.vt .vd a{cursor:pointer;color:inherit;text-decoration:underline}
 .card [tabindex="0"]:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
 .hdr{max-width:calc(100vw - 260px)}body.hascard .hdr{max-width:calc(100vw - 540px)}
 .hdr .meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -449,7 +464,8 @@ function openField(f,hl){
     <div class="sec"><div class="kicker">Dato</div><div class="val">${esc(f.valor||'—')}</div>
       <div class="kv"><b>Unidad</b><span>${esc(f.unidad||'—')}</span><b>Importancia</b><span>J${f.j} · ${JWORD[f.j]||''}</span><b>Estado</b><span>${f.st==='conflicto'?'<span class="pill conf">conflicto</span> ':''}${f.desconocido_parcial?'<span class="pill unk">desconocido parcial</span> ':''}${esc(f.estado||'')}</span><b>Confianza</b><span>${esc(f.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(f.fuente)||'—'}</span>${f.estado_proyecto?`<b>Proyecto</b><span>${esc(f.estado_proyecto)}</span>`:''}<b>Incertidumbre</b><span>${['desconocidos','conflictos','pendientes','inferidos'].map(k=>inc[k]?`${inc[k]} ${k}`:'').filter(Boolean).join(' · ')||'—'}</span></div></div>
     ${lectLine(f.id)}
-    <div class="sec"><div class="kicker">Detalle · ${(f.detalle||[]).length} registros</div>${(f.detalle||[]).map(detHtml).join('')}</div>
+    ${vocabSec(f)}
+    <div class="sec"><div class="kicker">Detalle ·${(f.detalle||[]).length} registros</div>${(f.detalle||[]).map(detHtml).join('')}</div>
     ${byT.responde_a?`<div class="sec"><div class="kicker">Responde al Programa · ${byT.responde_a.length}</div>${byT.responde_a.map(r=>relLine(r,f.id)).join('')}</div>`:''}
     ${byT.define?`<div class="sec"><div class="kicker">Define Identidad · ${byT.define.length}</div>${byT.define.map(r=>relLine(r,f.id)).join('')}</div>`:''}
     ${(byT.permite||byT.produce)?`<div class="sec"><div class="kicker">Permite · produce · ${(byT.permite||[]).length+(byT.produce||[]).length}</div>${[...(byT.permite||[]),...(byT.produce||[])].map(r=>relLine(r,f.id)).join('')}</div>`:''}
@@ -462,6 +478,16 @@ function openField(f,hl){
   if(hl){const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}
 }
 function openDetail(fid,did){const f=fieldById(fid);if(f)openField(f,did)}
+/* ---------- V2 · Vocabulario controlado (01/10): cualquier campo con `vocabulario` en defs muestra la sección; `aplica[lámpara]` sólo ordena y resalta, no es dato de la ficha ---------- */
+function vocabSec(f){const VO=((V2().fields||{})[f.id]||{}).vocabulario;if(!VO||!(VO.terminos||[]).length)return '';
+  const ap=new Map((((VO.aplica||{})[V])||[]).map(a=>[a.id,a])),T=VO.terminos,on=T.filter(t=>ap.has(t.id)),nm=metaOf(V).title;
+  const ex=t=>(t.ejemplos||[]).map(e=>[e.pieza,[e.disenador,e.fabricante,e.anio].filter(Boolean).join(', ')].filter(Boolean).join(' · ')).join(' — ');
+  const row=t=>{const a=ap.get(t.id);return `<div class="vt${a?' on':''}" data-id="${esc(t.id)}"><button type="button" aria-expanded="false" onclick="vocabToggle(this)"><span class="vn">${esc(t.termino)}</span>${a?`<span class="va">aplica a ${esc(nm)}${a.rol&&a.rol!=='principal'?' · '+esc(a.rol):''}</span>`:''}</button>
+    <div class="vd"><p>${esc(t.definicion)}</p>${t.criterio?`<p><b>Criterio:</b> ${esc(t.criterio)}</p>`:''}${t.rasgos_tecnicos?`<p><b>Rasgos:</b> ${esc(t.rasgos_tecnicos)}</p>`:''}${(t.subtipos||[]).length?`<p><b>Subtipos:</b> ${esc(t.subtipos.join(' · '))}</p>`:''}${t.epoca_origen?`<p><b>Origen:</b> ${esc(t.epoca_origen)}</p>`:''}${t.no_confundir?`<p><b>No confundir:</b> ${esc(t.no_confundir)}</p>`:''}${a&&a.nota?`<p><i>${esc(a.nota)}</i>${a.ref?` <a onclick="openDetail('${f.id}','${esc(a.ref)}')">${esc(a.ref)}</a>`:''}</p>`:''}
+    <small>Ejemplos: ${esc(ex(t))}</small>${t.sinonimos?`<small>${esc(t.sinonimos)}</small>`:''}</div></div>`};
+  return `<details class="vocabulario" open><summary>Vocabulario · ${T.length} términos</summary><div class="vh">${on.length?`Aplican a ${esc(nm)}: ${on.length} · primero y resaltados`:`Ningún término marcado para ${esc(nm)}`} · tocá un término para ver su definición</div>
+    ${[...on,...T.filter(t=>!ap.has(t.id))].map(row).join('')}<div class="vh">${esc(VO.fuente_general||'')} · v${esc(VO.version||'')} · ${esc(VO.fecha||'')}</div></details>`}
+function vocabToggle(b){const r=b.parentElement,o=!r.classList.contains('open');r.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}
 /* ---------- V2 · Programa proyectual (centro): enunciados de proyecto en prosa operativa; origen, fuentes e historia en trazabilidad desplegable ---------- */
 function imgNote(){const I=(DATA[V].meta||{}).imagen||{};return I.archivo?`<div class="sec"><div class="kicker">Imagen central</div><div class="human"><p>${esc(I.procedencia||'')} ${esc(I.nota||'')}${I.variante_confirmada===false?' Variante no confirmada.':''}</p></div></div>`:''}
 function traceP(P){return `<details class="trace"><summary>Trazabilidad · origen, fuentes e historia del proceso</summary>
