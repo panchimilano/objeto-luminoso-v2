@@ -89,8 +89,8 @@
    "say": {
     "name": "QUÉ COMUNICA",
     "nombre_teorico": "SEMÁNTICA",
-    "pregunta": "¿Qué reconocemos en esta lámpara, cómo se presenta y qué evoca?",
-    "que_es": "Describe cómo el objeto es reconocido e interpretado. Distingue qué tipo de objeto entendemos que es, qué cualidades aparenta poseer y qué imágenes, referencias o valores puede evocar. Toda interpretación debe conservar su evidencia, atribución o grado de certeza."
+    "pregunta": "¿Cómo se identifica esta lámpara, cómo se expresa y qué sugiere?",
+    "que_es": "Describe cómo el objeto se identifica e interpreta. Distingue qué tipo de objeto entendemos que es, qué cualidades aparenta poseer y qué imágenes, referencias o valores puede sugerir. Toda interpretación debe conservar su evidencia, atribución o grado de certeza."
    }
   },
   "zones": {
@@ -138,19 +138,19 @@
    },
    "CO1": {
     "code": "C1",
-    "nombre": "Qué reconozco",
-    "pregunta": "¿Qué reconozco que es este objeto luminoso?",
+    "nombre": "Cómo se identifica",
+    "pregunta": "¿Cómo se identifica este objeto luminoso?",
     "que_es": "Sitúa la luminaria dentro del universo conocido de la iluminación antes de describir su carácter o sus asociaciones."
    },
    "CO2": {
     "code": "C2",
-    "nombre": "Cómo se presenta",
+    "nombre": "Cómo se expresa",
     "pregunta": "¿Qué cualidades aparenta tener el objeto y qué las produce?",
-    "que_es": "Describe cualidades percibidas como pertenecientes al objeto, a alguna de sus partes o a su luz. No pregunta a qué recuerda, sino cómo se presenta."
+    "que_es": "Describe cualidades percibidas como pertenecientes al objeto, a alguna de sus partes o a su luz. No pregunta a qué recuerda, sino cómo se expresa."
    },
    "CO3": {
     "code": "C3",
-    "nombre": "Qué evoca",
+    "nombre": "Qué sugiere",
     "pregunta": "¿A qué imágenes, referencias o valores remite?",
     "que_es": "Describe asociaciones que el objeto puede activar más allá de su identificación y carácter inmediato. Pueden ser imágenes, objetos, fenómenos, referencias culturales o valores abstractos."
    }
@@ -537,7 +537,7 @@
     "lectura": {
      "grupo": "M",
      "decide": "Con qué modelo histórico de la iluminación se dialoga es una elección cultural y de proyecto.",
-     "se_calcula": "Reconocido el arquetipo, su configuración y sus rasgos técnicos se registran como vocabulario controlado."
+     "se_calcula": "Identificado el arquetipo, su configuración y sus rasgos técnicos se registran como vocabulario controlado."
     }
    },
    "CO1-3": {
@@ -586,7 +586,7 @@
     "no_incluye": [],
     "lectura": {
      "grupo": "G",
-     "por_que": "Las imágenes y valores que evoca se construyen con referencias culturales e interpretación, distinguiendo lectura propia de fuente documentada."
+     "por_que": "Las imágenes y valores que sugiere se construyen con referencias culturales e interpretación, distinguiendo lectura propia de fuente documentada."
     }
    },
    "CO3-2": {
