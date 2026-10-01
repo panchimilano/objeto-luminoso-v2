@@ -138,7 +138,7 @@
     {
      "id": "P2-1",
      "enunciado": "Tomar la esencia del candelabro y no su forma: multiplicar una fuente en cientos de reflejos y producir luz de fiesta con medios nuevos.",
-     "desarrollo": "Orienta toda la óptica. Cada componente debe refractar y multiplicar la fuente en lugar de difundirla (Recorrido y transformación); la relación con el arquetipo se define por esa continuidad de efecto y no por brazos, colgantes ni cristal (Arquetipo); el brillo percibido al encender es la lectura que se busca (Cualidades que transmite).",
+     "desarrollo": "Orienta toda la óptica. Cada componente debe refractar y multiplicar la fuente en lugar de difundirla (Gestión de la luz); la relación con el arquetipo se define por esa continuidad de efecto y no por brazos, colgantes ni cristal (Arquetipo); el brillo percibido al encender es la lectura que se busca (Cualidades que transmite).",
      "testimonio": "Tomar la esencia del candelabro —una fuente multiplicada en cientos de reflejos, luz festiva— y no su forma.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado (autores)",
@@ -261,7 +261,7 @@
     {
      "id": "P3-1",
      "enunciado": "Mantener la fuente fuera de la línea de visión desde cualquier punto, aunque el volumen sea abierto.",
-     "desarrollo": "Es la condición que ordena la geometría: coronas desfasadas con la hoja grande afuera (Ley formal), doble hoja por módulo y solape entre módulos y coronas (Recorrido y transformación) y vacíos calculados para que las hojas no se crucen (Forma y dimensiones). Se proyecta como requisito; el estado físico de su cumplimiento se registra aparte, en los datos.",
+     "desarrollo": "Es la condición que ordena la geometría: coronas desfasadas con la hoja grande afuera (Ley formal), doble hoja por módulo y solape entre módulos y coronas (Gestión de la luz) y vacíos calculados para que las hojas no se crucen (Forma y dimensiones). Se proyecta como requisito; el estado físico de su cumplimiento se registra aparte, en los datos.",
      "testimonio": "Que la fuente no se vea desde ningún punto, aunque el volumen sea abierto.",
      "procedencia": "testimonio autoral posterior (Rizzatto F9; Fran F19: «parte fundamental del proyecto»)",
      "estado": "documentado (Fran, Rizzatto)",
@@ -2431,7 +2431,7 @@
        },
        {
         "id": "HA4-2",
-        "name": "Recorrido y transformación",
+        "name": "Gestión de la luz",
         "importancia": "J4",
         "titular": "Solape para ocultar la fuente",
         "valor": "Cada módulo interpone dos lentes Fresnel de figura elíptica entre la fuente y el ambiente, la chica adentro y la grande afuera: refractan y multiplican la fuente en muchas imágenes, sin difundir. Las tres coronas desfasadas y el solape se pensaron para que la fuente no quede en línea de visión directa; la ocultación es intención documentada, no ensayada",
