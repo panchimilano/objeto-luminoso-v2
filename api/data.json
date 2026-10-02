@@ -61,7 +61,8 @@
   "convenciones": {
    "estado_campo": "El `estado` de un campo es el del enunciado principal (`valor`), redactado editorialmente; lleva `+ conflicto` si algún registro de detalle está en conflicto (punto rojo en la rueda) y `+ desconocido` sólo si el enunciado principal es desconocido (bloque contorneado). Los desconocidos parciales quedan en `incertidumbre` y en `desconocido_parcial` (círculo vacío en la punta de la barra).",
    "importancia": "J asignada por campo con criterio editorial (no promedio ni suma de los J históricos). J4 = clave · J3 = determinante · J2 = relevante · J1 = contextual. Los J históricos siguen en `legacy`.",
-   "detalle": "Cada registro de `detalle` es una afirmación o entidad atómica con sujeto, estado de evidencia, confianza, fuente y legacy_ids; `estado_proyecto` es un eje separado (nulo en Hope salvo en las condiciones del Programa). `ref` enlaza a otros registros, campos o ítems.",
+   "detalle": "Cada registro de `detalle` es una afirmación o entidad atómica con sujeto, estado de evidencia, confianza, fuente y legacy_ids; `estado_proyecto` es un eje separado. `ref` enlaza a otros registros, campos o ítems.",
+   "estado_proyecto": "Dos niveles: definido (ya está decidido) · por_definir (falta decidirlo; es lo que el proceso de diseño tiene que resolver). Lo lleva cada campo, registro de detalle e ítem del Programa y se deriva con la regla de defs.v2.estados.proyecto_regla (desconocido o vacío → por_definir; si no, definido). La ficha visible muestra este estado; la evidencia (documentado · observado · inferido · interpretado · desconocido · conflicto) queda en la trazabilidad.",
    "relaciones": "responde_a: campo → ítem de Programa (derivada de programa.*.vinculos) · define: campo → ítem de Identidad (derivada de identidad.*.links; el ancla es uno de los links) · permite / produce: campo → campo (explícitas). Nunca se deducen de tags; las cuerdas por tags son exploratorias.",
    "variantes": "Sin etiqueta = D66/42 EU. Otras: D66/42 US · D66/42 (ensayo 2011) · familia Hope."
   },
@@ -82,7 +83,7 @@
      "legacy_ids": [
       "O3-1"
      ],
-     "estado_proyecto": null,
+     "estado_proyecto": "definido",
      "vinculos": [
       {
        "campo": "CO1-2",
@@ -113,7 +114,7 @@
      "legacy_ids": [
       "U1-6"
      ],
-     "estado_proyecto": null,
+     "estado_proyecto": "definido",
      "vinculos": [
       {
        "campo": "US3-1",
@@ -148,7 +149,7 @@
       "O3-2",
       "C1-3"
      ],
-     "estado_proyecto": null,
+     "estado_proyecto": "definido",
      "vinculos": [
       {
        "campo": "HA4-2",
@@ -186,7 +187,7 @@
      "legacy_ids": [
       "O3-2"
      ],
-     "estado_proyecto": null,
+     "estado_proyecto": "definido",
      "vinculos": [
       {
        "campo": "HA2-2",
@@ -230,7 +231,7 @@
      "legacy_ids": [
       "O3-6"
      ],
-     "estado_proyecto": null,
+     "estado_proyecto": "definido",
      "vinculos": [
       {
        "campo": "HA1-2",
@@ -270,7 +271,7 @@
      "legacy_ids": [
       "O3-4"
      ],
-     "estado_proyecto": "requisito",
+     "estado_proyecto": "definido",
      "nota": "Condición documentada retrospectivamente. Las soluciones que le responden no constituyen verificación de ocultación total en todos los ángulos ni de ausencia de deslumbramiento. El relato V1 «bombitas a la vista» queda en conflicto (CO3-1).",
      "vinculos": [
       {
@@ -310,7 +311,7 @@
       "O3-6",
       "O8-8"
      ],
-     "estado_proyecto": "requisito",
+     "estado_proyecto": "definido",
      "vinculos": [
       {
        "campo": "HA4-1",
@@ -342,7 +343,7 @@
       "C4-6",
       "O8-2"
      ],
-     "estado_proyecto": "requisito",
+     "estado_proyecto": "definido",
      "vinculos": [
       {
        "campo": "HA4-1",
@@ -466,7 +467,7 @@
            "O4-1",
            "O1-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "diámetro",
@@ -486,7 +487,7 @@
            "O4-1",
            "O1-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "altura",
@@ -506,7 +507,7 @@
            "O4-1",
            "O2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "altura de suspensión",
@@ -528,7 +529,7 @@
           "legacy_ids": [
            "O4-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -543,7 +544,7 @@
           "legacy_ids": [
            "O4-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "Ø/h",
@@ -562,7 +563,7 @@
           "legacy_ids": [
            "O4-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -581,7 +582,7 @@
           "legacy_ids": [
            "O4-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -600,7 +601,7 @@
            "C5-3",
            "O4-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "Ø / peso",
@@ -619,7 +620,7 @@
           "legacy_ids": [
            "O4-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": true,
           "desconocido": false,
           "clave": "peso",
@@ -632,9 +633,9 @@
         "def": "Describe la envolvente o configuración global, sus dimensiones y proporciones relevantes, y su carácter continuo, abierto, perforado o discontinuo. Se refiere al conjunto, no a la geometría de una pieza individual ni a la impresión subjetiva de ligereza o pesadez.",
         "pregunta": "¿Qué volumen, superficie o recorrido configura el objeto y cuánto ocupa?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": true,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 1,
@@ -689,7 +690,7 @@
            "O6-3",
            "O2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU",
@@ -707,7 +708,7 @@
            "O6-3",
            "O4-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU"
@@ -725,7 +726,7 @@
            "O4-4",
            "O6-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU",
@@ -743,7 +744,7 @@
            "O6-3",
            "O3-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-modulo"
@@ -760,7 +761,7 @@
            "O6-4",
            "O3-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -779,7 +780,7 @@
           "legacy_ids": [
            "O4-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -794,7 +795,7 @@
           "legacy_ids": [
            "O6-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -809,7 +810,7 @@
           "legacy_ids": [
            "O6-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -824,7 +825,7 @@
           "legacy_ids": [
            "O6-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -848,7 +849,7 @@
            "C5-3",
            "C5-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "módulos",
@@ -868,7 +869,7 @@
            "C5-5",
            "C5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "kits",
@@ -888,7 +889,7 @@
            "O6-6",
            "O2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "familia Hope",
@@ -902,9 +903,9 @@
         "def": "Describe las relaciones espaciales que ordenan el conjunto: posición, orientación, jerarquía, repetición, simetría, distribución, secuencia y límites de configuración. Puede expresar una regla modular, una distribución no periódica o simplemente una organización singular. No obliga a que toda lámpara tenga una unidad repetida.",
         "pregunta": "¿Cómo se disponen los elementos para producir esa forma?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -968,7 +969,7 @@
            "O5-1",
            "O5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-estructura",
@@ -996,7 +997,7 @@
            "O5-1",
            "O5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-brazo",
@@ -1021,7 +1022,7 @@
            "O5-1",
            "O5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
@@ -1046,7 +1047,7 @@
            "O5-1",
            "O5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-chica",
@@ -1071,7 +1072,7 @@
            "O5-1",
            "O5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-floron",
@@ -1094,7 +1095,7 @@
           "legacy_ids": [
            "O5-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-placa",
@@ -1117,7 +1118,7 @@
           "legacy_ids": [
            "O5-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-cable-acero",
@@ -1139,7 +1140,7 @@
           "legacy_ids": [
            "O5-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-cable-electrico",
@@ -1161,7 +1162,7 @@
           "legacy_ids": [
            "O5-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-portalamparas",
@@ -1186,7 +1187,7 @@
            "O5-1",
            "O5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-lampara",
@@ -1211,7 +1212,7 @@
           "legacy_ids": [
            "O5-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-kit",
@@ -1234,7 +1235,7 @@
            "O5-2",
            "O3-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-modulo"
@@ -1250,7 +1251,7 @@
           "legacy_ids": [
            "O5-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -1265,7 +1266,7 @@
           "legacy_ids": [
            "O5-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -1280,7 +1281,7 @@
           "legacy_ids": [
            "O7-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true,
           "entidad": "E-estructura"
@@ -1290,9 +1291,9 @@
         "def": "Identifica los componentes físicos del objeto, su cantidad y su papel dentro del sistema. Una pieza puede sostener, posicionar, conducir electricidad, emitir luz, disipar calor, almacenar energía, aislar, filtrar o cumplir varias funciones simultáneamente.",
         "pregunta": "¿Qué piezas o subconjuntos hay, cuántos y qué hace cada uno?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -1343,7 +1344,7 @@
           "legacy_ids": [
            "O6-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
@@ -1364,7 +1365,7 @@
            "O7-7",
            "O3-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "espesor",
@@ -1383,7 +1384,7 @@
           "legacy_ids": [
            "O6-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "largo",
@@ -1402,7 +1403,7 @@
           "legacy_ids": [
            "O6-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "largo",
@@ -1422,7 +1423,7 @@
            "O6-2",
            "O3-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "salida del plano",
@@ -1445,7 +1446,7 @@
            "O8-5",
            "O3-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -1463,7 +1464,7 @@
           "legacy_ids": [
            "O5-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-brazo"
@@ -1480,7 +1481,7 @@
            "O5-3",
            "O7-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-estructura",
@@ -1499,7 +1500,7 @@
           "legacy_ids": [
            "O7-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true
          }
@@ -1508,9 +1509,9 @@
         "def": "Describe la geometría local de cada componente: dimensiones, sección, curvas, pliegues, ranuras, relieves, microgeometrías u operaciones necesarias para reconocerlo. Si la pieza cambia de forma durante el montaje, registra el estado inicial y el estado montado.",
         "pregunta": "¿Qué geometría tiene cada componente y qué detalles la definen?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -1563,7 +1564,7 @@
           "legacy_ids": [
            "O7-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
@@ -1581,7 +1582,7 @@
           "legacy_ids": [
            "O7-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
@@ -1599,7 +1600,7 @@
            "O7-1",
            "O7-8"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "nota": "Pendiente: fecha del cambio. No tratar como conflicto irresoluble ni como material atemporal.",
@@ -1619,7 +1620,7 @@
            "O7-1",
            "O7-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-brazo"
@@ -1637,7 +1638,7 @@
            "O7-3",
            "O7-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-estructura"
@@ -1653,7 +1654,7 @@
           "legacy_ids": [
            "O7-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-floron"
@@ -1669,7 +1670,7 @@
           "legacy_ids": [
            "O7-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -1684,7 +1685,7 @@
           "legacy_ids": [
            "O7-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
@@ -1703,7 +1704,7 @@
           "legacy_ids": [
            "O7-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -1722,7 +1723,7 @@
           "legacy_ids": [
            "O7-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -1741,7 +1742,7 @@
           "legacy_ids": [
            "O7-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true
          }
@@ -1750,9 +1751,9 @@
         "def": "Registra el material real, el acabado o color relevante y el proceso productivo documentado de cada componente. Debe mantener separados material, apariencia y proceso: una forma compatible con extrusión, inyección o mecanizado no demuestra que ese haya sido el proceso utilizado.",
         "pregunta": "¿De qué está hecha la pieza, qué terminación tiene y cómo se obtiene?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -1818,7 +1819,7 @@
           "legacy_ids": [
            "O5-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "extremos": [
@@ -1841,7 +1842,7 @@
            "O5-3",
            "O5-8"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "extremos": [
@@ -1866,7 +1867,7 @@
           "legacy_ids": [
            "O5-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "extremos": [
@@ -1888,7 +1889,7 @@
            "U4-1",
            "O2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "extremos": [
@@ -1909,7 +1910,7 @@
           "legacy_ids": [
            "O5-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "extremos": [
@@ -1931,7 +1932,7 @@
           "legacy_ids": [
            "O5-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -1951,7 +1952,7 @@
            "O5-4",
            "U4-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -1969,7 +1970,7 @@
           "legacy_ids": [
            "O7-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true,
           "entidad": "E-estructura"
@@ -1979,9 +1980,9 @@
         "def": "Identifica los dos extremos de cada unión, el tipo de vínculo, el sistema de fijación, la posibilidad de separación y, cuando sea relevante, la secuencia de montaje. Incluye también la unión al techo, pared, suelo, mueble o superficie de apoyo.",
         "pregunta": "¿Qué elementos se vinculan y mediante qué solución?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -2031,7 +2032,7 @@
           "legacy_ids": [
            "O5-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "carga"
@@ -2048,7 +2049,7 @@
            "O5-5",
            "O8-8"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "electricidad",
@@ -2068,7 +2069,7 @@
            "O7-6",
            "O6-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
@@ -2087,7 +2088,7 @@
           "legacy_ids": [
            "O7-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-brazo"
@@ -2103,7 +2104,7 @@
           "legacy_ids": [
            "O7-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-estructura",
@@ -2122,7 +2123,7 @@
           "legacy_ids": [
            "O5-8"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2140,7 +2141,7 @@
           "legacy_ids": [
            "U2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2155,7 +2156,7 @@
           "legacy_ids": [
            "O5-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2167,9 +2168,9 @@
         "def": "Explica qué circula o qué comportamiento hace posible la unión: carga, electricidad, señal, calor o movimiento. También describe cómo el conjunto mantiene su forma y qué libertades o restricciones mecánicas existen.",
         "pregunta": "¿Qué papel físico cumple cada conexión?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -2233,7 +2234,7 @@
            "O8-1",
            "O1-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-lampara",
@@ -2251,7 +2252,7 @@
           "legacy_ids": [
            "O1-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 US"
@@ -2267,7 +2268,7 @@
           "legacy_ids": [
            "O8-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU",
@@ -2284,7 +2285,7 @@
           "legacy_ids": [
            "O8-8"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2300,7 +2301,7 @@
            "O8-8",
            "O1-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2316,7 +2317,7 @@
            "O8-8",
            "U2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2334,7 +2335,7 @@
           "legacy_ids": [
            "O8-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2349,7 +2350,7 @@
           "legacy_ids": [
            "O8-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-ensayo-ies-2011",
@@ -2369,7 +2370,7 @@
           "legacy_ids": [
            "C5-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "fuentes",
@@ -2389,7 +2390,7 @@
            "C5-2",
            "C5-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "familia Hope"
@@ -2405,7 +2406,7 @@
           "legacy_ids": [
            "O8-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2418,9 +2419,9 @@
         "def": "Describe la fuente o fuentes luminosas, su cantidad y ubicación, y el sistema que las alimenta: red, batería, driver, fuente de alimentación, conexiones y arquitectura de control. Distingue fuente integrada de reemplazable y fuente de energía de fuente luminosa.",
         "pregunta": "¿Qué genera la luz y cómo recibe energía?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -2473,7 +2474,7 @@
           "legacy_ids": [
            "O8-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
@@ -2492,7 +2493,7 @@
           "legacy_ids": [
            "O8-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2512,7 +2513,7 @@
            "O8-6",
            "O5-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2527,7 +2528,7 @@
           "legacy_ids": [
            "O8-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2547,7 +2548,7 @@
            "O3-4",
            "O6-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2567,7 +2568,7 @@
           "legacy_ids": [
            "O8-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2585,7 +2586,7 @@
           "legacy_ids": [
            "O8-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true
          }
@@ -2594,9 +2595,9 @@
         "def": "Describe de forma causal qué elementos interceptan o conducen la luz y qué operación realizan: reflexión, refracción, difusión, transmisión, absorción, filtrado, guía o apantallamiento. Puede haber varios recorridos simultáneos.",
         "pregunta": "¿Qué le ocurre a la luz desde que se genera hasta que sale?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -2647,7 +2648,7 @@
           "legacy_ids": [
            "O8-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "flujo emitido",
@@ -2669,7 +2670,7 @@
            "O8-4",
            "U3-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "reparto",
@@ -2690,7 +2691,7 @@
           "legacy_ids": [
            "O8-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "intensidad máxima",
@@ -2711,7 +2712,7 @@
           "legacy_ids": [
            "O8-9"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "familia Hope"
@@ -2727,7 +2728,7 @@
           "legacy_ids": [
            "U3-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2742,7 +2743,7 @@
           "legacy_ids": [
            "O8-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2760,7 +2761,7 @@
           "legacy_ids": [
            "O8-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true
          }
@@ -2769,9 +2770,9 @@
         "def": "Registra el resultado luminoso del conjunto o de una configuración concreta: dirección, apertura, flujo, distribución, temperatura de color, reproducción cromática y otras magnitudes disponibles. Todo valor debe estar asociado a una variante y condición de referencia.",
         "pregunta": "¿Qué luz entrega físicamente el objeto?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -2843,7 +2844,7 @@
           "legacy_ids": [
            "U1-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2858,7 +2859,7 @@
           "legacy_ids": [
            "U1-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2876,7 +2877,7 @@
           "legacy_ids": [
            "U1-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          }
@@ -2885,9 +2886,9 @@
         "def": "Registra la actividad o actividades relevantes y, cuando sea necesario, las características de las personas que modifican esa necesidad. Describe la demanda de la actividad sin afirmar todavía que la lámpara la satisface.",
         "pregunta": "¿Qué actividad acompaña, para quién y qué necesita esa actividad de la luz?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -2934,7 +2935,7 @@
           "legacy_ids": [
            "U1-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2949,7 +2950,7 @@
           "legacy_ids": [
            "U1-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -2965,7 +2966,7 @@
            "U1-2",
            "O2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "clave": "altura bajo techo",
@@ -2986,7 +2987,7 @@
           "legacy_ids": [
            "U1-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -2998,9 +2999,9 @@
         "def": "Describe la relación espacial de uso: proximidad, altura, distancia, posición respecto del usuario, superficie o zona atendida y tipo general de ámbito cuando resulte relevante.",
         "pregunta": "¿Cómo se sitúa la lámpara respecto de las personas, la actividad y aquello que ilumina?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3067,7 +3068,7 @@
           "legacy_ids": [
            "U2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "actor": "usuario"
@@ -3083,7 +3084,7 @@
           "legacy_ids": [
            "U4-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "actor": "electricista",
@@ -3103,7 +3104,7 @@
            "U4-2",
            "U2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "actor": "cliente",
@@ -3123,7 +3124,7 @@
            "U4-4",
            "U2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "actor": "usuario"
@@ -3140,7 +3141,7 @@
            "U4-3",
            "U2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "actor": "usuario"
@@ -3156,7 +3157,7 @@
           "legacy_ids": [
            "O5-8"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "actor": "usuario",
@@ -3175,7 +3176,7 @@
           "legacy_ids": [
            "U4-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "actor": "usuario",
@@ -3194,7 +3195,7 @@
           "legacy_ids": [
            "U2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3206,9 +3207,9 @@
         "def": "Registra las acciones que la luminaria permite o requiere: encender, apagar, atenuar, orientar, desplazar, transportar, configurar, montar, recargar, limpiar o sustituir un elemento. Puede indicarse quién realiza la acción cuando sea importante.",
         "pregunta": "¿Qué puede hacer una persona para utilizar, adaptar o mantener disponible la lámpara?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3258,7 +3259,7 @@
           "legacy_ids": [
            "U2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3276,7 +3277,7 @@
           "legacy_ids": [
            "U4-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3295,7 +3296,7 @@
           "legacy_ids": [
            "U2-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3310,7 +3311,7 @@
           "legacy_ids": [
            "U2-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3325,7 +3326,7 @@
           "legacy_ids": [
            "U4-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3340,7 +3341,7 @@
           "legacy_ids": [
            "U4-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          }
@@ -3349,9 +3350,9 @@
         "def": "Relaciona cada acción con el control, gesto o procedimiento que la ejecuta y con la respuesta inmediata del objeto. Incluye feedback y límites de la operación cuando sean relevantes.",
         "pregunta": "¿Cómo se realiza cada acción y qué respuesta obtiene la persona?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3418,7 +3419,7 @@
           "legacy_ids": [
            "O2-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3433,7 +3434,7 @@
           "legacy_ids": [
            "U3-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3448,7 +3449,7 @@
           "legacy_ids": [
            "U3-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3466,7 +3467,7 @@
           "legacy_ids": [
            "U3-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3484,7 +3485,7 @@
           "legacy_ids": [
            "U3-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3502,7 +3503,7 @@
           "legacy_ids": [
            "C4-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          }
@@ -3511,9 +3512,9 @@
         "def": "Registra la contribución del objeto a la actividad o a la situación: hacer visible una superficie, acompañar una estancia, orientar un recorrido, destacar un objeto, crear una zona de luz, permitir reconfiguración o aportar una experiencia luminosa concreta.",
         "pregunta": "¿Qué quiero que provoque en quien la usa?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3568,7 +3569,7 @@
           "legacy_ids": [
            "C4-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3588,7 +3589,7 @@
            "C4-6",
            "O8-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3603,7 +3604,7 @@
           "legacy_ids": [
            "U3-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3622,7 +3623,7 @@
           "legacy_ids": [
            "U3-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3641,7 +3642,7 @@
            "O7-8",
            "U4-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3660,7 +3661,7 @@
            "O7-8",
            "U4-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3675,7 +3676,7 @@
           "legacy_ids": [
            "U2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -3690,7 +3691,7 @@
           "legacy_ids": [
            "O7-8"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true
          },
@@ -3705,7 +3706,7 @@
           "legacy_ids": [
            "U4-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "por_definir",
           "conflicto": false,
           "desconocido": true,
           "ref": [
@@ -3723,7 +3724,7 @@
           "legacy_ids": [
            "U3-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -3735,9 +3736,9 @@
         "def": "Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas.",
         "pregunta": "¿Qué tiene que pasar para que ese efecto ocurra?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 2,
          "conflictos": 0,
@@ -3805,7 +3806,7 @@
           "legacy_ids": [
            "O2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU",
@@ -3825,7 +3826,7 @@
           "legacy_ids": [
            "O2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "variante": "familia Hope",
@@ -4126,9 +4127,9 @@
         "def": "Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas.",
         "pregunta": "¿Qué tipo de luminaria es por su manera fundamental de existir en el espacio?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -4179,7 +4180,7 @@
           "legacy_ids": [
            "C1-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "marca y autores"
@@ -4195,7 +4196,7 @@
           "legacy_ids": [
            "C1-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autores y marca"
@@ -4211,7 +4212,7 @@
           "legacy_ids": [
            "C1-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4230,7 +4231,7 @@
           "legacy_ids": [
            "C1-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autores",
@@ -4249,7 +4250,7 @@
           "legacy_ids": [
            "C1-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autores"
@@ -4265,7 +4266,7 @@
           "legacy_ids": [
            "C1-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -4280,7 +4281,7 @@
           "legacy_ids": [
            "C1-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          }
@@ -4554,9 +4555,9 @@
         "def": "Identifica una configuración cultural y técnica consolidada, como chandelier, abat-jour, arco, lámpara de trabajo articulada, farol, spot o riel electrificado. Puede quedar `pendiente / no identificado` si no existe evidencia suficiente.",
         "pregunta": "¿Con qué modelo históricamente reconocible del mundo de la iluminación se relaciona?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -4626,7 +4627,7 @@
           "legacy_ids": [
            "C2-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "marca + observación",
@@ -4645,7 +4646,7 @@
           "legacy_ids": [
            "C2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autor + observación",
@@ -4664,7 +4665,7 @@
           "legacy_ids": [
            "C2-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4683,7 +4684,7 @@
            "C2-4",
            "C3-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "interpretación con cita de autor"
@@ -4699,7 +4700,7 @@
           "legacy_ids": [
            "O7-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "estudio",
@@ -4718,7 +4719,7 @@
           "legacy_ids": [
            "C3-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false
          },
@@ -4733,7 +4734,7 @@
           "legacy_ids": [
            "U3-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4746,9 +4747,9 @@
         "def": "Registra las cualidades dominantes relevantes: ligera, pesada, precisa, delicada, robusta, técnica, orgánica, austera, compleja, silenciosa, monumental, etc. Las cualidades deben tener un sujeto claro: conjunto, pieza, luz o estado.",
         "pregunta": "¿Qué cualidades aparenta poseer el objeto, sus partes o su luz?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -4803,7 +4804,7 @@
            "C2-1",
            "C3-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4823,7 +4824,7 @@
           "legacy_ids": [
            "C2-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4842,7 +4843,7 @@
           "legacy_ids": [
            "C2-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4861,7 +4862,7 @@
           "legacy_ids": [
            "C3-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "observación + autor",
@@ -4881,7 +4882,7 @@
           "legacy_ids": [
            "C2-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4899,7 +4900,7 @@
           "legacy_ids": [
            "C4-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4918,7 +4919,7 @@
           "legacy_ids": [
            "C4-3"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4937,7 +4938,7 @@
           "legacy_ids": [
            "C4-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -4949,9 +4950,9 @@
         "def": "Vincula la interpretación expresiva con evidencias observables: transparencia, espesor, vacío, repetición, acabado, detalle, continuidad, contraste, encendido/apagado o punto de vista. Fundamenta una lectura sin convertirla en verdad universal.",
         "pregunta": "¿Qué rasgos visibles, materiales o luminosos sustentan cada cualidad?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -5021,7 +5022,7 @@
            "C1-2",
            "C2-5"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "marca (Luceplan)",
@@ -5042,7 +5043,7 @@
            "O7-2",
            "C1-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "estudio (autores)",
@@ -5063,7 +5064,7 @@
            "C2-5",
            "O3-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autores",
@@ -5084,7 +5085,7 @@
            "C1-2",
            "C2-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "interpretación",
@@ -5104,7 +5105,7 @@
            "C4-1",
            "C4-4"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autores y marca",
@@ -5124,7 +5125,7 @@
           "legacy_ids": [
            "C3-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "interpretación con voz de marca"
@@ -5140,7 +5141,7 @@
           "legacy_ids": [
            "C3-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": true,
           "desconocido": false,
           "ref": [
@@ -5154,9 +5155,9 @@
         "def": "Registra asociaciones como flor, joya, cielo, herramienta, correa, celebración, intimidad, libertad, tradición o tecnología cuando estén sustentadas. Debe distinguir una interpretación nuestra de una referencia documentada del autor o la marca.",
         "pregunta": "¿A qué imágenes, referencias o valores remite?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": true,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 1,
@@ -5206,7 +5207,7 @@
            "C1-2",
            "C3-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -5227,7 +5228,7 @@
            "C2-5",
            "C3-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -5248,7 +5249,7 @@
            "O3-7",
            "C1-2"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autores",
@@ -5268,7 +5269,7 @@
            "C1-2",
            "C2-6"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -5288,7 +5289,7 @@
            "C4-4",
            "C4-1"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "ref": [
@@ -5308,7 +5309,7 @@
           "legacy_ids": [
            "O3-7"
           ],
-          "estado_proyecto": null,
+          "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
           "atribucion": "autores",
@@ -5321,9 +5322,9 @@
         "def": "Relaciona cada asociación con sus evidencias: forma, material, luz, comportamiento, detalle, contexto o fuente autoral. Una asociación sin sustento suficiente debe mantenerse como hipótesis.",
         "pregunta": "¿Qué rasgos producen esa asociación o qué referencia documentada la respalda?",
         "extra": [],
-        "estado_proyecto": null,
         "desconocido": false,
         "conflicto": false,
+        "estado_proyecto": "definido",
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
