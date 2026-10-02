@@ -2627,11 +2627,15 @@
     "conflicto"
    ],
    "proyecto": [
-    "requisito",
-    "propuesta",
     "definido",
-    "validado"
+    "por_definir"
    ],
+   "proyecto_nombres": {
+    "definido": "Definido",
+    "por_definir": "Por definir"
+   },
+   "proyecto_regla": "Se deriva, no se carga a mano: un campo (su enunciado), un registro de detalle o un ítem del Programa queda «por definir» si su contenido es desconocido o está vacío; si no, «definido». En una lámpara existente en producción casi todo queda definido. Una ficha de proyecto puede declarar «por definir» sobre un contenido ya redactado que todavía no se decidió; nunca «definido» sobre un contenido desconocido o vacío.",
+   "proyecto_ayuda": "Definido: ya está decidido. Por definir: falta decidirlo; es lo que el proceso de diseño tiene que resolver.",
    "nota": "Este segundo estado no debe reemplazar el estado de evidencia."
   },
   "relaciones": {
