@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OOL V2 · Ficha del objeto luminoso</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Jura:wght@400;500;600&family=Big+Shoulders+Display:wght@700&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Jura:wght@300;400;500;600&family=Big+Shoulders+Display:wght@700&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--paper:#f1eee7;--ink:#262a2e;--muted:#787c82;--line:#cdc8be;--card:#fbfaf7;--conf:#c4503c;--radius:12px;--shadow:0 24px 70px rgba(38,41,46,.14);
   --f-display:Gloock,serif;--f-ui:Jura,system-ui,sans-serif;--f-mono:'Red Hat Mono',monospace;--f-plane:'Big Shoulders Display',sans-serif;--w-display:400;--w-plane:700;--ls-plane:.12em;--ls-kicker:.09em}
@@ -26,7 +26,7 @@ html,body{height:100%;margin:0}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-weight:500;overflow:hidden;transition:background .3s}
 .stage{position:fixed;inset:0;display:grid;place-items:center;transition:right .35s ease}
 body.hascard .stage{right:490px}
-svg.plate{width:min(100vh,100%);height:min(100vh,100vw);max-width:100%;display:block;transition:width .35s ease}
+svg.plate{width:min(100vh,100%);height:min(100vh,100vw);max-width:100%;display:block;overflow:visible;transition:width .35s ease}
 .hdr{position:fixed;top:26px;left:36px;pointer-events:none}
 .hdr h1{font-family:var(--f-display);font-weight:var(--w-display);font-size:54px;line-height:1;margin:0 0 6px}
 .hdr .sub{font-size:14px;color:var(--muted)}
@@ -116,11 +116,11 @@ textarea:focus{outline:2px solid #d9d3c4}
 .plate.dim .sel{opacity:1}
 .plate .zring:hover,.plate .parc:hover{filter:brightness(.92)}
 .plate .blk:hover{filter:brightness(.85)}
-.plate .flabel{font-size:9px;pointer-events:all;cursor:pointer}.plate .flabel.ia{opacity:1!important}
+.plate .flabel{font-size:11.5px;pointer-events:all;cursor:pointer}.plate .flabel.ia{opacity:1!important}
 .plate .flabel.lo{fill:var(--muted)}
-.plate .flabel.top{font-size:11px;font-weight:600}
+.plate .flabel.top{font-size:12.5px;font-weight:600}
 .plate .zlabel{font-size:11px;pointer-events:none}
-.plate .zlabel.rad{font-size:9px;letter-spacing:.01em}
+.plate .zlabel.rad{font-size:11px;letter-spacing:.01em}
 .plate .plabel{font-family:var(--f-plane);font-weight:var(--w-plane);font-size:23px;letter-spacing:var(--ls-plane);fill:var(--paper);pointer-events:none}
 .plate .scale{fill:none;stroke:var(--line);stroke-width:.8;stroke-dasharray:2.5 5}
 .plate .chord path{fill:none;stroke-linejoin:round;pointer-events:stroke}
@@ -152,11 +152,11 @@ textarea:focus{outline:2px solid #d9d3c4}
 .plate [tabindex]:focus{outline:none}.plate #center:focus-visible{stroke:var(--ink);stroke-width:1.5}
 .plate .blk:focus-visible{stroke:var(--ink);stroke-width:1.5}
 .plate .iring{fill:none;stroke:#8e8981;stroke-width:1.5}
-.plate .isel{font-family:var(--f-mono);font-size:24px;letter-spacing:.2em;fill:var(--muted);text-transform:uppercase}.plate .isel.off{fill-opacity:.3} /* Fran (01/10): las tres en el mismo círculo, un solo tamaño, lo más grande posible; las inactivas en gris clarito */
+.plate .isel{font-family:var(--f-ui);font-weight:300;font-size:20px;letter-spacing:.32em;fill:var(--muted);text-transform:uppercase}.plate .isel.off{fill-opacity:.3} /* Fran (01/10): las tres en el mismo círculo, un solo tamaño, lo más grande posible; las inactivas en gris clarito */
 .plate .isel{cursor:pointer}.plate .isel:hover,.plate .isel.on{fill:var(--ink);fill-opacity:1}
 .plate .inode{fill:#8e8981}
 .plate .iline{stroke:#8e8981;stroke-width:1.5;fill:none}
-.plate .ilabel{font-family:var(--f-mono);font-size:10px;letter-spacing:.05em;fill:var(--ink);cursor:pointer;text-transform:uppercase}
+.plate .ilabel{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.05em;fill:var(--ink);cursor:pointer;text-transform:uppercase}
 .plate.dim .inode,.plate.dim .iline,.plate.dim .ilabel,.plate.dim .iring{opacity:.22}.plate.dim .ident .isel.on,.plate.dim .ident .iring.on,.plate.dim .ident .iline,.plate.dim .ident .inode,.plate.dim .ident .ilabel{opacity:1}
 .plate.dim .inode.sel,.plate.dim .iline.sel,.plate.dim .ilabel.sel{opacity:1}
 .plate .xlinks,.plate .xlinks path,.plate .iline{pointer-events:none!important}
@@ -233,7 +233,7 @@ details.vocabulario summary:focus-visible,.vt>button:focus-visible{outline:2px s
 </style>
 </head>
 <body>
-<div class="stage"><svg class="plate" id="plate" viewBox="-30 -30 1060 1060"></svg></div>
+<div class="stage"><svg class="plate" id="plate" viewBox="40 110 920 920"></svg></div>
 <div class="hdr"><h1 id="title">—</h1><div class="sub" id="sub"></div><div class="meta" id="meta"></div></div>
 <div class="sel" id="sel"><button id="baseBtn">Database</button></div>
 <div class="base" id="base"><button class="close" onclick="closeBase()">×</button>
@@ -301,8 +301,18 @@ function render(){
   el('image',{href:MV.img,x:G.cx-G.RPH,y:G.cy-G.RPH,width:2*G.RPH,height:2*G.RPH,preserveAspectRatio:'xMidYMid meet','clip-path':'url(#ph)',transform:'translate('+G.cx+' '+G.cy+') scale(.8) translate('+(-G.cx)+' '+(-G.cy)+')',style:MV.isPhoto?'':'filter:grayscale(1) contrast(1.08);mix-blend-mode:multiply'},svg);  // la lámpara ocupa el vacío central, por debajo de las cuerdas
   // V2 · centro clickeable = Programa proyectual (misma tarjeta lateral); leyenda discreta en el vacío entre la foto (r≈97) y el arco de planos, sin tapar la lámpara ni sumar color
   {const c=el('circle',{cx:G.cx,cy:G.cy,r:G.RPH,fill:'transparent',class:'hit',id:'center',tabindex:0,role:'button','aria-label':'Programa proyectual'},svg);c.addEventListener('click',()=>openProgram());c.addEventListener('keydown',e=>KEY(e,openProgram));el('title',{},c).textContent='Programa proyectual'}
-  el('path',{id:'pp-center',d:arcPath(G.RPH-10,Math.PI/2-.95,Math.PI/2+.95),fill:'none'},defs);
-  {const t=el('text',{class:'clabel','dominant-baseline':'central',id:'center-lbl'},svg);const tp=el('textPath',{href:'#pp-center',startOffset:'50%','text-anchor':'middle'},t);tp.textContent='PROGRAMA PROYECTUAL'}
+  // Fran (01/10 23:54, OK 02/10): título arriba, sobre la imagen; las tres partes del Programa en 360°, cada una clickeable
+  {const g=el('g',{class:'ptitle'},svg);el('rect',{x:G.cx-74,y:G.cy-62,width:148,height:20,rx:10,fill:'var(--paper)','fill-opacity':.72},g);
+   const t=el('text',{x:G.cx,y:G.cy-52,'text-anchor':'middle','dominant-baseline':'central',class:'clabel',id:'center-lbl',style:'font-size:12px;letter-spacing:.18em;fill-opacity:1'},g);t.textContent='PROGRAMA PROYECTUAL'}
+  [['PROPÓSITO','proposito'],['PRINCIPIOS RECTORES','principios'],['CONDICIONES NO NEGOCIABLES','condiciones']].forEach(([lbl,k],i)=>{
+    const c=-Math.PI/2+i*2*Math.PI/3, a0=c-Math.PI/3+.06, a1=c+Math.PI/3-.06, r=G.RPH-11;
+    el('path',{id:'pp-'+k,d:arcPath(r,a0,a1),fill:'none'},defs);
+    const g=el('g',{class:'ppart hit',tabindex:0,role:'button','aria-label':lbl,style:'cursor:pointer'},svg);
+    el('path',{d:arcPath(G.RPH-3,a0,a1),fill:'none',stroke:'var(--ink)','stroke-width':1.2,'stroke-opacity':.35},g);
+    const t=el('text',{class:'clabel','dominant-baseline':'central',style:'font-size:10.5px;letter-spacing:.16em;fill-opacity:.9;pointer-events:auto'},g);
+    const tp=el('textPath',{href:'#pp-'+k,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lbl;
+    g.addEventListener('click',e=>{e.stopPropagation();openProgram(k)});g.addEventListener('keydown',e=>KEY(e,()=>openProgram(k)));
+  });
   // halo: proyección de la importancia, por zona con su tono, desenfocada
   const halo=el('g',{class:'halo',filter:'url(#blur)',opacity:TH().halo},svg);
   d.planes.forEach(p=>{
@@ -322,11 +332,11 @@ function render(){
       el('path',{d:sectorPath(G.RP0,G.RP1,Math.max(z.a0,p.a0+.004),z.a1-(zi===p.zones.length-1?.004:0)),fill:z.deep,class:'parc hit',id:'parc-'+z.nodeId,'data-plane':p.name},gP).addEventListener('click',()=>openPlane(p));
       const zr=el('path',{d:sectorPath(G.RZ0,G.RZ1,z.a0+G.GAPZ/2,z.a1-G.GAPZ/2),fill:mix(z.col,.72),stroke:getComputedStyle(document.body).getPropertyValue('--paper').trim()||'#f1eee7','stroke-width':1.2,class:'zring hit',id:'zr-'+z.nodeId},gZ);zr.addEventListener('click',()=>openZone(z));
       // nombre de zona: siempre en el eje (radial), en 1-2 líneas que entran en el anillo (regla de Fran, 04/09)
-      {const maxc=12,words=z.name.split(' '),lines=[];let cur='';
+      {const maxc=9,words=z.name.split(' '),lines=[];let cur='';
         words.forEach(w=>{if(cur&&(cur+' '+w).length>maxc){lines.push(cur);cur=w}else cur=cur?cur+' '+w:w});if(cur)lines.push(cur);
-        const longest=Math.max(...lines.map(l=>l.length)),AV=G.RZ1-G.RZ0-9,fs=Math.min(9,AV/(longest*.58));
+        const longest=Math.max(...lines.map(l=>l.length)),AV=G.RZ1-G.RZ0-9,fs=Math.min(11,AV/(longest*.58));
         const deg=z.am*180/Math.PI,left=Math.cos(z.am)<0,rot=left?deg+180:deg;const [x,y]=pol(G.RZ0+5,z.am);const ux=Math.sin(rot*Math.PI/180),uy=-Math.cos(rot*Math.PI/180);
-        lines.forEach((ln,i)=>{const k2=((lines.length-1)/2-i)*(lines.length>2?9:10);const t=el('text',{class:'zlabel rad',x:x+ux*k2,y:y+uy*k2,transform:`rotate(${rot} ${x+ux*k2} ${y+uy*k2})`,'text-anchor':left?'end':'start','dominant-baseline':'central',style:`font-size:${fs}px`},gT);t.textContent=ln;t.dataset.z=z.nodeId;if(t.getComputedTextLength()>AV){t.setAttribute('textLength',AV);t.setAttribute('lengthAdjust','spacingAndGlyphs')}})}
+        const zt=[];lines.forEach((ln,i)=>{const k2=((lines.length-1)/2-i)*(lines.length>2?9:10);const t=el('text',{class:'zlabel rad',x:x+ux*k2,y:y+uy*k2,transform:`rotate(${rot} ${x+ux*k2} ${y+uy*k2})`,'text-anchor':left?'end':'start','dominant-baseline':'central',style:`font-size:${fs}px`},gT);t.textContent=ln;t.dataset.z=z.nodeId;zt.push(t)});{const ml=Math.max(...zt.map(t=>t.getComputedTextLength()))||1,f2=Math.min(12,fs*AV/ml);zt.forEach(t=>{t.style.fontSize=f2+'px';if(t.getComputedTextLength()>AV){t.setAttribute('textLength',AV);t.setAttribute('lengthAdjust','spacingAndGlyphs')}})}}
       // campos: bloques + rótulo radial
       z.fields.forEach(f=>{const j=jn(f.importancia),st=state(f.estado),L=G.LEN[j]??G.LEN[1];f.j=j;f.st=st;
         const at={d:sectorPath(G.RF0,G.RF0+L,f.a0+G.GAPZ/3,f.a1-G.GAPZ/3),class:'blk hit',id:'blk-'+f.id};
