@@ -481,8 +481,8 @@
    },
    "US3-1": {
     "code": "B3.1",
-    "nombre": "Qué tiene que lograr",
-    "pregunta": "¿Qué quiero que logre en quien la usa?",
+    "nombre": "Efecto buscado",
+    "pregunta": "¿Qué quiero que provoque en quien la usa?",
     "que_es": "Registra la contribución del objeto a la actividad o a la situación: hacer visible una superficie, acompañar una estancia, orientar un recorrido, destacar un objeto, crear una zona de luz, permitir reconfiguración o aportar una experiencia luminosa concreta.",
     "incluye": [
      "resultados funcionales y experienciales de uso"
@@ -497,8 +497,8 @@
    },
    "US3-2": {
     "code": "B3.2",
-    "nombre": "Qué no puede fallar",
-    "pregunta": "¿Qué condiciones tiene que respetar?",
+    "nombre": "Condiciones del efecto",
+    "pregunta": "¿Qué tiene que pasar para que ese efecto ocurra?",
     "que_es": "Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas.",
     "incluye": [
      "condiciones de uso y límites reales"
