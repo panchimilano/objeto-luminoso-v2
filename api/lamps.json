@@ -24,5 +24,105 @@
   "mtime": "2026-09-29T00:00",
   "carpeta": "01 · Fichas",
   "schema": "ool-v2.0"
+ },
+ {
+  "id": "Mesh D86-100 — Luceplan",
+  "objeto": "Mesh Suspensión D86 Ø 100 cm — phase-cut original 2015",
+  "nombre": "Mesh",
+  "codigo": "D86KT101",
+  "empresa": "Luceplan",
+  "disenadores": [
+   "Francisco Gómez Paz"
+  ],
+  "anio": 2015,
+  "existe": true,
+  "estado_ficha": "definitiva",
+  "titulares": [
+   "Fibonacci como ley, no como dibujo",
+   "El cable que conduce, sostiene y ubica",
+   "Explotar la fuente en el espacio"
+  ],
+  "dibujo": "mesh-dibujo.png",
+  "foto": "mesh-foto.jpg",
+  "campos": 22,
+  "desconocidos": 34,
+  "mtime": "2026-10-02T02:00",
+  "carpeta": "01 · Fichas",
+  "schema": "ool-v2.0"
+ },
+ {
+  "id": "Africa 5580 — Vibia",
+  "objeto": "Africa 5580",
+  "nombre": "Africa",
+  "codigo": "5580",
+  "empresa": "Vibia",
+  "disenadores": [
+   "Francisco Gómez Paz"
+  ],
+  "anio": "en conflicto (2020 · 2022 · 2023)",
+  "existe": true,
+  "estado_ficha": "definitiva",
+  "titulares": [
+   "Un cono continuo rematado por una cabeza oblicua",
+   "Luz próxima sin cable",
+   "La lámpara de trabajo sin su mecanismo"
+  ],
+  "dibujo": "africa-dibujo.png",
+  "foto": "africa-foto.jpg",
+  "campos": 22,
+  "desconocidos": 13,
+  "mtime": "2026-10-02T04:00",
+  "carpeta": "01 · Fichas",
+  "schema": "ool-v2.0"
+ },
+ {
+  "id": "Guise — Vibia",
+  "objeto": "Guise 2260 (aplique)",
+  "nombre": "Guise",
+  "codigo": "2260",
+  "empresa": "Vibia",
+  "disenadores": [
+   "Stefan Diez"
+  ],
+  "anio": 2017,
+  "existe": true,
+  "estado_ficha": "definitiva",
+  "titulares": [
+   "Luz por el canto del vidrio",
+   "Un vidrio que casi no está",
+   "Un disco y un radio"
+  ],
+  "dibujo": "",
+  "foto": "guise-foto.jpg",
+  "campos": 22,
+  "desconocidos": 9,
+  "mtime": "2026-10-02T03:30",
+  "carpeta": "01 · Fichas",
+  "schema": "ool-v2.0"
+ },
+ {
+  "id": "Wireflow 0300 — Vibia",
+  "objeto": "Wireflow 0300 (sub-familia 3D)",
+  "nombre": "Wireflow 0300",
+  "codigo": "0300",
+  "empresa": "Vibia",
+  "disenadores": [
+   "Arik Levy"
+  ],
+  "anio": 2013,
+  "existe": true,
+  "estado_ficha": "definitiva",
+  "titulares": [
+   "El cable que conduce y sostiene",
+   "Todo línea negra, sin cuerpo",
+   "Ocho líneas, tres octógonos"
+  ],
+  "dibujo": "wireflow-dibujo.png",
+  "foto": "wireflow-foto.jpg",
+  "campos": 22,
+  "desconocidos": 6,
+  "mtime": "2026-10-02T03:00",
+  "carpeta": "01 · Fichas",
+  "schema": "ool-v2.0"
  }
 ]
