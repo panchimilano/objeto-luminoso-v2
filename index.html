@@ -108,9 +108,10 @@ textarea:focus{outline:2px solid #d9d3c4}
 .saved{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin-top:5px;min-height:14px}
 .pill{display:inline-block;border-radius:999px;padding:2px 9px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;background:rgba(0,0,0,.06)}
 .pill.conf{background:var(--conf);color:#fff}
-/* V2 · estado de proyecto en dos niveles (Fran 02/10, ítem 17): pill arriba de la ficha junto a la importancia; marca discreta en listas; la evidencia queda en la trazabilidad */
+/* V2 · estado de proyecto en cuatro valores (Fran 02/10 01:22): pill arriba de la ficha junto a la importancia y, debajo, origen y validación en una línea discreta; marca discreta en listas; la evidencia queda en la trazabilidad */
 .fstate{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 0}
-.pill.pd{background:transparent;border:1px solid var(--ink);color:var(--ink)}.pill.pd[data-pd=por_definir]{border-style:dashed}
+.pill.pd{background:transparent;border:1px solid var(--ink);color:var(--ink)}.pill.pd[data-pd=incertidumbre]{border-style:dashed}.pill.pd[data-pd=hipotesis]{border-style:dotted}.pill.pd[data-pd=libre]{border-color:var(--muted);color:var(--muted)}
+.forig{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.03em;color:var(--muted);margin:5px 0 0}
 .pdm{font-family:var(--f-mono);font-size:10px;letter-spacing:.03em;color:var(--muted);margin-left:6px;white-space:nowrap}
 /* svg */
 .plate text{font-family:var(--f-ui);font-weight:500;fill:var(--ink)}
@@ -265,7 +266,7 @@ const MODENAME={objeto:'Identidad de producto',familia:'Identidad de familia',ma
 let LMODE=null,LECT={}; // V2 · capa de lectura D·M·G: grupo activo (D | M | G | null) · clasificación vigente {id: grupo} (oficial de defs.json + ediciones del navegador)
 const LKEYP='ool-v2-lectura-v1',LKEY=()=>LKEYP+':'+V,LKEY_OLD_OWNER='Hope D66-42 — Luceplan',LNAME={D:'Determinístico',M:'Mixto',G:'Generativo'}; // etapa 01 (01/10): persistencia de la lectura aislada por id de lámpara · la clave global previa (LKEYP) sólo pudo contener ediciones de Hope: se lee para Hope si su clave nueva no existe, sin copiarla ni borrarla
 const KEY=(e,fn)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}};
-let SHOW_PD_WHEEL=false; // ítem 17 (02/10): variante en borrador — en la rueda, los bloques «por definir» sólo con contorno. APAGADA: Fran rechazó sombreados por evidencia; un cambio visual de rueda se le muestra antes (borrador-rueda-por-definir.png)
+let SHOW_PD_WHEEL=false; // ítem 17 (02/10): variante en borrador — en la rueda, los bloques «por definir» (incertidumbre + hipótesis, cuatro estados 02/10 01:22) sólo con contorno. APAGADA: Fran rechazó sombreados por evidencia; un cambio visual de rueda se le muestra antes (borrador-rueda-por-definir.png)
 const CHORDS={S:[['O3-3','O7-4'],['O3-4','O6-4'],['O8-5','C4-3'],['O6-3','C5-2'],['U3-6','C4-2'],['O5-4','U4-2'],['O3-2','C1-3'],['O7-1','U4-4']],
               W:[['O3-3','O7-5'],['O3-4','C2-1'],['O5-3','O6-2'],['O8-5','C4-2'],['U3-1','C4-4'],['O6-3','C5-2'],['O3-2','C1-3'],['O5-7','U4-2']]};
 function metaOf(v){const m=(DATA[v]&&DATA[v].meta)||{};return {title:m.nombre||m.objeto||v,sub:[m.empresa,(m.disenadores||[]).join(' + '),m.anio].filter(Boolean).join(' · '),img:'img/'+(m.foto||m.dibujo||''),isPhoto:!!m.foto,objeto:m.objeto||v,estado:m.estado_ficha||''}}
@@ -346,7 +347,7 @@ function render(){
       z.fields.forEach(f=>{const j=jn(f.importancia),st=state(f.estado),L=G.LEN[j]??G.LEN[1];f.j=j;f.st=st;
         const at={d:sectorPath(G.RF0,G.RF0+L,f.a0+G.GAPZ/3,f.a1-G.GAPZ/3),class:'blk hit',id:'blk-'+f.id};
         at.fill=z.col;at['fill-opacity']=.92; // Fran 01/10 23:38: la rueda no muestra el estado de evidencia (queda en la trazabilidad de cada campo)
-        if(SHOW_PD_WHEEL&&f.estado_proyecto==='por_definir'){at.fill='transparent';at.stroke=z.col;at['stroke-width']=1.2} // variante apagada (ítem 17): por definir = sólo contorno
+        if(SHOW_PD_WHEEL&&PORDEF.has(f.estado_proyecto)){at.fill='transparent';at.stroke=z.col;at['stroke-width']=1.2} // variante apagada (ítem 17): por definir = sólo contorno
         {at.tabindex=0;at.role='button';at['aria-label']=f.name;const b=el('path',at,gB);b.addEventListener('click',()=>openField(f));b.addEventListener('keydown',e=>KEY(e,()=>openField(f)))}
         if(st==='conflicto'){const [x,y]=pol(G.RF0+L+4,f.am);el('circle',{cx:x,cy:y,r:2,fill:TH().conf},gB)}
         const deg=f.am*180/Math.PI,left=Math.cos(f.am)<0;const [x,y]=pol(G.RF0+L+11,f.am); // el rótulo arranca donde termina la barra y la acompaña
@@ -456,10 +457,15 @@ function introRest(p){const lines=(p.intro||'').split('\n').map(l=>l.trim()).fil
 const cap=s=>(s||'').charAt(0)+(s||'').slice(1).toLowerCase();
 const V2=()=>DEFS.v2||{};
 const REL=()=>DATA[V].relations||[];
-/* V2 · estado de proyecto (ítem 17, Fran 02/10): definido / por definir, derivado por el migrador; nombres desde defs */
-const PDN=()=>((V2().estados||{}).proyecto_nombres)||{definido:'Definido',por_definir:'Por definir'};
+/* V2 · estado de proyecto (Fran 02/10 01:22): incertidumbre · hipótesis · definido · libre, derivado por el migrador; nombres desde defs.
+   Origen (usuario · imagen · comparación · IA) y validación son ejes aparte: línea discreta debajo del estado */
+const PDN=()=>((V2().estados||{}).proyecto_nombres)||{incertidumbre:'Incertidumbre',hipotesis:'Hipótesis',definido:'Definido',libre:'Libre'};
+const PORDEF=new Set(['incertidumbre','hipotesis']); // la variante de rueda (apagada) los trata como «por definir»
+const pdTxt=x=>x&&x.estado_proyecto&&x.estado_proyecto!=='definido'?'· '+(PDN()[x.estado_proyecto]||x.estado_proyecto).toLowerCase():'';
+const pdOrig=x=>{if(!x||!x.estado_proyecto)return '';const E=V2().estados||{},on=E.origen_nombres||{},vn=E.validacion_nombres||{true:'validado',false:'sin validar'};
+  return `<div class="forig" title="origen y validación: ejes aparte del estado">Origen: ${esc(x.origen?(on[x.origen]||x.origen):'sin registrar')} · ${esc(vn[String(!!x.validado)])}</div>`};
 const pdPill=x=>x&&x.estado_proyecto?`<span class="pill pd" data-pd="${esc(x.estado_proyecto)}" title="estado de proyecto">${esc(PDN()[x.estado_proyecto]||x.estado_proyecto)}</span>`:'';
-const pdMark=x=>x&&x.estado_proyecto==='por_definir'?`<span class="pdm">· ${esc((PDN().por_definir||'por definir').toLowerCase())}</span>`:'';
+const pdMark=x=>pdTxt(x)?`<span class="pdm">${esc(pdTxt(x))}</span>`:'';
 const evLine=x=>[`${x.conflicto?'<span class="pill conf">conflicto</span> ':''}${x.desconocido?'<span class="pill unk">desconocido</span> ':''}${esc(x.estado||'')}`,x.confianza&&x.confianza!=='—'?`confianza ${esc(x.confianza)}`:'',esc(x.fuente||'')].filter(Boolean).join(' · ');
 const lpills=ids=>(ids||[]).map(i=>`<span class="pill lg" onclick="openLegacy('${i}')" title="campo V1 (legacy)">${esc(i)}</span>`).join(' ');
 function legacyPlaneOf(p){const L=(DATA[V].legacy||{}).ficha;if(!L)return null;const i=DATA[V].planes.indexOf(p);return L.planes[i]||null}
@@ -475,7 +481,7 @@ function openPlane(p){
 function openZoneId(id){for(const p of DATA[V].planes)for(const z of p.zones)if(z.nodeId===id)return openZone(z)}
 function openFieldId(id){const f=fieldById(id);if(f)return openField(f)}
 function openZone(z){
-  const rows=z.fields.map(f=>`<div class="f" onclick="openFieldId('${f.id}')"><span class="id">${esc(f.code||f.id)}</span><span class="n">${esc(f.name)}</span><span class="bar"><i style="width:${[0,12,30,58,100][f.j]||10}%;background:${z.col};opacity:.92"></i></span><span class="st">${f.estado_proyecto==='por_definir'?'· '+esc((PDN().por_definir||'').toLowerCase()):''}</span></div>`).join(''); // ítem 17: sin evidencia en la lista; marca discreta sólo en lo que está por definir
+  const rows=z.fields.map(f=>`<div class="f" onclick="openFieldId('${f.id}')"><span class="id">${esc(f.code||f.id)}</span><span class="n">${esc(f.name)}</span><span class="bar"><i style="width:${[0,12,30,58,100][f.j]||10}%;background:${z.col};opacity:.92"></i></span><span class="st">${esc(pdTxt(f))}</span></div>`).join(''); // sin evidencia en la lista; marca discreta en incertidumbre / hipótesis / libre (definido sin marca)
   showCard(`<div class="kicker">${esc(z.plane.name)} · zona ${esc(z.code||z.num)}</div><div class="hrow"><h2>${esc(z.name)}</h2>${helpBtn('zone',z.nodeId)}</div><div class="q">${esc(z.pregunta||'')}</div>
     <div class="sec"><div class="kicker">Lectura humana · ${esc(metaOf(V).title)}</div><div class="human">${paras(z.lectura||'')}</div></div>
     <div class="sec"><div class="kicker">Campos · ${z.fields.length}</div><div class="flist">${rows}</div></div>`,
@@ -506,8 +512,8 @@ function relLine(r,me){const other=r.from===me?r.to:r.from,dir=r.from===me;const
   return `<div class="rel"><span class="tag">${dir?`${esc(me)} <b>${t}</b> ${esc(other)}`:`${esc(other)} <b>${t}</b> ${esc(me)}`}${r.anchor?' · ancla':''}</span><a onclick="${fnOf(other)}"><small>${esc(other)}</small>${esc(nameOf(other))}${f?` <small>· ${esc(f.zone.name)}</small>`:''}</a>${r.why?`<span class="why">${esc(r.why)}</span>`:''}${(r.via||[]).length?`<small>${r.via.map(v=>`<a onclick="goRef('${v}')" style="display:inline">→ ${esc(v)}</a>`).join(' ')}</small>`:''}</div>`}
 function openField(f,hl){
   const dv=(V2().fields||{})[f.id]||{};const rels=REL().filter(r=>r.from===f.id||r.to===f.id),byT={};rels.forEach(r=>(byT[r.type]=byT[r.type]||[]).push(r));const inc=f.incertidumbre||{};
-  // ítem 17 (Fran 02/10): arriba, la importancia de la lámpara y el estado de proyecto (Definido / Por definir); la evidencia (estado, confianza, fuentes, incertidumbre y la de cada registro) sólo en la trazabilidad plegada
-  const top=`<div class="fstate"><span class="pill imp" title="importancia en esta lámpara">${f.importancia?`J${f.j} · ${JWORD[f.j]||''}`:'importancia sin asignar (borrador)'}</span>${pdPill(f)}</div>`;
+  // ítem 17 (Fran 02/10): arriba, la importancia de la lámpara y el estado de proyecto (Incertidumbre / Hipótesis / Definido / Libre) y debajo origen y validación; la evidencia (estado, confianza, fuentes, incertidumbre y la de cada registro) sólo en la trazabilidad plegada
+  const top=`<div class="fstate"><span class="pill imp" title="importancia en esta lámpara">${f.importancia?`J${f.j} · ${JWORD[f.j]||''}`:'importancia sin asignar (borrador)'}</span>${pdPill(f)}</div>${pdOrig(f)}`;
   const arq=!!(f.arquetipo&&f.arquetipo.termino)||!!(f.tipologia&&(f.tipologia.terminos||[]).length),dato=`<div class="sec"><div class="kicker">Dato</div><div class="val">${esc(f.valor||'—')}</div>
       <div class="kv"><b>Unidad</b><span>${esc(f.unidad||'—')}</span><b>Estado</b><span>${esc(PDN()[f.estado_proyecto]||'—')}</span></div></div>
     ${lectLine(f.id)}`,evid=`<div class="sec"><div class="kicker">Evidencia</div><div class="kv"><b>Evidencia</b><span>${f.st==='conflicto'?'<span class="pill conf">conflicto</span> ':''}${f.desconocido_parcial?'<span class="pill unk">desconocido parcial</span> ':''}${esc(f.estado||'')}</span><b>Confianza</b><span>${esc(f.confianza||'—')}</span><b>Fuentes</b><span>${srcHtml(f.fuente)||'—'}</span><b>Incertidumbre</b><span>${['desconocidos','conflictos','pendientes','inferidos'].map(k=>inc[k]?`${inc[k]} ${k}`:'').filter(Boolean).join(' · ')||'—'}</span></div></div>
@@ -579,7 +585,7 @@ function openProgram(hl){const P=DATA[V].programa||{},MV=metaOf(V);const n=new S
 // arco del centro → su parte del Programa (Propósito / Principios / Condiciones), sin abrir la trazabilidad
 function openProgramPart(k){openProgram();const e=document.getElementById('psec-'+k);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'start'}),30)}}
 function openPItem(id){const it=pitemById(id);if(!it||!it.seccion)return openProgram(id);const code=it.seccion,pd=((V2().programa||{}).partes||{})[code]||{};const rels=REL().filter(r=>r.type==='responde_a'&&r.to===id);
-  showCard(`<div class="kicker">Programa · <b>${esc(PSEC[code])}</b> · ${id}</div><div class="hrow"><h2>${esc(PSEC[code])}</h2>${helpBtn('pitem',code)}</div><div class="q">${esc(pd.pregunta||'')}</div><div class="fstate">${pdPill(it)}</div>
+  showCard(`<div class="kicker">Programa · <b>${esc(PSEC[code])}</b> · ${id}</div><div class="hrow"><h2>${esc(PSEC[code])}</h2>${helpBtn('pitem',code)}</div><div class="q">${esc(pd.pregunta||'')}</div><div class="fstate">${pdPill(it)}</div>${pdOrig(it)}
     <div class="sec"><div class="kicker">Enunciado</div><div class="val">${esc(it.enunciado||it.texto)}</div><div class="human">${paras(it.desarrollo||'')}</div></div>
     ${lectLine(code)}
     <div class="sec"><div class="kicker">Responden a este enunciado · ${rels.length} categorías</div>${rels.map(r=>relLine(r,id)).join('')||'<div class="human"><p>—</p></div>'}</div>
@@ -642,7 +648,7 @@ function helpBtn(kind,id){return `<button class="help" title="qué es esto" oncl
 const unbold=s=>(s||'').replace(/\*\*/g,'');
 function guideHtml(kind,obj){const D=V2();const li=a=>(a||[]).length?`<ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p><small>La especificación no lo explicita.</small></p>';
   const block=d=>`<div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p></div></div><div class="sec guide"><div class="kicker">Qué pregunta responde</div><div class="human"><p>${esc(d.pregunta||'')}</p></div></div>${(d.incluye||[]).length?`<div class="sec guide"><div class="kicker">Qué incluye</div><div class="human">${li(d.incluye)}</div></div>`:''}${(d.no_incluye||[]).length?`<div class="sec guide"><div class="kicker">Qué no incluye</div><div class="human">${li(d.no_incluye)}</div></div>`:''}${d.no_confundir?`<div class="sec guide"><div class="kicker">No confundir con</div><div class="human"><p>${esc(d.no_confundir)}</p></div></div>`:''}`; // sin casilleros vacíos (Fran, 01/10/2026)
-  const leer=`<div class="sec guide"><div class="kicker">Cómo se lee</div><div class="human"><p>${esc((D.estados||{}).proyecto_ayuda||'')}</p><p>La evidencia de cada dato (${esc((D.estados||{}).evidencia?.join(' · ')||'')}), su confianza (cuánto fiarse) y sus fuentes (de dónde sale) quedan en la trazabilidad de cada campo. Importancia J4 clave · J3 determinante · J2 relevante · J1 contextual: es la longitud de la barra; la identidad es una relación explícita del anillo exterior, no una altura.</p></div></div>`;
+  const leer=`<div class="sec guide"><div class="kicker">Cómo se lee</div><div class="human">${[].concat((D.estados||{}).proyecto_ayuda||[]).map(l=>`<p>${esc(l)}</p>`).join('')}<p>La evidencia de cada dato (${esc((D.estados||{}).evidencia?.join(' · ')||'')}), su confianza (cuánto fiarse) y sus fuentes (de dónde sale) quedan en la trazabilidad de cada campo. Importancia J4 clave · J3 determinante · J2 relevante · J1 contextual: es la longitud de la barra; la identidad es una relación explícita del anillo exterior, no una altura.</p></div></div>`;
   if(kind==='plane'){const p=obj,d=(D.planes||{})[p.id]||{};return `<div class="kicker">Qué es este plano${p.nombre_teorico?` · nombre teórico: ${esc(p.nombre_teorico)}`:''}</div><div class="hrow"><h2>${esc(cap(p.name))}</h2>${helpBtn('plane',p.id)}</div><div class="q">${esc(d.pregunta||'')}</div>
     <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p><p><small>La tarjeta muestra la lectura humana del caso ${esc(metaOf(V).title)}; esta ayuda explica el concepto.</small></p></div></div>
     <div class="sec guide"><div class="kicker">Sus zonas y qué se carga en cada una</div>${p.zones.map(z=>{const zd=(D.zones||{})[z.id]||{};return `<div class="def"><b><small>${esc(z.code||'')}</small> ${esc(z.name)} <small>· ${z.fields.length} campos</small></b><i>${esc(zd.pregunta||'')}</i><br>${esc(zd.que_es||'')}</div>`}).join('')}</div>${leer}`}
@@ -654,7 +660,7 @@ function guideHtml(kind,obj){const D=V2();const li=a=>(a||[]).length?`<ul>${a.ma
   if(kind==='program'){const d=D.programa||{};return `<div class="kicker">Qué es el Programa proyectual</div><div class="hrow"><h2>${esc(d.nombre||'')}</h2>${helpBtn('program','programa')}</div><div class="q">${esc(d.pregunta||'')}</div>
     <div class="sec guide"><div class="kicker">Qué es</div><div class="human"><p>${esc(d.que_es||'')}</p><p>${esc(unbold(d.principio))}</p></div></div>
     <div class="sec guide"><div class="kicker">Sus tres partes</div>${['P1','P2','P3'].map(k=>{const p=(d.partes||{})[k]||{};return `<div class="def"><b><small>${k}</small> ${esc(p.nombre||'')}</b><i>${esc(p.pregunta||'')}</i><br>${esc(p.que_es||'')}<br><small>Incluye: ${esc((p.incluye||[]).join(' · '))}</small><br><small>No incluye: ${esc((p.no_incluye||[]).join(' · '))}</small></div>`}).join('')}</div>
-    <div class="sec guide"><div class="kicker">Relaciones</div><div class="human"><p><b>responde_a</b>: ${esc((D.relaciones||{}).responde_a||'')} Dirección: campo o decisión → ítem del Programa. ${esc((D.relaciones||{}).nota||'')} Una condición documentada no es una solución verificada: el estado de proyecto (definido · por definir) es un eje aparte de la evidencia.</p></div></div>`}
+    <div class="sec guide"><div class="kicker">Relaciones</div><div class="human"><p><b>responde_a</b>: ${esc((D.relaciones||{}).responde_a||'')} Dirección: campo o decisión → ítem del Programa. ${esc((D.relaciones||{}).nota||'')} Una condición documentada no es una solución verificada: el estado de proyecto (incertidumbre · hipótesis · definido · libre) es un eje aparte de la evidencia, y el origen y la validación son otros dos.</p></div></div>`}
   if(kind==='pitem'){const k=obj,p=((D.programa||{}).partes||{})[k]||{};return `<div class="kicker">Qué es · Programa proyectual · ${k}</div><div class="hrow"><h2>${esc(p.nombre||'')}</h2>${helpBtn('pitem',k)}</div><div class="q">${esc(p.pregunta||'')}</div>${block(p)}`}
   if(kind==='lectura'){const L=D.lectura||{};return `<div class="kicker">Qué es · Lectura D · M · G</div><div class="hrow"><h2>${esc((L[obj]||{}).nombre||LNAME[obj]||'')}</h2>${helpBtn('lectura',obj)}</div><div class="q">Capa transversal sobre la ficha: no cambia la ontología ni la Identidad; dice cómo se resuelve cada campo una vez tomada la decisión.</div>
     <div class="sec guide"><div class="kicker">Tres grupos</div>${['D','M','G'].map(k=>`<div class="def"><b>${k} · ${esc((L[k]||{}).nombre||LNAME[k])}</b>${esc((L[k]||{}).definicion||'')}</div>`).join('')}<div class="human"><p><small>Identidad (producto / familia / marca) no se clasifica: selecciona y valora campos de cualquier grupo. En los Mixtos la tarjeta separa qué se decide y qué se calcula después.</small></p></div></div>`}
