@@ -2487,6 +2487,44 @@
        "no_confundir": "No es la tipología suspensión a secas: el arquetipo es la figura del contrapeso visible que sube y baja la luz.",
        "sinonimos": "fr. suspension à contrepoids · en. rise-and-fall pendant",
        "fuente": "https://www.buildingconservation.com/articles/lighting/lighting.htm"
+      },
+      {
+       "id": "bouillotte",
+       "termino": "Bouillotte (lámpara de mesa de juego)",
+       "definicion": "Lámpara de mesa francesa de fines del siglo XVIII, difundida en el XIX, nacida para iluminar la mesa redonda del juego de cartas bouillotte: base en plato, varilla central y dos a cuatro brazos de vela bajo una pantalla baja de chapa pintada que sube o baja por la varilla.",
+       "rasgos_tecnicos": "Base en plato que recoge la cera; varilla central que atraviesa la pantalla y remata arriba; dos a cuatro brazos de vela; pantalla baja de chapa pintada (tôle), opaca por fuera y reflectante por dentro; pantalla que sube y baja por la varilla; luz concentrada sobre la mesa sin deslumbrar a quienes se sientan alrededor.",
+       "rasgos": [
+        "Base en plato que recoge la cera",
+        "Varilla central que atraviesa la pantalla y remata arriba",
+        "Dos a cuatro brazos de vela",
+        "Pantalla baja de chapa pintada (tôle), opaca por fuera y reflectante por dentro",
+        "Pantalla que sube y baja por la varilla",
+        "Luz concentrada sobre la mesa sin deslumbrar a quienes se sientan alrededor"
+       ],
+       "epoca_origen": "Francia, fines del siglo XVIII (Directorio; el ejemplar del Met se fecha c. 1795–1800); muy difundida en el siglo XIX; reediciones del siglo XX (Ruhlmann, Stiffel) y reinterpretaciones LED del XXI.",
+       "ejemplos": [
+        {
+         "pieza": "Table lamp (bouillotte), acc. 1977.75",
+         "fabricante": "taller francés no identificado",
+         "disenador": "anónimo",
+         "anio": "c. 1795–1800",
+         "url": "https://www.metmuseum.org/art/collection/search/206596",
+         "verificado": true,
+         "nota": "bronce dorado, acero y tôle; base en plato, tres brazos de vela, varilla con remate y pantalla de chapa (ficha y foto de dominio público del Met, leídas el 02/10/2026 por su API abierta)"
+        },
+        {
+         "pieza": "Lampe bouillotte (bronce plateado y esmaltado)",
+         "fabricante": "Ruhlmann",
+         "disenador": "Émile-Jacques Ruhlmann",
+         "anio": "c. 1925",
+         "url": "https://www.invaluable.com/blog/bouillotte-lamps/",
+         "verificado": false,
+         "nota": "citada por la guía de Invaluable (venta Sotheby's 2008); pieza y año no verificados en fuente primaria"
+        }
+       ],
+       "no_confundir": "No es el abat-jour: la pantalla de la bouillotte es baja, de chapa opaca y reflectante por dentro, no una tela que filtra; y la fuente son velas en brazos bajo ella. Tampoco es el candelabro, que no tiene pantalla, ni la lámpara de banquero, de pantalla horizontal de vidrio.",
+       "sinonimos": "fr. lampe bouillotte · en. bouillotte lamp",
+       "fuente": "https://www.metmuseum.org/art/collection/search/206596"
       }
      ],
      "aplica": {
