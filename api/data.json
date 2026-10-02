@@ -62,7 +62,8 @@
    "estado_campo": "El `estado` de un campo es el del enunciado principal (`valor`), redactado editorialmente; lleva `+ conflicto` si algún registro de detalle está en conflicto (punto rojo en la rueda) y `+ desconocido` sólo si el enunciado principal es desconocido (bloque contorneado). Los desconocidos parciales quedan en `incertidumbre` y en `desconocido_parcial` (círculo vacío en la punta de la barra).",
    "importancia": "J asignada por campo con criterio editorial (no promedio ni suma de los J históricos). J4 = clave · J3 = determinante · J2 = relevante · J1 = contextual. Los J históricos siguen en `legacy`.",
    "detalle": "Cada registro de `detalle` es una afirmación o entidad atómica con sujeto, estado de evidencia, confianza, fuente y legacy_ids; `estado_proyecto` es un eje separado. `ref` enlaza a otros registros, campos o ítems.",
-   "estado_proyecto": "Dos niveles: definido (ya está decidido) · por_definir (falta decidirlo; es lo que el proceso de diseño tiene que resolver). Lo lleva cada campo, registro de detalle e ítem del Programa y se deriva con la regla de defs.v2.estados.proyecto_regla (desconocido o vacío → por_definir; si no, definido). La ficha visible muestra este estado; la evidencia (documentado · observado · inferido · interpretado · desconocido · conflicto) queda en la trazabilidad.",
+   "estado_proyecto": "Cuatro valores: incertidumbre (hay que resolverlo para avanzar) · hipotesis (la IA cree entenderlo; falta que la persona lo confirme) · definido (está decidido) · libre (queda abierto a propósito). Lo lleva cada campo, registro de detalle e ítem del Programa y se deriva con la regla de defs.v2.estados.proyecto_regla (desconocido o vacío → incertidumbre; evidencia principal inferido → hipotesis; si no, definido; libre sólo declarado). `por_definir` es alias legado de incertidumbre. La ficha visible muestra este estado; la evidencia (documentado · observado · inferido · interpretado · desconocido · conflicto) queda en la trazabilidad.",
+   "origen_validacion": "Ejes aparte del estado, en la trazabilidad: `origen` ∈ usuario · imagen · comparacion · ia (derivado sólo si es inequívoco, defs.v2.estados.origen_regla; si no, null) y `validado` (booleano, false por defecto: verdadero sólo si el diseñador lo confirmó).",
    "relaciones": "responde_a: campo → ítem de Programa (derivada de programa.*.vinculos) · define: campo → ítem de Identidad (derivada de identidad.*.links; el ancla es uno de los links) · permite / produce: campo → campo (explícitas). Nunca se deducen de tags; las cuerdas por tags son exploratorias.",
    "variantes": "Sin etiqueta = D66/42 EU. Otras: D66/42 US · D66/42 (ensayo 2011) · familia Hope."
   },
@@ -97,6 +98,8 @@
       }
      ],
      "seccion": "P1",
+     "origen": null,
+     "validado": false,
      "texto": "Crear un candelabro contemporáneo para Luceplan: una lámpara de gran presencia que celebre la luz sin ser un objeto decorativo.",
      "links": [
       "CO1-2"
@@ -128,6 +131,8 @@
       }
      ],
      "seccion": "P1",
+     "origen": null,
+     "validado": false,
      "texto": "Devolver a un ambiente la maravilla del candelabro —una luz brillante, multiplicada, imposible de ignorar— con un objeto liviano y actual.",
      "links": [
       "US3-1",
@@ -168,6 +173,8 @@
       }
      ],
      "seccion": "P2",
+     "origen": null,
+     "validado": false,
      "texto": "Tomar la esencia del candelabro y no su forma: multiplicar una fuente en cientos de reflejos y producir luz de fiesta con medios nuevos.",
      "links": [
       "HA4-2",
@@ -211,6 +218,8 @@
       }
      ],
      "seccion": "P2",
+     "origen": "ia",
+     "validado": false,
      "texto": "Liberar esa luz multiplicada del peso, el costo, la fragilidad y el montaje del cristal: usar la liviandad y la economía como lógica de toda solución.",
      "links": [
       "HA1-1",
@@ -250,6 +259,8 @@
       }
      ],
      "seccion": "P2",
+     "origen": null,
+     "validado": false,
      "texto": "Construir la lámpara con un solo módulo repetido —elementos fijos y una estructura variable— para que el mismo sistema genere una familia.",
      "links": [
       "HA1-2",
@@ -291,6 +302,8 @@
       }
      ],
      "seccion": "P3",
+     "origen": null,
+     "validado": false,
      "texto": "Mantener la fuente fuera de la línea de visión desde cualquier punto, aunque el volumen sea abierto.",
      "links": [
       "HA1-1",
@@ -325,6 +338,8 @@
       }
      ],
      "seccion": "P3",
+     "origen": null,
+     "validado": false,
      "texto": "Usar una fuente luminosa comercial y reemplazable, sin electrónica propia en la luminaria.",
      "links": [
       "HA4-1"
@@ -357,6 +372,8 @@
       }
      ],
      "seccion": "P3",
+     "origen": "usuario",
+     "validado": false,
      "texto": "Elegir una lámpara puntual o de filamento visible: con una fuente opal se pierde el destello que da sentido al objeto.",
      "links": [
       "HA4-1",
@@ -473,7 +490,9 @@
           "clave": "diámetro",
           "valor": "110",
           "unidad": "cm",
-          "variante": "D66/42 EU"
+          "variante": "D66/42 EU",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-1.d2",
@@ -493,7 +512,9 @@
           "clave": "altura",
           "valor": "66",
           "unidad": "cm",
-          "variante": "D66/42 EU"
+          "variante": "D66/42 EU",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-1.d3",
@@ -516,7 +537,9 @@
           "variante": "D66/42 EU",
           "ref": [
            "US1-2.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-1.d4",
@@ -531,7 +554,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-1.d5",
@@ -544,13 +569,15 @@
           "legacy_ids": [
            "O4-3"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
           "clave": "Ø/h",
           "valor": "1,67",
           "unidad": "razón",
-          "variante": "D66/42 EU · familia Hope"
+          "variante": "D66/42 EU · familia Hope",
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA1-1.d6",
@@ -569,7 +596,9 @@
           "ref": [
            "HA4-2.d5",
            "P3-1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-1.d7",
@@ -587,7 +616,9 @@
           "desconocido": false,
           "ref": [
            "HA1-2.d5"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA1-1.d9",
@@ -607,7 +638,9 @@
           "clave": "Ø / peso",
           "valor": "48–200 / 1,5–16,1",
           "unidad": "cm / kg",
-          "variante": "familia Hope"
+          "variante": "familia Hope",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-1.d8",
@@ -626,7 +659,9 @@
           "clave": "peso",
           "valor": "7 (US: 3 lb)",
           "unidad": "kg",
-          "variante": "D66/42 EU · US"
+          "variante": "D66/42 EU · US",
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A1.1",
@@ -636,6 +671,8 @@
         "desconocido": false,
         "conflicto": true,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 1,
@@ -694,7 +731,9 @@
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU",
-          "entidad": "E-modulo"
+          "entidad": "E-modulo",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-2.d2",
@@ -711,7 +750,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "variante": "D66/42 EU"
+          "variante": "D66/42 EU",
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA1-2.d3",
@@ -726,11 +767,13 @@
            "O4-4",
            "O6-5"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU",
-          "nota": "No presentar como documentado."
+          "nota": "No presentar como documentado.",
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA1-2.d4",
@@ -747,7 +790,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "entidad": "E-modulo"
+          "entidad": "E-modulo",
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA1-2.d5",
@@ -767,7 +812,9 @@
           "ref": [
            "P3-1",
            "HA4-2.d5"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA1-2.d6",
@@ -782,7 +829,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-2.d7",
@@ -797,7 +846,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-2.d8",
@@ -812,7 +863,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA1-2.d9",
@@ -835,7 +888,9 @@
            "HA2-2.d2",
            "HA2-2.d5",
            "HA4-1.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-2.d11",
@@ -855,7 +910,9 @@
           "clave": "módulos",
           "valor": "3–105",
           "unidad": "unidades",
-          "variante": "familia Hope"
+          "variante": "familia Hope",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-2.d12",
@@ -875,7 +932,9 @@
           "clave": "kits",
           "valor": "17",
           "unidad": "kits",
-          "variante": "familia Hope"
+          "variante": "familia Hope",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA1-2.d10",
@@ -896,7 +955,9 @@
           "ref": [
            "IF3",
            "IV1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A1.2",
@@ -906,6 +967,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -983,7 +1046,9 @@
           ],
           "ref": [
            "HA2-1.x1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p2",
@@ -1008,7 +1073,9 @@
            "posicionar",
            "orientar",
            "enganchar"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p3",
@@ -1033,7 +1100,9 @@
            "refractar",
            "multiplicar",
            "apantallar"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p4",
@@ -1058,7 +1127,9 @@
            "refractar",
            "multiplicar",
            "apantallar"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p5",
@@ -1082,7 +1153,9 @@
           "funciones": [
            "colgar",
            "regular altura"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p6",
@@ -1105,7 +1178,9 @@
           "funciones": [
            "anclar",
            "conectar"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p7",
@@ -1127,7 +1202,9 @@
           "subsistema": "suspensión",
           "funciones": [
            "sostener"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p8",
@@ -1149,7 +1226,9 @@
           "subsistema": "estructura y fuentes",
           "funciones": [
            "conducir electricidad"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p9",
@@ -1173,7 +1252,9 @@
            "alojar la fuente",
            "conducir electricidad"
           ],
-          "variante": "D66/42 EU"
+          "variante": "D66/42 EU",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p10",
@@ -1199,7 +1280,9 @@
           ],
           "ref": [
            "HA4-1.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.p11",
@@ -1221,7 +1304,9 @@
           "subsistema": "kit",
           "funciones": [
            "proteger las hojas al manipular"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.s1",
@@ -1238,7 +1323,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "entidad": "E-modulo"
+          "entidad": "E-modulo",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-1.s2",
@@ -1251,9 +1338,11 @@
           "legacy_ids": [
            "O5-2"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA2-1.a1",
@@ -1268,7 +1357,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA2-1.x1",
@@ -1281,10 +1372,12 @@
           "legacy_ids": [
            "O7-6"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
           "desconocido": true,
-          "entidad": "E-estructura"
+          "entidad": "E-estructura",
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A2.1",
@@ -1294,6 +1387,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -1350,7 +1445,9 @@
           "entidad": "E-hoja-grande",
           "ref": [
            "HA3-1.u1"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-2.d2",
@@ -1371,7 +1468,9 @@
           "clave": "espesor",
           "valor": "0,8",
           "unidad": "mm",
-          "entidad": "E-hoja-grande"
+          "entidad": "E-hoja-grande",
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-2.d3",
@@ -1390,7 +1489,9 @@
           "clave": "largo",
           "valor": "≈25",
           "unidad": "cm",
-          "entidad": "E-hoja-grande"
+          "entidad": "E-hoja-grande",
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-2.d4",
@@ -1409,7 +1510,9 @@
           "clave": "largo",
           "valor": "≈10",
           "unidad": "cm",
-          "entidad": "E-hoja-chica"
+          "entidad": "E-hoja-chica",
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-2.d5",
@@ -1431,7 +1534,9 @@
           "unidad": "cm",
           "ref": [
            "HA3-2.d3"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-2.d6",
@@ -1451,7 +1556,9 @@
           "desconocido": false,
           "ref": [
            "HA4-2.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-2.d7",
@@ -1467,7 +1574,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "entidad": "E-brazo"
+          "entidad": "E-brazo",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-2.d8",
@@ -1487,7 +1596,9 @@
           "entidad": "E-estructura",
           "ref": [
            "HA2-3.d5"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-2.x1",
@@ -1500,9 +1611,11 @@
           "legacy_ids": [
            "O7-7"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
-          "desconocido": true
+          "desconocido": true,
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A2.2",
@@ -1512,6 +1625,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -1569,7 +1684,9 @@
           "desconocido": false,
           "entidad": "E-hoja-grande",
           "epoca": "2023–2026",
-          "nota": "No fecha el cambio ni prueba el material de cada ejemplar D66/42."
+          "nota": "No fecha el cambio ni prueba el material de cada ejemplar D66/42.",
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-3.d2",
@@ -1586,7 +1703,9 @@
           "conflicto": false,
           "desconocido": false,
           "entidad": "E-hoja-grande",
-          "epoca": "2009–2013 (y catálogo 2022/23)"
+          "epoca": "2009–2013 (y catálogo 2022/23)",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.d3",
@@ -1606,7 +1725,9 @@
           "nota": "Pendiente: fecha del cambio. No tratar como conflicto irresoluble ni como material atemporal.",
           "ref": [
            "HA2-3.x1"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA2-3.d4",
@@ -1623,7 +1744,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "entidad": "E-brazo"
+          "entidad": "E-brazo",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.d5",
@@ -1641,7 +1764,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "entidad": "E-estructura"
+          "entidad": "E-estructura",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.d6",
@@ -1657,7 +1782,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "entidad": "E-floron"
+          "entidad": "E-floron",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.d7",
@@ -1672,7 +1799,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.d8",
@@ -1691,7 +1820,9 @@
           "entidad": "E-hoja-grande",
           "ref": [
            "HA2-3.x1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.d9",
@@ -1710,7 +1841,9 @@
           "ref": [
            "PA-1",
            "HA2-2.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.d10",
@@ -1729,7 +1862,9 @@
           "ref": [
            "CO2-1.d5",
            "CO3-1.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA2-3.x1",
@@ -1742,9 +1877,11 @@
           "legacy_ids": [
            "O7-1"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
-          "desconocido": true
+          "desconocido": true,
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A2.3",
@@ -1754,6 +1891,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -1827,7 +1966,9 @@
            "E-brazo"
           ],
           "mecanismo": "encastre por ranura",
-          "separable": true
+          "separable": true,
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA3-1.u2",
@@ -1854,7 +1995,9 @@
           "ref": [
            "HA3-2.d4",
            "HA3-2.d6"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA3-1.u3",
@@ -1875,7 +2018,9 @@
            "E-floron"
           ],
           "mecanismo": "cables tensores",
-          "separable": true
+          "separable": true,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA3-1.u4",
@@ -1897,7 +2042,9 @@
            "techo"
           ],
           "mecanismo": "tornillos + conexión eléctrica",
-          "separable": true
+          "separable": true,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA3-1.u5",
@@ -1919,7 +2066,9 @@
           ],
           "mecanismo": "rosca",
           "separable": true,
-          "variante": "D66/42 EU"
+          "variante": "D66/42 EU",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA3-1.u6",
@@ -1938,7 +2087,9 @@
           "ref": [
            "US2-1.d3",
            "US2-2.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA3-1.a1",
@@ -1957,7 +2108,9 @@
           "desconocido": false,
           "ref": [
            "HA3-1.u4"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA3-1.x1",
@@ -1970,10 +2123,12 @@
           "legacy_ids": [
            "O7-6"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
           "desconocido": true,
-          "entidad": "E-estructura"
+          "entidad": "E-estructura",
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A3.1",
@@ -1983,6 +2138,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -2032,10 +2189,12 @@
           "legacy_ids": [
            "O5-5"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
-          "clave": "carga"
+          "clave": "carga",
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA3-2.d2",
@@ -2055,7 +2214,9 @@
           "clave": "electricidad",
           "ref": [
            "HA4-1.d4"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA3-2.d3",
@@ -2075,7 +2236,9 @@
           "entidad": "E-hoja-grande",
           "ref": [
            "HA2-2.d5"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA3-2.d4",
@@ -2091,7 +2254,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "entidad": "E-brazo"
+          "entidad": "E-brazo",
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA3-2.d5",
@@ -2110,7 +2275,9 @@
           "entidad": "E-estructura",
           "ref": [
            "HA3-1.x1"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA3-2.d6",
@@ -2128,7 +2295,9 @@
           "desconocido": false,
           "ref": [
            "US2-1.d6"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "HA3-2.d7",
@@ -2143,7 +2312,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA3-2.d8",
@@ -2156,12 +2327,14 @@
           "legacy_ids": [
            "O5-5"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
           "ref": [
            "HA4-2.d3"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          }
         ],
         "code": "A3.2",
@@ -2170,7 +2343,9 @@
         "extra": [],
         "desconocido": false,
         "conflicto": false,
-        "estado_proyecto": "definido",
+        "estado_proyecto": "hipotesis",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -2239,7 +2414,9 @@
           "desconocido": false,
           "entidad": "E-lampara",
           "cantidad": 3,
-          "variante": "D66/42 EU"
+          "variante": "D66/42 EU",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d2",
@@ -2255,7 +2432,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "variante": "D66/42 US"
+          "variante": "D66/42 US",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d3",
@@ -2272,7 +2451,9 @@
           "conflicto": false,
           "desconocido": false,
           "variante": "D66/42 EU",
-          "epoca": "2009–2026"
+          "epoca": "2009–2026",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d4",
@@ -2287,7 +2468,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d5",
@@ -2303,7 +2486,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d6",
@@ -2322,7 +2507,9 @@
           "desconocido": false,
           "ref": [
            "US2-2.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d7",
@@ -2337,7 +2524,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d8",
@@ -2357,7 +2546,9 @@
           "variante": "D66/42 (ensayo 2011)",
           "ref": [
            "HA4-3.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d10",
@@ -2376,7 +2567,9 @@
           "clave": "fuentes",
           "valor": "1–5",
           "unidad": "unidades",
-          "variante": "familia Hope"
+          "variante": "familia Hope",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d11",
@@ -2393,7 +2586,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "variante": "familia Hope"
+          "variante": "familia Hope",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-1.d9",
@@ -2412,7 +2607,9 @@
           "ref": [
            "US3-2.d1",
            "P3-3"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          }
         ],
         "code": "A4.1",
@@ -2422,6 +2619,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -2480,7 +2679,9 @@
           "entidad": "E-hoja-grande",
           "ref": [
            "HA2-2.d6"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-2.d2",
@@ -2499,7 +2700,9 @@
           "ref": [
            "CO2-2.d6",
            "US3-1.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-2.d3",
@@ -2513,9 +2716,11 @@
            "O8-6",
            "O5-5"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA4-2.d4",
@@ -2533,7 +2738,9 @@
           "desconocido": false,
           "ref": [
            "HA4-3.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-2.d5",
@@ -2555,7 +2762,9 @@
            "P3-1",
            "HA1-2.d5",
            "HA1-2.d4"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-2.d6",
@@ -2573,7 +2782,9 @@
           "desconocido": false,
           "ref": [
            "US3-2.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-2.x1",
@@ -2586,9 +2797,11 @@
           "legacy_ids": [
            "O8-7"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
-          "desconocido": true
+          "desconocido": true,
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A4.2",
@@ -2598,6 +2811,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -2656,7 +2871,9 @@
           "unidad": "lm",
           "condicion": "IES 16-02-2011 · 3 × 23 W CFL E27 · 1.500 lm c/u",
           "variante": "D66/42 (ensayo 2011)",
-          "entidad": "E-ensayo-ies-2011"
+          "entidad": "E-ensayo-ies-2011",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-3.d2",
@@ -2678,7 +2895,9 @@
           "unidad": "%",
           "condicion": "IES 2011 · 3 × 23 W CFL",
           "variante": "D66/42 (ensayo 2011)",
-          "entidad": "E-ensayo-ies-2011"
+          "entidad": "E-ensayo-ies-2011",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-3.d3",
@@ -2699,7 +2918,9 @@
           "unidad": "cd",
           "condicion": "IES 2011 · 3 × 23 W CFL",
           "variante": "D66/42 (ensayo 2011)",
-          "entidad": "E-ensayo-ies-2011"
+          "entidad": "E-ensayo-ies-2011",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-3.d4",
@@ -2715,7 +2936,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "variante": "familia Hope"
+          "variante": "familia Hope",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-3.d5",
@@ -2728,9 +2951,11 @@
           "legacy_ids": [
            "U3-4"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "HA4-3.d6",
@@ -2748,7 +2973,9 @@
           "desconocido": false,
           "ref": [
            "HA4-1.d7"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "HA4-3.x1",
@@ -2761,9 +2988,11 @@
           "legacy_ids": [
            "O8-2"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
-          "desconocido": true
+          "desconocido": true,
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "A4.3",
@@ -2773,6 +3002,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 1,
          "conflictos": 0,
@@ -2844,9 +3075,11 @@
           "legacy_ids": [
            "U1-4"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "US1-1.d2",
@@ -2864,7 +3097,9 @@
           "desconocido": false,
           "ref": [
            "US3-2.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US1-1.d3",
@@ -2877,9 +3112,11 @@
           "legacy_ids": [
            "U1-3"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          }
         ],
         "code": "B1.1",
@@ -2888,7 +3125,9 @@
         "extra": [],
         "desconocido": false,
         "conflicto": false,
-        "estado_proyecto": "definido",
+        "estado_proyecto": "hipotesis",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -2937,7 +3176,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US1-2.d2",
@@ -2952,7 +3193,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US1-2.d3",
@@ -2974,7 +3217,9 @@
           "unidad": "cm",
           "ref": [
            "HA1-1.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US1-2.d4",
@@ -2987,12 +3232,14 @@
           "legacy_ids": [
            "U1-2"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
           "ref": [
            "CO2-2.d5"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          }
         ],
         "code": "B1.2",
@@ -3002,6 +3249,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3071,7 +3320,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "actor": "usuario"
+          "actor": "usuario",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-1.d2",
@@ -3090,7 +3341,9 @@
           "actor": "electricista",
           "ref": [
            "HA3-1.u4"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-1.d3",
@@ -3110,7 +3363,9 @@
           "actor": "cliente",
           "ref": [
            "HA3-1.u6"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-1.d4",
@@ -3127,7 +3382,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "actor": "usuario"
+          "actor": "usuario",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-1.d5",
@@ -3144,7 +3401,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "actor": "usuario"
+          "actor": "usuario",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-1.d6",
@@ -3163,7 +3422,9 @@
           "actor": "usuario",
           "ref": [
            "HA3-2.d6"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "US2-1.d7",
@@ -3182,7 +3443,9 @@
           "actor": "usuario",
           "ref": [
            "DOC-9"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "US2-1.d8",
@@ -3200,7 +3463,9 @@
           "desconocido": false,
           "ref": [
            "HA3-2.d7"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "B2.1",
@@ -3210,6 +3475,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3264,7 +3531,9 @@
           "desconocido": false,
           "ref": [
            "HA4-1.d6"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-2.d2",
@@ -3283,7 +3552,9 @@
           "ref": [
            "HA3-1.u1",
            "HA3-1.u2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-2.d3",
@@ -3296,9 +3567,11 @@
           "legacy_ids": [
            "U2-3"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "US2-2.d4",
@@ -3313,7 +3586,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-2.d5",
@@ -3328,7 +3603,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US2-2.d6",
@@ -3341,9 +3618,11 @@
           "legacy_ids": [
            "U4-2"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "ia",
+          "validado": false
          }
         ],
         "code": "B2.2",
@@ -3353,6 +3632,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3421,7 +3702,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-1.d2",
@@ -3436,7 +3719,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-1.d3",
@@ -3454,7 +3739,9 @@
           "desconocido": false,
           "ref": [
            "HA4-2.d2"
-          ]
+          ],
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "US3-1.d4",
@@ -3472,7 +3759,9 @@
           "desconocido": false,
           "ref": [
            "CO2-2.d8"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-1.d5",
@@ -3485,12 +3774,14 @@
           "legacy_ids": [
            "U3-2"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
           "ref": [
            "HA4-3.d1"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "US3-1.d6",
@@ -3505,7 +3796,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "B3.1",
@@ -3515,6 +3808,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -3575,7 +3870,9 @@
           "ref": [
            "HA4-1.d9",
            "HA4-2.d5"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "US3-2.d2",
@@ -3591,7 +3888,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "US3-2.d3",
@@ -3610,7 +3909,9 @@
           "ref": [
            "HA4-2.d6",
            "P3-1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-2.d4",
@@ -3623,12 +3924,14 @@
           "legacy_ids": [
            "U3-4"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
           "ref": [
            "HA4-3.d5"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "US3-2.d5",
@@ -3647,7 +3950,9 @@
           "desconocido": false,
           "ref": [
            "HA2-3.d3"
-          ]
+          ],
+          "origen": "usuario",
+          "validado": false
          },
          {
           "id": "US3-2.d6",
@@ -3663,7 +3968,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-2.d7",
@@ -3678,7 +3985,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-2.d8",
@@ -3691,9 +4000,11 @@
           "legacy_ids": [
            "O7-8"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
-          "desconocido": true
+          "desconocido": true,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-2.d9",
@@ -3706,12 +4017,14 @@
           "legacy_ids": [
            "U4-6"
           ],
-          "estado_proyecto": "por_definir",
+          "estado_proyecto": "incertidumbre",
           "conflicto": false,
           "desconocido": true,
           "ref": [
            "DOC-10"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "US3-2.d10",
@@ -3724,12 +4037,14 @@
           "legacy_ids": [
            "U3-2"
           ],
-          "estado_proyecto": "definido",
+          "estado_proyecto": "hipotesis",
           "conflicto": false,
           "desconocido": false,
           "ref": [
            "US3-1.d5"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          }
         ],
         "code": "B3.2",
@@ -3739,6 +4054,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 2,
          "conflictos": 0,
@@ -3813,7 +4130,9 @@
           "ref": [
            "HA3-1.u4",
            "US1-2.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO1-1.d2",
@@ -3833,7 +4152,9 @@
           "ref": [
            "IF1",
            "IV3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          }
         ],
         "tipologia": {
@@ -4130,6 +4451,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -4183,7 +4506,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "atribucion": "marca y autores"
+          "atribucion": "marca y autores",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO1-2.d2",
@@ -4199,7 +4524,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "atribucion": "autores y marca"
+          "atribucion": "autores y marca",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO1-2.d3",
@@ -4218,7 +4545,9 @@
           "ref": [
            "CO3-1.d1",
            "CO3-1.d3"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "CO1-2.d4",
@@ -4237,7 +4566,9 @@
           "atribucion": "autores",
           "ref": [
            "P2-1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO1-2.d5",
@@ -4253,7 +4584,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "atribucion": "autores"
+          "atribucion": "autores",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO1-2.d6",
@@ -4268,7 +4601,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO1-2.d7",
@@ -4283,7 +4618,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": null,
+          "validado": false
          }
         ],
         "arquetipo": {
@@ -4558,6 +4895,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -4633,7 +4972,9 @@
           "atribucion": "marca + observación",
           "ref": [
            "CO2-2.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO2-1.d2",
@@ -4652,7 +4993,9 @@
           "atribucion": "autor + observación",
           "ref": [
            "CO2-2.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO2-1.d3",
@@ -4670,7 +5013,9 @@
           "desconocido": false,
           "ref": [
            "CO2-2.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO2-1.d4",
@@ -4687,7 +5032,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "atribucion": "interpretación con cita de autor"
+          "atribucion": "interpretación con cita de autor",
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "CO2-1.d5",
@@ -4706,7 +5053,9 @@
           "atribucion": "estudio",
           "ref": [
            "HA2-3.d10"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO2-1.d6",
@@ -4721,7 +5070,9 @@
           ],
           "estado_proyecto": "definido",
           "conflicto": false,
-          "desconocido": false
+          "desconocido": false,
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "CO2-1.d7",
@@ -4740,7 +5091,9 @@
           "ref": [
            "HA4-2.d2",
            "US3-1.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "C2.1",
@@ -4750,6 +5103,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -4811,7 +5166,9 @@
            "HA2-2.d2",
            "HA2-3.d7",
            "CO2-1.d1"
-          ]
+          ],
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "CO2-2.d2",
@@ -4830,7 +5187,9 @@
           "ref": [
            "HA1-1.d6",
            "CO2-1.d2"
-          ]
+          ],
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "CO2-2.d3",
@@ -4849,7 +5208,9 @@
           "ref": [
            "HA1-2.d1",
            "CO2-1.d3"
-          ]
+          ],
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "CO2-2.d4",
@@ -4869,7 +5230,9 @@
           "ref": [
            "HA3-1.u1",
            "CO2-1.d4"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO2-2.d5",
@@ -4887,7 +5250,9 @@
           "desconocido": false,
           "ref": [
            "US1-2.d4"
-          ]
+          ],
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "CO2-2.d6",
@@ -4906,7 +5271,9 @@
           "ref": [
            "HA4-2.d5",
            "CO3-1.d7"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO2-2.d7",
@@ -4925,7 +5292,9 @@
           "ref": [
            "HA4-1.d1",
            "HA4-2.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO2-2.d8",
@@ -4943,7 +5312,9 @@
           "desconocido": false,
           "ref": [
            "US3-1.d4"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "C2.2",
@@ -4953,6 +5324,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
@@ -5028,7 +5401,9 @@
           "atribucion": "marca (Luceplan)",
           "ref": [
            "CO3-2.d1"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-1.d2",
@@ -5049,7 +5424,9 @@
           "atribucion": "estudio (autores)",
           "ref": [
            "CO3-2.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-1.d3",
@@ -5071,7 +5448,9 @@
           "ref": [
            "CO3-2.d3",
            "PA-2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-1.d4",
@@ -5091,7 +5470,9 @@
           "atribucion": "interpretación",
           "ref": [
            "CO3-2.d4"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          },
          {
           "id": "CO3-1.d5",
@@ -5112,7 +5493,9 @@
           "ref": [
            "CO3-2.d5",
            "P1-2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-1.d6",
@@ -5128,7 +5511,9 @@
           "estado_proyecto": "definido",
           "conflicto": false,
           "desconocido": false,
-          "atribucion": "interpretación con voz de marca"
+          "atribucion": "interpretación con voz de marca",
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-1.d7",
@@ -5148,7 +5533,9 @@
            "HA4-2.d5",
            "P3-1",
            "LEGACY-say"
-          ]
+          ],
+          "origen": "ia",
+          "validado": false
          }
         ],
         "code": "C3.1",
@@ -5158,6 +5545,8 @@
         "desconocido": false,
         "conflicto": true,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 1,
@@ -5214,7 +5603,9 @@
            "HA2-2.d1",
            "HA1-2.d2",
            "CO3-1.d1"
-          ]
+          ],
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "CO3-2.d2",
@@ -5235,7 +5626,9 @@
            "HA2-3.d7",
            "US3-1.d3",
            "CO3-1.d2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-2.d3",
@@ -5255,7 +5648,9 @@
           "atribucion": "autores",
           "ref": [
            "CO3-1.d3"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-2.d4",
@@ -5275,7 +5670,9 @@
           "ref": [
            "CO2-2.d5",
            "CO3-1.d4"
-          ]
+          ],
+          "origen": "imagen",
+          "validado": false
          },
          {
           "id": "CO3-2.d5",
@@ -5296,7 +5693,9 @@
            "CO1-2.d1",
            "HA4-2.d2",
            "CO3-1.d5"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          },
          {
           "id": "CO3-2.d6",
@@ -5315,7 +5714,9 @@
           "atribucion": "autores",
           "ref": [
            "PA-2"
-          ]
+          ],
+          "origen": null,
+          "validado": false
          }
         ],
         "code": "C3.2",
@@ -5325,6 +5726,8 @@
         "desconocido": false,
         "conflicto": false,
         "estado_proyecto": "definido",
+        "origen": null,
+        "validado": false,
         "incertidumbre": {
          "desconocidos": 0,
          "conflictos": 0,
