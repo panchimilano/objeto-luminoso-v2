@@ -104,7 +104,7 @@
     {
      "id": "P1-2",
      "enunciado": "Devolver a un ambiente la maravilla del candelabro —una luz brillante, multiplicada, imposible de ignorar— con un objeto liviano y actual.",
-     "desarrollo": "Fija el resultado de uso que se persigue: espectáculo luminoso y presencia escultórica antes que luz de tarea (Qué tiene que lograr), y los valores de celebración y maravilla que la pieza debe sugerir (Asociaciones y valores).",
+     "desarrollo": "Fija el resultado de uso que se persigue: espectáculo luminoso y presencia escultórica antes que luz de tarea (Efecto buscado), y los valores de celebración y maravilla que la pieza debe sugerir (Asociaciones y valores).",
      "testimonio": "Recuperar la maravilla del candelabro —«muy brillante, imposible no verla»— con un objeto liviano y moderno.",
      "procedencia": "testimonio autoral posterior",
      "estado": "documentado (autores)",
@@ -332,7 +332,7 @@
     {
      "id": "P3-3",
      "enunciado": "Elegir una lámpara puntual o de filamento visible: con una fuente opal se pierde el destello que da sentido al objeto.",
-     "desarrollo": "Define la fuente recomendada (Fuente y alimentación) y las condiciones para que el efecto ocurra (Qué no puede fallar). La elección de la fuente debe preservar el destello: su tamaño y su distribución luminosa forman parte del proyecto óptico.",
+     "desarrollo": "Define la fuente recomendada (Fuente y alimentación) y las condiciones para que el efecto ocurra (Condiciones del efecto). La elección de la fuente debe preservar el destello: su tamaño y su distribución luminosa forman parte del proyecto óptico.",
      "testimonio": "Para que el efecto ocurra, la lámpara debe ser puntual o de filamento visible: con LED opal se pierde el destello.",
      "procedencia": "testimonio autoral 2026 (posterior al desarrollo; condición de uso, no requisito original de 2009)",
      "estado": "documentado (Fran)",
@@ -3376,7 +3376,7 @@
       "fields": [
        {
         "id": "US3-1",
-        "name": "Qué tiene que lograr",
+        "name": "Efecto buscado",
         "importancia": "J3",
         "titular": "",
         "valor": "Luz general de ambiente para estar, comer y conversar, repartida hacia techo y piso, y sobre todo espectáculo: cientos de destellos con irisaciones que cambian al moverse, «imposible no verla»; apagada, una presencia escultórica. El alcance de 20–40 m² es una estimación, no una prestación",
@@ -3509,7 +3509,7 @@
         ],
         "code": "B3.1",
         "def": "Registra la contribución del objeto a la actividad o a la situación: hacer visible una superficie, acompañar una estancia, orientar un recorrido, destacar un objeto, crear una zona de luz, permitir reconfiguración o aportar una experiencia luminosa concreta.",
-        "pregunta": "¿Qué quiero que logre en quien la usa?",
+        "pregunta": "¿Qué quiero que provoque en quien la usa?",
         "extra": [],
         "estado_proyecto": null,
         "desconocido": false,
@@ -3524,7 +3524,7 @@
        },
        {
         "id": "US3-2",
-        "name": "Qué no puede fallar",
+        "name": "Condiciones del efecto",
         "importancia": "J2",
         "titular": "",
         "valor": "El efecto depende de la lámpara (fuente puntual o de filamento visible; con LED opal se pierde destello) y de la geometría intacta; el confort visual no está medido; las hojas se rompen con maltrato y se limpian sólo con pH neutro; inclinación máxima 30°; envejecimiento del plástico y fin de ciclo sin datos",
@@ -3733,7 +3733,7 @@
         ],
         "code": "B3.2",
         "def": "Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas.",
-        "pregunta": "¿Qué condiciones tiene que respetar?",
+        "pregunta": "¿Qué tiene que pasar para que ese efecto ocurra?",
         "extra": [],
         "estado_proyecto": null,
         "desconocido": false,
