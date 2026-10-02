@@ -124,5 +124,55 @@
   "mtime": "2026-10-02T03:00",
   "carpeta": "01 · Fichas",
   "schema": "ool-v2.0"
+ },
+ {
+  "id": "Lucio Spiral — Vibia",
+  "objeto": "Lucio — Spiral (declinación espiral)",
+  "nombre": "Lucio — Spiral",
+  "codigo": "",
+  "empresa": "Vibia",
+  "disenadores": [
+   "Francisco Gómez Paz"
+  ],
+  "anio": "en desarrollo (2023–2026)",
+  "existe": false,
+  "estado_ficha": "proyecto",
+  "titulares": [
+   "Una sola S de luz",
+   "La luz de un abat-jour estirada en una línea",
+   "El peso que ordena"
+  ],
+  "dibujo": "lucio-spiral-dibujo.jpg",
+  "foto": "lucio-spiral-foto.jpg",
+  "campos": 22,
+  "desconocidos": 46,
+  "mtime": "2026-10-02T04:30",
+  "carpeta": "01 · Fichas",
+  "schema": "ool-v2.0"
+ },
+ {
+  "id": "Mayfair — Vibia",
+  "objeto": "Mayfair 5505 (mesa)",
+  "nombre": "Mayfair",
+  "codigo": "5505",
+  "empresa": "Vibia",
+  "disenadores": [
+   "Diego Fortunato"
+  ],
+  "anio": 2016,
+  "existe": true,
+  "estado_ficha": "definitiva",
+  "titulares": [
+   "Una varilla que atraviesa la pantalla",
+   "Dos capas de luz",
+   "Una bouillotte sin velas"
+  ],
+  "dibujo": "",
+  "foto": "mayfair-foto.jpg",
+  "campos": 22,
+  "desconocidos": 7,
+  "mtime": "2026-10-02T05:30",
+  "carpeta": "01 · Fichas",
+  "schema": "ool-v2.0"
  }
 ]
