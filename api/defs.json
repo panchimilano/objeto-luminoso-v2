@@ -481,8 +481,8 @@
    },
    "US3-1": {
     "code": "B3.1",
-    "nombre": "Aporte al uso",
-    "pregunta": "¿Qué permite, facilita o aporta esta lámpara?",
+    "nombre": "Qué tiene que lograr",
+    "pregunta": "¿Qué quiero que logre en quien la usa?",
     "que_es": "Registra la contribución del objeto a la actividad o a la situación: hacer visible una superficie, acompañar una estancia, orientar un recorrido, destacar un objeto, crear una zona de luz, permitir reconfiguración o aportar una experiencia luminosa concreta.",
     "incluye": [
      "resultados funcionales y experienciales de uso"
@@ -497,8 +497,8 @@
    },
    "US3-2": {
     "code": "B3.2",
-    "nombre": "Condiciones y límites relevantes",
-    "pregunta": "¿Qué debe cumplirse para obtener ese aporte y qué limita su utilización?",
+    "nombre": "Qué no puede fallar",
+    "pregunta": "¿Qué condiciones tiene que respetar?",
     "que_es": "Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas.",
     "incluye": [
      "condiciones de uso y límites reales"
