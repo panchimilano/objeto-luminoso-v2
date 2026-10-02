@@ -165,7 +165,7 @@ textarea:focus{outline:2px solid #d9d3c4}
 .det .t{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .det .m{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:3px;line-height:1.7}
 .det .m a{cursor:pointer;color:inherit}.det .m a:hover{text-decoration:underline}
-.det.hl{background:rgba(0,0,0,.05);border-radius:6px;padding:8px 6px}
+.det.hl,.sec.hl{background:rgba(0,0,0,.05);border-radius:6px;padding:8px 6px}
 .pitem{padding:9px 0;border-bottom:1px dashed var(--line);cursor:pointer;font-size:13.5px;line-height:1.5}
 .pitem:hover{background:rgba(0,0,0,.03)}
 .pitem small{display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:3px}
@@ -311,7 +311,7 @@ function render(){
     el('path',{d:arcPath(G.RPH-3,a0,a1),fill:'none',stroke:'var(--ink)','stroke-width':1.2,'stroke-opacity':.35},g);
     const t=el('text',{class:'clabel','dominant-baseline':'central',style:'font-size:10.5px;letter-spacing:.16em;fill-opacity:.9;pointer-events:auto'},g);
     const tp=el('textPath',{href:'#pp-'+k,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lbl;
-    g.addEventListener('click',e=>{e.stopPropagation();openProgram(k)});g.addEventListener('keydown',e=>KEY(e,()=>openProgram(k)));
+    g.addEventListener('click',e=>{e.stopPropagation();openProgramPart(k)});g.addEventListener('keydown',e=>KEY(e,()=>openProgramPart(k)));
   });
   // halo: proyección de la importancia, por zona con su tono, desenfocada
   const halo=el('g',{class:'halo',filter:'url(#blur)',opacity:TH().halo},svg);
@@ -552,12 +552,14 @@ function traceP(P){return `<details class="trace"><summary>Trazabilidad · orige
       <div class="sec"><div class="kicker">Historia del proceso · fuera del programa</div>${(P.antecedentes||[]).map(a=>`<div class="det" id="det-${a.id}"><span class="t">${a.id}</span>${esc(a.texto)}<div class="m">${esc(a.estado)} · ${esc(a.fuente)}${(a.legacy_ids||[]).length?' · '+lpills(a.legacy_ids):''}${(a.ref||[]).map(r=>` · <a onclick="goRef('${r}')">→ ${r}</a>`).join('')}</div></div>`).join('')}</div>
       ${imgNote()}<div class="rel"><a onclick="openDocs()">Documentación de producto · ${(DATA[V].documentacion||[]).length} →</a></div></details>`}
 function openProgram(hl){const P=DATA[V].programa||{},MV=metaOf(V);const n=new Set(REL().filter(r=>r.type==='responde_a').map(r=>r.from)).size;
-  const sec=(key,code)=>`<div class="sec"><div class="kicker">${esc(PSEC[code])}</div>${(P[key]||[]).map(it=>`<div class="pitem" onclick="openPItem('${it.id}')"><span class="e">${esc(it.enunciado||it.texto)}</span><span class="w">${esc(it.desarrollo||'')}</span><small>${it.id} · ${(it.links||[]).length} categorías responden</small></div>`).join('')}</div>`;
+  const sec=(key,code)=>`<div class="sec" id="psec-${key}"><div class="kicker">${esc(PSEC[code])}</div>${(P[key]||[]).map(it=>`<div class="pitem" onclick="openPItem('${it.id}')"><span class="e">${esc(it.enunciado||it.texto)}</span><span class="w">${esc(it.desarrollo||'')}</span><small>${it.id} · ${(it.links||[]).length} categorías responden</small></div>`).join('')}</div>`;
   showCard(`<div class="kicker">Programa proyectual · <b>reconstrucción para proyectar</b></div><div class="hrow"><h2>${esc(MV.title)}</h2>${helpBtn('program','programa')}</div><div class="q">${esc((V2().programa||{}).pregunta||'')}</div>
     ${sec('proposito','P1')}${sec('principios','P2')}${sec('condiciones','P3')}
     <div class="sec"><div class="kicker">Relaciones</div><div class="human"><p>${n} categorías responden al programa. Elegí un enunciado para ver cuáles y con qué tipo de relación; las líneas se dibujan sólo por selección.</p></div></div>
     ${traceP(P)}`,'#center-lbl');
   if(hl){const d=$('#cardBody details');if(d)d.open=true;const e=document.getElementById('det-'+hl);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'center'}),30)}}}
+// arco del centro → su parte del Programa (Propósito / Principios / Condiciones), sin abrir la trazabilidad
+function openProgramPart(k){openProgram();const e=document.getElementById('psec-'+k);if(e){e.classList.add('hl');setTimeout(()=>e.scrollIntoView({block:'start'}),30)}}
 function openPItem(id){const it=pitemById(id);if(!it||!it.seccion)return openProgram(id);const code=it.seccion,pd=((V2().programa||{}).partes||{})[code]||{};const rels=REL().filter(r=>r.type==='responde_a'&&r.to===id);
   showCard(`<div class="kicker">Programa · <b>${esc(PSEC[code])}</b> · ${id}</div><div class="hrow"><h2>${esc(PSEC[code])}</h2>${helpBtn('pitem',code)}</div><div class="q">${esc(pd.pregunta||'')}</div>
     <div class="sec"><div class="kicker">Enunciado</div><div class="val">${esc(it.enunciado||it.texto)}</div><div class="human">${paras(it.desarrollo||'')}</div></div>
