@@ -122,7 +122,7 @@
       {
        "campo": "US3-1",
        "via": "US3-1.d2",
-       "nota": "el aporte experiencial responde a la intención; aporte observado, no validado"
+       "nota": "el efecto en uso responde a la intención; efecto observado, no validado"
       },
       {
        "campo": "CO3-1",
@@ -473,6 +473,30 @@
         ],
         "detalle": [
          {
+          "id": "HA1-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA1-1",
+          "texto": "J3 · determinante: Ø 110 × h 66 cm, el esferoide achatado sin piel y los 7 kg fijan la escala y la lectura de esta variante; pero la familia va de 12 a 105 módulos sin dejar de ser Hope (IV2) y la forma la genera la regla de coronas (HA1-2): decide cómo es la D66/42, no qué la hace Hope. No sube a J4.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F1,F3,F12,F14,F19",
+          "legacy_ids": [
+           "O4-1",
+           "O4-2",
+           "O4-3",
+           "O4-5",
+           "O4-6",
+           "O4-7",
+           "O1-4"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA1-1.d1",
           "tipo": "medida",
           "sujeto": "conjunto D66/42",
@@ -715,6 +739,30 @@
          "O2-2"
         ],
         "detalle": [
+         {
+          "id": "HA1-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA1-2",
+          "texto": "J4 · clave: 42 módulos iguales en tres coronas desfasadas, hoja grande afuera y chica adentro con solape calculado, es la regla que construye el objeto y la respuesta a la condición de ocultar la fuente (P2-3, P3-1; invariante de familia IF3): cambiarla da otro objeto. Documentada por Fran.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F19,F9,F3,F5,F12,F14",
+          "legacy_ids": [
+           "O6-3",
+           "O6-1",
+           "O6-4",
+           "O6-5",
+           "O6-6",
+           "O4-4",
+           "O2-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA1-2.d1",
           "tipo": "regla",
@@ -1020,6 +1068,27 @@
          "O5-6"
         ],
         "detalle": [
+         {
+          "id": "HA2-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA2-1",
+          "texto": "J3 · determinante: el módulo de tres piezas (brazo + dos hojas) colgado de una estructura de acero es la unidad del sistema (P2-3, IF1) y de él salen las uniones y los flujos; no es clave porque lo que hace Hope a Hope está en la hoja-lente (HA2-2) y en la regla de agregación (HA1-2), que ya lo son.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F3,F19,F9,F14",
+          "legacy_ids": [
+           "O5-1",
+           "O5-2",
+           "O5-3",
+           "O5-6"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA2-1.p1",
           "tipo": "pieza",
@@ -1429,6 +1498,28 @@
         ],
         "detalle": [
          {
+          "id": "HA2-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA2-2",
+          "texto": "J4 · clave: la hoja-lente plana de 0,8 mm con cara Fresnel, que se vuelve rígida al calzarse, es la pieza que hace posible el proyecto: multiplica la fuente sin el peso ni el costo del cristal (P2-1, P2-2; invariante IF2, rasgo de marca IM1). Sin ella no hay Hope. Documentada por Fran.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F19,F9,F10,F8,F14",
+          "legacy_ids": [
+           "O3-3",
+           "O6-2",
+           "O7-7",
+           "O7-3",
+           "O5-3"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA2-2.d1",
           "tipo": "geometria",
           "sujeto": "hoja",
@@ -1668,6 +1759,28 @@
          "O7-8"
         ],
         "detalle": [
+         {
+          "id": "HA2-3.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA2-3",
+          "texto": "J3 · determinante: policarbonato inyectado, hoja prensada transparente y acero plegado deciden la liviandad, la transparencia y la economía que pide el principio P2-2; no es clave porque el material de la hoja cambió (policarbonato → metacrilato) sin cambiar el objeto.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F1,F8,F5,F19,F9,F10,F11,F15",
+          "legacy_ids": [
+           "O7-1",
+           "O7-3",
+           "O7-4",
+           "O7-5",
+           "O7-8"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA2-3.d1",
           "tipo": "material",
@@ -1948,6 +2061,28 @@
         ],
         "detalle": [
          {
+          "id": "HA3-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA3-1",
+          "texto": "J3 · determinante: calzar la hoja en el brazo y colgar el brazo del nodo como una percha decide cómo se arma, se repara y se orienta cada módulo (rasgo de marca IM2); no es clave porque la identidad está en la hoja y en la regla de agregación, no en la unión.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F3,F19,F1",
+          "legacy_ids": [
+           "O5-4",
+           "O5-7",
+           "O2-1",
+           "U4-1",
+           "O5-8"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA3-1.u1",
           "tipo": "union",
           "sujeto": "hoja–brazo",
@@ -2179,6 +2314,27 @@
         ],
         "detalle": [
          {
+          "id": "HA3-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA3-2",
+          "texto": "J2 · relevante: los recorridos de carga (hoja → brazo → nodo → estructura → cables → techo) y de electricidad son consecuencia de las uniones y de la estructura, sin una decisión propia que distinga a Hope, y la lectura de rigidez es inferida: informa sin decidir.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F3,F19,F14,F1",
+          "legacy_ids": [
+           "O5-5",
+           "O7-6",
+           "O5-8",
+           "U2-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA3-2.d1",
           "tipo": "flujo",
           "sujeto": "conjunto D66/42",
@@ -2397,6 +2553,27 @@
          "O1-4"
         ],
         "detalle": [
+         {
+          "id": "HA4-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA4-1",
+          "texto": "J3 · determinante: tres lámparas E27 comerciales, reemplazables y sin electrónica propia son condición del proyecto (P3-2, invariante IF4) y de la lámpara elegida depende el destello (P3-3); no es clave porque la fuente es intercambiable por diseño: lo que hace Hope es cómo la gestiona (HA4-2).",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F1,F2,F3,F5,F7,F19",
+          "legacy_ids": [
+           "O8-1",
+           "O8-8",
+           "O8-2",
+           "O1-4"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA4-1.d1",
           "tipo": "fuente_luz",
@@ -2663,6 +2840,29 @@
         ],
         "detalle": [
          {
+          "id": "HA4-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA4-2",
+          "texto": "J4 · clave: dos lentes Fresnel por módulo que refractan y multiplican la fuente sin difundirla, y el solape que la oculta, son la respuesta a la condición que ordenó el proyecto (P3-1) y la esencia del candelabro sin su forma (P2-1; rasgo de marca IM3). La ocultación es intención documentada, no prestación ensayada.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F8,F9,F10,F12,F19",
+          "legacy_ids": [
+           "O8-5",
+           "O8-6",
+           "O8-7",
+           "O3-4",
+           "O6-4",
+           "O5-5"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA4-2.d1",
           "tipo": "optica",
           "sujeto": "hojas",
@@ -2852,6 +3052,29 @@
          "O8-2"
         ],
         "detalle": [
+         {
+          "id": "HA4-3.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA4-3",
+          "texto": "J2 · relevante: el único ensayo (IES 2011 con 3 × 23 W CFL, 4.142 lm, casi omnidireccional) informa el reparto pero no se traslada a otras lámparas, y la pieza no se elige por lúmenes: informa sin decidir.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F7,F2",
+          "legacy_ids": [
+           "O8-3",
+           "O8-4",
+           "O8-9",
+           "U3-1",
+           "U3-4",
+           "O8-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA4-3.d1",
           "tipo": "medicion",
@@ -3065,11 +3288,31 @@
         ],
         "detalle": [
          {
+          "id": "US1-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US1-1",
+          "texto": "J2 · relevante: estar, comer, recibir y celebrar son actividades inferidas del tipo y del discurso: matizan para qué es la luz sin decidir la pieza.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F5,F8,F10,F3",
+          "legacy_ids": [
+           "U1-4",
+           "U1-5",
+           "U1-3"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "US1-1.d1",
           "tipo": "actividad",
           "sujeto": "actividad",
           "texto": "Estar, comer, recibir, celebrar; contemplarla apagada y encendida. No acompaña tareas de precisión.",
-          "estado": "inferido del tipo + discurso",
+          "estado": "inferido (del tipo y del discurso)",
           "confianza": "media-alta",
           "fuente": "F5,F8",
           "legacy_ids": [
@@ -3163,6 +3406,26 @@
          "O2-1"
         ],
         "detalle": [
+         {
+          "id": "US1-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US1-2",
+          "texto": "J2 · relevante: colgar en el centro de un ambiente amplio, a la altura elegida al instalar, y leerse a distancia como nube matiza cómo se usa y se ve; se desprende de la tipología y de la escala, no es una decisión propia.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F1,F3,F5",
+          "legacy_ids": [
+           "U1-1",
+           "U1-2",
+           "O2-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US1-2.d1",
           "tipo": "ambito",
@@ -3306,6 +3569,30 @@
          "O5-8"
         ],
         "detalle": [
+         {
+          "id": "US2-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US2-1",
+          "texto": "J2 · relevante: encender y regular desde la instalación, armar los 42 módulos y reemplazar una hoja rota informan el uso y la reparabilidad, pero ninguna acción distingue a Hope de otra suspensión.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F3,F19,F1",
+          "legacy_ids": [
+           "U2-1",
+           "U2-2",
+           "U4-1",
+           "U4-2",
+           "U4-3",
+           "U4-4",
+           "O5-8"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US2-1.d1",
           "tipo": "accion",
@@ -3516,6 +3803,28 @@
         ],
         "detalle": [
          {
+          "id": "US2-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US2-2",
+          "texto": "J1 · contextual: el control externo por interruptor o dimmer de pared y el «clic» del enganche al montar son detalle operativo que sitúa el uso.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F3,F19,F7",
+          "legacy_ids": [
+           "U2-3",
+           "U2-4",
+           "U4-2",
+           "U4-3",
+           "U2-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "US2-2.d1",
           "tipo": "operacion",
           "sujeto": "usuario",
@@ -3652,7 +3961,7 @@
       "name": "Experiencia",
       "pregunta": "¿Qué quiero que ocurra cuando lo usa?",
       "razon": "Describe qué permite, facilita o aporta la luminaria una vez utilizada, incluyendo tanto la función práctica como la experiencia luminosa relevante. Distingue entre aporte previsto, documentado, observado o validado.",
-      "lectura": "Encendida, Hope da luz general para estar, comer y conversar —repartida, según el ensayo de 2011, casi por igual hacia el techo y el piso, con el máximo hacia abajo— y sobre todo espectáculo: cada hoja proyecta la lámpara como una estrella radial y el conjunto es un campo de puntos y rayos con irisaciones que cambia al moverse, «imposible no verla». Apagada, es una presencia escultórica transparente que se irisa con la luz lateral. Ese aporte tiene condiciones: una fuente puntual o de filamento visible (con LED opal se pierde destello), la geometría de coronas y solape intacta, hojas que no se maltraten y se limpien sólo con pH neutro. El confort visual y la ausencia de deslumbramiento no están medidos; el alcance de 20–40 m² es una estimación; el envejecimiento del plástico y el fin de ciclo no tienen datos.",
+      "lectura": "El efecto buscado: que Hope, encendida, dé luz general para estar, comer y conversar —repartida, según el ensayo de 2011, casi por igual hacia el techo y el piso, con el máximo hacia abajo— y sobre todo espectáculo: que cada hoja proyecte la lámpara como una estrella radial y el conjunto sea un campo de puntos y rayos con irisaciones que cambia al moverse, «imposible no verla»; y que apagada siga siendo una presencia escultórica transparente que se irisa con la luz lateral. Para que ese efecto ocurra hacen falta una fuente puntual o de filamento visible (con LED opal se pierde destello), la geometría de coronas y solape intacta, hojas que no se maltraten y se limpien sólo con pH neutro. El confort visual y la ausencia de deslumbramiento no están medidos; el alcance de 20–40 m² es una estimación; el envejecimiento del plástico y el fin de ciclo no tienen datos.",
       "importancia": "",
       "cards": [],
       "fields": [
@@ -3661,7 +3970,7 @@
         "name": "Efecto buscado",
         "importancia": "J3",
         "titular": "",
-        "valor": "Luz general de ambiente para estar, comer y conversar, repartida hacia techo y piso, y sobre todo espectáculo: cientos de destellos con irisaciones que cambian al moverse, «imposible no verla»; apagada, una presencia escultórica. El alcance de 20–40 m² es una estimación, no una prestación",
+        "valor": "Que quien está debajo tenga luz general de ambiente para estar, comer y conversar, repartida hacia techo y piso, y sobre todo un espectáculo: cientos de destellos con irisaciones que cambian al moverse, «imposible no verla»; y que apagada siga siendo una presencia escultórica. El alcance de 20–40 m² es una estimación, no una prestación",
         "unidad": "—",
         "estado": "documentado + observado + inferido",
         "confianza": "alta / media",
@@ -3689,6 +3998,29 @@
          "C4-4"
         ],
         "detalle": [
+         {
+          "id": "US3-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US3-1",
+          "texto": "J3 · determinante: el efecto buscado —luz general con un espectáculo de destellos, «imposible no verla», y presencia escultórica apagada— es el propósito en uso (P1-2) y decide para qué está la lámpara; no sube a J4 porque se materializa en la hoja-lente y en la gestión de la luz (HA2-2, HA4-2), que ya son clave.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F5,F7,F8,F9,F12,F4",
+          "legacy_ids": [
+           "O2-3",
+           "U3-3",
+           "U3-6",
+           "U3-7",
+           "U3-2",
+           "C4-4"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US3-1.d1",
           "tipo": "aporte",
@@ -3787,7 +4119,7 @@
           "id": "US3-1.d6",
           "tipo": "aporte",
           "sujeto": "espacio",
-          "texto": "Aporte espacial: el techo iluminado agranda el espacio; brillos, no neblina.",
+          "texto": "Efecto espacial: el techo iluminado agranda el espacio; brillos, no neblina.",
           "estado": "documentado + inferido",
           "confianza": "media",
           "fuente": "F7,F8",
@@ -3816,16 +4148,16 @@
          "pendientes": 0,
          "inferidos": 1
         },
-        "body": "_Registra la contribución del objeto a la actividad o a la situación: hacer visible una superficie, acompañar una estancia, orientar un recorrido, destacar un objeto, crear una zona de luz, permitir reconfiguración o aportar una experiencia luminosa concreta._\nValor: Luz general de ambiente para estar, comer y conversar, repartida hacia techo y piso, y sobre todo espectáculo: cientos de destellos con irisaciones que cambian al moverse, «imposible no verla»; apagada, una presencia escultórica. El alcance de 20–40 m² es una estimación, no una prestación · Unidad: — · Importancia: J3\nFuente/estado/confianza: F5,F7,F8,F9,F12,F4 · documentado + observado + inferido · alta / media\nEtiquetas: #luz-general #espectaculo #no-tarea #destello #brillo #multiplicacion #dibujo-de-luz #estrella #apagada-encendida #escultura #alcance #techo\nLegacy: O2-3 U3-3 U3-6 U3-7 U3-2 C4-4"
+        "body": "_Registra la contribución del objeto a la actividad o a la situación: hacer visible una superficie, acompañar una estancia, orientar un recorrido, destacar un objeto, crear una zona de luz, permitir reconfiguración o aportar una experiencia luminosa concreta._\nValor: Que quien está debajo tenga luz general de ambiente para estar, comer y conversar, repartida hacia techo y piso, y sobre todo un espectáculo: cientos de destellos con irisaciones que cambian al moverse, «imposible no verla»; y que apagada siga siendo una presencia escultórica. El alcance de 20–40 m² es una estimación, no una prestación · Unidad: — · Importancia: J3\nFuente/estado/confianza: F5,F7,F8,F9,F12,F4 · documentado + observado + inferido · alta / media\nEtiquetas: #luz-general #espectaculo #no-tarea #destello #brillo #multiplicacion #dibujo-de-luz #estrella #apagada-encendida #escultura #alcance #techo\nLegacy: O2-3 U3-3 U3-6 U3-7 U3-2 C4-4"
        },
        {
         "id": "US3-2",
         "name": "Condiciones del efecto",
         "importancia": "J2",
         "titular": "",
-        "valor": "El efecto depende de la lámpara (fuente puntual o de filamento visible; con LED opal se pierde destello) y de la geometría intacta; el confort visual no está medido; las hojas se rompen con maltrato y se limpian sólo con pH neutro; inclinación máxima 30°; envejecimiento del plástico y fin de ciclo sin datos",
+        "valor": "Para que el efecto ocurra: una fuente puntual o de filamento visible (con LED opal se pierde destello) y la geometría de coronas y solape intacta. Límites: el confort visual no está medido; las hojas se rompen con maltrato y se limpian sólo con pH neutro; inclinación máxima 30°; envejecimiento del plástico y fin de ciclo sin datos",
         "unidad": "—",
-        "estado": "documentado (Fran) + hipótesis",
+        "estado": "documentado (Fran) + inferido (confort y uniformidad sin medir)",
         "confianza": "alta / media",
         "fuente": "F19,F9,F10,F3,F1,F8,F7",
         "tags": [
@@ -3853,6 +4185,30 @@
          "O8-2"
         ],
         "detalle": [
+         {
+          "id": "US3-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US3-2",
+          "texto": "J2 · relevante: las condiciones del efecto (fuente puntual o de filamento visible, geometría intacta) y sus límites (fragilidad, limpieza, confort sin medir) importan en uso, pero derivan de la fuente y de la gestión de la luz (HA4-1, HA4-2): matizan el efecto sin decidirlo.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F19,F9,F10,F3,F1,F8,F7",
+          "legacy_ids": [
+           "C4-6",
+           "U3-5",
+           "U3-4",
+           "O7-8",
+           "U4-6",
+           "U2-2",
+           "O8-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US3-2.d1",
           "tipo": "condicion",
@@ -3897,7 +4253,7 @@
           "tipo": "hipotesis",
           "sujeto": "confort",
           "texto": "Deslumbramiento: intención de control por diseño (fuente no visible + lente calculada); sin medición; con LED de alta luminancia el riesgo subiría. Confort visual no validado.",
-          "estado": "documentado (intención) + hipótesis",
+          "estado": "documentado (intención) + inferido (riesgo, sin medición)",
           "confianza": "media",
           "fuente": "F9,F10",
           "legacy_ids": [
@@ -4060,10 +4416,10 @@
          "desconocidos": 2,
          "conflictos": 0,
          "pendientes": 2,
-         "inferidos": 3
+         "inferidos": 2
         },
         "desconocido_parcial": true,
-        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: El efecto depende de la lámpara (fuente puntual o de filamento visible; con LED opal se pierde destello) y de la geometría intacta; el confort visual no está medido; las hojas se rompen con maltrato y se limpian sólo con pH neutro; inclinación máxima 30°; envejecimiento del plástico y fin de ciclo sin datos · Unidad: — · Importancia: J2\nFuente/estado/confianza: F19,F9,F10,F3,F1,F8,F7 · documentado (Fran) + hipótesis · alta / media\nEtiquetas: #led-filamento #solape #coronas #fresnel #condicion #deslumbramiento #fuente-oculta #fragilidad #ph-neutro #envejecimiento #fin-de-vida #longevidad #inclinacion\nLegacy: C4-6 U3-5 U3-4 O7-8 U4-6 U2-2 O8-2"
+        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: una fuente puntual o de filamento visible (con LED opal se pierde destello) y la geometría de coronas y solape intacta. Límites: el confort visual no está medido; las hojas se rompen con maltrato y se limpian sólo con pH neutro; inclinación máxima 30°; envejecimiento del plástico y fin de ciclo sin datos · Unidad: — · Importancia: J2\nFuente/estado/confianza: F19,F9,F10,F3,F1,F8,F7 · documentado (Fran) + inferido (confort y uniformidad sin medir) · alta / media\nEtiquetas: #led-filamento #solape #coronas #fresnel #condicion #deslumbramiento #fuente-oculta #fragilidad #ph-neutro #envejecimiento #fin-de-vida #longevidad #inclinacion\nLegacy: C4-6 U3-5 U3-4 O7-8 U4-6 U2-2 O8-2"
        }
       ]
      }
@@ -4112,6 +4468,25 @@
          "O2-2"
         ],
         "detalle": [
+         {
+          "id": "CO1-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO1-1",
+          "texto": "J2 · relevante: «suspensión» y «sistema modular» sitúan a Hope en el mundo de la iluminación y explican que el mismo módulo arme la familia, pero no la distinguen de otras suspensiones: clasificación.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F1,F3,F5",
+          "legacy_ids": [
+           "O2-1",
+           "O2-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO1-1.d1",
           "tipo": "tipologia",
@@ -4492,6 +4867,27 @@
          "C1-5"
         ],
         "detalle": [
+         {
+          "id": "CO1-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO1-2",
+          "texto": "J3 · determinante: el candelabro es el antecedente que declaran la marca y los autores y que el Programa nombra (P1-1, P2-1): tomar su esencia y no su forma explica la identidad del objeto. No llega a J4 porque esa operación ya es clave en la hoja-lente y en la gestión de la luz (HA2-2, HA4-2).",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F5,F8,F9,F10,F11,F14",
+          "legacy_ids": [
+           "C1-1",
+           "C1-4",
+           "C1-3",
+           "C1-5"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO1-2.d1",
           "tipo": "arquetipo",
@@ -4956,6 +5352,31 @@
         ],
         "detalle": [
          {
+          "id": "CO2-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO2-1",
+          "texto": "J3 · determinante: liviana y desmaterializada pese a su tamaño, abierta, ordenada por repetición y a la vez compleja, técnica y orgánica: son las cualidades que la marca y los autores ponen en palabras y que distinguen a Hope en el espacio; la causa está en los rasgos (CO2-2).",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F5,F8,F9,F12,F14,F7",
+          "legacy_ids": [
+           "C2-1",
+           "C2-2",
+           "C2-3",
+           "C2-4",
+           "C3-1",
+           "C3-4",
+           "O7-2",
+           "U3-3"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "CO2-1.d1",
           "tipo": "cualidad",
           "sujeto": "conjunto",
@@ -5147,6 +5568,28 @@
          "C4-5"
         ],
         "detalle": [
+         {
+          "id": "CO2-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO2-2",
+          "texto": "J2 · relevante: la transparencia de la hoja, los vacíos, la repetición y el cambio al encender explican las cualidades, pero repiten rasgos ya registrados en HA1-2, HA2-2 y HA4-2: valen como enlace.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F12,F3,F11,F9,F10,F19",
+          "legacy_ids": [
+           "C2-6",
+           "C3-3",
+           "C4-2",
+           "C4-3",
+           "C4-5"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO2-2.d1",
           "tipo": "rasgo",
@@ -5384,6 +5827,29 @@
         ],
         "detalle": [
          {
+          "id": "CO3-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO3-1",
+          "texto": "J2 · relevante: flor, cristal y joya, racimo y nube, y las diatomeas como referente de los autores informan la lectura sin decidir el objeto; la «honestidad» que atribuía la V1 queda en conflicto.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F5,F8,F9,F10,F12",
+          "legacy_ids": [
+           "C1-2",
+           "C2-5",
+           "C4-1",
+           "C4-4",
+           "C3-2",
+           "O7-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "CO3-1.d1",
           "tipo": "asociacion",
           "sujeto": "conjunto / hojas",
@@ -5584,6 +6050,28 @@
          "C4-4"
         ],
         "detalle": [
+         {
+          "id": "CO3-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO3-2",
+          "texto": "J1 · contextual: el sustento de cada asociación repite rasgos ya descritos (contorno de hoja, transparencia refractiva, lectura a distancia): sitúa, contexto.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "F8,F9,F11,F12,F19",
+          "legacy_ids": [
+           "C1-2",
+           "C2-5",
+           "C3-2",
+           "O3-7",
+           "C4-4"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Hope (etapa 07, sin cambiar el nivel); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO3-2.d1",
           "tipo": "sustento",
@@ -6238,7 +6726,7 @@
     "via": [
      "US3-1.d2"
     ],
-    "why": "el aporte experiencial responde a la intención; aporte observado, no validado",
+    "why": "el efecto en uso responde a la intención; efecto observado, no validado",
     "estado": "documentado (autores)",
     "fuente": "F8,F9",
     "origen": "programa.vinculos"
@@ -7311,37 +7799,45 @@
    "cobertura": {
     "O4-1": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d1",
      "HA1-1.d2",
      "HA1-1.d3"
     ],
     "O4-2": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d4"
     ],
     "O4-3": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d5",
      "HA1-1.d9",
      "IV2"
     ],
     "O4-5": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d6"
     ],
     "O4-6": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d8"
     ],
     "O4-7": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d7"
     ],
     "O1-4": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d1",
      "HA1-1.d2",
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d1",
      "HA4-1.d2",
      "HA4-1.d5",
@@ -7350,10 +7846,13 @@
     "O2-1": [
      "HA1-1.d3",
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u4",
      "US1-2",
+     "US1-2.j1",
      "US1-2.d3",
      "CO1-1",
+     "CO1-1.j1",
      "CO1-1.d1"
     ],
     "C5-3": [
@@ -7369,6 +7868,7 @@
     ],
     "O6-3": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d1",
      "HA1-2.d2",
      "HA1-2.d3",
@@ -7377,17 +7877,21 @@
     ],
     "O6-1": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d8"
     ],
     "O6-4": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d5",
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d5",
      "IO3"
     ],
     "O6-5": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d3",
      "HA1-2.d9",
      "HA2-2.d3",
@@ -7395,26 +7899,31 @@
     ],
     "O6-6": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d7",
      "HA1-2.d10"
     ],
     "O4-4": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d2",
      "HA1-2.d3",
      "HA1-2.d6"
     ],
     "O2-2": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d1",
      "HA1-2.d10",
      "CO1-1",
+     "CO1-1.j1",
      "CO1-1.d2"
     ],
     "O3-4": [
      "HA1-2.d4",
      "HA1-2.d5",
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d5",
      "P3-1",
      "IO3"
@@ -7434,6 +7943,7 @@
     ],
     "O5-1": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.p1",
      "HA2-1.p2",
      "HA2-1.p3",
@@ -7449,12 +7959,14 @@
     ],
     "O5-2": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.s1",
      "HA2-1.s2",
      "IO2"
     ],
     "O5-3": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.p1",
      "HA2-1.p2",
      "HA2-1.p3",
@@ -7462,16 +7974,19 @@
      "HA2-1.p5",
      "HA2-1.p10",
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d8",
      "HA3-1.u2"
     ],
     "O5-6": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.a1"
     ],
     "O3-3": [
      "HA2-1.s1",
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d2",
      "HA2-2.d5",
      "HA2-2.d6",
@@ -7481,12 +7996,14 @@
      "HA2-1.x1",
      "HA3-1.x1",
      "HA3-2",
+     "HA3-2.j1",
      "HA3-2.d3",
      "HA3-2.d4",
      "HA3-2.d5"
     ],
     "O6-2": [
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d1",
      "HA2-2.d2",
      "HA2-2.d5",
@@ -7495,19 +8012,23 @@
     ],
     "O7-7": [
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d2",
      "HA2-2.x1"
     ],
     "O7-3": [
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d6",
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d5",
      "HA2-3.d7"
     ],
     "O8-5": [
      "HA2-2.d6",
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d1",
      "HA4-2.d2",
      "IO1"
@@ -7515,6 +8036,7 @@
     "O5-4": [
      "HA2-2.d7",
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u1",
      "HA3-1.u2",
      "HA3-1.u3",
@@ -7524,12 +8046,14 @@
     "O7-4": [
      "HA2-2.d8",
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d4",
      "HA2-3.d5",
      "HA2-3.d8"
     ],
     "O7-1": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d1",
      "HA2-3.d2",
      "HA2-3.d3",
@@ -7540,12 +8064,15 @@
     ],
     "O7-5": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d9"
     ],
     "O7-8": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d3",
      "US3-2",
+     "US3-2.j1",
      "US3-2.d5",
      "US3-2.d6",
      "US3-2.d8"
@@ -7553,32 +8080,41 @@
     "O7-2": [
      "HA2-3.d10",
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d5",
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d2"
     ],
     "O5-7": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u6"
     ],
     "U4-1": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u4",
      "US2-1",
+     "US2-1.j1",
      "US2-1.d2"
     ],
     "O5-8": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u2",
      "HA3-2",
+     "HA3-2.j1",
      "HA3-2.d6",
      "US2-1",
+     "US2-1.j1",
      "US2-1.d6",
      "DOC-9"
     ],
     "U4-4": [
      "HA3-1.a1",
      "US2-1",
+     "US2-1.j1",
      "US2-1.d4",
      "US2-1.d7",
      "US3-2.d5",
@@ -7586,23 +8122,29 @@
     ],
     "O5-5": [
      "HA3-2",
+     "HA3-2.j1",
      "HA3-2.d1",
      "HA3-2.d2",
      "HA3-2.d8",
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d3"
     ],
     "U2-2": [
      "HA3-2",
+     "HA3-2.j1",
      "HA3-2.d7",
      "US2-1",
+     "US2-1.j1",
      "US2-1.d8",
      "US3-2",
+     "US3-2.j1",
      "US3-2.d7"
     ],
     "O8-8": [
      "HA3-2.d2",
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d4",
      "HA4-1.d5",
      "HA4-1.d6",
@@ -7610,33 +8152,40 @@
     ],
     "O8-1": [
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d1",
      "HA4-1.d3"
     ],
     "O8-2": [
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d7",
      "HA4-1.d9",
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d6",
      "HA4-3.x1",
      "US3-2",
+     "US3-2.j1",
      "US3-2.d2",
      "P3-3"
     ],
     "U2-1": [
      "HA4-1.d6",
      "US2-1",
+     "US2-1.j1",
      "US2-1.d1",
      "US2-1.d3",
      "US2-1.d4",
      "US2-1.d5",
      "US2-2",
+     "US2-2.j1",
      "US2-2.d1"
     ],
     "O8-3": [
      "HA4-1.d8",
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d1"
     ],
     "C5-2": [
@@ -7649,132 +8198,164 @@
     ],
     "O8-6": [
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d3",
      "HA4-2.d4"
     ],
     "O8-7": [
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d5",
      "HA4-2.d6",
      "HA4-2.x1"
     ],
     "O8-4": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d2",
      "HA4-3.d3"
     ],
     "O8-9": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d4",
      "DOC-7"
     ],
     "U3-1": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d2"
     ],
     "U3-4": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d5",
      "US3-2",
+     "US3-2.j1",
      "US3-2.d4"
     ],
     "U1-4": [
      "US1-1",
+     "US1-1.j1",
      "US1-1.d1"
     ],
     "U1-5": [
      "US1-1",
+     "US1-1.j1",
      "US1-1.d2"
     ],
     "U1-3": [
      "US1-1",
+     "US1-1.j1",
      "US1-1.d3"
     ],
     "U1-1": [
      "US1-2",
+     "US1-2.j1",
      "US1-2.d1",
      "US1-2.d2"
     ],
     "U1-2": [
      "US1-2",
+     "US1-2.j1",
      "US1-2.d3",
      "US1-2.d4"
     ],
     "U4-2": [
      "US2-1",
+     "US2-1.j1",
      "US2-1.d3",
      "US2-2",
+     "US2-2.j1",
      "US2-2.d2",
      "US2-2.d6"
     ],
     "U4-3": [
      "US2-1",
+     "US2-1.j1",
      "US2-1.d5",
      "US2-2",
+     "US2-2.j1",
      "US2-2.d5",
      "US3-2.d6"
     ],
     "U2-3": [
      "US2-2",
+     "US2-2.j1",
      "US2-2.d3"
     ],
     "U2-4": [
      "US2-2",
+     "US2-2.j1",
      "US2-2.d4"
     ],
     "O2-3": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d1"
     ],
     "U3-3": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d2",
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d7"
     ],
     "U3-6": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d3",
      "IO4"
     ],
     "U3-7": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d4"
     ],
     "U3-2": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d5",
      "US3-2.d10"
     ],
     "C4-4": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d6",
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d5",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d5"
     ],
     "C4-6": [
      "US3-2",
+     "US3-2.j1",
      "US3-2.d1",
      "US3-2.d2",
      "P3-3"
     ],
     "U3-5": [
      "US3-2",
+     "US3-2.j1",
      "US3-2.d3"
     ],
     "U4-6": [
      "US3-2",
+     "US3-2.j1",
      "US3-2.d9",
      "DOC-10"
     ],
     "C1-1": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d1"
     ],
     "C1-4": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d2",
      "IM1",
      "IM2",
@@ -7782,6 +8363,7 @@
     ],
     "C1-3": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d4",
      "CO1-2.d5",
      "CO1-2.d6",
@@ -7789,97 +8371,117 @@
     ],
     "C1-5": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d7"
     ],
     "C1-2": [
      "CO1-2.d3",
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d1",
      "CO3-1.d2",
      "CO3-1.d3",
      "CO3-1.d4",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d1",
      "CO3-2.d3",
      "CO3-2.d4"
     ],
     "C2-1": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d1",
      "CO2-2.d1",
      "IO4"
     ],
     "C2-2": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d2",
      "CO2-2.d2"
     ],
     "C2-3": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d3",
      "CO2-2.d3"
     ],
     "C2-4": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d4"
     ],
     "C3-1": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d6",
      "CO2-2.d1"
     ],
     "C3-4": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d4"
     ],
     "C2-6": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d5",
      "CO3-1.d4",
      "CO3-2.d4"
     ],
     "C3-3": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d4",
      "IM2"
     ],
     "C4-2": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d6"
     ],
     "C4-3": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d7",
      "IO4"
     ],
     "C4-5": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d8"
     ],
     "C2-5": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d1",
      "CO3-1.d2",
      "CO3-1.d3",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d2"
     ],
     "C4-1": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d5",
      "CO3-2.d5"
     ],
     "C3-2": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d6",
      "CO3-1.d7",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d1",
      "CO3-2.d2"
     ],
     "O3-7": [
      "CO3-1.d3",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d3",
      "CO3-2.d6",
      "PA-2"
@@ -10513,7 +11115,7 @@
    "desconocidos": 0,
    "conflictos": 2,
    "desconocidos_parciales": 7,
-   "detalle": 171,
+   "detalle": 193,
    "detalle_desconocidos": 8,
    "detalle_conflictos": 2,
    "relations": 65,
@@ -11095,6 +11697,31 @@
         ],
         "detalle": [
          {
+          "id": "HA1-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA1-1",
+          "texto": "J3 · determinante: la escala Ø 100 × h 90, la envolvente casi esférica y la apertura total son lo que hace falta para rehacer esta variante; no definen por sí solas la identidad (eso lo hace la ley formal y el cable), pero sin ellas la ficha no describe la Ø 100.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M1,M2,M3,M9,M11,K1",
+          "legacy_ids": [
+           "O4-1",
+           "O4-2",
+           "O4-3",
+           "O4-5",
+           "O4-6",
+           "O4-7",
+           "C5-3",
+           "O7-7"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA1-1.d1",
           "tipo": "medida",
           "sujeto": "conjunto Ø 100",
@@ -11511,6 +12138,32 @@
         ],
         "detalle": [
          {
+          "id": "HA1-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA1-2",
+          "texto": "J4 · clave: la regla que reparte los puntos —una ley de crecimiento natural interpretada, no una retícula ni una simetría— es lo que hace que una red de cables con LED sea Mesh y no una guirnalda o una malla regular. Cambiar la ley cambia el objeto.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M2,M11,K1",
+          "legacy_ids": [
+           "O6-1",
+           "O6-2",
+           "O6-3",
+           "O6-4",
+           "O6-5",
+           "O6-6",
+           "O4-4",
+           "O2-2",
+           "C5-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA1-2.d1",
           "tipo": "regla",
           "sujeto": "nudo",
@@ -11831,6 +12484,29 @@
          "O6-2"
         ],
         "detalle": [
+         {
+          "id": "HA2-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA2-1",
+          "texto": "J4 · clave: la decisión de que una sola pieza —el cable con alma de acero armónico— cumpla a la vez las funciones eléctrica, estructural y de posicionamiento es la idea rectora documentada del autor; sin ese cable la red no soporta, no llega la corriente y no hay coordenadas para cada LED.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M1,M2,M3,M11",
+          "legacy_ids": [
+           "O5-1",
+           "O5-2",
+           "O5-3",
+           "O5-6",
+           "O3-3",
+           "O6-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA2-1.p1",
           "tipo": "pieza",
@@ -12175,6 +12851,27 @@
         ],
         "detalle": [
          {
+          "id": "HA2-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA2-2",
+          "texto": "J2 · relevante: la geometría local documentada se reduce al florón (Ø 30 × 7 cm), a la lente circular pequeña y al anillo; la sección del cable, la forma del nudo y los espesores no están publicados, de modo que este campo describe menos de lo que falta.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M3,M11,D0,M2",
+          "legacy_ids": [
+           "O7-7",
+           "O6-2",
+           "O4-1",
+           "O5-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA2-2.d1",
           "tipo": "geometria",
           "sujeto": "cable",
@@ -12349,6 +13046,28 @@
          "O7-8"
         ],
         "detalle": [
+         {
+          "id": "HA2-3.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA2-3",
+          "texto": "J3 · determinante: el cable fabricado a medida con alma de acero armónico y el LED SMD con lente son las dos capacidades industriales sin las cuales el objeto no existe; el negro mate es invariante de familia. Los procesos del florón y del contacto LED–cable siguen sin publicarse; cobre y bipolaridad del cable son herencia no corroborada.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M1,M2,M11,K1",
+          "legacy_ids": [
+           "O7-1",
+           "O7-3",
+           "O7-4",
+           "O7-5",
+           "O7-8"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA2-3.d1",
           "tipo": "material",
@@ -12645,6 +13364,28 @@
         ],
         "detalle": [
          {
+          "id": "HA3-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA3-1",
+          "texto": "J2 · relevante: la instalación está bien documentada por el manual, pero las uniones que definen el objeto (cable–anillo, LED–cruce) no están publicadas; el campo sirve para rehacer la instalación, no el cuerpo.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M3,M11,K2,K1",
+          "legacy_ids": [
+           "O5-4",
+           "O5-7",
+           "U4-1",
+           "U4-2",
+           "O2-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA3-1.u1",
           "tipo": "union",
           "sujeto": "cable–anillo",
@@ -12898,6 +13639,26 @@
         ],
         "detalle": [
          {
+          "id": "HA3-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA3-2",
+          "texto": "J3 · determinante: que por el mismo cable circulen la carga y la corriente, y que la rigidez del volumen sea la de un sistema en tensión y no la de piezas rígidas, es la traducción física de la idea rectora; sin esto no se entiende por qué el objeto no necesita estructura.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M3",
+          "legacy_ids": [
+           "O5-5",
+           "O7-6",
+           "U2-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA3-2.d1",
           "tipo": "flujo",
           "sujeto": "conjunto Ø 100",
@@ -13090,6 +13851,28 @@
          "O5-3"
         ],
         "detalle": [
+         {
+          "id": "HA4-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA4-1",
+          "texto": "J3 · determinante: LED integrado en cada nudo, driver externo en el florón y control por corte de fase con sectores son lo que hace falta para rehacer la versión 2015 y lo que la distingue de las capas wireless y Casambi posteriores.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M1,M2,M3,M8,D0,K1",
+          "legacy_ids": [
+           "O8-1",
+           "O8-2",
+           "O8-8",
+           "O5-3"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "variante": "familia Mesh",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA4-1.d1",
           "tipo": "fuente_luz",
@@ -13379,6 +14162,27 @@
         ],
         "detalle": [
          {
+          "id": "HA4-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA4-2",
+          "texto": "J4 · clave: la decisión óptica de Mesh es prescindir de una envolvente difusora común entre las fuentes y el ambiente —cada nudo es un pequeño proyector con su lente y la fuente se exhibe— en lugar de disfrazar una fuente única con difusores; es la respuesta directa a la restricción determinante del proyecto y lo que la opone a la tradición de la luminaria decorativa.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M1,M2,M11",
+          "legacy_ids": [
+           "O8-5",
+           "O8-6",
+           "O8-7",
+           "O3-4"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "HA4-2.d1",
           "tipo": "optica",
           "sujeto": "nudo",
@@ -13575,6 +14379,29 @@
          "O8-2"
         ],
         "detalle": [
+         {
+          "id": "HA4-3.j1",
+          "tipo": "importancia",
+          "sujeto": "campo HA4-3",
+          "texto": "J2 · relevante: las magnitudes disponibles son de catálogo (flujo en conflicto, 2.700 K, CRI 90) y no hay fotometría publicada ni por sector; el campo registra lo que se sabe sin poder describir el reparto medido.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M1,M9,M2,M8,D0,K1",
+          "legacy_ids": [
+           "O8-3",
+           "O8-4",
+           "O8-9",
+           "U3-1",
+           "U3-4",
+           "O8-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "HA4-3.d1",
           "tipo": "medida",
@@ -13970,6 +14797,26 @@
         ],
         "detalle": [
          {
+          "id": "US1-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US1-1",
+          "texto": "J2 · relevante: las actividades y su demanda están inferidas del tipo y del discurso; lo que sí es propio de Mesh es la demanda de dirigir la luz por zonas, que da sentido al control por sectores.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M2,M3",
+          "legacy_ids": [
+           "U1-4",
+           "U1-5",
+           "U1-3"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "US1-1.d1",
           "tipo": "actividad",
           "sujeto": "actividad",
@@ -14070,6 +14917,26 @@
          "O2-1"
         ],
         "detalle": [
+         {
+          "id": "US1-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US1-2",
+          "texto": "J2 · relevante: la posición (centro de un ambiente amplio y alto, cable de 1 a 5 m, lectura a distancia como nube) condiciona el efecto pero se infiere del tipo y del catálogo; el fabricante no fija una altura mínima de techo.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M2,M3,M9",
+          "legacy_ids": [
+           "U1-1",
+           "U1-2",
+           "O2-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US1-2.d1",
           "tipo": "ambito",
@@ -14217,6 +15084,29 @@
          "O5-8"
         ],
         "detalle": [
+         {
+          "id": "US2-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US2-1",
+          "texto": "J3 · determinante: elegir qué sectores encender es la acción que distingue a Mesh de una suspensión que sólo se atenúa; el resto (instalar, limpiar, llamar a servicio) es común a cualquier luminaria con LED integrado.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M2,M3,M8,D0",
+          "legacy_ids": [
+           "U2-1",
+           "U2-2",
+           "U4-1",
+           "U4-3",
+           "U4-4",
+           "O5-8"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US2-1.d1",
           "tipo": "accion",
@@ -14414,6 +15304,28 @@
         ],
         "detalle": [
          {
+          "id": "US2-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US2-2",
+          "texto": "J2 · relevante: el gesto (dimmer + selección de sectores) y la respuesta (cada LED encendido se ve) están documentados en general, pero el procedimiento concreto de selección de sectores en la versión 2015 no, y la mayor parte de la interacción descrita en el corpus pertenece a la app del kit wireless.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M3,M5,M8,D0",
+          "legacy_ids": [
+           "U2-3",
+           "U2-4",
+           "U4-2",
+           "U2-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "variante": "familia Mesh",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "US2-2.d1",
           "tipo": "operacion",
           "sujeto": "usuario",
@@ -14575,6 +15487,29 @@
          "U3-1"
         ],
         "detalle": [
+         {
+          "id": "US3-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US3-1",
+          "texto": "J3 · determinante: el efecto que Mesh busca —luz general que además puede repartirse de manera distinta por dirección, decidida por quien la usa— es la finalidad declarada del proyecto (P1-1) y lo que la distingue en uso de una suspensión decorativa. Queda en J3 y no en J4 porque se materializa en decisiones que ya son clave (explotar la fuente, HA4-2) y en el control (HA4-1), y porque el reparto por dirección es intención documentada, no prestación medida.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M2,M5,M8,M11,M1",
+          "legacy_ids": [
+           "O2-3",
+           "U3-2",
+           "U3-3",
+           "U3-6",
+           "U3-7",
+           "U3-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US3-1.d1",
           "tipo": "aporte",
@@ -14748,6 +15683,29 @@
          "U4-1"
         ],
         "detalle": [
+         {
+          "id": "US3-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo US3-2",
+          "texto": "J2 · relevante: las condiciones documentadas para que el efecto ocurra (altura, contraste, dimmer compatible, limpieza) son pocas y las que más pesan (confort visual con la fuente a la vista, vida útil, amarilleo) están sin datos; el campo registra sobre todo límites del conocimiento, por eso no sube a J3.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M3,M8,M2,M7",
+          "legacy_ids": [
+           "C4-6",
+           "U3-5",
+           "O7-8",
+           "U4-6",
+           "U2-2",
+           "U4-1"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "US3-2.d1",
           "tipo": "condicion",
@@ -14955,6 +15913,25 @@
         ],
         "detalle": [
          {
+          "id": "CO1-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO1-1",
+          "texto": "J2 · relevante: la tipología (suspensión por un cable, de longitud fija por código) es dato de especificación; lo que importa editorialmente es que NO es un sistema modular, aunque pertenezca a una familia.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M2,M3,K1,K2",
+          "legacy_ids": [
+           "O2-1",
+           "O2-2"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "CO1-1.d1",
           "tipo": "tipologia",
           "sujeto": "conjunto Ø 100",
@@ -15001,6 +15978,165 @@
           "validado": false
          }
         ],
+        "tipologia": {
+         "terminos": [
+          {
+           "id": "suspension",
+           "termino": "Suspensión",
+           "definicion": "Luminaria que cuelga del techo mediante cable, varilla o cadena, con el cuerpo separado del plano de fijación.",
+           "rol": "principal",
+           "ref": "CO1-1.d1",
+           "rasgos": [
+            "Fijada al techo",
+            "Cuelga de un elemento de suspensión: cable, varilla o cadena",
+            "Cuerpo separado del plano de fijación"
+           ],
+           "adhesion": {
+            "conserva": 3,
+            "transforma": 0,
+            "rechaza": 0,
+            "total": 3,
+            "porcentaje": 100,
+            "derivada": true,
+            "texto": "conserva 3 de 3 rasgos · 100 %",
+            "formula": "Se deriva, no se declara, por término: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta."
+           }
+          }
+         ],
+         "operaciones": [
+          {
+           "id": "CO1-1.o1",
+           "termino": "suspension",
+           "rasgo": "Fijada al techo",
+           "operacion": "conserva",
+           "como": "Una placa atornillada al techo recibe la conexión de clase I, que hace un electricista; el florón con el driver se fija a ella.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "M3",
+           "ref": [
+            "HA3-1.u5",
+            "HA2-1.p7",
+            "HA2-1.p5"
+           ],
+           "legacy_ids": [
+            "O5-1",
+            "O5-3",
+            "O5-4",
+            "U4-1"
+           ]
+          },
+          {
+           "id": "CO1-1.o2",
+           "termino": "suspension",
+           "rasgo": "Cuelga de un elemento de suspensión: cable, varilla o cadena",
+           "operacion": "conserva",
+           "como": "Cuelga del florón por la suspensión, de 1 a 5 m según el código elegido al comprar; si es un cable único (manual heredado y dibujo) o varios (fotografía oficial) está en conflicto.",
+           "estado": "documentado (heredado) + conflicto",
+           "confianza": "media",
+           "fuente": "M2,M3,M11",
+           "ref": [
+            "HA2-1.p6",
+            "HA3-1.u4",
+            "HA3-1.a1"
+           ],
+           "legacy_ids": [
+            "O2-1",
+            "O5-1",
+            "O5-3",
+            "O5-4"
+           ]
+          },
+          {
+           "id": "CO1-1.o3",
+           "termino": "suspension",
+           "rasgo": "Cuerpo separado del plano de fijación",
+           "operacion": "conserva",
+           "como": "El cuerpo de Ø 100 × 90 cm cuelga separado del techo a la distancia que da el cable: ≈ 190 cm de altura total con cable de 1 m según el distribuidor. Si admite ajuste en obra está pendiente del manual; en uso no se mueve.",
+           "estado": "documentado (distribuidor, manual heredado)",
+           "confianza": "alta",
+           "fuente": "M3,M9",
+           "ref": [
+            "US1-2.d3",
+            "HA1-1.d3",
+            "US2-1.d7"
+           ],
+           "legacy_ids": [
+            "O2-1",
+            "O4-1",
+            "U1-2",
+            "U2-2"
+           ]
+          }
+         ],
+         "modo_creativo": {
+          "nota": "Respuestas reconstruidas desde la ficha, no dichas por Fran con estas palabras.",
+          "respuestas": [
+           {
+            "id": "interesa",
+            "pregunta": "¿Qué te interesa de una suspensión?",
+            "respuesta": "Que el cuerpo quede en el aire, separado del techo, para que la red de puntos se despliegue en el centro de un ambiente amplio y alto y se lea desde lejos.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "media",
+            "fuente": "M2,M3",
+            "ref": [
+             "CO1-1.o3",
+             "US1-2.d2",
+             "US1-2.d4"
+            ]
+           },
+           {
+            "id": "no_quiero",
+            "pregunta": "¿Qué no querés de ella?",
+            "respuesta": "Nada de lo que la define: conserva placa, florón, cable y cuerpo separado del techo. Lo que rehace no es la manera de colgar sino lo que cuelga: una red de cables y puntos en lugar de un cuerpo.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "media",
+            "fuente": "M3,D0",
+            "ref": [
+             "CO1-1.o1",
+             "CO1-1.o2",
+             "CO1-1.o3",
+             "HA2-1.p2"
+            ]
+           },
+           {
+            "id": "quisiera",
+            "pregunta": "¿Qué te gustaría que hiciera y normalmente no hace?",
+            "respuesta": "Que desde el florón la energía llegue a una red que es a la vez estructura y fuente —cada cable conduce, sostiene y ubica un punto— y que desde la instalación se elija qué parte del volumen se enciende.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "media",
+            "fuente": "D0,M3,M8",
+            "ref": [
+             "HA2-1.p2",
+             "HA2-1.p4",
+             "US2-1.d3"
+            ]
+           }
+          ],
+          "frase_proyectual": {
+           "texto": "Una suspensión clásica —placa, florón, cable— de la que cuelga, en vez de un cuerpo, una red de cables y puntos LED alimentada desde el florón.",
+           "estado": "interpretado (síntesis)",
+           "confianza": "media-alta",
+           "fuente": "M3,D0",
+           "ref": [
+            "CO1-1.d1",
+            "HA2-1.p2",
+            "HA2-1.p4"
+           ]
+          },
+          "libre": {
+           "texto": "Queda abierto lo que la tipología no ata: la longitud del cable (1–5 m, elegida al comprar), el diámetro (Ø 80 o Ø 100) y si la altura se ajusta en obra (pendiente del manual).",
+           "estado": "interpretado (desde los registros)",
+           "confianza": "media",
+           "fuente": "M3,M2,K1",
+           "ref": [
+            "US1-2.d3",
+            "HA1-1.d14",
+            "HA3-1.u4"
+           ]
+          }
+         },
+         "estado": "interpretado (desde registros documentados)"
+        },
         "code": "C1.1",
         "def": "Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas.",
         "pregunta": "¿Qué tipo de luminaria es por su manera fundamental de existir en el espacio?",
@@ -15016,13 +16152,7 @@
          "pendientes": 0,
          "inferidos": 0
         },
-        "body": "_Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas._\nValor: Suspensión interior a techo colgada desde el florón, con altura dada por la longitud del cable elegida al comprar (1–5 m); un único cable según el manual heredado, varios en la fotografía local (conflicto). Objeto único, no modular, de una familia que incluye además plafón, aplique y pie (Ø 55) · Unidad: — · Importancia: J2\nFuente/estado/confianza: M2,M3,K1,K2 · documentado + conflicto · alta\nEtiquetas: #suspension #techo #altura #cable-ultrafino #familia #led-integrado #sistema\nLegacy: O2-1 O2-2",
-        "tipologia": {
-         "terminos": [],
-         "operaciones": [],
-         "modo_creativo": null,
-         "estado": "pendiente (sin cargar: términos, rasgos y operaciones)"
-        }
+        "body": "_Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas._\nValor: Suspensión interior a techo colgada desde el florón, con altura dada por la longitud del cable elegida al comprar (1–5 m); un único cable según el manual heredado, varios en la fotografía local (conflicto). Objeto único, no modular, de una familia que incluye además plafón, aplique y pie (Ø 55) · Unidad: — · Importancia: J2\nFuente/estado/confianza: M2,M3,K1,K2 · documentado + conflicto · alta\nEtiquetas: #suspension #techo #altura #cable-ultrafino #familia #led-integrado #sistema\nLegacy: O2-1 O2-2"
        },
        {
         "id": "CO1-2",
@@ -15064,6 +16194,28 @@
          "C1-5"
         ],
         "detalle": [
+         {
+          "id": "CO1-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO1-2",
+          "texto": "J3 · determinante: con la relación integrada, Arquetipo dice qué modelo de luminaria rehace Mesh y cómo: el rechazo del difusor que envuelve una fuente única es palabra del autor y es la tesis del proyecto (P2-1); conservar la multiplicidad de la araña y renunciar a su cristal explica la identidad del objeto. No llega a J4 porque esa decisión ya es clave en Gestión de la luz (HA4-2) y porque el término «Araña» es lectura del revisor sobre V1 y el vault, no declarada por el autor ni por la marca.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,K2,M11",
+          "legacy_ids": [
+           "C1-1",
+           "C1-2",
+           "C1-4",
+           "C1-3",
+           "C1-5"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO1-2.d1",
           "tipo": "arquetipo",
@@ -15586,6 +16738,31 @@
         ],
         "detalle": [
          {
+          "id": "CO2-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO2-1",
+          "texto": "J3 · determinante: la desmaterialización no es sólo una lectura perceptiva; es una intención declarada del autor («desmaterializar al máximo») y una palabra de la marca, y es lo que un observador reconoce antes que cualquier dato técnico.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M2,M11",
+          "legacy_ids": [
+           "C2-1",
+           "C2-2",
+           "C2-3",
+           "C2-4",
+           "C3-1",
+           "C3-4",
+           "O7-2",
+           "U3-3"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
+         {
           "id": "CO2-1.d1",
           "tipo": "cualidad",
           "sujeto": "conjunto",
@@ -15763,6 +16940,28 @@
          "C4-5"
         ],
         "detalle": [
+         {
+          "id": "CO2-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO2-2",
+          "texto": "J2 · relevante: los rasgos que sustentan las cualidades (cable negro delgado, vacíos, lectura a distancia, micro-articulaciones, encendido) son observables en imágenes oficiales pero no verificados en el objeto; sostienen la lectura sin volverla universal.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "M11,D0,M2",
+          "legacy_ids": [
+           "C2-6",
+           "C3-3",
+           "C4-2",
+           "C4-3",
+           "C4-5"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO2-2.d1",
           "tipo": "rasgo",
@@ -15960,6 +17159,30 @@
          "O3-7"
         ],
         "detalle": [
+         {
+          "id": "CO3-1.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO3-1",
+          "texto": "J2 · relevante: las asociaciones (constelación, girasol, red) y los valores (libertad, investigación) están bien sustentados en el discurso del autor y en lecturas de V1, pero son proyección hacia afuera del objeto, no decisiones que lo constituyan.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M2,M8,M11,K1",
+          "legacy_ids": [
+           "C1-1",
+           "C1-2",
+           "C2-5",
+           "C4-1",
+           "C4-4",
+           "C3-2",
+           "O3-7"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO3-1.d1",
           "tipo": "asociacion",
@@ -16173,6 +17396,28 @@
          "C4-4"
         ],
         "detalle": [
+         {
+          "id": "CO3-2.j1",
+          "tipo": "importancia",
+          "sujeto": "campo CO3-2",
+          "texto": "J1 · contextual: enlaza cada asociación con el rasgo o la fuente que la sostiene; no aporta datos nuevos, sólo trazabilidad de las lecturas de CO3-1.",
+          "estado": "interpretado (criterio editorial de importancia)",
+          "confianza": "alta",
+          "fuente": "D0,M11,M2,M8",
+          "legacy_ids": [
+           "C1-2",
+           "C3-2",
+           "C4-5",
+           "O3-7",
+           "C4-4"
+          ],
+          "estado_proyecto": "definido",
+          "conflicto": false,
+          "desconocido": false,
+          "nota": "Justificación del nivel J asignado al campo para Mesh (la misma de `importancia_por_que`); no es promedio de los J históricos de la V1 (que siguen en legacy).",
+          "origen": "ia",
+          "validado": false
+         },
          {
           "id": "CO3-2.d1",
           "tipo": "sustento",
@@ -18159,41 +19404,49 @@
    "cobertura": {
     "O4-1": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d1",
      "HA1-1.d2",
      "HA1-1.d3",
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d4"
     ],
     "O4-2": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d4"
     ],
     "O4-3": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d5",
      "HA1-1.d12",
      "HA1-1.d15"
     ],
     "O4-5": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d6",
      "IO5"
     ],
     "O4-6": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d8",
      "HA1-1.d9",
      "HA1-1.d10"
     ],
     "O4-7": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d7",
      "P3-3",
      "IO3"
     ],
     "C5-3": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d11",
      "HA1-1.d12",
      "HA1-1.d13",
@@ -18214,32 +19467,39 @@
     ],
     "O7-7": [
      "HA1-1",
+     "HA1-1.j1",
      "HA1-1.d8",
      "HA1-1.d9",
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d1",
      "HA2-2.d3",
      "HA2-2.x1"
     ],
     "O6-1": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d2",
      "HA1-2.d5",
      "HA1-2.d8"
     ],
     "O6-2": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d1",
      "HA1-2.d2",
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.s1",
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d1",
      "HA2-2.d2",
      "IO2"
     ],
     "O6-3": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d3",
      "HA1-2.d5",
      "P2-3",
@@ -18248,32 +19508,39 @@
     ],
     "O6-4": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d4",
      "P3-3"
     ],
     "O6-5": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d9",
      "HA1-2.x1"
     ],
     "O6-6": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d7",
      "HA3-1.x2"
     ],
     "O4-4": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d6"
     ],
     "O2-2": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d10",
      "HA1-2.d11",
      "CO1-1",
+     "CO1-1.j1",
      "CO1-1.d2"
     ],
     "C5-2": [
      "HA1-2",
+     "HA1-2.j1",
      "HA1-2.d11",
      "IF1",
      "IF2",
@@ -18284,6 +19551,7 @@
     ],
     "O5-1": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.p1",
      "HA2-1.p2",
      "HA2-1.p3",
@@ -18294,16 +19562,19 @@
      "HA2-1.p8",
      "HA2-1.x1",
      "HA2-2",
+     "HA2-2.j1",
      "HA2-2.d2",
      "HA2-2.d5"
     ],
     "O5-2": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.s1",
      "HA2-1.s2"
     ],
     "O5-3": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.p1",
      "HA2-1.p2",
      "HA2-1.p3",
@@ -18311,14 +19582,17 @@
      "HA2-1.p5",
      "HA2-1.p6",
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d4"
     ],
     "O5-6": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.a1"
     ],
     "O3-3": [
      "HA2-1",
+     "HA2-1.j1",
      "HA2-1.p2",
      "P2-2",
      "IO1",
@@ -18326,6 +19600,7 @@
     ],
     "O7-1": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d1",
      "HA2-3.d2",
      "HA2-3.d3",
@@ -18336,24 +19611,29 @@
     ],
     "O7-3": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d2",
      "HA2-3.d5"
     ],
     "O7-4": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d6",
      "HA2-3.x1"
     ],
     "O7-5": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d7",
      "IO1",
      "IM1"
     ],
     "O7-8": [
      "HA2-3",
+     "HA2-3.j1",
      "HA2-3.d9",
      "US3-2",
+     "US3-2.j1",
      "US3-2.d6",
      "US3-2.d5",
      "US3-2.x1"
@@ -18361,11 +19641,13 @@
     "O7-2": [
      "HA2-3.d8",
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d1",
      "IO5"
     ],
     "O5-4": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u1",
      "HA3-1.u2",
      "HA3-1.u3",
@@ -18377,35 +19659,45 @@
     ],
     "O5-7": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u6"
     ],
     "U4-1": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u5",
      "HA3-1.u6",
      "US2-1",
+     "US2-1.j1",
      "US2-1.d2",
      "US3-2",
+     "US3-2.j1",
      "US3-2.d4"
     ],
     "U4-2": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u6",
      "US2-2",
+     "US2-2.j1",
      "US2-2.d4"
     ],
     "O2-1": [
      "HA3-1",
+     "HA3-1.j1",
      "HA3-1.u4",
      "HA3-1.a1",
      "HA3-1.x2",
      "US1-2",
+     "US1-2.j1",
      "US1-2.d3",
      "CO1-1",
+     "CO1-1.j1",
      "CO1-1.d1"
     ],
     "O5-5": [
      "HA3-2",
+     "HA3-2.j1",
      "HA3-2.d1",
      "HA3-2.d2",
      "HA3-2.d3",
@@ -18413,19 +19705,24 @@
     ],
     "O7-6": [
      "HA3-2",
+     "HA3-2.j1",
      "HA3-2.d1",
      "HA3-2.d4"
     ],
     "U2-2": [
      "HA3-2",
+     "HA3-2.j1",
      "HA3-2.d5",
      "US2-1",
+     "US2-1.j1",
      "US2-1.d7",
      "US3-2",
+     "US3-2.j1",
      "US3-2.d4"
     ],
     "O8-1": [
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d1",
      "HA4-1.d2",
      "HA4-1.d3",
@@ -18436,15 +19733,18 @@
     ],
     "O8-2": [
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d1",
      "HA4-1.d7",
      "HA4-1.d8",
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d3",
      "HA4-3.d9"
     ],
     "O8-8": [
      "HA4-1",
+     "HA4-1.j1",
      "HA4-1.d4",
      "HA4-1.d5",
      "HA4-1.d10",
@@ -18459,6 +19759,7 @@
     ],
     "O8-5": [
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d1",
      "HA4-2.d3",
      "HA4-2.d6",
@@ -18467,11 +19768,13 @@
     ],
     "O8-6": [
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d2",
      "HA4-2.x1"
     ],
     "O8-7": [
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d4",
      "HA4-2.d5",
      "HA4-2.d6",
@@ -18480,6 +19783,7 @@
     ],
     "O3-4": [
      "HA4-2",
+     "HA4-2.j1",
      "HA4-2.d3",
      "HA4-2.d4",
      "P2-1",
@@ -18489,139 +19793,171 @@
     ],
     "O8-3": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d1",
      "HA4-3.d2"
     ],
     "O8-4": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d4",
      "HA4-3.d5",
      "HA4-3.x1"
     ],
     "O8-9": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d7",
      "HA4-3.x1",
      "DOC-8"
     ],
     "U3-1": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d4",
      "HA4-3.d5",
      "US3-1",
+     "US3-1.j1",
      "US3-1.d2",
      "IO4"
     ],
     "U3-4": [
      "HA4-3",
+     "HA4-3.j1",
      "HA4-3.d6"
     ],
     "U1-4": [
      "US1-1",
+     "US1-1.j1",
      "US1-1.d1"
     ],
     "U1-5": [
      "US1-1",
+     "US1-1.j1",
      "US1-1.d2"
     ],
     "U1-3": [
      "US1-1",
+     "US1-1.j1",
      "US1-1.d3"
     ],
     "U1-1": [
      "US1-2",
+     "US1-2.j1",
      "US1-2.d1",
      "US1-2.d2"
     ],
     "U1-2": [
      "US1-2",
+     "US1-2.j1",
      "US1-2.d3",
      "US1-2.d4"
     ],
     "U2-1": [
      "US2-1",
+     "US2-1.j1",
      "US2-1.d1",
      "US2-1.d2",
      "US2-1.d3",
      "US2-1.d4",
      "US2-1.d5",
      "US2-2",
+     "US2-2.j1",
      "US2-2.d1",
      "US2-2.d5"
     ],
     "U4-3": [
      "US2-1",
+     "US2-1.j1",
      "US2-1.d5"
     ],
     "U4-4": [
      "US2-1",
+     "US2-1.j1",
      "US2-1.d6",
      "DOC-10"
     ],
     "O5-8": [
      "US2-1",
+     "US2-1.j1",
      "US2-1.d6",
      "DOC-10"
     ],
     "U2-3": [
      "US2-2",
+     "US2-2.j1",
      "US2-2.d2",
      "US2-2.d5"
     ],
     "U2-4": [
      "US2-2",
+     "US2-2.j1",
      "US2-2.d3"
     ],
     "O2-3": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d1"
     ],
     "U3-2": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d6"
     ],
     "U3-3": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d3",
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d6"
     ],
     "U3-6": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d4"
     ],
     "U3-7": [
      "US3-1",
+     "US3-1.j1",
      "US3-1.d5"
     ],
     "C4-6": [
      "US3-2",
+     "US3-2.j1",
      "US3-2.d1",
      "US3-2.d2"
     ],
     "U3-5": [
      "US3-2",
+     "US3-2.j1",
      "US3-2.d3"
     ],
     "U4-6": [
      "US3-2",
+     "US3-2.j1",
      "US3-2.d5",
      "DOC-11"
     ],
     "C1-1": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d1",
      "CO1-2.d2",
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d1"
     ],
     "C1-2": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d3",
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d2",
      "CO3-1.d3",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d1",
      "CO3-2.d2",
      "CO3-2.d3",
@@ -18629,12 +19965,14 @@
     ],
     "C1-4": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d4",
      "CO1-2.d5",
      "P1-2"
     ],
     "C1-3": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d2",
      "CO1-2.d6",
      "CO1-2.d7",
@@ -18643,12 +19981,14 @@
     ],
     "C1-5": [
      "CO1-2",
+     "CO1-2.j1",
      "CO1-2.d6",
      "CO1-2.d8",
      "CO1-2.d10"
     ],
     "C2-1": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d1",
      "P2-4",
      "IO5",
@@ -18656,53 +19996,65 @@
     ],
     "C2-2": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d2"
     ],
     "C2-3": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d3",
      "IO3"
     ],
     "C2-4": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d4"
     ],
     "C3-1": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d5"
     ],
     "C3-4": [
      "CO2-1",
+     "CO2-1.j1",
      "CO2-1.d5"
     ],
     "C2-6": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d1",
      "CO2-2.d2",
      "CO2-2.d4"
     ],
     "C3-3": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d3"
     ],
     "C4-2": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d5"
     ],
     "C4-3": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d6"
     ],
     "C4-5": [
      "CO2-2",
+     "CO2-2.j1",
      "CO2-2.d6",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d2",
      "CO3-2.d4",
      "CO3-2.d5"
     ],
     "C2-5": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d2",
      "CO3-1.d3",
      "CO3-1.d4",
@@ -18711,25 +20063,32 @@
     ],
     "C4-1": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d5"
     ],
     "C4-4": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d6",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d4",
      "CO3-2.d5"
     ],
     "C3-2": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d7",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d3"
     ],
     "O3-7": [
      "CO3-1",
+     "CO3-1.j1",
      "CO3-1.d2",
      "CO3-2",
+     "CO3-2.j1",
      "CO3-2.d1",
      "CO3-2.d6",
      "P2-3",
@@ -21324,7 +22683,7 @@
    "desconocidos": 0,
    "conflictos": 10,
    "desconocidos_parciales": 12,
-   "detalle": 176,
+   "detalle": 198,
    "detalle_desconocidos": 34,
    "detalle_conflictos": 22,
    "relations": 76,
@@ -21915,7 +23274,7 @@
           "tipo": "medida",
           "sujeto": "5580",
           "texto": "Razón alto / diámetro de base = 9 (45 / 5). Cálculo sobre datos del fabricante.",
-          "estado": "documentado + calculado",
+          "estado": "documentado + inferido (cálculo)",
           "confianza": "alta",
           "fuente": "AF1,AF4",
           "legacy_ids": [
@@ -25194,7 +26553,7 @@
         "titular": "",
         "valor": "Para que el efecto ocurra: la lámpara cerca de lo que se hace, sobre una superficie horizontal y estable, con la batería cargada, y una mirada que no reciba la boca de frente (hipótesis del revisor); el campo se lee mejor con poca luz ambiente. Límites: autonomía de 6,5 h al 100 % (20 h al 33 %); IP20 pese a que la marca la sugiere en exteriores; deslumbramiento sin medir; nada publicado sobre limpieza, recambio de batería o LED, reparación ni fin de vida",
         "unidad": "—",
-        "estado": "documentado + hipótesis (visual) + conflicto (exterior con IP20; mantenimiento y vida pendientes en registros)",
+        "estado": "documentado + inferido (hipótesis visual del revisor) + conflicto (exterior con IP20; mantenimiento y vida pendientes en registros)",
         "confianza": "alta / media",
         "fuente": "AF4,AF5,AF1,AF11,AF9",
         "tags": [
@@ -25399,7 +26758,7 @@
          "inferidos": 2
         },
         "desconocido_parcial": true,
-        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: la lámpara cerca de lo que se hace, sobre una superficie horizontal y estable, con la batería cargada, y una mirada que no reciba la boca de frente (hipótesis del revisor); el campo se lee mejor con poca luz ambiente. Límites: autonomía de 6,5 h al 100 % (20 h al 33 %); IP20 pese a que la marca la sugiere en exteriores; deslumbramiento sin medir; nada publicado sobre limpieza, recambio de batería o LED, reparación ni fin de vida · Unidad: — · Importancia: J2\nFuente/estado/confianza: AF4,AF5,AF1,AF11,AF9 · documentado + hipótesis (visual) + conflicto (exterior con IP20; mantenimiento y vida pendientes en registros) · alta / media\nEtiquetas: #condicion #cerca #estable #bateria-cargada #penumbra #autonomia #ip20 #deslumbramiento #limpieza #recambio #fin-de-vida #no-publicado\nLegacy: C4-6 U3-5 U4-1 U4-3 U4-4 U4-6 O7-8"
+        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: la lámpara cerca de lo que se hace, sobre una superficie horizontal y estable, con la batería cargada, y una mirada que no reciba la boca de frente (hipótesis del revisor); el campo se lee mejor con poca luz ambiente. Límites: autonomía de 6,5 h al 100 % (20 h al 33 %); IP20 pese a que la marca la sugiere en exteriores; deslumbramiento sin medir; nada publicado sobre limpieza, recambio de batería o LED, reparación ni fin de vida · Unidad: — · Importancia: J2\nFuente/estado/confianza: AF4,AF5,AF1,AF11,AF9 · documentado + inferido (hipótesis visual del revisor) + conflicto (exterior con IP20; mantenimiento y vida pendientes en registros) · alta / media\nEtiquetas: #condicion #cerca #estable #bateria-cargada #penumbra #autonomia #ip20 #deslumbramiento #limpieza #recambio #fin-de-vida #no-publicado\nLegacy: C4-6 U3-5 U4-1 U4-3 U4-4 U4-6 O7-8"
        }
       ]
      }
@@ -32004,7 +33363,7 @@
           "tipo": "medida",
           "sujeto": "disco",
           "texto": "Proporción diámetro / espesor del vidrio: 54 (54 cm / 1 cm). Cálculo sobre la lámina técnica.",
-          "estado": "documentado (ficha Vibia) + calculado",
+          "estado": "documentado (ficha Vibia) + inferido (cálculo)",
           "confianza": "alta",
           "fuente": "M15",
           "legacy_ids": [
@@ -34274,7 +35633,7 @@
           "tipo": "actividad",
           "sujeto": "actividad",
           "texto": "Estar, circular, recibir, esperar; mirar la pieza. No acompaña tareas de precisión.",
-          "estado": "inferido del tipo + editorial",
+          "estado": "inferido (del tipo y de la editorial)",
           "confianza": "media-alta",
           "fuente": "M14,M10",
           "legacy_ids": [
@@ -34981,7 +36340,7 @@
         "titular": "",
         "valor": "Para que el efecto ocurra: una pared clara y lisa detrás que devuelva el halo (hipótesis apoyada en la pared como reflector), un vidrio sin tinte verde y limpio, la fuente oculta y un interior seco (IP20). Límites: el cable queda a la vista; sin recambio de LED por el usuario; deslumbramiento bajo pero sin medir; vida útil no publicada; garantía 2 años (distribuidor)",
         "unidad": "—",
-        "estado": "documentado (autor, prensa) + hipótesis + inferido",
+        "estado": "documentado (autor, prensa) + inferido (incluye la hipótesis del revisor sobre la pared)",
         "confianza": "alta / media",
         "fuente": "M1,M5,M8,M19,M14",
         "tags": [
@@ -35182,7 +36541,7 @@
          "inferidos": 2
         },
         "desconocido_parcial": true,
-        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: una pared clara y lisa detrás que devuelva el halo (hipótesis apoyada en la pared como reflector), un vidrio sin tinte verde y limpio, la fuente oculta y un interior seco (IP20). Límites: el cable queda a la vista; sin recambio de LED por el usuario; deslumbramiento bajo pero sin medir; vida útil no publicada; garantía 2 años (distribuidor) · Unidad: — · Importancia: J2\nFuente/estado/confianza: M1,M5,M8,M19,M14 · documentado (autor, prensa) + hipótesis + inferido · alta / media\nEtiquetas: #condicion #pared-clara #reflector #vidrio-puro #limpieza #ip20 #cable-visible #sin-recambio #deslumbramiento #vida-util\nLegacy: C4-6 U3-5 U4-6 U4-4 O7-8"
+        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: una pared clara y lisa detrás que devuelva el halo (hipótesis apoyada en la pared como reflector), un vidrio sin tinte verde y limpio, la fuente oculta y un interior seco (IP20). Límites: el cable queda a la vista; sin recambio de LED por el usuario; deslumbramiento bajo pero sin medir; vida útil no publicada; garantía 2 años (distribuidor) · Unidad: — · Importancia: J2\nFuente/estado/confianza: M1,M5,M8,M19,M14 · documentado (autor, prensa) + inferido (incluye la hipótesis del revisor sobre la pared) · alta / media\nEtiquetas: #condicion #pared-clara #reflector #vidrio-puro #limpieza #ip20 #cable-visible #sin-recambio #deslumbramiento #vida-util\nLegacy: C4-6 U3-5 U4-6 U4-4 O7-8"
        }
       ]
      }
@@ -43723,7 +45082,7 @@
           "tipo": "fuente_luz",
           "sujeto": "fuente",
           "texto": "Potencia LED total: 36 W, producto de 8 × 4,5 W del manual EU; es un cálculo sobre el dato del fabricante, no una cifra publicada. La evolución histórica de la potencia por terminal (3 W → 3,7 W → 4,5 W) vive en HA2-3.d11.",
-          "estado": "documentado (manual) + calculado",
+          "estado": "documentado (manual) + inferido (cálculo)",
           "confianza": "alta",
           "fuente": "W8",
           "legacy_ids": [
@@ -44471,7 +45830,7 @@
           "tipo": "actividad",
           "sujeto": "actividad",
           "texto": "Estar, recibir, circular, comer; contemplar el dibujo. En contract, identificar un lugar (recepción, lobby). No acompaña tareas de precisión.",
-          "estado": "inferido del tipo + editorial",
+          "estado": "inferido (del tipo y de la editorial)",
           "confianza": "media-alta",
           "fuente": "W11,W13",
           "legacy_ids": [
@@ -45268,7 +46627,7 @@
         "titular": "",
         "valor": "Para que el efecto ocurra: un fondo claro contra el que se recorten las líneas negras y altura para ver el volumen entero (hipótesis del revisor); cables de igual longitud y marcos a su altura de fábrica, o el poliedro se deforma; sólo interior seco. Límites: deslumbramiento bajo pero sin medir; sin recambio ni reparación por el usuario (LED integrado, terminal cerrado de fábrica), vida útil no publicada, garantía 2 años; el cable sobrante se recalienta; limpieza sólo con paño de algodón húmedo",
         "unidad": "—",
-        "estado": "documentado (manual) + hipótesis (vida útil pendiente en registros)",
+        "estado": "documentado (manual) + inferido (hipótesis del revisor sobre el fondo; vida útil pendiente en registros)",
         "confianza": "alta / media",
         "fuente": "W7,W8,W9,W10,W13",
         "tags": [
@@ -45489,7 +46848,7 @@
          "inferidos": 2
         },
         "desconocido_parcial": true,
-        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: un fondo claro contra el que se recorten las líneas negras y altura para ver el volumen entero (hipótesis del revisor); cables de igual longitud y marcos a su altura de fábrica, o el poliedro se deforma; sólo interior seco. Límites: deslumbramiento bajo pero sin medir; sin recambio ni reparación por el usuario (LED integrado, terminal cerrado de fábrica), vida útil no publicada, garantía 2 años; el cable sobrante se recalienta; limpieza sólo con paño de algodón húmedo · Unidad: — · Importancia: J2\nFuente/estado/confianza: W7,W8,W9,W10,W13 · documentado (manual) + hipótesis (vida útil pendiente en registros) · alta / media\nEtiquetas: #condicion #fondo-claro #techo-alto #longitud-igual #ip20 #limpieza #deslumbramiento #no-reparable #led-integrado #garantia #vida-util #sobrecalentamiento #weee\nLegacy: C4-6 U3-5 U4-1 U4-6 O7-8 U4-4"
+        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: un fondo claro contra el que se recorten las líneas negras y altura para ver el volumen entero (hipótesis del revisor); cables de igual longitud y marcos a su altura de fábrica, o el poliedro se deforma; sólo interior seco. Límites: deslumbramiento bajo pero sin medir; sin recambio ni reparación por el usuario (LED integrado, terminal cerrado de fábrica), vida útil no publicada, garantía 2 años; el cable sobrante se recalienta; limpieza sólo con paño de algodón húmedo · Unidad: — · Importancia: J2\nFuente/estado/confianza: W7,W8,W9,W10,W13 · documentado (manual) + inferido (hipótesis del revisor sobre el fondo; vida útil pendiente en registros) · alta / media\nEtiquetas: #condicion #fondo-claro #techo-alto #longitud-igual #ip20 #limpieza #deslumbramiento #no-reparable #led-integrado #garantia #vida-util #sobrecalentamiento #weee\nLegacy: C4-6 U3-5 U4-1 U4-6 O7-8 U4-4"
        }
       ]
      }
@@ -45606,6 +46965,239 @@
           "validado": false
          }
         ],
+        "tipologia": {
+         "terminos": [
+          {
+           "id": "suspension",
+           "termino": "Suspensión",
+           "definicion": "Luminaria que cuelga del techo mediante cable, varilla o cadena, con el cuerpo separado del plano de fijación.",
+           "rol": "principal",
+           "ref": "CO1-1.d1",
+           "rasgos": [
+            "Fijada al techo",
+            "Cuelga de un elemento de suspensión: cable, varilla o cadena",
+            "Cuerpo separado del plano de fijación"
+           ],
+           "adhesion": {
+            "conserva": 2,
+            "transforma": 1,
+            "rechaza": 0,
+            "total": 3,
+            "porcentaje": 83,
+            "derivada": true,
+            "texto": "conserva 2 de 3 rasgos · transforma 1 · 83 %",
+            "formula": "Se deriva, no se declara, por término: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta."
+           }
+          },
+          {
+           "id": "sistema-modular",
+           "termino": "Sistema modular o estructural",
+           "definicion": "Luminaria formada por módulos que se agregan, se encadenan o forman estructura para componer piezas de distinto tamaño o recorrido.",
+           "rol": "secundaria",
+           "ref": "CO1-1.d2",
+           "rasgos": [
+            "Módulos que se agregan, se encadenan o forman estructura",
+            "Piezas de distinto tamaño o recorrido con los mismos módulos",
+            "No es una pieza cerrada: el usuario o el instalador decide cantidad o configuración"
+           ],
+           "adhesion": {
+            "conserva": 1,
+            "transforma": 2,
+            "rechaza": 0,
+            "total": 3,
+            "porcentaje": 67,
+            "derivada": true,
+            "texto": "conserva 1 de 3 rasgos · transforma 2 · 67 %",
+            "formula": "Se deriva, no se declara, por término: (rasgos conservados + ½ × rasgos transformados) ÷ rasgos del término, en %. «Introduce» no cuenta."
+           }
+          }
+         ],
+         "operaciones": [
+          {
+           "id": "CO1-1.o1",
+           "termino": "suspension",
+           "rasgo": "Fijada al techo",
+           "operacion": "conserva",
+           "como": "Una placa con ranuras y barra cruzada se atornilla al techo y recibe la conexión con el protocolo de regulación elegido; la hace un electricista.",
+           "estado": "documentado (manual)",
+           "confianza": "alta",
+           "fuente": "W7,W8",
+           "ref": [
+            "HA3-1.u4",
+            "HA2-1.p1",
+            "US2-1.d2"
+           ],
+           "legacy_ids": [
+            "O2-1",
+            "O5-1",
+            "U4-1"
+           ]
+          },
+          {
+           "id": "CO1-1.o2",
+           "termino": "suspension",
+           "rasgo": "Cuelga de un elemento de suspensión: cable, varilla o cadena",
+           "operacion": "transforma",
+           "como": "Los ocho cables que caen del florón son la suspensión y también los conductores de cada LED y las aristas verticales del cuerpo: el elemento de suspensión no se distingue del objeto.",
+           "estado": "documentado (autor + manual)",
+           "confianza": "alta",
+           "fuente": "W6,W7",
+           "ref": [
+            "HA2-1.p3",
+            "HA3-1.u2",
+            "HA3-2.d2"
+           ],
+           "legacy_ids": [
+            "O3-3",
+            "O5-1",
+            "O5-3",
+            "O5-4",
+            "O5-5"
+           ]
+          },
+          {
+           "id": "CO1-1.o3",
+           "termino": "suspension",
+           "rasgo": "Cuerpo separado del plano de fijación",
+           "operacion": "conserva",
+           "como": "El poliedro queda bajo el techo a la altura que se fija al instalar tirando de los ocho cables por igual, hasta 250 cm; en uso no se mueve.",
+           "estado": "documentado (manual)",
+           "confianza": "alta",
+           "fuente": "W7,W9",
+           "ref": [
+            "US1-2.d3",
+            "HA1-1.d3",
+            "HA3-2.d5"
+           ],
+           "legacy_ids": [
+            "O2-1",
+            "O4-1",
+            "O5-5",
+            "U1-2",
+            "U2-2"
+           ]
+          },
+          {
+           "id": "CO1-1.o4",
+           "termino": "sistema-modular",
+           "rasgo": "Módulos que se agregan, se encadenan o forman estructura",
+           "operacion": "transforma",
+           "como": "La 0300 no se arma por agregación: es una geometría cerrada de fábrica. Lo modular está en el sistema —cuatro sub-familias y el configurador CREA con que los proyectistas arman versiones propias—, no en la pieza.",
+           "estado": "documentado",
+           "confianza": "alta",
+           "fuente": "W11,W12,W1",
+           "ref": [
+            "CO1-1.d2"
+           ],
+           "legacy_ids": [
+            "O2-2"
+           ]
+          },
+          {
+           "id": "CO1-1.o5",
+           "termino": "sistema-modular",
+           "rasgo": "Piezas de distinto tamaño o recorrido con los mismos módulos",
+           "operacion": "conserva",
+           "como": "La sub-familia 3D repite la misma silueta octogonal en cinco tamaños: 0299 Ø 150, 0300 Ø 120, 0301 Ø 89 y las 0302/0303, más chicas.",
+           "estado": "documentado (manual, distribuidor) + interpretado",
+           "confianza": "media-alta",
+           "fuente": "W8,W9",
+           "ref": [
+            "HA1-1.d9"
+           ],
+           "legacy_ids": [
+            "C5-3",
+            "O1-4",
+            "O4-3"
+           ]
+          },
+          {
+           "id": "CO1-1.o6",
+           "termino": "sistema-modular",
+           "rasgo": "No es una pieza cerrada: el usuario o el instalador decide cantidad o configuración",
+           "operacion": "transforma",
+           "como": "La 0300 sí es una pieza cerrada —los retenes salen de fábrica a su altura y los marcos van en un orden fijo—; quien decide la configuración es el proyectista con CREA, no el usuario ni el instalador.",
+           "estado": "documentado (manual, marca)",
+           "confianza": "alta",
+           "fuente": "W7,W12",
+           "ref": [
+            "HA2-1.p5",
+            "CO1-1.d2"
+           ],
+           "legacy_ids": [
+            "O2-2",
+            "O5-1",
+            "O5-3"
+           ]
+          }
+         ],
+         "modo_creativo": {
+          "nota": "Respuestas reconstruidas desde la ficha, no dichas por Levy con estas palabras.",
+          "respuestas": [
+           {
+            "id": "interesa",
+            "pregunta": "¿Qué te interesa de una suspensión?",
+            "respuesta": "Que la pieza cuelgue en el aire de un techo alto —un hall, una recepción, un comedor de doble altura— y se lea desde lejos como un dibujo en el espacio.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "media-alta",
+            "fuente": "W1,W13",
+            "ref": [
+             "CO1-1.o3",
+             "US1-2.d1",
+             "US1-2.d4"
+            ]
+           },
+           {
+            "id": "no_quiero",
+            "pregunta": "¿Qué no querés de ella?",
+            "respuesta": "Un elemento de suspensión aparte del objeto: los cables que la cuelgan son las líneas que la dibujan y los conductores de su luz.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "media-alta",
+            "fuente": "W6,W7",
+            "ref": [
+             "CO1-1.o2",
+             "HA2-1.p3"
+            ]
+           },
+           {
+            "id": "quisiera",
+            "pregunta": "¿Qué te gustaría que hiciera y normalmente no hace?",
+            "respuesta": "Que el mismo cable sostenga, conduzca y dibuje, y que un sistema de sub-familias y un configurador permitan a los proyectistas armar sus propias versiones.",
+            "estado": "interpretado (reconstruido desde la ficha)",
+            "confianza": "media-alta",
+            "fuente": "W6,W11,W12",
+            "ref": [
+             "HA2-1.p3",
+             "CO1-1.d2",
+             "CO1-1.o4"
+            ]
+           }
+          ],
+          "frase_proyectual": {
+           "texto": "Una suspensión en la que la suspensión es el objeto: ocho cables que cuelgan del florón, conducen y dibujan un poliedro, dentro de un sistema que el proyectista puede configurar.",
+           "estado": "interpretado (síntesis)",
+           "confianza": "media-alta",
+           "fuente": "W6,W7,W12",
+           "ref": [
+            "CO1-1.d1",
+            "CO1-1.d2",
+            "HA2-1.p3"
+           ]
+          },
+          "libre": {
+           "texto": "Queda abierto lo que la tipología no ata: la altura bajo el techo (hasta 250 cm, fijada al instalar), el tamaño dentro de la sub-familia 3D y, en la familia, la composición con CREA.",
+           "estado": "interpretado (desde los registros)",
+           "confianza": "media",
+           "fuente": "W9,W8,W12",
+           "ref": [
+            "US1-2.d3",
+            "HA1-1.d9",
+            "CO1-1.d2"
+           ]
+          }
+         },
+         "estado": "interpretado (desde registros documentados)"
+        },
         "code": "C1.1",
         "def": "Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas.",
         "pregunta": "¿Qué tipo de luminaria es por su manera fundamental de existir en el espacio?",
@@ -45621,13 +47213,7 @@
          "pendientes": 0,
          "inferidos": 0
         },
-        "body": "_Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas._\nValor: Suspensión interior (0300): colgada de un florón, altura regulable en obra acortando los cables; geometría cerrada de fábrica dentro de un sistema con cuatro sub-familias (3D, Lineal, Chandelier, FreeForm) y un configurador (CREA) para composiciones a medida · Unidad: — · Importancia: J2\nFuente/estado/confianza: W7,W8,W11,W12,W1 · documentado · alta\nEtiquetas: #suspension #floron #altura #sistema #sub-familias #geometria-fija #crea\nLegacy: O2-1 O2-2",
-        "tipologia": {
-         "terminos": [],
-         "operaciones": [],
-         "modo_creativo": null,
-         "estado": "pendiente (sin cargar: términos, rasgos y operaciones)"
-        }
+        "body": "_Clasifica el objeto por su condición general de instalación o presencia: suspensión, sobremesa, pie, aplique, techo, empotrada, portátil, sistema u otras tipologías controladas._\nValor: Suspensión interior (0300): colgada de un florón, altura regulable en obra acortando los cables; geometría cerrada de fábrica dentro de un sistema con cuatro sub-familias (3D, Lineal, Chandelier, FreeForm) y un configurador (CREA) para composiciones a medida · Unidad: — · Importancia: J2\nFuente/estado/confianza: W7,W8,W11,W12,W1 · documentado · alta\nEtiquetas: #suspension #floron #altura #sistema #sub-familias #geometria-fija #crea\nLegacy: O2-1 O2-2"
        },
        {
         "id": "CO1-2",
@@ -58632,7 +60218,7 @@
           "tipo": "medida",
           "sujeto": "conjunto 5505",
           "texto": "Proporción diámetro de la pantalla / diámetro de la base: 2 (30 cm / 15 cm). Cálculo sobre la lámina.",
-          "estado": "documentado (lámina) + calculado",
+          "estado": "documentado (lámina) + inferido (cálculo)",
           "confianza": "alta",
           "fuente": "MF10",
           "legacy_ids": [],
@@ -58650,7 +60236,7 @@
           "tipo": "medida",
           "sujeto": "pantalla",
           "texto": "Proporción diámetro / alto de la pantalla: 5 (30 cm / 6 cm): una pantalla baja, más ala que tambor. Cálculo sobre la lámina.",
-          "estado": "documentado (lámina) + calculado",
+          "estado": "documentado (lámina) + inferido (cálculo)",
           "confianza": "alta",
           "fuente": "MF10",
           "legacy_ids": [],
@@ -61281,7 +62867,7 @@
         "titular": "",
         "valor": "Para que el efecto ocurra: una superficie debajo que reciba el charco de luz, la cara interior de la pantalla limpia y clara, una posición sentada que no vea el cabezal, un tomacorriente cerca y un interior seco (IP20). Límites: sin recambio de LED por el usuario; deslumbramiento sin medir; vida útil y largo de cable no publicados",
         "unidad": "—",
-        "estado": "documentado (marca, manual) + hipótesis + inferido",
+        "estado": "documentado (marca, manual) + inferido (incluye hipótesis del revisor)",
         "confianza": "alta / media",
         "fuente": "MF2,MF1,MF10,MF17",
         "tags": [
@@ -61449,7 +63035,7 @@
          "inferidos": 2
         },
         "desconocido_parcial": true,
-        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: una superficie debajo que reciba el charco de luz, la cara interior de la pantalla limpia y clara, una posición sentada que no vea el cabezal, un tomacorriente cerca y un interior seco (IP20). Límites: sin recambio de LED por el usuario; deslumbramiento sin medir; vida útil y largo de cable no publicados · Unidad: — · Importancia: J2\nFuente/estado/confianza: MF2,MF1,MF10,MF17 · documentado (marca, manual) + hipótesis + inferido · alta / media\nEtiquetas: #condicion #superficie #pantalla-limpia #posicion-sentada #tomacorriente #ip20 #sin-recambio #vida-util\nLegacy: "
+        "body": "_Registra las condiciones que afectan al resultado de uso: posición, orientación, distancia, autonomía, configuración, compatibilidad, confort visual o limitaciones de alcance. Sólo incluye condiciones relevantes y sustentadas._\nValor: Para que el efecto ocurra: una superficie debajo que reciba el charco de luz, la cara interior de la pantalla limpia y clara, una posición sentada que no vea el cabezal, un tomacorriente cerca y un interior seco (IP20). Límites: sin recambio de LED por el usuario; deslumbramiento sin medir; vida útil y largo de cable no publicados · Unidad: — · Importancia: J2\nFuente/estado/confianza: MF2,MF1,MF10,MF17 · documentado (marca, manual) + inferido (incluye hipótesis del revisor) · alta / media\nEtiquetas: #condicion #superficie #pantalla-limpia #posicion-sentada #tomacorriente #ip20 #sin-recambio #vida-util\nLegacy: "
        }
       ]
      }
