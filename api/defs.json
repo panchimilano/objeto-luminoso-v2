@@ -2627,15 +2627,46 @@
     "conflicto"
    ],
    "proyecto": [
+    "incertidumbre",
+    "hipotesis",
     "definido",
-    "por_definir"
+    "libre"
    ],
    "proyecto_nombres": {
+    "incertidumbre": "Incertidumbre",
+    "hipotesis": "Hipótesis",
     "definido": "Definido",
-    "por_definir": "Por definir"
+    "libre": "Libre"
    },
-   "proyecto_regla": "Se deriva, no se carga a mano: un campo (su enunciado), un registro de detalle o un ítem del Programa queda «por definir» si su contenido es desconocido o está vacío; si no, «definido». En una lámpara existente en producción casi todo queda definido. Una ficha de proyecto puede declarar «por definir» sobre un contenido ya redactado que todavía no se decidió; nunca «definido» sobre un contenido desconocido o vacío.",
-   "proyecto_ayuda": "Definido: ya está decidido. Por definir: falta decidirlo; es lo que el proceso de diseño tiene que resolver.",
+   "proyecto_alias": {
+    "por_definir": "incertidumbre"
+   },
+   "proyecto_regla": "Se deriva, no se carga a mano: un campo (su enunciado), un registro de detalle o un ítem del Programa queda en «incertidumbre» si su contenido es desconocido o está vacío; si no, en «hipótesis» si su evidencia principal (el primer término del estado de evidencia) es «inferido»; si no, «definido». El estado «libre» nunca se deriva: sólo se declara, cuando algo queda abierto a propósito. Una ficha de proyecto puede declarar cualquiera de los cuatro sobre un contenido ya redactado; nunca «definido» ni «hipótesis» sobre un contenido desconocido o vacío, ni «hipótesis» validada. «por_definir» (los dos estados anteriores) se acepta como alias de «incertidumbre».",
+   "proyecto_ayuda": [
+    "Incertidumbre: hay que resolverlo para avanzar.",
+    "Hipótesis: la IA cree entenderlo; falta que la persona lo confirme.",
+    "Definido: está decidido.",
+    "Libre: queda abierto a propósito (puede variar).",
+    "Origen y validación son cosas distintas: el origen dice de dónde salió el dato (la persona, una imagen, una comparación o la IA); la validación, si el diseñador lo confirmó."
+   ],
+   "origen": [
+    "usuario",
+    "imagen",
+    "comparacion",
+    "ia"
+   ],
+   "origen_nombres": {
+    "usuario": "usuario",
+    "imagen": "imagen",
+    "comparacion": "comparación",
+    "ia": "IA"
+   },
+   "origen_regla": "Se deriva sólo cuando es inequívoco, de los términos del estado de evidencia: sólo «observado» → imagen; sólo «inferido» o «interpretado» → IA; exactamente «documentado (Fran)» → usuario. Cualquier otra cosa (documentación de catálogo, manual o autor, mezclas, desconocido) queda sin origen: no se inventa. «Comparación» sólo se declara.",
+   "validacion_nombres": {
+    "true": "validado",
+    "false": "sin validar"
+   },
+   "validacion_regla": "Booleano, falso por defecto: verdadero sólo cuando el diseñador confirmó el dato. Una hipótesis validada deja de ser hipótesis.",
    "nota": "Este segundo estado no debe reemplazar el estado de evidencia."
   },
   "relaciones": {
